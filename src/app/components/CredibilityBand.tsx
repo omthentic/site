@@ -136,21 +136,21 @@ const CredibilityBand = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-                      <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10 glow-primary cursor-pointer">
-              <blockquote className="text-xl lg:text-2xl text-gray-800 font-medium leading-relaxed mb-6">
-                &ldquo;Articulate transformed how our students approach interview preparation. 
-                The AI feedback is incredibly accurate and the improvement in confidence is remarkable.&rdquo;
-              </blockquote>
-              <div className="flex items-center justify-center space-x-4">
-                <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold shadow-card hover:shadow-hover transition-all duration-300">
-                  DR
-                </div>
-                <div className="text-left">
-                  <div className="font-semibold text-gray-800 dark:text-gray-800">Dr. Rachel Chen</div>
-                  <div className="text-gray-600 dark:text-gray-600 text-sm">Career Services Director, Stanford University</div>
-                </div>
+                                <div className="bg-gradient-to-br from-primary/5 to-accent/5 dark:from-primary/10 dark:to-accent/10 rounded-2xl p-8 lg:p-12 border border-primary/10 dark:border-primary/20 glow-primary cursor-pointer">
+            <blockquote className="text-xl lg:text-2xl text-gray-800 font-medium leading-relaxed mb-6">
+              &ldquo;Articulate transformed how our students approach interview preparation. 
+              The AI feedback is incredibly accurate and the improvement in confidence is remarkable.&rdquo;
+            </blockquote>
+            <div className="flex items-center justify-center space-x-4">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold shadow-card hover:shadow-hover transition-all duration-300">
+                DR
+              </div>
+              <div className="text-left">
+                <div className="font-semibold text-gray-800">Dr. Rachel Chen</div>
+                <div className="text-gray-600 text-sm">Career Services Director, Stanford University</div>
               </div>
             </div>
+          </div>
         </motion.div>
       </div>
     </section>

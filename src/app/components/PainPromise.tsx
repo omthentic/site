@@ -65,26 +65,26 @@ const PainPromise = () => {
 
             <div className="space-y-6">
               {painPoints.map((pain, index) => (
-                <motion.div
-                  key={pain.title}
-                  className="group flex items-start space-x-4 p-6 bg-white rounded-xl glow-subtle cursor-pointer"
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                  viewport={{ once: true }}
-                >
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-200 transition-colors duration-300">
-                    <pain.icon className="w-6 h-6 text-red-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-800 mb-2">
-                      {pain.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-600">
-                      {pain.description}
-                    </p>
-                  </div>
-                </motion.div>
+                                  <motion.div
+                    key={pain.title}
+                    className="group flex items-start space-x-4 p-6 bg-white dark:bg-gray-800 rounded-xl glow-subtle cursor-pointer"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                    viewport={{ once: true }}
+                  >
+                    <div className="flex-shrink-0 w-12 h-12 bg-red-100 dark:bg-red-900/20 rounded-lg flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900/30 transition-colors duration-300">
+                      <pain.icon className="w-6 h-6 text-red-600 dark:text-red-400" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                        {pain.title}
+                      </h3>
+                      <p className="text-gray-600">
+                        {pain.description}
+                      </p>
+                    </div>
+                  </motion.div>
               ))}
             </div>
           </motion.div>
@@ -97,19 +97,19 @@ const PainPromise = () => {
             transition={{ duration: 0.8, delay: 0.2 }}
             viewport={{ once: true }}
           >
-            {/* Main Product Interface */}
-            <div className="relative bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
+                        {/* Main Product Interface */}
+            <div className="relative bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
-                                  <div className="flex items-center space-x-3">
+                  <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-sm">A</span>
                     </div>
-                    <span className="font-semibold text-gray-800 dark:text-gray-800">Practice Session</span>
+                    <span className="font-semibold text-gray-800">Practice Session</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-sm text-gray-600 dark:text-gray-600">Live Feedback</span>
+                    <span className="text-sm text-gray-600">Live Feedback</span>
                   </div>
               </div>
 
@@ -166,22 +166,22 @@ const PainPromise = () => {
               {/* Real-time Feedback */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-800 dark:text-gray-800">Real-time Analysis</span>
+                  <span className="text-sm font-medium text-gray-800">Real-time Analysis</span>
                   <span className="text-sm text-primary font-semibold">85% Confidence</span>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors duration-300">
-                    <div className="text-lg font-bold text-green-600">12</div>
-                    <div className="text-xs text-green-800">Clear Points</div>
+                  <div className="text-center p-3 bg-green-50 dark:bg-green-900/20 rounded-lg hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-300">
+                    <div className="text-lg font-bold text-green-600 dark:text-green-400">12</div>
+                    <div className="text-xs text-green-800 dark:text-green-300">Clear Points</div>
                   </div>
-                  <div className="text-center p-3 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors duration-300">
-                    <div className="text-lg font-bold text-yellow-600">3</div>
-                    <div className="text-xs text-yellow-800">Filler Words</div>
+                  <div className="text-center p-3 bg-yellow-50 dark:bg-yellow-900/20 rounded-lg hover:bg-yellow-100 dark:hover:bg-yellow-900/30 transition-colors duration-300">
+                    <div className="text-lg font-bold text-yellow-600 dark:text-yellow-400">3</div>
+                    <div className="text-xs text-yellow-800 dark:text-yellow-300">Filler Words</div>
                   </div>
-                  <div className="text-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-300">
-                    <div className="text-lg font-bold text-blue-600">Good</div>
-                    <div className="text-xs text-blue-800">Pace</div>
+                  <div className="text-center p-3 bg-blue-50 dark:bg-blue-900/20 rounded-lg hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300">
+                    <div className="text-lg font-bold text-blue-600 dark:text-blue-400">Good</div>
+                    <div className="text-xs text-blue-800 dark:text-blue-300">Pace</div>
                   </div>
                 </div>
               </div>

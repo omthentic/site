@@ -85,11 +85,11 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <motion.button
-                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 ${
-                    activeStep === index
-                      ? 'bg-white glow-primary border-2 border-primary/20'
-                      : 'bg-white/50 hover:bg-white glow-subtle'
-                  }`}
+                                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 ${
+                  activeStep === index
+                    ? 'bg-white dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
+                    : 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 glow-subtle'
+                }`}
                   onClick={() => setActiveStep(index)}
                   whileTap={{ scale: 0.98 }}
                   initial={{ opacity: 0, y: 20 }}
@@ -101,9 +101,9 @@ const HowItWorks = () => {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-gray-400 dark:text-gray-400 font-medium">{step.number}</div>
-                    <div className="text-xl font-bold text-gray-800 dark:text-gray-800">{step.title}</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-600">{step.subtitle}</div>
+                    <div className="text-sm text-gray-400 font-medium">{step.number}</div>
+                    <div className="text-xl font-bold text-gray-800">{step.title}</div>
+                    <div className="text-sm text-gray-600">{step.subtitle}</div>
                   </div>
                 </motion.button>
                 
@@ -127,10 +127,10 @@ const HowItWorks = () => {
             {/* Left Column - Details */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-gray-800 dark:text-gray-800 mb-4">
+                <h3 className="text-3xl font-bold text-gray-800 mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-gray-600 dark:text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -145,7 +145,7 @@ const HowItWorks = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-800 dark:text-gray-800">{feature}</span>
+                    <span className="text-gray-800">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -176,18 +176,18 @@ const RecordMockup = () => {
   const [isRecording, setIsRecording] = useState(false);
 
   return (
-    <div className="bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-800">Practice Session</h4>
-          <div className="text-sm text-gray-400 dark:text-gray-400">Question 1 of 5</div>
+          <h4 className="text-lg font-semibold text-gray-800">Practice Session</h4>
+          <div className="text-sm text-gray-400">Question 1 of 5</div>
         </div>
 
         {/* Question */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors duration-300">
-          <h5 className="text-blue-900 font-semibold mb-2">Interview Question</h5>
-          <p className="text-blue-800">
+        <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg p-6 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300">
+          <h5 className="text-blue-900 dark:text-blue-200 font-semibold mb-2">Interview Question</h5>
+          <p className="text-blue-800 dark:text-blue-300">
             &ldquo;Tell me about a time when you had to overcome a significant challenge at work. 
             How did you approach it and what was the outcome?&rdquo;
           </p>
@@ -213,17 +213,17 @@ const RecordMockup = () => {
           </motion.button>
           
           <div className="text-center">
-            <div className="text-lg font-semibold text-gray-800 dark:text-gray-800">
+            <div className="text-lg font-semibold text-gray-800">
               {isRecording ? 'Recording...' : 'Ready to Record'}
             </div>
-            <div className="text-sm text-gray-600 dark:text-gray-600">
+            <div className="text-sm text-gray-600">
               {isRecording ? '00:23' : 'Click to start'}
             </div>
           </div>
         </div>
 
         {/* Progress */}
-        <div className="flex items-center justify-between text-sm text-gray-400 dark:text-gray-400 bg-gray-50 rounded-lg p-3">
+        <div className="flex items-center justify-between text-sm text-gray-400 bg-gray-50 dark:bg-gray-700/50 rounded-lg p-3">
           <span>Attempts: 1</span>
           <span>Best Score: --</span>
           <span>Time Limit: 2 min</span>
@@ -236,48 +236,48 @@ const RecordMockup = () => {
 // Review Step Mockup
 const ReviewMockup = () => {
   return (
-    <div className="bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-800">Analysis Results</h4>
+          <h4 className="text-lg font-semibold text-gray-800">Analysis Results</h4>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 bg-green-400 rounded-full" />
-            <span className="text-sm text-gray-600 dark:text-gray-600">Analysis Complete</span>
+            <span className="text-sm text-gray-600">Analysis Complete</span>
           </div>
         </div>
 
         {/* Overall Score */}
-        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl glow-subtle cursor-pointer">
-          <div className="text-4xl font-bold text-purple-700 mb-2">85</div>
-          <div className="text-purple-600 font-medium">Overall Score</div>
-          <div className="text-sm text-purple-500 mt-1">Great improvement!</div>
+        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl glow-subtle cursor-pointer">
+          <div className="text-4xl font-bold text-purple-700 dark:text-purple-300 mb-2">85</div>
+          <div className="text-purple-600 dark:text-purple-400 font-medium">Overall Score</div>
+          <div className="text-sm text-purple-500 dark:text-purple-400 mt-1">Great improvement!</div>
         </div>
 
         {/* Detailed Metrics */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
-            <div className="text-2xl font-bold text-green-700">92</div>
-            <div className="text-sm text-green-700">Clarity</div>
+          <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+            <div className="text-2xl font-bold text-green-700 dark:text-green-300">92</div>
+            <div className="text-sm text-green-700 dark:text-green-400">Clarity</div>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
-            <div className="text-2xl font-bold text-blue-700">78</div>
-            <div className="text-sm text-blue-700">Confidence</div>
+          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+            <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">78</div>
+            <div className="text-sm text-blue-700 dark:text-blue-400">Confidence</div>
           </div>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
-            <div className="text-2xl font-bold text-yellow-700">5</div>
-            <div className="text-sm text-yellow-700">Filler Words</div>
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+            <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">5</div>
+            <div className="text-sm text-yellow-700 dark:text-yellow-400">Filler Words</div>
           </div>
-          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
-            <div className="text-2xl font-bold text-indigo-700">Good</div>
-            <div className="text-sm text-indigo-700">Pace</div>
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+            <div className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">Good</div>
+            <div className="text-sm text-indigo-700 dark:text-indigo-400">Pace</div>
           </div>
         </div>
 
         {/* Key Insights */}
-        <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300">
-          <h5 className="font-semibold text-gray-800 dark:text-gray-800 mb-2">Key Insights</h5>
-          <ul className="text-sm text-gray-600 dark:text-gray-600 space-y-1">
+        <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-gray-700/70 transition-colors duration-300">
+          <h5 className="font-semibold text-gray-800 mb-2">Key Insights</h5>
+          <ul className="text-sm text-gray-600 space-y-1">
             <li>✅ Strong opening with clear examples</li>
             <li>⚠️ Consider reducing &ldquo;um&rdquo; usage</li>
             <li>✅ Good use of STAR method</li>
@@ -291,55 +291,55 @@ const ReviewMockup = () => {
 // Refine Step Mockup
 const RefineMockup = () => {
   return (
-    <div className="bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
+    <div className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-800">Improvement Plan</h4>
-          <div className="text-sm text-gray-400 dark:text-gray-400">Personalized for you</div>
+          <h4 className="text-lg font-semibold text-gray-800">Improvement Plan</h4>
+          <div className="text-sm text-gray-400">Personalized for you</div>
         </div>
 
         {/* Progress Comparison */}
-        <div className="bg-green-50 border border-green-200 rounded-lg p-6 glow-subtle cursor-pointer">
-          <h5 className="text-green-900 font-semibold mb-4">Your Progress</h5>
+        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-6 glow-subtle cursor-pointer">
+          <h5 className="text-green-900 dark:text-green-200 font-semibold mb-4">Your Progress</h5>
           <div className="flex items-center justify-between">
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-700">67</div>
-              <div className="text-sm text-green-700">First Attempt</div>
+              <div className="text-2xl font-bold text-green-700 dark:text-green-300">67</div>
+              <div className="text-sm text-green-700 dark:text-green-400">First Attempt</div>
             </div>
-            <ChevronRight className="w-6 h-6 text-green-500" />
+            <ChevronRight className="w-6 h-6 text-green-500 dark:text-green-400" />
             <div className="text-center">
-              <div className="text-2xl font-bold text-green-700">85</div>
-              <div className="text-sm text-green-700">Latest Score</div>
+              <div className="text-2xl font-bold text-green-700 dark:text-green-300">85</div>
+              <div className="text-sm text-green-700 dark:text-green-400">Latest Score</div>
             </div>
           </div>
         </div>
 
         {/* Recommendations */}
         <div className="space-y-3">
-          <h5 className="font-semibold text-gray-800 dark:text-gray-800">Recommended Actions</h5>
+          <h5 className="font-semibold text-gray-800">Recommended Actions</h5>
           
-          <div className="flex items-start space-x-3 p-3 bg-blue-50 border border-blue-200 rounded-lg glow-subtle cursor-pointer">
-            <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
+          <div className="flex items-start space-x-3 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg glow-subtle cursor-pointer">
+            <CheckCircle className="w-5 h-5 text-blue-500 dark:text-blue-400 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium text-blue-900 dark:text-blue-900">Practice Power Pauses</div>
-              <div className="text-xs text-blue-800 dark:text-blue-800">Replace filler words with strategic pauses</div>
+              <div className="text-sm font-medium text-blue-900 dark:text-blue-200">Practice Power Pauses</div>
+              <div className="text-xs text-blue-800 dark:text-blue-300">Replace filler words with strategic pauses</div>
             </div>
           </div>
 
-          <div className="flex items-start space-x-3 p-3 bg-yellow-50 border border-yellow-200 rounded-lg glow-subtle cursor-pointer">
-            <Play className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
+          <div className="flex items-start space-x-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded-lg glow-subtle cursor-pointer">
+            <Play className="w-5 h-5 text-yellow-500 dark:text-yellow-400 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium text-yellow-900 dark:text-yellow-900">Watch Example Response</div>
-              <div className="text-xs text-yellow-800 dark:text-yellow-800">See how top performers handle this question</div>
+              <div className="text-sm font-medium text-yellow-900 dark:text-yellow-200">Watch Example Response</div>
+              <div className="text-xs text-yellow-800 dark:text-yellow-300">See how top performers handle this question</div>
             </div>
           </div>
 
-          <div className="flex items-start space-x-3 p-3 bg-purple-50 border border-purple-200 rounded-lg glow-subtle cursor-pointer">
-            <Repeat className="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
+          <div className="flex items-start space-x-3 p-3 bg-purple-50 dark:bg-purple-900/20 border border-purple-200 dark:border-purple-800/30 rounded-lg glow-subtle cursor-pointer">
+            <Repeat className="w-5 h-5 text-purple-500 dark:text-purple-400 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium text-purple-900 dark:text-purple-900">Practice Again</div>
-              <div className="text-xs text-purple-800 dark:text-purple-800">Try once more with these improvements</div>
+              <div className="text-sm font-medium text-purple-900 dark:text-purple-200">Practice Again</div>
+              <div className="text-xs text-purple-800 dark:text-purple-300">Try once more with these improvements</div>
             </div>
           </div>
         </div>

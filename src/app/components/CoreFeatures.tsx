@@ -84,8 +84,8 @@ const CoreFeatures = () => {
                 key={feature.id}
                 className={`group w-full text-left p-6 rounded-xl transition-all duration-300 ${
                   activeFeature === index
-                    ? 'bg-white glow-primary border-2 border-primary/20'
-                    : 'bg-gray-50 hover:bg-white glow-subtle'
+                    ? 'bg-white dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
+                    : 'bg-gray-50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-800 glow-subtle'
                 }`}
                 onClick={() => setActiveFeature(index)}
                 whileTap={{ scale: 0.98 }}
@@ -95,15 +95,15 @@ const CoreFeatures = () => {
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-800">
+                    <h3 className="text-lg font-semibold text-gray-800">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-600 dark:text-gray-600">
+                    <p className="text-sm text-gray-600">
                       {feature.subtitle}
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 dark:text-gray-600 text-sm">
+                <p className="text-gray-600 text-sm">
                   {feature.description}
                 </p>
               </motion.button>
@@ -115,7 +115,7 @@ const CoreFeatures = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFeature}
-                className="bg-white rounded-2xl glow-primary border border-gray-200/50 min-h-[400px] p-8"
+                className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 min-h-[400px] p-8"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -149,10 +149,10 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-800">Live Analysis</h3>
+        <h3 className="text-2xl font-bold text-gray-800">Live Analysis</h3>
         <div className="flex items-center space-x-2">
           <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
-          <span className="text-sm text-gray-600 dark:text-gray-600">Recording</span>
+          <span className="text-sm text-gray-600">Recording</span>
         </div>
       </div>
 
@@ -173,25 +173,25 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
 
       {/* Metrics */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg glow-subtle cursor-pointer">
-          <Zap className="w-8 h-8 text-blue-600 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-blue-700">127</div>
-          <div className="text-sm text-blue-700">Words/Min</div>
+        <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg glow-subtle cursor-pointer">
+          <Zap className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
+          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">127</div>
+          <div className="text-sm text-blue-700 dark:text-blue-300">Words/Min</div>
         </div>
-        <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg glow-subtle cursor-pointer">
-          <MessageCircle className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-yellow-700">{fillerCount}</div>
-          <div className="text-sm text-yellow-700">Filler Words</div>
+        <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 rounded-lg glow-subtle cursor-pointer">
+          <MessageCircle className="w-8 h-8 text-yellow-600 dark:text-yellow-400 mx-auto mb-2" />
+          <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">{fillerCount}</div>
+          <div className="text-sm text-yellow-700 dark:text-yellow-300">Filler Words</div>
         </div>
-        <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg glow-subtle cursor-pointer">
-          <TrendingUp className="w-8 h-8 text-green-600 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-green-700">Good</div>
-          <div className="text-sm text-green-700">Pace</div>
+        <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg glow-subtle cursor-pointer">
+          <TrendingUp className="w-8 h-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
+          <div className="text-2xl font-bold text-green-700 dark:text-green-300">Good</div>
+          <div className="text-sm text-green-700 dark:text-green-300">Pace</div>
         </div>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 hover:bg-blue-100 transition-colors duration-300">
-        <p className="text-blue-800 text-sm">
+      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg p-4 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300">
+        <p className="text-blue-800 dark:text-blue-200 text-sm">
           <strong>💡 Tip:</strong> Try to reduce &ldquo;um&rdquo; and &ldquo;uh&rdquo; for clearer communication. 
           Take brief pauses instead of using filler words.
         </p>
@@ -212,7 +212,7 @@ const CharametricsWidget = () => {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-800 mb-6">Your Communication Strengths</h3>
+      <h3 className="text-2xl font-bold text-gray-800 mb-6">Your Communication Strengths</h3>
       
       {/* Radial Chart */}
       <div className="flex justify-center mb-8">
@@ -243,8 +243,8 @@ const CharametricsWidget = () => {
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-3xl font-bold text-gray-800 dark:text-gray-800">78</div>
-              <div className="text-sm text-gray-600 dark:text-gray-600">Overall Score</div>
+              <div className="text-3xl font-bold text-gray-800">78</div>
+              <div className="text-sm text-gray-600">Overall Score</div>
             </div>
           </div>
         </div>
@@ -255,12 +255,12 @@ const CharametricsWidget = () => {
         {strengths.map((strength, index) => (
           <motion.div
             key={strength.label}
-            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg glow-subtle cursor-pointer"
+            className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg glow-subtle cursor-pointer"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <span className="font-medium text-gray-800 dark:text-gray-800">{strength.label}</span>
+            <span className="font-medium text-gray-800">{strength.label}</span>
             <div className="flex items-center space-x-3">
               <div className="w-24 bg-gray-200 rounded-full h-2">
                 <motion.div
@@ -270,7 +270,7 @@ const CharametricsWidget = () => {
                   transition={{ duration: 1, delay: index * 0.1 }}
                 />
               </div>
-              <span className="text-sm font-semibold text-gray-800 dark:text-gray-800 w-8">
+              <span className="text-sm font-semibold text-gray-800 w-8">
                 {strength.value}
               </span>
             </div>
@@ -304,13 +304,13 @@ const CoachWidget = () => {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-800 mb-6">Connect with Expert Coaches</h3>
+      <h3 className="text-2xl font-bold text-gray-800 mb-6">Connect with Expert Coaches</h3>
       
       <div className="space-y-4">
         {coaches.map((coach, index) => (
           <motion.div
             key={coach.name}
-            className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-xl glow-subtle cursor-pointer"
+            className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl glow-subtle cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
@@ -320,17 +320,17 @@ const CoachWidget = () => {
                 {coach.name.split(' ').map(n => n[0]).join('')}
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-800">{coach.name}</h4>
-                <p className="text-gray-600 dark:text-gray-600 text-sm">{coach.role}</p>
-                <p className="text-gray-400 dark:text-gray-400 text-xs">{coach.specialty}</p>
+                <h4 className="text-lg font-semibold text-gray-800">{coach.name}</h4>
+                <p className="text-gray-600 text-sm">{coach.role}</p>
+                <p className="text-gray-400 text-xs">{coach.specialty}</p>
               </div>
             </div>
             <div className="text-right">
               <div className="flex items-center space-x-1 mb-1">
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900">{coach.rating}</span>
+                <span className="text-sm font-semibold text-gray-900">{coach.rating}</span>
               </div>
-              <p className="text-xs text-gray-400 dark:text-gray-400">{coach.sessions} sessions</p>
+              <p className="text-xs text-gray-400">{coach.sessions} sessions</p>
               <motion.button
                 className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium glow-primary"
                 whileHover={{ scale: 1.05 }}
@@ -343,8 +343,8 @@ const CoachWidget = () => {
         ))}
       </div>
 
-      <div className="bg-green-50 border border-green-200 rounded-lg p-4 hover:bg-green-100 transition-colors duration-300">
-        <p className="text-green-800 text-sm">
+      <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-4 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-300">
+        <p className="text-green-800 dark:text-green-200 text-sm">
           <strong>✨ Premium Feature:</strong> Get personalized 1-on-1 coaching sessions 
           tailored to your specific communication goals and challenges.
         </p>
