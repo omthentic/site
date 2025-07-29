@@ -4,6 +4,8 @@ import PainPromise from './components/PainPromise';
 import CoreFeatures from './components/CoreFeatures';
 import HowItWorks from './components/HowItWorks';
 import CredibilityBand from './components/CredibilityBand';
+import FinalCTA from './components/FinalCTA';
+import Footer from './components/Footer';
 
 export default function Home() {
   return (
@@ -14,6 +16,8 @@ export default function Home() {
       <CoreFeatures />
       <HowItWorks />
       <CredibilityBand />
+      <FinalCTA />
+      <Footer />
     </main>
   );
 }
