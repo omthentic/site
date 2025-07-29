@@ -59,8 +59,15 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="how-it-works" className="py-20 lg:py-32 bg-gray-900 relative overflow-hidden">
+      {/* Enhanced Background Pattern */}
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-20 left-20 w-72 h-72 bg-blue-500 rounded-full blur-3xl" />
+        <div className="absolute bottom-20 right-20 w-96 h-96 bg-purple-500 rounded-full blur-3xl" />
+        <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-green-500 rounded-full blur-3xl" />
+      </div>
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
@@ -69,11 +76,11 @@ const HowItWorks = () => {
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             Master communication in{' '}
             <span className="text-gradient">three simple steps</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Our proven methodology helps you build confidence through practice, 
             analysis, and continuous improvement.
           </p>
@@ -85,10 +92,10 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <motion.button
-                  className={`flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 ${
+                  className={`flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 border ${
                     activeStep === index
-                      ? 'bg-white shadow-hover border-2 border-primary/20'
-                      : 'bg-white/50 hover:bg-white hover:shadow-card'
+                      ? 'bg-white shadow-2xl border-primary/30 text-gray-900'
+                      : 'bg-gray-800/80 backdrop-blur-sm hover:bg-gray-700/90 border-gray-600/50 text-white hover:shadow-xl hover:border-primary/30'
                   }`}
                   onClick={() => setActiveStep(index)}
                   whileHover={{ y: -2 }}
@@ -98,19 +105,25 @@ const HowItWorks = () => {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center shadow-card`}>
+                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center shadow-lg`}>
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-gray-500 font-medium">{step.number}</div>
-                    <div className="text-xl font-bold text-foreground">{step.title}</div>
-                    <div className="text-sm text-gray-600">{step.subtitle}</div>
+                    <div className={`text-sm font-medium ${activeStep === index ? 'text-gray-500' : 'text-gray-400'}`}>
+                      {step.number}
+                    </div>
+                    <div className={`text-xl font-bold ${activeStep === index ? 'text-gray-900' : 'text-white'}`}>
+                      {step.title}
+                    </div>
+                    <div className={`text-sm ${activeStep === index ? 'text-gray-600' : 'text-gray-300'}`}>
+                      {step.subtitle}
+                    </div>
                   </div>
                 </motion.button>
                 
                 {index < steps.length - 1 && (
                   <div className="hidden lg:flex items-center">
-                    <ChevronRight className="w-6 h-6 text-gray-400" />
+                    <ChevronRight className="w-6 h-6 text-gray-500" />
                   </div>
                 )}
               </React.Fragment>
@@ -128,10 +141,10 @@ const HowItWorks = () => {
             {/* Left Column - Details */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">
+                <h3 className="text-3xl font-bold text-white mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-300 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -140,19 +153,19 @@ const HowItWorks = () => {
                 {steps[activeStep].features.map((feature, index) => (
                   <motion.div
                     key={feature}
-                    className="flex items-center space-x-3"
+                    className="flex items-center space-x-3 bg-gray-800/50 backdrop-blur-sm p-3 rounded-lg border border-gray-700/50"
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <CheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                    <span className="text-gray-200 font-medium">{feature}</span>
                   </motion.div>
                 ))}
               </div>
 
               <motion.button
-                className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-3 group"
+                className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-3 group"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -181,14 +194,16 @@ const RecordMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-foreground">Practice Session</h4>
-          <div className="text-sm text-gray-500">Question 1 of 5</div>
+          <h4 className="text-lg font-semibold text-gray-900">Practice Session</h4>
+          <div className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full font-medium">
+            Question 1 of 5
+          </div>
         </div>
 
         {/* Question */}
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h5 className="text-blue-900 font-semibold mb-2">Interview Question</h5>
-          <p className="text-blue-800">
+          <p className="text-blue-800 font-medium">
             &ldquo;Tell me about a time when you had to overcome a significant challenge at work. 
             How did you approach it and what was the outcome?&rdquo;
           </p>
@@ -200,7 +215,7 @@ const RecordMockup = () => {
             className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
               isRecording
                 ? 'bg-red-500 hover:bg-red-600'
-                : 'bg-gradient-primary hover:shadow-hover'
+                : 'bg-gradient-primary hover:shadow-xl'
             }`}
             onClick={() => setIsRecording(!isRecording)}
             whileHover={{ scale: 1.1 }}
@@ -214,20 +229,20 @@ const RecordMockup = () => {
           </motion.button>
           
           <div className="text-center">
-            <div className="text-lg font-semibold text-foreground">
+            <div className="text-lg font-semibold text-gray-900">
               {isRecording ? 'Recording...' : 'Ready to Record'}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-600 font-medium">
               {isRecording ? '00:23' : 'Click to start'}
             </div>
           </div>
         </div>
 
         {/* Progress */}
-        <div className="flex items-center justify-between text-sm text-gray-600">
-          <span>Attempts: 1</span>
-          <span>Best Score: --</span>
-          <span>Time Limit: 2 min</span>
+        <div className="flex items-center justify-between text-sm text-gray-700 bg-gray-50 p-4 rounded-lg">
+          <span className="font-medium">Attempts: 1</span>
+          <span className="font-medium">Best Score: --</span>
+          <span className="font-medium">Time Limit: 2 min</span>
         </div>
       </div>
     </div>
@@ -241,44 +256,44 @@ const ReviewMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-foreground">Analysis Results</h4>
-          <div className="flex items-center space-x-2">
-            <div className="w-3 h-3 bg-green-400 rounded-full" />
-            <span className="text-sm text-gray-600">Analysis Complete</span>
+          <h4 className="text-lg font-semibold text-gray-900">Analysis Results</h4>
+          <div className="flex items-center space-x-2 bg-green-50 px-3 py-2 rounded-full">
+            <div className="w-3 h-3 bg-green-500 rounded-full" />
+            <span className="text-sm text-green-700 font-medium">Analysis Complete</span>
           </div>
         </div>
 
         {/* Overall Score */}
-        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl border border-purple-200">
           <div className="text-4xl font-bold text-purple-700 mb-2">85</div>
-          <div className="text-purple-600 font-medium">Overall Score</div>
-          <div className="text-sm text-purple-500 mt-1">Great improvement!</div>
+          <div className="text-purple-600 font-semibold">Overall Score</div>
+          <div className="text-sm text-purple-500 mt-1 font-medium">Great improvement!</div>
         </div>
 
         {/* Detailed Metrics */}
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-green-700">92</div>
-            <div className="text-sm text-green-600">Clarity</div>
+            <div className="text-sm text-green-600 font-medium">Clarity</div>
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-blue-700">78</div>
-            <div className="text-sm text-blue-600">Confidence</div>
+            <div className="text-sm text-blue-600 font-medium">Confidence</div>
           </div>
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-yellow-700">5</div>
-            <div className="text-sm text-yellow-600">Filler Words</div>
+            <div className="text-sm text-yellow-600 font-medium">Filler Words</div>
           </div>
           <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-indigo-700">Good</div>
-            <div className="text-sm text-indigo-600">Pace</div>
+            <div className="text-sm text-indigo-600 font-medium">Pace</div>
           </div>
         </div>
 
         {/* Key Insights */}
-        <div className="bg-gray-50 rounded-lg p-4">
-          <h5 className="font-semibold text-foreground mb-2">Key Insights</h5>
-          <ul className="text-sm text-gray-600 space-y-1">
+        <div className="bg-gray-50 border border-gray-200 rounded-lg p-4">
+          <h5 className="font-semibold text-gray-900 mb-2">Key Insights</h5>
+          <ul className="text-sm text-gray-700 space-y-1 font-medium">
             <li>✅ Strong opening with clear examples</li>
             <li>⚠️ Consider reducing &ldquo;um&rdquo; usage</li>
             <li>✅ Good use of STAR method</li>
@@ -296,8 +311,10 @@ const RefineMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-foreground">Improvement Plan</h4>
-          <div className="text-sm text-gray-500">Personalized for you</div>
+          <h4 className="text-lg font-semibold text-gray-900">Improvement Plan</h4>
+          <div className="text-sm text-gray-600 bg-gray-100 px-3 py-1 rounded-full font-medium">
+            Personalized for you
+          </div>
         </div>
 
         {/* Progress Comparison */}
@@ -306,24 +323,24 @@ const RefineMockup = () => {
           <div className="flex items-center justify-between">
             <div className="text-center">
               <div className="text-2xl font-bold text-green-700">67</div>
-              <div className="text-sm text-green-600">First Attempt</div>
+              <div className="text-sm text-green-600 font-medium">First Attempt</div>
             </div>
             <ChevronRight className="w-6 h-6 text-green-500" />
             <div className="text-center">
               <div className="text-2xl font-bold text-green-700">85</div>
-              <div className="text-sm text-green-600">Latest Score</div>
+              <div className="text-sm text-green-600 font-medium">Latest Score</div>
             </div>
           </div>
         </div>
 
         {/* Recommendations */}
         <div className="space-y-3">
-          <h5 className="font-semibold text-foreground">Recommended Actions</h5>
+          <h5 className="font-semibold text-gray-900">Recommended Actions</h5>
           
           <div className="flex items-start space-x-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
             <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium text-blue-900">Practice Power Pauses</div>
+              <div className="text-sm font-semibold text-blue-900">Practice Power Pauses</div>
               <div className="text-xs text-blue-700">Replace filler words with strategic pauses</div>
             </div>
           </div>
@@ -331,7 +348,7 @@ const RefineMockup = () => {
           <div className="flex items-start space-x-3 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
             <Play className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium text-yellow-900">Watch Example Response</div>
+              <div className="text-sm font-semibold text-yellow-900">Watch Example Response</div>
               <div className="text-xs text-yellow-700">See how top performers handle this question</div>
             </div>
           </div>
@@ -339,7 +356,7 @@ const RefineMockup = () => {
           <div className="flex items-start space-x-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
             <Repeat className="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
             <div>
-              <div className="text-sm font-medium text-purple-900">Practice Again</div>
+              <div className="text-sm font-semibold text-purple-900">Practice Again</div>
               <div className="text-xs text-purple-700">Try once more with these improvements</div>
             </div>
           </div>
@@ -347,7 +364,7 @@ const RefineMockup = () => {
 
         {/* Achievement */}
         <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-4 text-center">
-          <div className="text-sm font-medium">🎉 Achievement Unlocked!</div>
+          <div className="text-sm font-semibold">🎉 Achievement Unlocked!</div>
           <div className="text-xs opacity-90">Consistent Improvement Streak</div>
         </div>
       </div>
