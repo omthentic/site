@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Mic, User, Star, TrendingUp, Activity, MessageCircle, Zap, BarChart3 } from 'lucide-react';
+import { User, Star, TrendingUp, Activity, MessageCircle, Zap, BarChart3 } from 'lucide-react';
 
 const CoreFeatures = () => {
   const [activeFeature, setActiveFeature] = useState(0);
@@ -193,7 +193,7 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
 
       <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
         <p className="text-blue-800 text-sm">
-          <strong>💡 Tip:</strong> Try to reduce "um" and "uh" for clearer communication. 
+          <strong>💡 Tip:</strong> Try to reduce &ldquo;um&rdquo; and &ldquo;uh&rdquo; for clearer communication. 
           Take brief pauses instead of using filler words.
         </p>
       </div>

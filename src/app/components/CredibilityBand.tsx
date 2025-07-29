@@ -139,8 +139,8 @@ const CredibilityBand = () => {
         >
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10">
             <blockquote className="text-xl lg:text-2xl text-gray-700 font-medium leading-relaxed mb-6">
-              "Articulate transformed how our students approach interview preparation. 
-              The AI feedback is incredibly accurate and the improvement in confidence is remarkable."
+              &ldquo;Articulate transformed how our students approach interview preparation. 
+              The AI feedback is incredibly accurate and the improvement in confidence is remarkable.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
               <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
