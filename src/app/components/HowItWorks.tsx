@@ -189,8 +189,8 @@ const RecordMockup = () => {
         <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h5 className="text-blue-900 font-semibold mb-2">Interview Question</h5>
           <p className="text-blue-800">
-            "Tell me about a time when you had to overcome a significant challenge at work. 
-            How did you approach it and what was the outcome?"
+            &ldquo;Tell me about a time when you had to overcome a significant challenge at work. 
+            How did you approach it and what was the outcome?&rdquo;
           </p>
         </div>
 
@@ -280,7 +280,7 @@ const ReviewMockup = () => {
           <h5 className="font-semibold text-foreground mb-2">Key Insights</h5>
           <ul className="text-sm text-gray-600 space-y-1">
             <li>✅ Strong opening with clear examples</li>
-            <li>⚠️ Consider reducing "um" usage</li>
+            <li>⚠️ Consider reducing &ldquo;um&rdquo; usage</li>
             <li>✅ Good use of STAR method</li>
           </ul>
         </div>

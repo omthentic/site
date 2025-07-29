@@ -136,7 +136,7 @@ const PainPromise = () => {
                 <div className="absolute bottom-4 left-4 right-4">
                   <div className="bg-black/80 rounded-lg p-3">
                     <p className="text-white text-sm">
-                      "Tell me about a challenging situation you've handled..."
+                      &ldquo;Tell me about a challenging situation you&apos;ve handled...&rdquo;
                     </p>
                   </div>
                 </div>
