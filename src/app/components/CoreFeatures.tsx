@@ -82,17 +82,16 @@ const CoreFeatures = () => {
             {features.map((feature, index) => (
               <motion.button
                 key={feature.id}
-                className={`w-full text-left p-6 rounded-xl transition-all duration-300 ${
+                className={`group w-full text-left p-6 rounded-xl transition-all duration-300 ${
                   activeFeature === index
-                    ? 'bg-white shadow-hover border-2 border-primary/20'
-                    : 'bg-gray-50 hover:bg-white hover:shadow-card'
+                    ? 'bg-white glow-primary border-2 border-primary/20'
+                    : 'bg-gray-50 hover:bg-white glow-subtle'
                 }`}
                 onClick={() => setActiveFeature(index)}
-                whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
                 <div className="flex items-center space-x-4 mb-3">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-card`}>
+                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}>
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
@@ -116,7 +115,7 @@ const CoreFeatures = () => {
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeFeature}
-                className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200/50 min-h-[400px]"
+                className="bg-white rounded-2xl glow-primary border border-gray-200/50 min-h-[400px] p-8"
                 initial={{ opacity: 0, x: 20 }}
                 animate={{ opacity: 1, x: 0 }}
                 exit={{ opacity: 0, x: -20 }}
@@ -158,7 +157,7 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
       </div>
 
       {/* Audio Waveform */}
-      <div className="bg-gray-900 rounded-xl p-6 mb-6">
+      <div className="bg-gray-900 rounded-xl p-6 mb-6 hover:bg-gray-800 transition-colors duration-300">
         <div className="flex items-end justify-center space-x-1 h-20">
           {waveformData.map((height, index) => (
             <motion.div
@@ -174,24 +173,24 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
 
       {/* Metrics */}
       <div className="grid grid-cols-3 gap-4">
-        <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
+        <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg glow-subtle cursor-pointer">
           <Zap className="w-8 h-8 text-blue-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-blue-700">127</div>
           <div className="text-sm text-blue-700">Words/Min</div>
         </div>
-        <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg">
+        <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg glow-subtle cursor-pointer">
           <MessageCircle className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-yellow-700">{fillerCount}</div>
           <div className="text-sm text-yellow-700">Filler Words</div>
         </div>
-        <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
+        <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg glow-subtle cursor-pointer">
           <TrendingUp className="w-8 h-8 text-green-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-green-700">Good</div>
           <div className="text-sm text-green-700">Pace</div>
         </div>
       </div>
 
-      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4">
+      <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 hover:bg-blue-100 transition-colors duration-300">
         <p className="text-blue-800 text-sm">
           <strong>💡 Tip:</strong> Try to reduce &ldquo;um&rdquo; and &ldquo;uh&rdquo; for clearer communication. 
           Take brief pauses instead of using filler words.
@@ -217,7 +216,7 @@ const CharametricsWidget = () => {
       
       {/* Radial Chart */}
       <div className="flex justify-center mb-8">
-        <div className="relative w-64 h-64">
+        <div className="relative w-64 h-64 hover:scale-105 transition-transform duration-300">
           <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
             {strengths.map((strength, index) => {
               const radius = 35 - index * 6;
@@ -256,7 +255,7 @@ const CharametricsWidget = () => {
         {strengths.map((strength, index) => (
           <motion.div
             key={strength.label}
-            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg"
+            className="flex items-center justify-between p-3 bg-gray-50 rounded-lg glow-subtle cursor-pointer"
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
@@ -311,14 +310,13 @@ const CoachWidget = () => {
         {coaches.map((coach, index) => (
           <motion.div
             key={coach.name}
-            className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-xl hover:shadow-card transition-all duration-300"
+            className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-50 to-white border border-gray-200 rounded-xl glow-subtle cursor-pointer"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.2 }}
-            whileHover={{ y: -2 }}
           >
             <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl">
+              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-card hover:shadow-hover transition-all duration-300">
                 {coach.name.split(' ').map(n => n[0]).join('')}
               </div>
               <div>
@@ -334,7 +332,7 @@ const CoachWidget = () => {
               </div>
               <p className="text-xs text-gray-600">{coach.sessions} sessions</p>
               <motion.button
-                className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium"
+                className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium glow-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -345,7 +343,7 @@ const CoachWidget = () => {
         ))}
       </div>
 
-      <div className="bg-green-50 border border-green-200 rounded-lg p-4">
+      <div className="bg-green-50 border border-green-200 rounded-lg p-4 hover:bg-green-100 transition-colors duration-300">
         <p className="text-green-800 text-sm">
           <strong>✨ Premium Feature:</strong> Get personalized 1-on-1 coaching sessions 
           tailored to your specific communication goals and challenges.
