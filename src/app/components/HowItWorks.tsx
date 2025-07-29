@@ -85,20 +85,19 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <motion.button
-                  className={`flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 ${
+                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 ${
                     activeStep === index
-                      ? 'bg-white shadow-hover border-2 border-primary/20'
-                      : 'bg-white/50 hover:bg-white hover:shadow-card'
+                      ? 'bg-white glow-primary border-2 border-primary/20'
+                      : 'bg-white/50 hover:bg-white glow-subtle'
                   }`}
                   onClick={() => setActiveStep(index)}
-                  whileHover={{ y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center shadow-card`}>
+                  <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}>
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
@@ -152,8 +151,8 @@ const HowItWorks = () => {
               </div>
 
               <motion.button
-                className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-3 group"
-                whileHover={{ scale: 1.05, y: -2 }}
+                className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold glow-primary flex items-center space-x-3 group"
+                whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <span>Try This Step</span>
@@ -177,7 +176,7 @@ const RecordMockup = () => {
   const [isRecording, setIsRecording] = useState(false);
 
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200/50">
+    <div className="bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -186,7 +185,7 @@ const RecordMockup = () => {
         </div>
 
         {/* Question */}
-        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6">
+        <div className="bg-blue-50 border border-blue-200 rounded-lg p-6 hover:bg-blue-100 transition-colors duration-300">
           <h5 className="text-blue-900 font-semibold mb-2">Interview Question</h5>
           <p className="text-blue-800">
             &ldquo;Tell me about a time when you had to overcome a significant challenge at work. 
@@ -199,8 +198,8 @@ const RecordMockup = () => {
           <motion.button
             className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
               isRecording
-                ? 'bg-red-500 hover:bg-red-600'
-                : 'bg-gradient-primary hover:shadow-hover'
+                ? 'bg-red-500 hover:bg-red-600 glow-accent'
+                : 'bg-gradient-primary glow-primary'
             }`}
             onClick={() => setIsRecording(!isRecording)}
             whileHover={{ scale: 1.1 }}
@@ -224,7 +223,7 @@ const RecordMockup = () => {
         </div>
 
         {/* Progress */}
-        <div className="flex items-center justify-between text-sm text-gray-700">
+        <div className="flex items-center justify-between text-sm text-gray-700 bg-gray-50 rounded-lg p-3">
           <span>Attempts: 1</span>
           <span>Best Score: --</span>
           <span>Time Limit: 2 min</span>
@@ -237,7 +236,7 @@ const RecordMockup = () => {
 // Review Step Mockup
 const ReviewMockup = () => {
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200/50">
+    <div className="bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -249,7 +248,7 @@ const ReviewMockup = () => {
         </div>
 
         {/* Overall Score */}
-        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl">
+        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 rounded-xl glow-subtle cursor-pointer">
           <div className="text-4xl font-bold text-purple-700 mb-2">85</div>
           <div className="text-purple-600 font-medium">Overall Score</div>
           <div className="text-sm text-purple-500 mt-1">Great improvement!</div>
@@ -257,26 +256,26 @@ const ReviewMockup = () => {
 
         {/* Detailed Metrics */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+          <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
             <div className="text-2xl font-bold text-green-700">92</div>
             <div className="text-sm text-green-700">Clarity</div>
           </div>
-          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
+          <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
             <div className="text-2xl font-bold text-blue-700">78</div>
             <div className="text-sm text-blue-700">Confidence</div>
           </div>
-          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
+          <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
             <div className="text-2xl font-bold text-yellow-700">5</div>
             <div className="text-sm text-yellow-700">Filler Words</div>
           </div>
-          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-center">
+          <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-center glow-subtle cursor-pointer">
             <div className="text-2xl font-bold text-indigo-700">Good</div>
             <div className="text-sm text-indigo-700">Pace</div>
           </div>
         </div>
 
         {/* Key Insights */}
-        <div className="bg-gray-50 rounded-lg p-4">
+        <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300">
           <h5 className="font-semibold text-foreground mb-2">Key Insights</h5>
           <ul className="text-sm text-gray-700 space-y-1">
             <li>✅ Strong opening with clear examples</li>
@@ -292,7 +291,7 @@ const ReviewMockup = () => {
 // Refine Step Mockup
 const RefineMockup = () => {
   return (
-    <div className="bg-white rounded-2xl shadow-2xl p-8 border border-gray-200/50">
+    <div className="bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -301,7 +300,7 @@ const RefineMockup = () => {
         </div>
 
         {/* Progress Comparison */}
-        <div className="bg-green-50 border border-green-200 rounded-lg p-6">
+        <div className="bg-green-50 border border-green-200 rounded-lg p-6 glow-subtle cursor-pointer">
           <h5 className="text-green-900 font-semibold mb-4">Your Progress</h5>
           <div className="flex items-center justify-between">
             <div className="text-center">
@@ -320,7 +319,7 @@ const RefineMockup = () => {
         <div className="space-y-3">
           <h5 className="font-semibold text-foreground">Recommended Actions</h5>
           
-          <div className="flex items-start space-x-3 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+          <div className="flex items-start space-x-3 p-3 bg-blue-50 border border-blue-200 rounded-lg glow-subtle cursor-pointer">
             <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-blue-900">Practice Power Pauses</div>
@@ -328,7 +327,7 @@ const RefineMockup = () => {
             </div>
           </div>
 
-          <div className="flex items-start space-x-3 p-3 bg-yellow-50 border border-yellow-200 rounded-lg">
+          <div className="flex items-start space-x-3 p-3 bg-yellow-50 border border-yellow-200 rounded-lg glow-subtle cursor-pointer">
             <Play className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-yellow-900">Watch Example Response</div>
@@ -336,7 +335,7 @@ const RefineMockup = () => {
             </div>
           </div>
 
-          <div className="flex items-start space-x-3 p-3 bg-purple-50 border border-purple-200 rounded-lg">
+          <div className="flex items-start space-x-3 p-3 bg-purple-50 border border-purple-200 rounded-lg glow-subtle cursor-pointer">
             <Repeat className="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-purple-900">Practice Again</div>
@@ -346,7 +345,7 @@ const RefineMockup = () => {
         </div>
 
         {/* Achievement */}
-        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-4 text-center">
+        <div className="bg-gradient-to-r from-green-500 to-green-600 text-white rounded-lg p-4 text-center glow-accent cursor-pointer">
           <div className="text-sm font-medium">🎉 Achievement Unlocked!</div>
           <div className="text-xs opacity-90">Consistent Improvement Streak</div>
         </div>

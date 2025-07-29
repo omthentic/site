@@ -45,14 +45,14 @@ const CredibilityBand = () => {
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
-                className="flex flex-col items-center space-y-2"
+                className="flex flex-col items-center space-y-2 cursor-pointer group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -4 }}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${partner.color} rounded-xl flex items-center justify-center shadow-card hover:shadow-hover transition-all duration-300`}>
+                <div className={`w-16 h-16 bg-gradient-to-r ${partner.color} rounded-xl flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}>
                   <span className="text-white font-bold text-lg">
                     {partner.logo}
                   </span>
@@ -76,12 +76,11 @@ const CredibilityBand = () => {
           {stats.map((stat, index) => (
             <motion.div
               key={stat.label}
-              className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl shadow-card hover:shadow-hover transition-all duration-300"
+              className="text-center p-6 bg-gradient-to-br from-gray-50 to-white rounded-xl glow-subtle cursor-pointer"
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 + index * 0.1 }}
               viewport={{ once: true }}
-              whileHover={{ y: -4, scale: 1.02 }}
             >
               <div className="text-3xl lg:text-4xl font-bold text-gradient mb-2">
                 {stat.number}
@@ -109,14 +108,14 @@ const CredibilityBand = () => {
             {pressLogos.map((press, index) => (
               <motion.div
                 key={press.name}
-                className="flex items-center space-x-3 opacity-70 hover:opacity-100 transition-opacity duration-300"
+                className="flex items-center space-x-3 opacity-70 hover:opacity-100 transition-opacity duration-300 cursor-pointer group"
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 0.7, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ opacity: 1, scale: 1.05 }}
               >
-                <div className={`w-10 h-10 bg-gradient-to-r ${press.color} rounded-lg flex items-center justify-center shadow-sm`}>
+                <div className={`w-10 h-10 bg-gradient-to-r ${press.color} rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-card transition-all duration-300`}>
                   <span className="text-white font-bold text-sm">
                     {press.logo}
                   </span>
@@ -137,13 +136,13 @@ const CredibilityBand = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
         >
-          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10">
+          <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10 glow-primary cursor-pointer">
             <blockquote className="text-xl lg:text-2xl text-gray-800 font-medium leading-relaxed mb-6">
               &ldquo;Articulate transformed how our students approach interview preparation. 
               The AI feedback is incredibly accurate and the improvement in confidence is remarkable.&rdquo;
             </blockquote>
             <div className="flex items-center justify-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold">
+              <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold shadow-card hover:shadow-hover transition-all duration-300">
                 DR
               </div>
               <div className="text-left">
