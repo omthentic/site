@@ -101,7 +101,7 @@ const HowItWorks = () => {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-gray-600 font-medium">{step.number}</div>
+                    <div className="text-sm text-gray-800 font-medium">{step.number}</div>
                     <div className="text-xl font-bold text-foreground">{step.title}</div>
                     <div className="text-sm text-gray-700">{step.subtitle}</div>
                   </div>
@@ -181,7 +181,7 @@ const RecordMockup = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <h4 className="text-lg font-semibold text-foreground">Practice Session</h4>
-          <div className="text-sm text-gray-600">Question 1 of 5</div>
+          <div className="text-sm text-gray-800">Question 1 of 5</div>
         </div>
 
         {/* Question */}
@@ -296,7 +296,7 @@ const RefineMockup = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <h4 className="text-lg font-semibold text-foreground">Improvement Plan</h4>
-          <div className="text-sm text-gray-600">Personalized for you</div>
+          <div className="text-sm text-gray-800">Personalized for you</div>
         </div>
 
         {/* Progress Comparison */}

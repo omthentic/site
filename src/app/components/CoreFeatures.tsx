@@ -321,16 +321,16 @@ const CoachWidget = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-foreground">{coach.name}</h4>
-                <p className="text-gray-700 text-sm">{coach.role}</p>
-                <p className="text-gray-600 text-xs">{coach.specialty}</p>
+                <p className="text-gray-800 text-sm">{coach.role}</p>
+                <p className="text-gray-700 text-xs">{coach.specialty}</p>
               </div>
             </div>
             <div className="text-right">
               <div className="flex items-center space-x-1 mb-1">
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-sm font-semibold">{coach.rating}</span>
+                <span className="text-sm font-semibold text-gray-900">{coach.rating}</span>
               </div>
-              <p className="text-xs text-gray-600">{coach.sessions} sessions</p>
+              <p className="text-xs text-gray-700">{coach.sessions} sessions</p>
               <motion.button
                 className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium glow-primary"
                 whileHover={{ scale: 1.05 }}
