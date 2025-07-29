@@ -80,7 +80,7 @@ const PainPromise = () => {
                       <h3 className="text-lg font-semibold text-gray-800 mb-2">
                         {pain.title}
                       </h3>
-                      <p className="text-gray-600">
+                      <p className="text-gray-700">
                         {pain.description}
                       </p>
                     </div>
@@ -109,7 +109,7 @@ const PainPromise = () => {
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-sm text-gray-600">Live Feedback</span>
+                    <span className="text-sm text-gray-700">Live Feedback</span>
                   </div>
               </div>
 
