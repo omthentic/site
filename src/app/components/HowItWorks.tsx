@@ -101,9 +101,9 @@ const HowItWorks = () => {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-gray-800 font-medium">{step.number}</div>
-                    <div className="text-xl font-bold text-foreground">{step.title}</div>
-                    <div className="text-sm text-gray-700">{step.subtitle}</div>
+                    <div className="text-sm text-gray-400 font-medium">{step.number}</div>
+                    <div className="text-xl font-bold text-gray-800">{step.title}</div>
+                    <div className="text-sm text-gray-600">{step.subtitle}</div>
                   </div>
                 </motion.button>
                 
@@ -127,10 +127,10 @@ const HowItWorks = () => {
             {/* Left Column - Details */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-foreground mb-4">
+                <h3 className="text-3xl font-bold text-gray-800 mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-gray-700 leading-relaxed">
+                <p className="text-xl text-gray-600 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -180,8 +180,8 @@ const RecordMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-foreground">Practice Session</h4>
-          <div className="text-sm text-gray-800">Question 1 of 5</div>
+          <h4 className="text-lg font-semibold text-gray-800">Practice Session</h4>
+          <div className="text-sm text-gray-400">Question 1 of 5</div>
         </div>
 
         {/* Question */}
@@ -213,17 +213,17 @@ const RecordMockup = () => {
           </motion.button>
           
           <div className="text-center">
-            <div className="text-lg font-semibold text-foreground">
+            <div className="text-lg font-semibold text-gray-800">
               {isRecording ? 'Recording...' : 'Ready to Record'}
             </div>
-            <div className="text-sm text-gray-700">
+            <div className="text-sm text-gray-600">
               {isRecording ? '00:23' : 'Click to start'}
             </div>
           </div>
         </div>
 
         {/* Progress */}
-        <div className="flex items-center justify-between text-sm text-gray-700 bg-gray-50 rounded-lg p-3">
+        <div className="flex items-center justify-between text-sm text-gray-400 bg-gray-50 rounded-lg p-3">
           <span>Attempts: 1</span>
           <span>Best Score: --</span>
           <span>Time Limit: 2 min</span>
@@ -240,10 +240,10 @@ const ReviewMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-foreground">Analysis Results</h4>
+          <h4 className="text-lg font-semibold text-gray-800">Analysis Results</h4>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 bg-green-400 rounded-full" />
-            <span className="text-sm text-gray-700">Analysis Complete</span>
+            <span className="text-sm text-gray-600">Analysis Complete</span>
           </div>
         </div>
 
@@ -276,8 +276,8 @@ const ReviewMockup = () => {
 
         {/* Key Insights */}
         <div className="bg-gray-50 rounded-lg p-4 hover:bg-gray-100 transition-colors duration-300">
-          <h5 className="font-semibold text-foreground mb-2">Key Insights</h5>
-          <ul className="text-sm text-gray-700 space-y-1">
+          <h5 className="font-semibold text-gray-800 mb-2">Key Insights</h5>
+          <ul className="text-sm text-gray-600 space-y-1">
             <li>✅ Strong opening with clear examples</li>
             <li>⚠️ Consider reducing &ldquo;um&rdquo; usage</li>
             <li>✅ Good use of STAR method</li>
@@ -295,8 +295,8 @@ const RefineMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-foreground">Improvement Plan</h4>
-          <div className="text-sm text-gray-800">Personalized for you</div>
+          <h4 className="text-lg font-semibold text-gray-800">Improvement Plan</h4>
+          <div className="text-sm text-gray-400">Personalized for you</div>
         </div>
 
         {/* Progress Comparison */}
@@ -317,7 +317,7 @@ const RefineMockup = () => {
 
         {/* Recommendations */}
         <div className="space-y-3">
-          <h5 className="font-semibold text-foreground">Recommended Actions</h5>
+          <h5 className="font-semibold text-gray-800">Recommended Actions</h5>
           
           <div className="flex items-start space-x-3 p-3 bg-blue-50 border border-blue-200 rounded-lg glow-subtle cursor-pointer">
             <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />

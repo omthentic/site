@@ -77,10 +77,10 @@ const PainPromise = () => {
                     <pain.icon className="w-6 h-6 text-red-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
                       {pain.title}
                     </h3>
-                    <p className="text-gray-700">
+                    <p className="text-gray-600">
                       {pain.description}
                     </p>
                   </div>
@@ -101,16 +101,16 @@ const PainPromise = () => {
             <div className="relative bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
-                    <span className="text-white font-bold text-sm">A</span>
+                                  <div className="flex items-center space-x-3">
+                    <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
+                      <span className="text-white font-bold text-sm">A</span>
+                    </div>
+                    <span className="font-semibold text-gray-800">Practice Session</span>
                   </div>
-                  <span className="font-semibold text-gray-900">Practice Session</span>
-                </div>
-                <div className="flex items-center space-x-2">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-sm text-gray-700">Live Feedback</span>
-                </div>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-sm text-gray-600">Live Feedback</span>
+                  </div>
               </div>
 
               {/* Video Mock */}
