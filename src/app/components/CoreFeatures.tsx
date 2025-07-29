@@ -64,7 +64,7 @@ const CoreFeatures = () => {
             Three powerful tools,{' '}
             <span className="text-gradient">one confident you</span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-white max-w-3xl mx-auto">
             Our AI-powered platform combines real-time analysis, personalized coaching, 
             and expert guidance to transform how you communicate.
           </p>
@@ -95,15 +95,21 @@ const CoreFeatures = () => {
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
+                    <h3 className={`text-lg font-semibold ${
+                      activeFeature === index ? 'text-[#1f1e1e]' : 'text-white'
+                    }`}>
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className={`text-sm ${
+                      activeFeature === index ? 'text-[#1f1e1e]' : 'text-white'
+                    }`}>
                       {feature.subtitle}
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className={`text-sm ${
+                  activeFeature === index ? 'text-[#1f1e1e]' : 'text-white'
+                }`}>
                   {feature.description}
                 </p>
               </motion.button>

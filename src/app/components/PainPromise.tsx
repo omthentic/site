@@ -53,7 +53,7 @@ const PainPromise = () => {
                 Stop letting fear hold you back
               </motion.h2>
               <motion.p
-                className="text-xl text-gray-700 leading-relaxed"
+                className="text-xl text-white leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
