@@ -77,10 +77,10 @@ const PainPromise = () => {
                       <pain.icon className="w-6 h-6 text-red-600 dark:text-red-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                      <h3 className="text-lg font-semibold text-[#0052ff] mb-2">
                         {pain.title}
                       </h3>
-                      <p className="text-gray-900">
+                      <p className="text-[#1f1e1e]">
                         {pain.description}
                       </p>
                     </div>
