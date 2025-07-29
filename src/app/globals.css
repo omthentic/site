@@ -32,6 +32,8 @@
   /* Shadows */
   --shadow-card: 0 8px 24px rgba(0, 0, 0, 0.07);
   --shadow-hover: 0 12px 32px rgba(0, 0, 0, 0.12);
+  --shadow-glow: 0 0 20px rgba(0, 82, 255, 0.15);
+  --shadow-glow-accent: 0 0 20px rgba(255, 204, 0, 0.15);
   
   /* Border Radius */
   --radius-sm: 8px;
@@ -64,6 +66,8 @@
   
   --shadow-card: var(--shadow-card);
   --shadow-hover: var(--shadow-hover);
+  --shadow-glow: var(--shadow-glow);
+  --shadow-glow-accent: var(--shadow-glow-accent);
   
   --radius-sm: var(--radius-sm);
   --radius-md: var(--radius-md);
@@ -148,6 +152,37 @@ html {
   background-clip: text;
 }
 
+/* Glow effects */
+.glow-primary {
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.glow-primary:hover {
+  box-shadow: var(--shadow-hover), var(--shadow-glow);
+  transform: translateY(-2px);
+}
+
+.glow-accent {
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.glow-accent:hover {
+  box-shadow: var(--shadow-hover), var(--shadow-glow-accent);
+  transform: translateY(-2px);
+}
+
+.glow-subtle {
+  box-shadow: var(--shadow-card);
+  transition: all 0.3s ease;
+}
+
+.glow-subtle:hover {
+  box-shadow: var(--shadow-hover), 0 0 15px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
 /* Animation keyframes */
 @keyframes fade-in-up {
   from {
@@ -186,5 +221,17 @@ html {
   
   html {
     scroll-behavior: auto;
+  }
+  
+  .glow-primary,
+  .glow-accent,
+  .glow-subtle {
+    transition: none !important;
+  }
+  
+  .glow-primary:hover,
+  .glow-accent:hover,
+  .glow-subtle:hover {
+    transform: none !important;
   }
 }

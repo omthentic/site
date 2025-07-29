@@ -67,14 +67,13 @@ const PainPromise = () => {
               {painPoints.map((pain, index) => (
                 <motion.div
                   key={pain.title}
-                  className="flex items-start space-x-4 p-6 bg-white rounded-xl shadow-card hover:shadow-hover transition-all duration-300"
+                  className="group flex items-start space-x-4 p-6 bg-white rounded-xl glow-subtle cursor-pointer"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
                   viewport={{ once: true }}
-                  whileHover={{ y: -4, scale: 1.02 }}
                 >
-                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center">
+                  <div className="flex-shrink-0 w-12 h-12 bg-red-100 rounded-lg flex items-center justify-center group-hover:bg-red-200 transition-colors duration-300">
                     <pain.icon className="w-6 h-6 text-red-600" />
                   </div>
                   <div>
@@ -99,7 +98,7 @@ const PainPromise = () => {
             viewport={{ once: true }}
           >
             {/* Main Product Interface */}
-            <div className="relative bg-white rounded-2xl shadow-2xl p-8 border border-gray-200/50">
+            <div className="relative bg-white rounded-2xl glow-primary border border-gray-200/50 p-8">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                 <div className="flex items-center space-x-3">
@@ -119,7 +118,7 @@ const PainPromise = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.button
-                    className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg"
+                    className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300"
                     onClick={handlePlayToggle}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -172,15 +171,15 @@ const PainPromise = () => {
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4">
-                  <div className="text-center p-3 bg-green-50 rounded-lg">
+                  <div className="text-center p-3 bg-green-50 rounded-lg hover:bg-green-100 transition-colors duration-300">
                     <div className="text-lg font-bold text-green-600">12</div>
                     <div className="text-xs text-green-800">Clear Points</div>
                   </div>
-                  <div className="text-center p-3 bg-yellow-50 rounded-lg">
+                  <div className="text-center p-3 bg-yellow-50 rounded-lg hover:bg-yellow-100 transition-colors duration-300">
                     <div className="text-lg font-bold text-yellow-600">3</div>
                     <div className="text-xs text-yellow-800">Filler Words</div>
                   </div>
-                  <div className="text-center p-3 bg-blue-50 rounded-lg">
+                  <div className="text-center p-3 bg-blue-50 rounded-lg hover:bg-blue-100 transition-colors duration-300">
                     <div className="text-lg font-bold text-blue-600">Good</div>
                     <div className="text-xs text-blue-800">Pace</div>
                   </div>
