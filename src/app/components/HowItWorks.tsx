@@ -73,7 +73,7 @@ const HowItWorks = () => {
             Master communication in{' '}
             <span className="text-gradient">three simple steps</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Our proven methodology helps you build confidence through practice, 
             analysis, and continuous improvement.
           </p>
@@ -102,9 +102,9 @@ const HowItWorks = () => {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-gray-500 font-medium">{step.number}</div>
+                    <div className="text-sm text-gray-600 font-medium">{step.number}</div>
                     <div className="text-xl font-bold text-foreground">{step.title}</div>
-                    <div className="text-sm text-gray-600">{step.subtitle}</div>
+                    <div className="text-sm text-gray-700">{step.subtitle}</div>
                   </div>
                 </motion.button>
                 
@@ -131,7 +131,7 @@ const HowItWorks = () => {
                 <h3 className="text-3xl font-bold text-foreground mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-gray-700 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -146,7 +146,7 @@ const HowItWorks = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-700">{feature}</span>
+                    <span className="text-gray-800">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -182,7 +182,7 @@ const RecordMockup = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <h4 className="text-lg font-semibold text-foreground">Practice Session</h4>
-          <div className="text-sm text-gray-500">Question 1 of 5</div>
+          <div className="text-sm text-gray-600">Question 1 of 5</div>
         </div>
 
         {/* Question */}
@@ -217,14 +217,14 @@ const RecordMockup = () => {
             <div className="text-lg font-semibold text-foreground">
               {isRecording ? 'Recording...' : 'Ready to Record'}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-gray-700">
               {isRecording ? '00:23' : 'Click to start'}
             </div>
           </div>
         </div>
 
         {/* Progress */}
-        <div className="flex items-center justify-between text-sm text-gray-600">
+        <div className="flex items-center justify-between text-sm text-gray-700">
           <span>Attempts: 1</span>
           <span>Best Score: --</span>
           <span>Time Limit: 2 min</span>
@@ -244,7 +244,7 @@ const ReviewMockup = () => {
           <h4 className="text-lg font-semibold text-foreground">Analysis Results</h4>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 bg-green-400 rounded-full" />
-            <span className="text-sm text-gray-600">Analysis Complete</span>
+            <span className="text-sm text-gray-700">Analysis Complete</span>
           </div>
         </div>
 
@@ -259,26 +259,26 @@ const ReviewMockup = () => {
         <div className="grid grid-cols-2 gap-4">
           <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-green-700">92</div>
-            <div className="text-sm text-green-600">Clarity</div>
+            <div className="text-sm text-green-700">Clarity</div>
           </div>
           <div className="bg-blue-50 border border-blue-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-blue-700">78</div>
-            <div className="text-sm text-blue-600">Confidence</div>
+            <div className="text-sm text-blue-700">Confidence</div>
           </div>
           <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-yellow-700">5</div>
-            <div className="text-sm text-yellow-600">Filler Words</div>
+            <div className="text-sm text-yellow-700">Filler Words</div>
           </div>
           <div className="bg-indigo-50 border border-indigo-200 rounded-lg p-4 text-center">
             <div className="text-2xl font-bold text-indigo-700">Good</div>
-            <div className="text-sm text-indigo-600">Pace</div>
+            <div className="text-sm text-indigo-700">Pace</div>
           </div>
         </div>
 
         {/* Key Insights */}
         <div className="bg-gray-50 rounded-lg p-4">
           <h5 className="font-semibold text-foreground mb-2">Key Insights</h5>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <ul className="text-sm text-gray-700 space-y-1">
             <li>✅ Strong opening with clear examples</li>
             <li>⚠️ Consider reducing &ldquo;um&rdquo; usage</li>
             <li>✅ Good use of STAR method</li>
@@ -297,7 +297,7 @@ const RefineMockup = () => {
         {/* Header */}
         <div className="flex items-center justify-between">
           <h4 className="text-lg font-semibold text-foreground">Improvement Plan</h4>
-          <div className="text-sm text-gray-500">Personalized for you</div>
+          <div className="text-sm text-gray-600">Personalized for you</div>
         </div>
 
         {/* Progress Comparison */}
@@ -306,12 +306,12 @@ const RefineMockup = () => {
           <div className="flex items-center justify-between">
             <div className="text-center">
               <div className="text-2xl font-bold text-green-700">67</div>
-              <div className="text-sm text-green-600">First Attempt</div>
+              <div className="text-sm text-green-700">First Attempt</div>
             </div>
             <ChevronRight className="w-6 h-6 text-green-500" />
             <div className="text-center">
               <div className="text-2xl font-bold text-green-700">85</div>
-              <div className="text-sm text-green-600">Latest Score</div>
+              <div className="text-sm text-green-700">Latest Score</div>
             </div>
           </div>
         </div>
@@ -324,7 +324,7 @@ const RefineMockup = () => {
             <CheckCircle className="w-5 h-5 text-blue-500 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-blue-900">Practice Power Pauses</div>
-              <div className="text-xs text-blue-700">Replace filler words with strategic pauses</div>
+              <div className="text-xs text-blue-800">Replace filler words with strategic pauses</div>
             </div>
           </div>
 
@@ -332,7 +332,7 @@ const RefineMockup = () => {
             <Play className="w-5 h-5 text-yellow-500 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-yellow-900">Watch Example Response</div>
-              <div className="text-xs text-yellow-700">See how top performers handle this question</div>
+              <div className="text-xs text-yellow-800">See how top performers handle this question</div>
             </div>
           </div>
 
@@ -340,7 +340,7 @@ const RefineMockup = () => {
             <Repeat className="w-5 h-5 text-purple-500 mt-0.5 flex-shrink-0" />
             <div>
               <div className="text-sm font-medium text-purple-900">Practice Again</div>
-              <div className="text-xs text-purple-700">Try once more with these improvements</div>
+              <div className="text-xs text-purple-800">Try once more with these improvements</div>
             </div>
           </div>
         </div>

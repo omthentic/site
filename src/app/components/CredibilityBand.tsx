@@ -37,7 +37,7 @@ const CredibilityBand = () => {
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-500 text-sm font-medium mb-8 tracking-wide uppercase">
+          <p className="text-gray-600 text-sm font-medium mb-8 tracking-wide uppercase">
             Trusted by leading organizations
           </p>
           
@@ -57,7 +57,7 @@ const CredibilityBand = () => {
                     {partner.logo}
                   </span>
                 </div>
-                <span className="text-gray-600 text-xs font-medium text-center">
+                <span className="text-gray-700 text-xs font-medium text-center">
                   {partner.name}
                 </span>
               </motion.div>
@@ -86,7 +86,7 @@ const CredibilityBand = () => {
               <div className="text-3xl lg:text-4xl font-bold text-gradient mb-2">
                 {stat.number}
               </div>
-              <div className="text-gray-600 text-sm font-medium">
+              <div className="text-gray-700 text-sm font-medium">
                 {stat.label}
               </div>
             </motion.div>
@@ -101,7 +101,7 @@ const CredibilityBand = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <p className="text-gray-500 text-sm font-medium mb-8 tracking-wide uppercase">
+          <p className="text-gray-600 text-sm font-medium mb-8 tracking-wide uppercase">
             Featured in
           </p>
           
@@ -109,9 +109,9 @@ const CredibilityBand = () => {
             {pressLogos.map((press, index) => (
               <motion.div
                 key={press.name}
-                className="flex items-center space-x-3 opacity-60 hover:opacity-100 transition-opacity duration-300"
+                className="flex items-center space-x-3 opacity-70 hover:opacity-100 transition-opacity duration-300"
                 initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 0.6, x: 0 }}
+                whileInView={{ opacity: 0.7, x: 0 }}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ opacity: 1, scale: 1.05 }}
@@ -121,7 +121,7 @@ const CredibilityBand = () => {
                     {press.logo}
                   </span>
                 </div>
-                <span className="text-gray-700 font-semibold text-lg">
+                <span className="text-gray-800 font-semibold text-lg">
                   {press.name}
                 </span>
               </motion.div>
@@ -138,7 +138,7 @@ const CredibilityBand = () => {
           viewport={{ once: true }}
         >
           <div className="bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10">
-            <blockquote className="text-xl lg:text-2xl text-gray-700 font-medium leading-relaxed mb-6">
+            <blockquote className="text-xl lg:text-2xl text-gray-800 font-medium leading-relaxed mb-6">
               &ldquo;Articulate transformed how our students approach interview preparation. 
               The AI feedback is incredibly accurate and the improvement in confidence is remarkable.&rdquo;
             </blockquote>
@@ -148,7 +148,7 @@ const CredibilityBand = () => {
               </div>
               <div className="text-left">
                 <div className="font-semibold text-foreground">Dr. Rachel Chen</div>
-                <div className="text-gray-600 text-sm">Career Services Director, Stanford University</div>
+                <div className="text-gray-700 text-sm">Career Services Director, Stanford University</div>
               </div>
             </div>
           </div>
