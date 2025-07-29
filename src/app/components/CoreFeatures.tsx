@@ -64,7 +64,7 @@ const CoreFeatures = () => {
             Three powerful tools,{' '}
             <span className="text-gradient">one confident you</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
             Our AI-powered platform combines real-time analysis, personalized coaching, 
             and expert guidance to transform how you communicate.
           </p>
@@ -99,12 +99,12 @@ const CoreFeatures = () => {
                     <h3 className="text-lg font-semibold text-foreground">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-700">
                       {feature.subtitle}
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-700 text-sm">
                   {feature.description}
                 </p>
               </motion.button>
@@ -153,7 +153,7 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
         <h3 className="text-2xl font-bold text-foreground">Live Analysis</h3>
         <div className="flex items-center space-x-2">
           <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
-          <span className="text-sm text-gray-600">Recording</span>
+          <span className="text-sm text-gray-700">Recording</span>
         </div>
       </div>
 
@@ -177,17 +177,17 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
         <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg">
           <Zap className="w-8 h-8 text-blue-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-blue-700">127</div>
-          <div className="text-sm text-blue-600">Words/Min</div>
+          <div className="text-sm text-blue-700">Words/Min</div>
         </div>
         <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg">
           <MessageCircle className="w-8 h-8 text-yellow-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-yellow-700">{fillerCount}</div>
-          <div className="text-sm text-yellow-600">Filler Words</div>
+          <div className="text-sm text-yellow-700">Filler Words</div>
         </div>
         <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 rounded-lg">
           <TrendingUp className="w-8 h-8 text-green-600 mx-auto mb-2" />
           <div className="text-2xl font-bold text-green-700">Good</div>
-          <div className="text-sm text-green-600">Pace</div>
+          <div className="text-sm text-green-700">Pace</div>
         </div>
       </div>
 
@@ -245,7 +245,7 @@ const CharametricsWidget = () => {
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
               <div className="text-3xl font-bold text-foreground">78</div>
-              <div className="text-sm text-gray-600">Overall Score</div>
+              <div className="text-sm text-gray-700">Overall Score</div>
             </div>
           </div>
         </div>
@@ -271,7 +271,7 @@ const CharametricsWidget = () => {
                   transition={{ duration: 1, delay: index * 0.1 }}
                 />
               </div>
-              <span className="text-sm font-semibold text-gray-700 w-8">
+              <span className="text-sm font-semibold text-gray-800 w-8">
                 {strength.value}
               </span>
             </div>
@@ -323,8 +323,8 @@ const CoachWidget = () => {
               </div>
               <div>
                 <h4 className="text-lg font-semibold text-foreground">{coach.name}</h4>
-                <p className="text-gray-600 text-sm">{coach.role}</p>
-                <p className="text-gray-500 text-xs">{coach.specialty}</p>
+                <p className="text-gray-700 text-sm">{coach.role}</p>
+                <p className="text-gray-600 text-xs">{coach.specialty}</p>
               </div>
             </div>
             <div className="text-right">
@@ -332,7 +332,7 @@ const CoachWidget = () => {
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
                 <span className="text-sm font-semibold">{coach.rating}</span>
               </div>
-              <p className="text-xs text-gray-500">{coach.sessions} sessions</p>
+              <p className="text-xs text-gray-600">{coach.sessions} sessions</p>
               <motion.button
                 className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium"
                 whileHover={{ scale: 1.05 }}

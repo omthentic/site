@@ -53,7 +53,7 @@ const PainPromise = () => {
                 Stop letting fear hold you back
               </motion.h2>
               <motion.p
-                className="text-xl text-gray-600 leading-relaxed"
+                className="text-xl text-gray-700 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -81,7 +81,7 @@ const PainPromise = () => {
                     <h3 className="text-lg font-semibold text-gray-900 mb-2">
                       {pain.title}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-700">
                       {pain.description}
                     </p>
                   </div>
@@ -110,7 +110,7 @@ const PainPromise = () => {
                 </div>
                 <div className="flex items-center space-x-2">
                   <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                  <span className="text-sm text-gray-600">Live Feedback</span>
+                  <span className="text-sm text-gray-700">Live Feedback</span>
                 </div>
               </div>
 
@@ -167,22 +167,22 @@ const PainPromise = () => {
               {/* Real-time Feedback */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-700">Real-time Analysis</span>
+                  <span className="text-sm font-medium text-gray-800">Real-time Analysis</span>
                   <span className="text-sm text-primary font-semibold">85% Confidence</span>
                 </div>
                 
                 <div className="grid grid-cols-3 gap-4">
                   <div className="text-center p-3 bg-green-50 rounded-lg">
                     <div className="text-lg font-bold text-green-600">12</div>
-                    <div className="text-xs text-green-700">Clear Points</div>
+                    <div className="text-xs text-green-800">Clear Points</div>
                   </div>
                   <div className="text-center p-3 bg-yellow-50 rounded-lg">
                     <div className="text-lg font-bold text-yellow-600">3</div>
-                    <div className="text-xs text-yellow-700">Filler Words</div>
+                    <div className="text-xs text-yellow-800">Filler Words</div>
                   </div>
                   <div className="text-center p-3 bg-blue-50 rounded-lg">
                     <div className="text-lg font-bold text-blue-600">Good</div>
-                    <div className="text-xs text-blue-700">Pace</div>
+                    <div className="text-xs text-blue-800">Pace</div>
                   </div>
                 </div>
               </div>
