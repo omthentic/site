@@ -77,10 +77,10 @@ const PainPromise = () => {
                     <pain.icon className="w-6 h-6 text-red-600" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800 mb-2">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-800 mb-2">
                       {pain.title}
                     </h3>
-                    <p className="text-gray-600">
+                    <p className="text-gray-600 dark:text-gray-600">
                       {pain.description}
                     </p>
                   </div>
@@ -105,11 +105,11 @@ const PainPromise = () => {
                     <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-sm">A</span>
                     </div>
-                    <span className="font-semibold text-gray-800">Practice Session</span>
+                    <span className="font-semibold text-gray-800 dark:text-gray-800">Practice Session</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-sm text-gray-600">Live Feedback</span>
+                    <span className="text-sm text-gray-600 dark:text-gray-600">Live Feedback</span>
                   </div>
               </div>
 
@@ -166,7 +166,7 @@ const PainPromise = () => {
               {/* Real-time Feedback */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-800">Real-time Analysis</span>
+                  <span className="text-sm font-medium text-gray-800 dark:text-gray-800">Real-time Analysis</span>
                   <span className="text-sm text-primary font-semibold">85% Confidence</span>
                 </div>
                 

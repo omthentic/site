@@ -95,15 +95,15 @@ const CoreFeatures = () => {
                     <feature.icon className="w-6 h-6 text-white" />
                   </div>
                   <div>
-                    <h3 className="text-lg font-semibold text-gray-800">
+                    <h3 className="text-lg font-semibold text-gray-800 dark:text-gray-800">
                       {feature.title}
                     </h3>
-                    <p className="text-sm text-gray-600">
+                    <p className="text-sm text-gray-600 dark:text-gray-600">
                       {feature.subtitle}
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 text-sm">
+                <p className="text-gray-600 dark:text-gray-600 text-sm">
                   {feature.description}
                 </p>
               </motion.button>
@@ -149,10 +149,10 @@ const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
   return (
     <div className="space-y-6">
       <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-gray-800">Live Analysis</h3>
+        <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-800">Live Analysis</h3>
         <div className="flex items-center space-x-2">
           <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
-          <span className="text-sm text-gray-600">Recording</span>
+          <span className="text-sm text-gray-600 dark:text-gray-600">Recording</span>
         </div>
       </div>
 
@@ -212,7 +212,7 @@ const CharametricsWidget = () => {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">Your Communication Strengths</h3>
+      <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-800 mb-6">Your Communication Strengths</h3>
       
       {/* Radial Chart */}
       <div className="flex justify-center mb-8">
@@ -243,8 +243,8 @@ const CharametricsWidget = () => {
           </svg>
           <div className="absolute inset-0 flex items-center justify-center">
             <div className="text-center">
-              <div className="text-3xl font-bold text-gray-800">78</div>
-              <div className="text-sm text-gray-600">Overall Score</div>
+              <div className="text-3xl font-bold text-gray-800 dark:text-gray-800">78</div>
+              <div className="text-sm text-gray-600 dark:text-gray-600">Overall Score</div>
             </div>
           </div>
         </div>
@@ -260,7 +260,7 @@ const CharametricsWidget = () => {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: index * 0.1 }}
           >
-            <span className="font-medium text-gray-800">{strength.label}</span>
+            <span className="font-medium text-gray-800 dark:text-gray-800">{strength.label}</span>
             <div className="flex items-center space-x-3">
               <div className="w-24 bg-gray-200 rounded-full h-2">
                 <motion.div
@@ -270,7 +270,7 @@ const CharametricsWidget = () => {
                   transition={{ duration: 1, delay: index * 0.1 }}
                 />
               </div>
-              <span className="text-sm font-semibold text-gray-800 w-8">
+              <span className="text-sm font-semibold text-gray-800 dark:text-gray-800 w-8">
                 {strength.value}
               </span>
             </div>
@@ -304,7 +304,7 @@ const CoachWidget = () => {
 
   return (
     <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">Connect with Expert Coaches</h3>
+      <h3 className="text-2xl font-bold text-gray-800 dark:text-gray-800 mb-6">Connect with Expert Coaches</h3>
       
       <div className="space-y-4">
         {coaches.map((coach, index) => (
@@ -320,17 +320,17 @@ const CoachWidget = () => {
                 {coach.name.split(' ').map(n => n[0]).join('')}
               </div>
               <div>
-                <h4 className="text-lg font-semibold text-gray-800">{coach.name}</h4>
-                <p className="text-gray-600 text-sm">{coach.role}</p>
-                <p className="text-gray-400 text-xs">{coach.specialty}</p>
+                <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-800">{coach.name}</h4>
+                <p className="text-gray-600 dark:text-gray-600 text-sm">{coach.role}</p>
+                <p className="text-gray-400 dark:text-gray-400 text-xs">{coach.specialty}</p>
               </div>
             </div>
             <div className="text-right">
               <div className="flex items-center space-x-1 mb-1">
                 <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-sm font-semibold text-gray-900">{coach.rating}</span>
+                <span className="text-sm font-semibold text-gray-900 dark:text-gray-900">{coach.rating}</span>
               </div>
-              <p className="text-xs text-gray-400">{coach.sessions} sessions</p>
+              <p className="text-xs text-gray-400 dark:text-gray-400">{coach.sessions} sessions</p>
               <motion.button
                 className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium glow-primary"
                 whileHover={{ scale: 1.05 }}

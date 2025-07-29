@@ -146,8 +146,8 @@ const CredibilityBand = () => {
                   DR
                 </div>
                 <div className="text-left">
-                  <div className="font-semibold text-gray-800">Dr. Rachel Chen</div>
-                  <div className="text-gray-600 text-sm">Career Services Director, Stanford University</div>
+                  <div className="font-semibold text-gray-800 dark:text-gray-800">Dr. Rachel Chen</div>
+                  <div className="text-gray-600 dark:text-gray-600 text-sm">Career Services Director, Stanford University</div>
                 </div>
               </div>
             </div>
