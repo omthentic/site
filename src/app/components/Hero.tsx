@@ -2,20 +2,14 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Play, ArrowRight, Mic, Users, TrendingUp } from 'lucide-react';
+import { Play, ArrowRight } from 'lucide-react';
+import { copy } from '../lib/copy';
 
 const Hero = () => {
-  const stats = [
-    { icon: Users, label: 'Active Learners', value: '10K+' },
-    { icon: Mic, label: 'Practice Sessions', value: '50K+' },
-    { icon: TrendingUp, label: 'Success Rate', value: '95%' },
-  ];
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Animated Background */}
-      <div className="absolute inset-0 gradient-hero animate-gradient opacity-10" />
-      <div className="absolute inset-0 bg-background/50" />
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-primary">
+      {/* Animated Background Gradient */}
+      <div className="absolute inset-0 gradient-hero opacity-60" />
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-5">
@@ -28,39 +22,36 @@ const Hero = () => {
         <div className="text-center">
           {/* Badge */}
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium text-sm mb-8"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-primary font-medium text-sm mb-8 focus-ring"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
+            tabIndex={0}
+            role="banner"
+            aria-label={copy.hero.badge}
           >
             <span className="w-2 h-2 bg-primary rounded-full mr-2 animate-pulse" />
-            Future of authentic communication
+            {copy.hero.badge}
           </motion.div>
 
           {/* Main Headline */}
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-6 leading-tight"
+            className="text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-heading mb-6 leading-tight"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Speak with{' '}
-            <span className="text-gradient">confidence</span>
-            <br />
-            Be your{' '}
-            <span className="text-gradient">authentic self</span>
+            {copy.hero.headline}
           </motion.h1>
 
-          {/* Subtitle */}
+          {/* Purpose Statement */}
           <motion.p
-            className="text-xl lg:text-2xl text-gray-600 mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="text-xl lg:text-2xl text-secondary-body mb-12 max-w-4xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Transform your communication skills with AI-powered feedback, 
-            real-time coaching, and personalized practice sessions. 
-            Build the confidence to succeed in any conversation.
+            {copy.hero.subheading}
           </motion.p>
 
           {/* CTA Buttons */}
@@ -71,56 +62,29 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.6 }}
           >
             <motion.button
-              className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto"
+              className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              aria-label={copy.hero.primaryCTA}
             >
-              <span>Start Practicing Free</span>
+              <span>{copy.hero.primaryCTA}</span>
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
             </motion.button>
             
             <motion.button
-              className="bg-background border-2 border-gray-200 hover:border-primary text-foreground px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto"
+              className="bg-card border-2 border-gray-200 hover:border-primary text-primary-heading px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
               whileHover={{ scale: 1.05, y: -2, backgroundColor: 'rgba(0, 82, 255, 0.05)' }}
               whileTap={{ scale: 0.95 }}
+              aria-label={copy.hero.secondaryCTA}
             >
               <Play className="w-5 h-5 fill-current" />
-              <span>Watch Demo</span>
+              <span>{copy.hero.secondaryCTA}</span>
             </motion.button>
-          </motion.div>
-
-          {/* Stats */}
-          <motion.div
-            className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-2xl mx-auto"
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.8 }}
-          >
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                className="flex flex-col items-center"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                whileHover={{ y: -4 }}
-              >
-                <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center mb-3 shadow-card">
-                  <stat.icon className="w-6 h-6 text-white" />
-                </div>
-                <div className="text-2xl font-bold text-foreground mb-1">
-                  {stat.value}
-                </div>
-                <div className="text-gray-600 text-sm">
-                  {stat.label}
-                </div>
-              </motion.div>
-            ))}
           </motion.div>
         </div>
       </div>
 
-      {/* Floating Elements */}
+      {/* Floating Elements with reduced motion support */}
       <motion.div
         className="absolute top-1/4 left-8 w-4 h-4 bg-accent rounded-full opacity-60"
         animate={{
@@ -131,6 +95,9 @@ const Hero = () => {
           duration: 4,
           repeat: Infinity,
           ease: "easeInOut",
+        }}
+        style={{
+          animationPlayState: 'var(--animation-play-state, running)'
         }}
       />
       <motion.div
@@ -145,6 +112,9 @@ const Hero = () => {
           ease: "easeInOut",
           delay: 1,
         }}
+        style={{
+          animationPlayState: 'var(--animation-play-state, running)'
+        }}
       />
       <motion.div
         className="absolute bottom-1/4 left-1/4 w-3 h-3 bg-accent/60 rounded-full opacity-40"
@@ -158,9 +128,12 @@ const Hero = () => {
           ease: "easeInOut",
           delay: 2,
         }}
+        style={{
+          animationPlayState: 'var(--animation-play-state, running)'
+        }}
       />
     </section>
   );
 };
 
-export default Hero; 
+export default Hero;

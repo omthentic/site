@@ -1,362 +1,98 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { User, Star, TrendingUp, Activity, MessageCircle, Zap, BarChart3 } from 'lucide-react';
+import React from 'react';
+import { motion } from 'framer-motion';
+import { Activity, User, Repeat } from 'lucide-react';
+import { copy } from '../lib/copy';
 
 const CoreFeatures = () => {
-  const [activeFeature, setActiveFeature] = useState(0);
-  const [fillerCount, setFillerCount] = useState(0);
-
-  // Simulate filler word detection
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (activeFeature === 0) {
-        setFillerCount(prev => (prev + Math.random() > 0.7 ? 1 : 0));
-      }
-    }, 2000);
-
-    return () => clearInterval(interval);
-  }, [activeFeature]);
-
-  const features = [
-    {
-      id: 'feedback',
-      title: 'Real-time Feedback',
-      subtitle: 'Instant AI Analysis',
-      description: 'Get immediate feedback on your speech patterns, filler words, and pace while you practice.',
-      icon: Activity,
-      color: 'from-blue-500 to-blue-600',
-      component: <FeedbackWidget fillerCount={fillerCount} />
-    },
-    {
-      id: 'charametrics',
-      title: 'Charametrics™ Coaching',
-      subtitle: 'Strength Analysis',
-      description: 'Visualize your communication strengths and get personalized coaching recommendations.',
-      icon: BarChart3,
-      color: 'from-purple-500 to-purple-600',
-      component: <CharametricsWidget />
-    },
-    {
-      id: 'coach',
-      title: 'Human Coach Layer',
-      subtitle: 'Expert Guidance',
-      description: 'Connect with professional coaches for personalized feedback and advanced techniques.',
-      icon: User,
-      color: 'from-green-500 to-green-600',
-      component: <CoachWidget />
-    }
-  ];
+  const iconMap = {
+    activity: Activity,
+    user: User,
+    repeat: Repeat
+  };
 
   return (
-    <section id="features" className="py-20 lg:py-32 bg-background">
+    <section id="features" className="py-20 lg:py-32 bg-background-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
           className="text-center mb-16"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.4 }}
           viewport={{ once: true }}
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-foreground mb-6">
-            Three powerful tools,{' '}
-            <span className="text-gradient">one confident you</span>
+          <h2 className="text-3xl lg:text-5xl font-bold text-primary-heading mb-6">
+            {copy.features.heading}
           </h2>
-          <p className="text-xl text-white max-w-3xl mx-auto">
-            Our AI-powered platform combines real-time analysis, personalized coaching, 
-            and expert guidance to transform how you communicate.
+          <p className="text-xl text-secondary-body max-w-3xl mx-auto leading-relaxed">
+            {copy.features.subheading}
           </p>
         </motion.div>
 
-        {/* Feature Navigation */}
-        <motion.div
-          className="flex flex-col lg:flex-row gap-8 mb-12"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="lg:w-1/3 space-y-4">
-            {features.map((feature, index) => (
-              <motion.button
-                key={feature.id}
-                className={`group w-full text-left p-6 rounded-xl transition-all duration-300 ${
-                  activeFeature === index
-                    ? 'bg-white dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
-                    : 'bg-gray-50 dark:bg-gray-900/50 hover:bg-white dark:hover:bg-gray-800 glow-subtle'
-                }`}
-                onClick={() => setActiveFeature(index)}
-                whileTap={{ scale: 0.98 }}
+        {/* Feature Grid */}
+        <div className="grid md:grid-cols-3 gap-8">
+          {copy.features.items.map((feature, index) => {
+            const IconComponent = iconMap[feature.icon as keyof typeof iconMap];
+            
+            return (
+              <motion.div
+                key={feature.title}
+                className="bg-card rounded-lg p-8 text-center hover:shadow-hover transition-all duration-300 group cursor-pointer"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.4, delay: index * 0.1 }}
+                viewport={{ once: true }}
+                whileHover={{ y: -4 }}
+                tabIndex={0}
+                role="article"
+                aria-label={feature.title}
               >
-                <div className="flex items-center space-x-4 mb-3">
-                  <div className={`w-12 h-12 rounded-lg bg-gradient-to-r ${feature.color} flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}>
-                    <feature.icon className="w-6 h-6 text-white" />
-                  </div>
-                  <div>
-                    <h3 className={`text-lg font-semibold ${
-                      activeFeature === index ? 'text-[#1f1e1e]' : 'text-white'
-                    }`}>
-                      {feature.title}
-                    </h3>
-                    <p className={`text-sm ${
-                      activeFeature === index ? 'text-[#1f1e1e]' : 'text-white'
-                    }`}>
-                      {feature.subtitle}
-                    </p>
-                  </div>
+                {/* Icon */}
+                <div className="w-16 h-16 bg-gradient-to-r from-primary to-primary-dark rounded-lg flex items-center justify-center mb-6 mx-auto shadow-card group-hover:shadow-hover transition-all duration-300">
+                  <IconComponent className="w-8 h-8 text-white" />
                 </div>
-                <p className={`text-sm ${
-                  activeFeature === index ? 'text-[#1f1e1e]' : 'text-white'
-                }`}>
+
+                {/* Title */}
+                <h3 className="text-xl font-bold text-primary-heading mb-4 group-hover:text-primary transition-colors duration-300">
+                  {feature.title}
+                </h3>
+
+                {/* Description */}
+                <p className="text-secondary-body leading-relaxed">
                   {feature.description}
                 </p>
-              </motion.button>
-            ))}
-          </div>
 
-          {/* Feature Widget Display */}
-          <div className="lg:w-2/3">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeFeature}
-                className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 min-h-[400px] p-8"
-                initial={{ opacity: 0, x: 20 }}
-                animate={{ opacity: 1, x: 0 }}
-                exit={{ opacity: 0, x: -20 }}
-                transition={{ duration: 0.4 }}
-              >
-                {features[activeFeature].component}
+                {/* Hover indicator */}
+                <div className="mt-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="w-8 h-1 bg-accent rounded-full mx-auto" />
+                </div>
               </motion.div>
-            </AnimatePresence>
-          </div>
+            );
+          })}
+        </div>
+
+        {/* Bottom CTA */}
+        <motion.div
+          className="text-center mt-12"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4, delay: 0.4 }}
+          viewport={{ once: true }}
+        >
+          <motion.button
+            className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold text-lg shadow-card hover:shadow-hover transition-all duration-300 focus-ring"
+            whileHover={{ scale: 1.05, y: -2 }}
+            whileTap={{ scale: 0.95 }}
+            aria-label="Try all features free"
+          >
+            Try All Features Free
+          </motion.button>
         </motion.div>
       </div>
     </section>
   );
 };
 
-// Real-time Feedback Widget
-const FeedbackWidget = ({ fillerCount }: { fillerCount: number }) => {
-  const [waveformData, setWaveformData] = useState(Array(20).fill(0));
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setWaveformData(prev => {
-        const newData = [...prev.slice(1), Math.random() * 80 + 20];
-        return newData;
-      });
-    }, 100);
-
-    return () => clearInterval(interval);
-  }, []);
-
-  return (
-    <div className="space-y-6">
-      <div className="flex items-center justify-between mb-6">
-        <h3 className="text-2xl font-bold text-gray-800">Live Analysis</h3>
-        <div className="flex items-center space-x-2">
-          <div className="w-3 h-3 bg-red-400 rounded-full animate-pulse" />
-          <span className="text-sm text-gray-600">Recording</span>
-        </div>
-      </div>
-
-      {/* Audio Waveform */}
-      <div className="bg-gray-900 rounded-xl p-6 mb-6 hover:bg-gray-800 transition-colors duration-300">
-        <div className="flex items-end justify-center space-x-1 h-20">
-          {waveformData.map((height, index) => (
-            <motion.div
-              key={index}
-              className="w-2 bg-gradient-to-t from-accent to-primary rounded-full"
-              style={{ height: `${height}%` }}
-              animate={{ height: `${height}%` }}
-              transition={{ duration: 0.1 }}
-            />
-          ))}
-        </div>
-      </div>
-
-      {/* Metrics */}
-      <div className="grid grid-cols-3 gap-4">
-        <div className="text-center p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/20 dark:to-blue-800/20 rounded-lg glow-subtle cursor-pointer">
-          <Zap className="w-8 h-8 text-blue-600 dark:text-blue-400 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">127</div>
-          <div className="text-sm text-blue-700 dark:text-blue-300">Words/Min</div>
-        </div>
-        <div className="text-center p-4 bg-gradient-to-br from-yellow-50 to-yellow-100 dark:from-yellow-900/20 dark:to-yellow-800/20 rounded-lg glow-subtle cursor-pointer">
-          <MessageCircle className="w-8 h-8 text-yellow-600 dark:text-yellow-400 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">{fillerCount}</div>
-          <div className="text-sm text-yellow-700 dark:text-yellow-300">Filler Words</div>
-        </div>
-        <div className="text-center p-4 bg-gradient-to-br from-green-50 to-green-100 dark:from-green-900/20 dark:to-green-800/20 rounded-lg glow-subtle cursor-pointer">
-          <TrendingUp className="w-8 h-8 text-green-600 dark:text-green-400 mx-auto mb-2" />
-          <div className="text-2xl font-bold text-green-700 dark:text-green-300">Good</div>
-          <div className="text-sm text-green-700 dark:text-green-300">Pace</div>
-        </div>
-      </div>
-
-      <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg p-4 hover:bg-blue-100 dark:hover:bg-blue-900/30 transition-colors duration-300">
-        <p className="text-blue-800 dark:text-blue-200 text-sm">
-          <strong>💡 Tip:</strong> Try to reduce &ldquo;um&rdquo; and &ldquo;uh&rdquo; for clearer communication. 
-          Take brief pauses instead of using filler words.
-        </p>
-      </div>
-    </div>
-  );
-};
-
-// Charametrics Widget
-const CharametricsWidget = () => {
-  const strengths = [
-    { label: 'Clarity', value: 85, color: 'stroke-blue-500' },
-    { label: 'Confidence', value: 72, color: 'stroke-green-500' },
-    { label: 'Engagement', value: 90, color: 'stroke-purple-500' },
-    { label: 'Pace', value: 68, color: 'stroke-yellow-500' },
-    { label: 'Authority', value: 78, color: 'stroke-red-500' },
-  ];
-
-  return (
-    <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">Your Communication Strengths</h3>
-      
-      {/* Radial Chart */}
-      <div className="flex justify-center mb-8">
-        <div className="relative w-64 h-64 hover:scale-105 transition-transform duration-300">
-          <svg className="w-full h-full transform -rotate-90" viewBox="0 0 100 100">
-            {strengths.map((strength, index) => {
-              const radius = 35 - index * 6;
-              const circumference = 2 * Math.PI * radius;
-              const strokeDasharray = `${(strength.value / 100) * circumference} ${circumference}`;
-              
-              return (
-                <motion.circle
-                  key={strength.label}
-                  cx="50"
-                  cy="50"
-                  r={radius}
-                  fill="transparent"
-                  strokeWidth="4"
-                  className={strength.color}
-                  strokeDasharray={strokeDasharray}
-                  strokeLinecap="round"
-                  initial={{ strokeDasharray: `0 ${circumference}` }}
-                  animate={{ strokeDasharray }}
-                  transition={{ duration: 1.5, delay: index * 0.2 }}
-                />
-              );
-            })}
-          </svg>
-          <div className="absolute inset-0 flex items-center justify-center">
-            <div className="text-center">
-              <div className="text-3xl font-bold text-gray-800">78</div>
-              <div className="text-sm text-gray-600">Overall Score</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Strength Breakdown */}
-      <div className="space-y-3">
-        {strengths.map((strength, index) => (
-          <motion.div
-            key={strength.label}
-            className="flex items-center justify-between p-3 bg-gray-50 dark:bg-gray-700/50 rounded-lg glow-subtle cursor-pointer"
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: index * 0.1 }}
-          >
-            <span className="font-medium text-gray-800">{strength.label}</span>
-            <div className="flex items-center space-x-3">
-              <div className="w-24 bg-gray-200 rounded-full h-2">
-                <motion.div
-                  className={`h-2 rounded-full ${strength.color.replace('stroke-', 'bg-')}`}
-                  initial={{ width: 0 }}
-                  animate={{ width: `${strength.value}%` }}
-                  transition={{ duration: 1, delay: index * 0.1 }}
-                />
-              </div>
-              <span className="text-sm font-semibold text-gray-800 w-8">
-                {strength.value}
-              </span>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-    </div>
-  );
-};
-
-// Coach Widget
-const CoachWidget = () => {
-  const coaches = [
-    {
-      name: 'Sarah Chen',
-      role: 'Executive Coach',
-      rating: 4.9,
-      sessions: 127,
-      avatar: '/api/placeholder/80/80',
-      specialty: 'Leadership Communication',
-    },
-    {
-      name: 'Marcus Johnson',
-      role: 'Interview Expert',
-      rating: 4.8,
-      sessions: 89,
-      avatar: '/api/placeholder/80/80',
-      specialty: 'Technical Interviews',
-    },
-  ];
-
-  return (
-    <div className="space-y-6">
-      <h3 className="text-2xl font-bold text-gray-800 mb-6">Connect with Expert Coaches</h3>
-      
-      <div className="space-y-4">
-        {coaches.map((coach, index) => (
-          <motion.div
-            key={coach.name}
-            className="flex items-center justify-between p-6 bg-gradient-to-r from-gray-50 to-white dark:from-gray-800 dark:to-gray-700 border border-gray-200 dark:border-gray-600 rounded-xl glow-subtle cursor-pointer"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.2 }}
-          >
-            <div className="flex items-center space-x-4">
-              <div className="w-16 h-16 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold text-xl shadow-card hover:shadow-hover transition-all duration-300">
-                {coach.name.split(' ').map(n => n[0]).join('')}
-              </div>
-              <div>
-                <h4 className="text-lg font-semibold text-gray-800">{coach.name}</h4>
-                <p className="text-gray-600 text-sm">{coach.role}</p>
-                <p className="text-gray-400 text-xs">{coach.specialty}</p>
-              </div>
-            </div>
-            <div className="text-right">
-              <div className="flex items-center space-x-1 mb-1">
-                <Star className="w-4 h-4 text-yellow-400 fill-current" />
-                <span className="text-sm font-semibold text-gray-900">{coach.rating}</span>
-              </div>
-              <p className="text-xs text-gray-400">{coach.sessions} sessions</p>
-              <motion.button
-                className="mt-2 px-4 py-2 bg-gradient-primary text-white text-xs rounded-lg font-medium glow-primary"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                Book Session
-              </motion.button>
-            </div>
-          </motion.div>
-        ))}
-      </div>
-
-      <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-4 hover:bg-green-100 dark:hover:bg-green-900/30 transition-colors duration-300">
-        <p className="text-green-800 dark:text-green-200 text-sm">
-          <strong>✨ Premium Feature:</strong> Get personalized 1-on-1 coaching sessions 
-          tailored to your specific communication goals and challenges.
-        </p>
-      </div>
-    </div>
-  );
-};
-
-export default CoreFeatures; 
+export default CoreFeatures;

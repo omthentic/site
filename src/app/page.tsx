@@ -1,10 +1,12 @@
 import Header from './components/Header';
 import Hero from './components/Hero';
-import PainPromise from './components/PainPromise';
+import StatsStrip from './components/StatsStrip';
+import WhyExist from './components/WhyExist';
 import CoreFeatures from './components/CoreFeatures';
+import ValuesStrip from './components/ValuesStrip';
 import HowItWorks from './components/HowItWorks';
 import CredibilityBand from './components/CredibilityBand';
-import FinalCTA from './components/FinalCTA';
+import FooterCTA from './components/FooterCTA';
 import Footer from './components/Footer';
 
 export default function Home() {
@@ -12,11 +14,13 @@ export default function Home() {
     <main className="min-h-screen">
       <Header />
       <Hero />
-      <PainPromise />
+      <StatsStrip />
+      <WhyExist />
       <CoreFeatures />
+      <ValuesStrip />
       <HowItWorks />
       <CredibilityBand />
-      <FinalCTA />
+      <FooterCTA />
       <Footer />
     </main>
   );
