@@ -39,14 +39,14 @@ const WhyExist = () => {
           <div className="relative bg-gradient-to-br from-primary/5 to-accent/5 rounded-2xl p-8 lg:p-12 border border-primary/10">
             {/* Large quotation mark */}
             <div className="absolute top-4 left-4 text-6xl text-primary/20 font-serif leading-none">
-              "
+              &ldquo;
             </div>
             
             <div className="relative z-10 pt-8">
               <blockquote className="text-2xl lg:text-3xl font-medium text-primary-heading leading-relaxed mb-6">
-                Opportunities aren't lost for lack of knowledge;
+                Opportunities aren&rsquo;t lost for lack of knowledge;
                 <br />
-                <span className="text-primary">they're lost in how we communicate it.</span>
+                <span className="text-primary">they&rsquo;re lost in how we communicate it.</span>
               </blockquote>
               
               <div className="w-16 h-1 bg-accent rounded-full mx-auto mb-6" />
@@ -58,7 +58,7 @@ const WhyExist = () => {
 
             {/* Decorative elements */}
             <div className="absolute bottom-4 right-4 text-6xl text-accent/20 font-serif leading-none rotate-180">
-              "
+              &rdquo;
             </div>
           </div>
 

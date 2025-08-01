@@ -114,7 +114,7 @@ const CredibilityBand = () => {
               >
                 {/* Testimonial Quote */}
                 <blockquote className="text-xl lg:text-2xl text-primary-heading font-medium leading-relaxed mb-8">
-                  "{copy.testimonials[currentTestimonial].quote}"
+                  &ldquo;{copy.testimonials[currentTestimonial].quote}&rdquo;
                 </blockquote>
 
                 {/* Author Info */}
