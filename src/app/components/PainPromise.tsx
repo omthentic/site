@@ -53,7 +53,7 @@ const PainPromise = () => {
                 Stop letting fear hold you back
               </motion.h2>
               <motion.p
-                className="text-xl text-white leading-relaxed"
+                className="text-xl text-gray-600 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -118,10 +118,11 @@ const PainPromise = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.button
-                    className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300"
+                    className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 focus-ring"
                     onClick={handlePlayToggle}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
+                    aria-label={isPlaying ? 'Pause video' : 'Play video'}
                   >
                     {isPlaying ? (
                       <Pause className="w-6 h-6 text-primary" />

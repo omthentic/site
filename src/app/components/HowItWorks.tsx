@@ -85,7 +85,7 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <motion.button
-                                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 ${
+                                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 focus-ring ${
                   activeStep === index
                     ? 'bg-white dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
                     : 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 glow-subtle'
@@ -96,6 +96,8 @@ const HowItWorks = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
+                  aria-label={`Step ${step.number}: ${step.title} - ${step.subtitle}`}
+                  aria-pressed={activeStep === index}
                 >
                   <div className={`w-16 h-16 rounded-lg bg-gradient-to-r ${step.color} flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}>
                     <step.icon className="w-8 h-8 text-white" />
@@ -151,9 +153,10 @@ const HowItWorks = () => {
               </div>
 
               <motion.button
-                className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold glow-primary flex items-center space-x-3 group"
+                className="bg-gradient-primary text-white px-8 py-4 rounded-lg font-semibold glow-primary flex items-center space-x-3 group focus-ring"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label={`Try step ${steps[activeStep].number}: ${steps[activeStep].title}`}
               >
                 <span>Try This Step</span>
                 <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
@@ -196,7 +199,7 @@ const RecordMockup = () => {
         {/* Recording Interface */}
         <div className="text-center space-y-4">
           <motion.button
-            className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 ${
+            className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg transition-all duration-300 focus-ring ${
               isRecording
                 ? 'bg-red-500 hover:bg-red-600 glow-accent'
                 : 'bg-gradient-primary glow-primary'
@@ -204,6 +207,7 @@ const RecordMockup = () => {
             onClick={() => setIsRecording(!isRecording)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            aria-label={isRecording ? 'Stop recording' : 'Start recording'}
           >
             {isRecording ? (
               <div className="w-6 h-6 bg-white rounded-sm" />

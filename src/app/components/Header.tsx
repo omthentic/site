@@ -81,16 +81,18 @@ const Header = () => {
             {/* CTA Button */}
             <div className="hidden lg:flex items-center space-x-4">
               <motion.button
-                className="text-gray-600 hover:text-primary font-medium transition-colors duration-200"
+                className="text-gray-600 hover:text-primary font-medium transition-colors duration-200 focus-ring"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="Sign in to your account"
               >
                 Sign In
               </motion.button>
               <motion.button
-                className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group"
+                className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group focus-ring"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
+                aria-label="Start practicing for free"
               >
                 <span>Start Practicing Free</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
@@ -99,9 +101,11 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200"
+              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus-ring"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileTap={{ scale: 0.95 }}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </motion.button>
@@ -134,13 +138,17 @@ const Header = () => {
                 </motion.a>
               ))}
               <div className="pt-4 border-t border-gray-200/20 flex flex-col space-y-3">
-                <button className="text-gray-600 hover:text-primary font-medium py-2 transition-colors duration-200 text-left">
+                <button
+                  className="text-gray-600 hover:text-primary font-medium py-2 transition-colors duration-200 text-left focus-ring"
+                  aria-label="Sign in to your account"
+                >
                   Sign In
                 </button>
                 <motion.button
-                  className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold shadow-card flex items-center justify-center space-x-2 group"
+                  className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold shadow-card flex items-center justify-center space-x-2 group focus-ring"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
+                  aria-label="Start practicing for free"
                 >
                   <span>Start Practicing Free</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />

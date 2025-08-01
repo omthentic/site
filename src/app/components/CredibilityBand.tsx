@@ -4,16 +4,27 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { copy } from '../lib/copy';
+import { 
+  fadeInUp, 
+  staggerContainer, 
+  hoverEffect,
+  slideTransition,
+  navDot,
+  badgeEntrance,
+  getAnimation 
+} from '../lib/animations';
 
 const CredibilityBand = () => {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [direction, setDirection] = useState(0);
 
   // Auto-advance testimonials
   useEffect(() => {
     if (!isAutoPlaying) return;
     
     const interval = setInterval(() => {
+      setDirection(1);
       setCurrentTestimonial((prev) => (prev + 1) % copy.testimonials.length);
     }, 5000);
 
@@ -21,12 +32,20 @@ const CredibilityBand = () => {
   }, [isAutoPlaying]);
 
   const nextTestimonial = () => {
+    setDirection(1);
     setCurrentTestimonial((prev) => (prev + 1) % copy.testimonials.length);
     setIsAutoPlaying(false);
   };
 
   const prevTestimonial = () => {
+    setDirection(-1);
     setCurrentTestimonial((prev) => (prev - 1 + copy.testimonials.length) % copy.testimonials.length);
+    setIsAutoPlaying(false);
+  };
+
+  const goToTestimonial = (index: number) => {
+    setDirection(index > currentTestimonial ? 1 : -1);
+    setCurrentTestimonial(index);
     setIsAutoPlaying(false);
   };
 
@@ -44,155 +63,213 @@ const CredibilityBand = () => {
         {/* Trusted By Universities */}
         <motion.div
           className="text-center mb-20"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4 }}
+          variants={getAnimation(fadeInUp)}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
         >
-          <p className="text-secondary-body text-sm font-medium mb-8 tracking-wide uppercase">
+          <p className="text-caption mb-8 tracking-wide uppercase">
             Trusted by leading medical schools
           </p>
           
-          <div className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center">
+          <motion.div 
+            className="grid grid-cols-2 lg:grid-cols-5 gap-8 items-center"
+            variants={staggerContainer}
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: true }}
+          >
             {partners.map((partner, index) => (
               <motion.div
                 key={partner.name}
                 className="flex flex-col items-center space-y-2 cursor-pointer group"
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.1 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -4 }}
+                variants={getAnimation(fadeInUp)}
+                whileHover={{ y: -4, scale: 1.05 }}
                 tabIndex={0}
                 role="img"
                 aria-label={partner.name}
               >
-                <div className={`w-16 h-16 bg-gradient-to-r ${partner.color} rounded-lg flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}>
+                <motion.div 
+                  className={`w-16 h-16 bg-gradient-to-r ${partner.color} rounded-2xl flex items-center justify-center shadow-card group-hover:shadow-hover transition-all duration-300`}
+                  whileHover={{ 
+                    rotate: 5,
+                    boxShadow: 'var(--shadow-hover)'
+                  }}
+                >
                   <span className="text-white font-bold text-sm">
                     {partner.logo}
                   </span>
-                </div>
-                <span className="text-secondary-body text-xs font-medium text-center">
+                </motion.div>
+                <span className="text-caption text-center">
                   {partner.name}
                 </span>
               </motion.div>
             ))}
-          </div>
+          </motion.div>
         </motion.div>
 
         {/* Testimonial Slider */}
         <motion.div
           className="max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.4, delay: 0.2 }}
+          variants={getAnimation(fadeInUp)}
+          initial="initial"
+          whileInView="animate"
           viewport={{ once: true }}
         >
           <div className="text-center mb-12">
-            <h2 className="text-3xl lg:text-4xl font-bold text-primary-heading mb-4">
+            <h2 className="text-h3 mb-4">
               Stories of Growth & Confidence
             </h2>
-            <p className="text-secondary-body max-w-2xl mx-auto">
+            <p className="text-body max-w-2xl mx-auto">
               Real students sharing how Articulate transformed their interview experience
             </p>
           </div>
 
-          <div className="relative bg-card rounded-2xl p-8 lg:p-12 shadow-card">
-            {/* Quote Icon */}
-            <div className="absolute top-6 left-6 text-4xl text-primary/20">
+          <motion.div 
+            className="relative bg-card rounded-3xl p-8 lg:p-12 shadow-card overflow-hidden"
+            whileHover={{ boxShadow: 'var(--shadow-hover)' }}
+            transition={{ duration: 0.3 }}
+          >
+            {/* Quote Icon with enhanced animation */}
+            <motion.div 
+              className="absolute top-6 left-6 text-4xl text-primary-200"
+              initial={{ opacity: 0, scale: 0.5, rotate: -15 }}
+              animate={{ 
+                opacity: 1, 
+                scale: 1, 
+                rotate: 0,
+                transition: { duration: 0.6, delay: 0.3 }
+              }}
+            >
               <Quote className="w-8 h-8" />
-            </div>
+            </motion.div>
 
-            <AnimatePresence mode="wait">
+            <AnimatePresence mode="wait" custom={direction}>
               <motion.div
                 key={currentTestimonial}
                 className="text-center pt-4"
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.4 }}
+                custom={direction}
+                variants={slideTransition}
+                initial="initial"
+                animate="animate"
+                exit="exit"
+                transition={{ duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }}
               >
                 {/* Testimonial Quote */}
-                <blockquote className="text-xl lg:text-2xl text-primary-heading font-medium leading-relaxed mb-8">
+                <blockquote className="text-h5 font-medium leading-relaxed mb-8">
                   &ldquo;{copy.testimonials[currentTestimonial].quote}&rdquo;
                 </blockquote>
 
                 {/* Author Info */}
                 <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold shadow-card">
+                    <motion.div 
+                      className="w-12 h-12 bg-gradient-primary rounded-full flex items-center justify-center text-white font-bold shadow-card"
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                    >
                       {copy.testimonials[currentTestimonial].author.split(' ').map(n => n[0]).join('')}
-                    </div>
+                    </motion.div>
                     <div className="text-left">
                       <div className="font-semibold text-primary-heading">
                         {copy.testimonials[currentTestimonial].author}
                       </div>
-                      <div className="text-secondary-body text-sm">
+                      <div className="text-caption">
                         {copy.testimonials[currentTestimonial].role}
                       </div>
-                      <div className="text-secondary-body text-xs">
+                      <div className="text-caption-sm">
                         {copy.testimonials[currentTestimonial].university}
                       </div>
                     </div>
                   </div>
 
-                  {/* Improvement Badge */}
-                  <div className="px-4 py-2 bg-accent/10 border border-accent/20 rounded-full text-accent font-medium text-sm">
+                  {/* Improvement Badge with entrance animation */}
+                  <motion.div 
+                    className="px-4 py-2 bg-accent-50 border border-accent-200 rounded-full text-accent-600 font-medium text-sm"
+                    variants={badgeEntrance}
+                    initial="initial"
+                    animate="animate"
+                    key={`badge-${currentTestimonial}`}
+                  >
                     {copy.testimonials[currentTestimonial].improvement}
-                  </div>
+                  </motion.div>
                 </div>
               </motion.div>
             </AnimatePresence>
 
-            {/* Navigation Controls */}
+            {/* Enhanced Navigation Controls */}
             <div className="flex items-center justify-between mt-8">
-              <button
+              <motion.button
                 onClick={prevTestimonial}
-                className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors duration-300 focus-ring"
+                className="w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 focus-ring group"
+                whileHover={{ scale: 1.1, backgroundColor: 'var(--gray-200)' }}
+                whileTap={{ scale: 0.95 }}
                 aria-label="Previous testimonial"
               >
-                <ChevronLeft className="w-5 h-5 text-secondary-body" />
-              </button>
+                <ChevronLeft className="w-5 h-5 text-secondary-body group-hover:text-primary-600 transition-colors duration-200" />
+              </motion.button>
 
-              {/* Dots Indicator */}
-              <div className="flex space-x-2">
+              {/* Enhanced Dots Indicator */}
+              <div className="flex space-x-3">
                 {copy.testimonials.map((_, index) => (
-                  <button
+                  <motion.button
                     key={index}
-                    onClick={() => {
-                      setCurrentTestimonial(index);
-                      setIsAutoPlaying(false);
+                    onClick={() => goToTestimonial(index)}
+                    className="w-3 h-3 rounded-full transition-all duration-300 focus-ring"
+                    variants={navDot}
+                    initial="initial"
+                    animate={index === currentTestimonial ? "active" : "initial"}
+                    whileHover="hover"
+                    style={{
+                      backgroundColor: index === currentTestimonial ? 'var(--primary-500)' : 'var(--gray-300)'
                     }}
-                    className={`w-2 h-2 rounded-full transition-all duration-300 focus-ring ${
-                      index === currentTestimonial
-                        ? 'bg-primary w-6'
-                        : 'bg-gray-300 hover:bg-gray-400'
-                    }`}
                     aria-label={`Go to testimonial ${index + 1}`}
                   />
                 ))}
               </div>
 
-              <button
+              <motion.button
                 onClick={nextTestimonial}
-                className="w-10 h-10 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-colors duration-300 focus-ring"
+                className="w-12 h-12 bg-gray-100 hover:bg-gray-200 rounded-full flex items-center justify-center transition-all duration-300 focus-ring group"
+                whileHover={{ scale: 1.1, backgroundColor: 'var(--gray-200)' }}
+                whileTap={{ scale: 0.95 }}
                 aria-label="Next testimonial"
               >
-                <ChevronRight className="w-5 h-5 text-secondary-body" />
-              </button>
+                <ChevronRight className="w-5 h-5 text-secondary-body group-hover:text-primary-600 transition-colors duration-200" />
+              </motion.button>
             </div>
 
-            {/* Auto-play indicator */}
+            {/* Enhanced Auto-play indicator */}
             <div className="text-center mt-4">
-              <button
+              <motion.button
                 onClick={() => setIsAutoPlaying(!isAutoPlaying)}
-                className="text-xs text-secondary-body hover:text-primary transition-colors duration-300 focus-ring"
+                className="text-caption hover:text-primary-600 transition-colors duration-300 focus-ring px-2 py-1 rounded"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 aria-label={isAutoPlaying ? "Pause auto-advance" : "Resume auto-advance"}
               >
-                {isAutoPlaying ? "⏸ Pause" : "▶ Play"} auto-advance
-              </button>
+                <motion.span
+                  animate={{ opacity: [1, 0.7, 1] }}
+                  transition={{ duration: 2, repeat: Infinity }}
+                >
+                  {isAutoPlaying ? "⏸ Pause" : "▶ Play"} auto-advance
+                </motion.span>
+              </motion.button>
             </div>
-          </div>
+
+            {/* Progress indicator */}
+            <motion.div 
+              className="absolute bottom-0 left-0 h-1 bg-primary-500 rounded-full"
+              initial={{ width: "0%" }}
+              animate={{ 
+                width: isAutoPlaying ? "100%" : "0%",
+                transition: { 
+                  duration: isAutoPlaying ? 5 : 0.3,
+                  ease: "linear"
+                }
+              }}
+              key={`progress-${currentTestimonial}-${isAutoPlaying}`}
+            />
+          </motion.div>
         </motion.div>
       </div>
     </section>

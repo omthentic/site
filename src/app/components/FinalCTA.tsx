@@ -142,24 +142,26 @@ const FinalCTA = () => {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto"
-            whileHover={{ 
-              scale: 1.05, 
+            className="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+            whileHover={{
+              scale: 1.05,
               y: -4,
               boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)"
             }}
             whileTap={{ scale: 0.95 }}
             onHoverStart={() => setShowConfetti(true)}
             onHoverEnd={() => setShowConfetti(false)}
+            aria-label="Start practicing for free"
           >
             <span>Start Practicing Free</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
           </motion.button>
           
           <motion.button
-            className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto"
+            className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
             whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.95 }}
+            aria-label="Watch 2-minute demo video"
           >
             <Play className="w-5 h-5 fill-current" />
             <span>Watch 2-Min Demo</span>

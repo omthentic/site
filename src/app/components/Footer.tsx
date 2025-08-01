@@ -93,11 +93,13 @@ const Footer = () => {
                       type="email"
                       placeholder="Enter your email"
                       className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      aria-label="Email address for newsletter subscription"
                     />
                     <motion.button
-                      className="bg-gradient-primary px-4 py-2 rounded-lg font-medium text-sm hover:shadow-hover transition-all duration-300 flex items-center space-x-1"
+                      className="bg-gradient-primary px-4 py-2 rounded-lg font-medium text-sm hover:shadow-hover transition-all duration-300 flex items-center space-x-1 focus-ring"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
+                      aria-label="Subscribe to newsletter"
                     >
                       <span>Subscribe</span>
                       <ArrowRight className="w-4 h-4" />
