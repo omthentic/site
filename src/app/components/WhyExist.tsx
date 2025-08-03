@@ -69,6 +69,7 @@ const WhyExist = () => {
             <div className="relative z-10 pt-8">
               <motion.blockquote 
                 className="text-h4 font-medium leading-relaxed mb-8"
+                 style={{ color: 'var(--primary-800)' }}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ 
                   opacity: 1, 
@@ -123,6 +124,7 @@ const WhyExist = () => {
               
               <motion.p 
                 className="text-body-lg"
+                style={{ color: 'var(--primary-700)' }}
                 initial={{ opacity: 0, y: 15 }}
                 whileInView={{ 
                   opacity: 1, 

@@ -7,6 +7,13 @@
   /* Base Theme Colors */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Static Colors (Unchanging in Dark Mode) */
+  --static-gray-900: #0F172A;
+  --static-gray-800: #1E293B;
+  --static-gray-700: #334155;
+  --static-gray-600: #475569;
+  --static-gray-400: #94A3B8;
   
   /* Chronicle Design System - Enhanced */
 
@@ -507,3 +514,10 @@ html {
     animation: none !important;
   }
 }
+
+/* Static text colors for light backgrounds in any theme */
+.text-static-900 { color: var(--static-gray-900); }
+.text-static-800 { color: var(--static-gray-800); }
+.text-static-700 { color: var(--static-gray-700); }
+.text-static-600 { color: var(--static-gray-600); }
+.text-static-400 { color: var(--static-gray-400); }

@@ -103,9 +103,9 @@ const HowItWorks = () => {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-gray-400 font-medium">{step.number}</div>
-                    <div className="text-xl font-bold text-gray-800">{step.title}</div>
-                    <div className="text-sm text-gray-600">{step.subtitle}</div>
+                    <div className="text-sm text-static-400 font-medium">{step.number}</div>
+                    <div className="text-xl font-bold text-static-800">{step.title}</div>
+                    <div className="text-sm text-static-600">{step.subtitle}</div>
                   </div>
                 </motion.button>
                 
@@ -129,10 +129,10 @@ const HowItWorks = () => {
             {/* Left Column - Details */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                <h3 className="text-3xl font-bold text-static-800 mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-gray-600 leading-relaxed">
+                <p className="text-xl text-static-600 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -147,7 +147,7 @@ const HowItWorks = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-gray-800">{feature}</span>
+                    <span className="text-static-800">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -183,8 +183,8 @@ const RecordMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-gray-800">Practice Session</h4>
-          <div className="text-sm text-gray-400">Question 1 of 5</div>
+          <h4 className="text-lg font-semibold text-static-800">Practice Session</h4>
+          <div className="text-sm text-static-400">Question 1 of 5</div>
         </div>
 
         {/* Question */}
@@ -217,10 +217,10 @@ const RecordMockup = () => {
           </motion.button>
           
           <div className="text-center">
-            <div className="text-lg font-semibold text-gray-800">
+            <div className="text-lg font-semibold text-static-800">
               {isRecording ? 'Recording...' : 'Ready to Record'}
             </div>
-            <div className="text-sm text-gray-600">
+            <div className="text-sm text-static-600">
               {isRecording ? '00:23' : 'Click to start'}
             </div>
           </div>
@@ -244,10 +244,10 @@ const ReviewMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-gray-800">Analysis Results</h4>
+          <h4 className="text-lg font-semibold text-static-800">Analysis Results</h4>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 bg-green-400 rounded-full" />
-            <span className="text-sm text-gray-600">Analysis Complete</span>
+            <span className="text-sm text-static-600">Analysis Complete</span>
           </div>
         </div>
 
@@ -299,8 +299,8 @@ const RefineMockup = () => {
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-gray-800">Improvement Plan</h4>
-          <div className="text-sm text-gray-400">Personalized for you</div>
+          <h4 className="text-lg font-semibold text-static-800">Improvement Plan</h4>
+          <div className="text-sm text-static-400">Personalized for you</div>
         </div>
 
         {/* Progress Comparison */}
