@@ -129,7 +129,7 @@ const HowItWorks = () => {
             {/* Left Column - Details */}
             <div className="space-y-6">
               <div>
-                <h3 className="text-3xl font-bold text-static-800 mb-4">
+              <h3 className="text-3xl font-bold text-static-800 mb-4">
                   {steps[activeStep].title}
                 </h3>
                 <p className="text-xl text-static-600 leading-relaxed">
