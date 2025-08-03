@@ -59,7 +59,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
+    <section id="how-it-works" className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -73,7 +73,7 @@ const HowItWorks = () => {
             Master communication in{' '}
             <span className="text-gradient">three simple steps</span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-700 dark:text-gray-300 max-w-3xl mx-auto">
             Our proven methodology helps you build confidence through practice, 
             analysis, and continuous improvement.
           </p>
@@ -85,10 +85,10 @@ const HowItWorks = () => {
             {steps.map((step, index) => (
               <React.Fragment key={step.id}>
                 <motion.button
-                                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 focus-ring ${
+                  className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 focus-ring ${
                   activeStep === index
-                    ? 'bg-white dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
-                    : 'bg-white/50 dark:bg-gray-800/50 hover:bg-white dark:hover:bg-gray-800 glow-subtle'
+                    ? 'bg-card dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
+                    : 'bg-card/50 dark:bg-gray-800/50 hover:bg-card dark:hover:bg-gray-800 glow-subtle'
                 }`}
                   onClick={() => setActiveStep(index)}
                   whileTap={{ scale: 0.98 }}
@@ -103,9 +103,9 @@ const HowItWorks = () => {
                     <step.icon className="w-8 h-8 text-white" />
                   </div>
                   <div className="text-left">
-                    <div className="text-sm text-static-400 font-medium">{step.number}</div>
-                    <div className="text-xl font-bold text-static-800">{step.title}</div>
-                    <div className="text-sm text-static-600">{step.subtitle}</div>
+                    <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">{step.number}</div>
+                    <div className="text-xl font-bold text-gray-800 dark:text-gray-100">{step.title}</div>
+                    <div className="text-sm text-gray-600 dark:text-gray-300">{step.subtitle}</div>
                   </div>
                 </motion.button>
                 
@@ -129,10 +129,10 @@ const HowItWorks = () => {
             {/* Left Column - Details */}
             <div className="space-y-6">
               <div>
-              <h3 className="text-3xl font-bold text-static-800 mb-4">
+              <h3 className="text-3xl font-bold text-gray-800 dark:text-gray-100 mb-4">
                   {steps[activeStep].title}
                 </h3>
-                <p className="text-xl text-static-600 leading-relaxed">
+                <p className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed">
                   {steps[activeStep].description}
                 </p>
               </div>
@@ -147,7 +147,7 @@ const HowItWorks = () => {
                     transition={{ delay: index * 0.1 }}
                   >
                     <CheckCircle className="w-5 h-5 text-green-500 flex-shrink-0" />
-                    <span className="text-static-800">{feature}</span>
+                    <span className="text-gray-700 dark:text-gray-300">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -179,12 +179,12 @@ const RecordMockup = () => {
   const [isRecording, setIsRecording] = useState(false);
 
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+    <div className="bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-static-800">Practice Session</h4>
-          <div className="text-sm text-static-400">Question 1 of 5</div>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Practice Session</h4>
+          <div className="text-sm text-gray-500 dark:text-gray-400">Question 1 of 5</div>
         </div>
 
         {/* Question */}
@@ -210,17 +210,17 @@ const RecordMockup = () => {
             aria-label={isRecording ? 'Stop recording' : 'Start recording'}
           >
             {isRecording ? (
-              <div className="w-6 h-6 bg-white rounded-sm" />
+              <div className="w-6 h-6 bg-foreground rounded-sm" />
             ) : (
               <Mic className="w-8 h-8 text-white" />
             )}
           </motion.button>
           
           <div className="text-center">
-            <div className="text-lg font-semibold text-static-800">
+            <div className="text-lg font-semibold text-gray-800 dark:text-gray-100">
               {isRecording ? 'Recording...' : 'Ready to Record'}
             </div>
-            <div className="text-sm text-static-600">
+            <div className="text-sm text-gray-600 dark:text-gray-300">
               {isRecording ? '00:23' : 'Click to start'}
             </div>
           </div>
@@ -240,14 +240,14 @@ const RecordMockup = () => {
 // Review Step Mockup
 const ReviewMockup = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+    <div className="bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-static-800">Analysis Results</h4>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Analysis Results</h4>
           <div className="flex items-center space-x-2">
             <div className="w-3 h-3 bg-green-400 rounded-full" />
-            <span className="text-sm text-static-600">Analysis Complete</span>
+            <span className="text-sm text-gray-600 dark:text-gray-300">Analysis Complete</span>
           </div>
         </div>
 
@@ -280,8 +280,8 @@ const ReviewMockup = () => {
 
         {/* Key Insights */}
         <div className="bg-gray-50 dark:bg-gray-700/50 rounded-lg p-4 hover:bg-gray-100 dark:hover:bg-gray-700/70 transition-colors duration-300">
-          <h5 className="font-semibold text-gray-800 mb-2">Key Insights</h5>
-          <ul className="text-sm text-gray-600 space-y-1">
+          <h5 className="font-semibold text-gray-800 dark:text-gray-100 mb-2">Key Insights</h5>
+          <ul className="text-sm text-gray-600 dark:text-gray-300 space-y-1">
             <li>✅ Strong opening with clear examples</li>
             <li>⚠️ Consider reducing &ldquo;um&rdquo; usage</li>
             <li>✅ Good use of STAR method</li>
@@ -295,12 +295,12 @@ const ReviewMockup = () => {
 // Refine Step Mockup
 const RefineMockup = () => {
   return (
-    <div className="bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+    <div className="bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
-          <h4 className="text-lg font-semibold text-static-800">Improvement Plan</h4>
-          <div className="text-sm text-static-400">Personalized for you</div>
+          <h4 className="text-lg font-semibold text-gray-800 dark:text-gray-100">Improvement Plan</h4>
+          <div className="text-sm text-gray-500 dark:text-gray-400">Personalized for you</div>
         </div>
 
         {/* Progress Comparison */}
@@ -321,7 +321,7 @@ const RefineMockup = () => {
 
         {/* Recommendations */}
         <div className="space-y-3">
-          <h5 className="font-semibold text-gray-800">Recommended Actions</h5>
+          <h5 className="font-semibold text-gray-800 dark:text-gray-100">Recommended Actions</h5>
           
           <div className="flex items-start space-x-3 p-3 bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg glow-subtle cursor-pointer">
             <CheckCircle className="w-5 h-5 text-blue-500 dark:text-blue-400 mt-0.5 flex-shrink-0" />

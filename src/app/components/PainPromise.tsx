@@ -31,7 +31,7 @@ const PainPromise = () => {
   };
 
   return (
-    <section className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-white">
+    <section className="py-20 lg:py-32 bg-gradient-to-br from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left Column - Pain Points */}
@@ -44,7 +44,7 @@ const PainPromise = () => {
           >
             <div className="mb-12">
               <motion.h2
-                className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6"
+                className="text-3xl lg:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
@@ -53,7 +53,7 @@ const PainPromise = () => {
                 Stop letting fear hold you back
               </motion.h2>
               <motion.p
-                className="text-xl text-gray-600 leading-relaxed"
+                className="text-xl text-gray-600 dark:text-gray-300 leading-relaxed"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.4 }}
@@ -65,9 +65,9 @@ const PainPromise = () => {
 
             <div className="space-y-6">
               {painPoints.map((pain, index) => (
-                                  <motion.div
+                  <motion.div
                     key={pain.title}
-                    className="group flex items-start space-x-4 p-6 bg-white dark:bg-gray-800 rounded-xl glow-subtle cursor-pointer"
+                    className="group flex items-start space-x-4 p-6 bg-card dark:bg-gray-800 rounded-xl glow-subtle cursor-pointer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -77,10 +77,10 @@ const PainPromise = () => {
                       <pain.icon className="w-6 h-6 text-red-600 dark:text-red-400" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-semibold text-[#0052ff] mb-2">
+                      <h3 className="text-lg font-semibold text-primary mb-2">
                         {pain.title}
                       </h3>
-                      <p className="text-[#1f1e1e]">
+                      <p className="text-gray-700 dark:text-gray-300">
                         {pain.description}
                       </p>
                     </div>
@@ -98,18 +98,18 @@ const PainPromise = () => {
             viewport={{ once: true }}
           >
                         {/* Main Product Interface */}
-            <div className="relative bg-white dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+            <div className="relative bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-3">
                     <div className="w-8 h-8 bg-gradient-primary rounded-lg flex items-center justify-center">
                       <span className="text-white font-bold text-sm">A</span>
                     </div>
-                    <span className="font-semibold text-gray-900">Practice Session</span>
+                    <span className="font-semibold text-gray-900 dark:text-gray-100">Practice Session</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-sm text-gray-900">Live Feedback</span>
+                    <span className="text-sm text-gray-900 dark:text-gray-100">Live Feedback</span>
                   </div>
               </div>
 
@@ -118,7 +118,7 @@ const PainPromise = () => {
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
                   <motion.button
-                    className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center shadow-lg hover:bg-white hover:shadow-xl transition-all duration-300 focus-ring"
+                    className="w-16 h-16 bg-foreground/90 rounded-full flex items-center justify-center shadow-lg hover:bg-foreground hover:shadow-xl transition-all duration-300 focus-ring"
                     onClick={handlePlayToggle}
                     whileHover={{ scale: 1.1 }}
                     whileTap={{ scale: 0.95 }}
@@ -167,7 +167,7 @@ const PainPromise = () => {
               {/* Real-time Feedback */}
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-sm font-medium text-gray-900">Real-time Analysis</span>
+                  <span className="text-sm font-medium text-gray-900 dark:text-gray-100">Real-time Analysis</span>
                   <span className="text-sm text-primary font-semibold">85% Confidence</span>
                 </div>
                 
