@@ -63,7 +63,7 @@ export default function TemplatesExperience() {
             onClick={() => setActive(t)}
             className={`rounded-full px-3.5 py-2 text-sm font-medium transition-all border ${
               active.id === t.id
-                ? 'bg-gradient-primary text-white border-transparent shadow-hover'
+                ? 'gradient-primary text-white border-transparent shadow-hover'
                 : 'bg-card text-primary-heading border-subtle hover:shadow-hover'
             }`}
             aria-pressed={active.id === t.id}
