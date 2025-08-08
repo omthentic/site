@@ -62,7 +62,7 @@ export default function RevampHome() {
           </div>
 
           {/* Numbers strip */}
-          <div className="mt-10 flex items-center justify-center gap-6 text-white/90 text-sm tabular-nums">
+          <div className="mt-10 flex items-center justify-center gap-6 text-sm tabular-nums text-primary-heading dark:text-white/90">
             <div>10,000+ joined this month</div>
             <div className="hidden sm:block opacity-50">•</div>
             <div className="flex items-center gap-1"><Star className="w-4 h-4"/> 4.9/5 rating (2,847)</div>
@@ -74,8 +74,8 @@ export default function RevampHome() {
       <section id="widgets" className="py-14 sm:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-h3 text-primary-heading mb-3">A new, easy way to create</h2>
-            <p className="text-body text-secondary-body">Beautiful outputs from drag‑and‑drop blocks.</p>
+            <h2 className="text-h3 text-primary-heading mb-3">A smarter way to practice</h2>
+            <p className="text-body text-secondary-body">Guided prompts, real‑time feedback, and coach‑verified templates.</p>
           </div>
 
           <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
