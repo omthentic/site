@@ -80,7 +80,9 @@ export default function RevampHome() {
 
           <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
             {widgetCards.map(({ icon: Icon, title, desc }) => (
-              <motion.div key={title} className="bg-card rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border border-subtle">
+              <motion.div key={title} className="bg-card rounded-2xl p-6 shadow-card transition-all duration-300 border border-subtle"
+                whileHover={{ y: -6, boxShadow: 'var(--shadow-hover), var(--shadow-glow)' }}
+              >
                 <div className="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
                   <Icon className="w-5 h-5 text-white" />
                 </div>
@@ -126,10 +128,10 @@ export default function RevampHome() {
       <section className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-6 mb-8">
-            <NumberStat value="10,000+" label="joined this month" />
+            <NumberStat countTo={10000} suffix="+" label="joined this month" />
             <NumberStat value="4.9/5" label="average rating" />
             <NumberStat value="85%" label="report higher confidence" />
-            <NumberStat value="1M" label="goal by 2030" />
+            <NumberStat countTo={1000000} suffix="" label="goal by 2030" />
           </div>
           <div className="grid md:grid-cols-3 gap-6">
             <TrendCard title="Confidence score" delta="+12%" />
