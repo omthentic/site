@@ -4,6 +4,10 @@ import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Play, Layers, Zap, Users, Wand2, Smartphone, Star } from 'lucide-react';
+import NumberStat from './blocks/NumberStat';
+import TrendCard from './blocks/TrendCard';
+import PeopleRow from './blocks/PeopleRow';
+import TimelineStep from './blocks/TimelineStep';
 import Header from './Header';
 import Footer from './Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
@@ -115,6 +119,45 @@ export default function RevampHome() {
           <div className="inline-flex items-center gap-2 pill mb-4"><Smartphone className="w-4 h-4"/> Present anywhere</div>
           <h2 className="text-h3 mb-3">Made for every screen</h2>
           <p className="text-body text-secondary-body max-w-2xl mx-auto">Responsive, fast and accessible—so you can practice on the go.</p>
+        </div>
+      </section>
+
+      {/* NUMBERS + TRENDS */}
+      <section className="py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid md:grid-cols-4 gap-6 mb-8">
+            <NumberStat value="10,000+" label="joined this month" />
+            <NumberStat value="4.9/5" label="average rating" />
+            <NumberStat value="85%" label="report higher confidence" />
+            <NumberStat value="1M" label="goal by 2030" />
+          </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            <TrendCard title="Confidence score" delta="+12%" />
+            <TrendCard title="Filler words" delta="-28%" good={true} />
+            <TrendCard title="Pace stability" delta="+8%" />
+          </div>
+        </div>
+      </section>
+
+      {/* PEOPLE + TIMELINE */}
+      <section className="py-20 bg-background-primary">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 items-start">
+          <div>
+            <h3 className="text-h5 mb-4">Coaches & community</h3>
+            <PeopleRow people={[
+              { name: 'Sarah Chen', role: 'Coach' },
+              { name: 'Marcus Johnson', role: 'Mentor' },
+              { name: 'Dr. Rachel Kim', role: 'Advisor' },
+            ]} />
+          </div>
+          <div>
+            <h3 className="text-h5 mb-4">How it flows</h3>
+            <TimelineStep items={[
+              { step: 'Step 01', title: 'Record', desc: 'Practice with prompts and real-time guidance.' },
+              { step: 'Step 02', title: 'Review', desc: 'Get instant analysis on clarity, pace and confidence.' },
+              { step: 'Step 03', title: 'Refine', desc: 'Apply tips and repeat with improved technique.' },
+            ]} />
+          </div>
         </div>
       </section>
 
