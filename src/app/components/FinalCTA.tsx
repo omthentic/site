@@ -30,9 +30,9 @@ const FinalCTA = () => {
       
       {/* Background Pattern */}
       <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-32 h-32 bg-white rounded-full blur-2xl" />
+        <div className="absolute top-10 left-10 w-32 h-32 bg-card rounded-full blur-2xl" />
         <div className="absolute bottom-10 right-10 w-48 h-48 bg-accent rounded-full blur-3xl" />
-        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-white rounded-full blur-xl" />
+        <div className="absolute top-1/2 left-1/4 w-24 h-24 bg-card rounded-full blur-xl" />
         <div className="absolute bottom-1/4 left-1/2 w-40 h-40 bg-accent rounded-full blur-2xl" />
       </div>
 
@@ -66,7 +66,7 @@ const FinalCTA = () => {
       <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Badge */}
         <motion.div
-          className="inline-flex items-center px-4 py-2 rounded-full bg-white/20 backdrop-blur-sm border border-white/30 text-white font-medium text-sm mb-8"
+          className="inline-flex items-center px-4 py-2 rounded-full bg-foreground/20 backdrop-blur-sm border border-foreground/30 text-white font-medium text-sm mb-8"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -142,7 +142,7 @@ const FinalCTA = () => {
           viewport={{ once: true }}
         >
           <motion.button
-            className="bg-white text-primary px-8 py-4 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+            className="bg-card text-foreground px-8 py-4 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
             whileHover={{
               scale: 1.05,
               y: -4,
@@ -158,7 +158,7 @@ const FinalCTA = () => {
           </motion.button>
           
           <motion.button
-            className="bg-white/10 backdrop-blur-sm border-2 border-white/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-white/20 transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+            className="bg-foreground/10 backdrop-blur-sm border-2 border-foreground/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-foreground/20 transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
             whileHover={{ scale: 1.05, y: -4 }}
             whileTap={{ scale: 0.95 }}
             aria-label="Watch 2-minute demo video"
@@ -217,7 +217,7 @@ const FinalCTA = () => {
           }}
         />
         <motion.div
-          className="absolute top-1/3 right-12 w-4 h-4 bg-white/20 rounded-full blur-sm"
+          className="absolute top-1/3 right-12 w-4 h-4 bg-foreground/20 rounded-full blur-sm"
           animate={{
             y: [0, 25, 0],
             scale: [1, 0.8, 1],
