@@ -326,7 +326,7 @@ html {
 .text-h1 {
   font-size: var(--font-size-6xl);
   line-height: var(--line-height-xs);
-  font-weight: var(--font-weight-bold);
+  font-weight: 600;
   color: var(--text-primary);
   font-family: var(--font-headings);
 }
@@ -334,7 +334,7 @@ html {
 .text-h2 {
   font-size: var(--font-size-5xl);
   line-height: var(--line-height-sm);
-  font-weight: var(--font-weight-bold);
+  font-weight: 600;
   color: var(--text-primary);
   font-family: var(--font-headings);
 }
@@ -342,7 +342,7 @@ html {
 .text-h3 {
   font-size: var(--font-size-4xl);
   line-height: var(--line-height-sm);
-  font-weight: var(--font-weight-semibold);
+  font-weight: 500;
   color: var(--text-primary);
   font-family: var(--font-headings);
 }
@@ -551,6 +551,9 @@ html {
 .link { color: var(--om-blue); text-decoration: none; }
 .link:hover { text-decoration: underline; }
 .pill { background: var(--cloud); color: var(--om-teal); border: 1px solid var(--om-teal); border-radius: 9999px; padding: 6px 12px; font-weight: 600; font-size: 0.875rem; }
+
+/* Numeric styles */
+.tabular-nums { font-variant-numeric: tabular-nums; }
 
 /* Focus ring tuned to Om Blue */
 *:focus-visible { box-shadow: 0 0 0 2px var(--om-blue), 0 0 0 4px rgba(45, 111, 255, 0.35); }
