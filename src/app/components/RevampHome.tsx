@@ -3,22 +3,18 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Play, Mic, Activity, Users, FileText, Smartphone, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, Smartphone, Star } from 'lucide-react';
 import NumberStat from './blocks/NumberStat';
 import TrendCard from './blocks/TrendCard';
 import PeopleRow from './blocks/PeopleRow';
 import TimelineStep from './blocks/TimelineStep';
 import WaitlistModal from './WaitlistModal';
+import FeatureExperience from './FeatureExperience';
 import Header from './Header';
 import Footer from './Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
 
-const widgetCards = [
-  { icon: Mic, title: 'Practice Loop', desc: 'Record → review → refine in minutes with guided flows.' },
-  { icon: Activity, title: 'Real‑time Feedback', desc: 'Clarity, pace, filler words and presence—instantly.' },
-  { icon: Users, title: 'Human Coaching', desc: 'Personalised tips and accountability from real coaches.' },
-  { icon: FileText, title: 'Scenario Templates', desc: 'MMI, panel and behavioural prompts with STAR guides.' },
-];
+// Interactive block experience mirrored from revamp page
 
 const templates = [
   { title: 'Interview Pitch', tag: 'Popular' },
@@ -72,27 +68,14 @@ export default function RevampHome() {
         </motion.div>
       </section>
 
-      {/* FEATURED BLOCKS */}
+      {/* FEATURE EXPERIENCE */}
       <section id="widgets" className="py-14 sm:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-h3 text-primary-heading mb-3">A smarter way to practice</h2>
-            <p className="text-body text-secondary-body">Guided prompts, real‑time feedback, and coach‑verified templates.</p>
+          <div className="text-center mb-8">
+            <h2 className="text-h3 text-primary-heading mb-3">Experience the flow</h2>
+            <p className="text-body text-secondary-body">Try the practice → feedback → coaching loop.</p>
           </div>
-
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            {widgetCards.map(({ icon: Icon, title, desc }) => (
-              <motion.div key={title} className="bg-card rounded-2xl p-6 shadow-card transition-all duration-300 border border-subtle"
-                whileHover={{ y: -6, boxShadow: 'var(--shadow-hover), var(--shadow-glow)' }}
-              >
-                <div className="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
-                  <Icon className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-h5 mb-2">{title}</h3>
-                <p className="text-secondary-body text-sm">{desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <FeatureExperience />
         </div>
       </section>
 
