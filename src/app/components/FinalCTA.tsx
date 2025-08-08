@@ -141,21 +141,14 @@ const FinalCTA = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           viewport={{ once: true }}
         >
-          <motion.button
+          <a
+            href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/sign-up'}
             className="bg-card text-foreground px-8 py-4 rounded-lg font-bold text-lg shadow-2xl hover:shadow-3xl transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
-            whileHover={{
-              scale: 1.05,
-              y: -4,
-              boxShadow: "0 20px 40px rgba(0, 0, 0, 0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-            onHoverStart={() => setShowConfetti(true)}
-            onHoverEnd={() => setShowConfetti(false)}
             aria-label="Start practicing for free"
           >
             <span>Start Practicing Free</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
-          </motion.button>
+          </a>
           
           <motion.button
             className="bg-foreground/10 backdrop-blur-sm border-2 border-foreground/30 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:bg-foreground/20 transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"

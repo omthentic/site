@@ -2,11 +2,19 @@
   "name": "articulate-app",
   "version": "0.1.0",
   "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
   "scripts": {
     "dev": "next dev --turbopack",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:marketing": "npm run dev -w .",
+    "build:marketing": "npm run build -w .",
+    "dev:app": "npm run dev -w apps/app",
+    "build:app": "npm run build -w apps/app"
   },
   "dependencies": {
     "clsx": "^2.1.1",

@@ -52,12 +52,12 @@ export default function RevampHome() {
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <button onClick={() => setOpen(true)} className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">
-              Join waitlist <ArrowRight className="w-5 h-5" />
-            </button>
-            <button className="btn-secondary bg-card rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring text-white border-white/50">
-              <Play className="w-5 h-5" /> Watch demo
-            </button>
+            <a href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/sign-up'} className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">
+              Start practicing <ArrowRight className="w-5 h-5" />
+            </a>
+            <a href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/sign-in'} className="btn-secondary bg-card rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring text-white border-white/50">
+              <Play className="w-5 h-5" /> Sign in
+            </a>
           </div>
 
           {/* Numbers strip */}
@@ -145,7 +145,7 @@ export default function RevampHome() {
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-h2 text-white text-contrast-glow mb-4">Start your story</h2>
           <p className="text-body-lg text-gray-200 text-contrast-glow mb-8">Join thousands building confidence with Omthentic.</p>
-          <Link href="/" className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">Try for free <ArrowRight className="w-5 h-5"/></Link>
+          <a href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/sign-up'} className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">Try for free <ArrowRight className="w-5 h-5"/></a>
         </div>
       </section>
 
