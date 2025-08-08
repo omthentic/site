@@ -4,7 +4,7 @@ import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ArrowRight, RefreshCw, Home } from 'lucide-react';
+import { RefreshCw, Home } from 'lucide-react';
 import { getAnimation, fadeInUpScale, floatingElement, figureEight } from './lib/animations';
 
 export default function NotFound() {

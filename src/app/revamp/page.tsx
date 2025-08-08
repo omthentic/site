@@ -2,12 +2,12 @@
 
 import React from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Play, Layers, Zap, Users, Wand2, Smartphone } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
+import FeatureExperience from '../components/FeatureExperience';
 
 const widgetCards = [
   { icon: Layers, title: 'Blocks', desc: 'Compose with polished, interactive building blocks.' },
@@ -53,25 +53,14 @@ export default function Revamp() {
         </motion.div>
       </section>
 
-      {/* FEATURED */}
+      {/* FEATURE EXPERIENCE */}
       <section id="widgets" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-h3 text-primary-heading mb-3">A new, easy way to create</h2>
-            <p className="text-body text-secondary-body">Beautiful outputs from drag‑and‑drop blocks.</p>
+          <div className="text-center mb-8">
+            <h2 className="text-h3 text-primary-heading mb-3">Experience the flow</h2>
+            <p className="text-body text-secondary-body">Try the practice → feedback → coaching loop.</p>
           </div>
-
-          <motion.div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            {widgetCards.map(({ icon: Icon, title, desc }) => (
-              <motion.div key={title} className="bg-card rounded-2xl p-6 shadow-card hover:shadow-hover transition-all duration-300 border border-subtle">
-                <div className="w-10 h-10 rounded-lg mb-4 flex items-center justify-center" style={{ background: 'var(--gradient-primary)' }}>
-                  <Icon className="w-5 h-5 text-white" />
-                </div>
-                <h3 className="text-h5 mb-2">{title}</h3>
-                <p className="text-secondary-body text-sm">{desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <FeatureExperience />
         </div>
       </section>
 

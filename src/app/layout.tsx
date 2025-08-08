@@ -8,14 +8,16 @@ export const metadata: Metadata = {
   authors: [{ name: "Omthentic Team" }],
   openGraph: {
     title: "Omthentic — Speak your truth with confidence",
-    description: "Practice with real-time AI feedback tuned to your unique strengths.",
+    description: "Practice real interview questions with AI feedback and coach‑verified tips.",
     type: "website",
     url: "https://omthentic.com",
+    images: [{ url: "/opengraph-image" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Omthentic — Speak your truth with confidence",
-    description: "Practice with real-time AI feedback tuned to your unique strengths.",
+    description: "Practice real interview questions with AI feedback and coach‑verified tips.",
+    images: ["/twitter-image"],
   },
   viewport: "width=device-width, initial-scale=1",
   icons: {

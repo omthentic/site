@@ -8,6 +8,7 @@ import NumberStat from './blocks/NumberStat';
 import TrendCard from './blocks/TrendCard';
 import PeopleRow from './blocks/PeopleRow';
 import TimelineStep from './blocks/TimelineStep';
+import WaitlistModal from './WaitlistModal';
 import Header from './Header';
 import Footer from './Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
@@ -27,6 +28,7 @@ const templates = [
 ];
 
 export default function RevampHome() {
+  const [open, setOpen] = React.useState(false);
   return (
     <main className="min-h-screen bg-background">
       <Header />
@@ -49,13 +51,13 @@ export default function RevampHome() {
             Practice that feels effortless.
           </h1>
           <p className="text-body-lg text-gray-200 text-contrast-glow max-w-2xl mx-auto mb-10">
-            Blocks, motion and guided workflows help you turn nerves into clarity—fast.
+            Practice real interview questions with real‑time AI feedback and coach‑verified tips.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
-            <Link href="#widgets" className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">
-              Start free <ArrowRight className="w-5 h-5" />
-            </Link>
+            <button onClick={() => setOpen(true)} className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">
+              Join waitlist <ArrowRight className="w-5 h-5" />
+            </button>
             <button className="btn-secondary bg-card rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring text-white border-white/50">
               <Play className="w-5 h-5" /> Watch demo
             </button>
@@ -174,6 +176,7 @@ export default function RevampHome() {
       </section>
 
       <Footer />
+      <WaitlistModal open={open} onClose={() => setOpen(false)} />
     </main>
   );
 }

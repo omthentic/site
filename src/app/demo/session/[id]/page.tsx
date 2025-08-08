@@ -13,7 +13,7 @@ type Result = {
 
 export default function SessionPage() {
   const params = useParams<{ id: string }>();
-  const router = useRouter();
+  // const router = useRouter();
   const question = useMemo(() => questions.find(q => q.id === params.id), [params.id]);
   const [recording, setRecording] = useState(false);
   const [elapsed, setElapsed] = useState(0);
@@ -23,11 +23,13 @@ export default function SessionPage() {
   const [result, setResult] = useState<Result | null>(null);
 
   useEffect(() => {
-    let timer: any;
+    let timer: ReturnType<typeof setInterval> | undefined;
     if (recording) {
       timer = setInterval(() => setElapsed((e) => e + 1), 1000);
     }
-    return () => clearInterval(timer);
+    return () => {
+      if (timer) clearInterval(timer);
+    };
   }, [recording]);
 
   const startRecording = async () => {

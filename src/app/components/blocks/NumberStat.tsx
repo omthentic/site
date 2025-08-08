@@ -29,7 +29,7 @@ export default function NumberStat({ value, label, countTo, suffix = '', duratio
       if (t < 1) requestAnimationFrame(step);
     };
     requestAnimationFrame(step);
-  }, [countTo, durationMs, hasCount]);
+  }, [countTo, durationMs, hasCount, suffix]);
 
   return (
     <motion.div

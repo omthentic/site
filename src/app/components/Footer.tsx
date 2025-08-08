@@ -87,17 +87,17 @@ const Footer = () => {
                 </p>
                 
                 {/* Newsletter Signup */}
-                <div className="bg-gray-800 rounded-lg p-4 border border-gray-700">
+                <div className="bg-gray-800 rounded-lg p-4 border border-gray-700 max-w-md w-full overflow-hidden">
                   <h4 className="font-semibold mb-3">Stay Updated</h4>
-                  <div className="flex space-x-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <input
                       type="email"
                       placeholder="Enter your email"
-                      className="flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
+                      className="w-full sm:flex-1 px-3 py-2 bg-gray-700 border border-gray-600 rounded-lg text-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
                       aria-label="Email address for newsletter subscription"
                     />
                     <motion.button
-                      className="bg-gradient-primary px-4 py-2 rounded-lg font-medium text-sm hover:shadow-hover transition-all duration-300 flex items-center space-x-1 focus-ring"
+                      className="bg-gradient-primary px-4 py-2 rounded-lg font-medium text-sm hover:shadow-hover transition-all duration-300 flex items-center justify-center space-x-1 focus-ring"
                       whileHover={{ scale: 1.05 }}
                       whileTap={{ scale: 0.95 }}
                       aria-label="Subscribe to newsletter"

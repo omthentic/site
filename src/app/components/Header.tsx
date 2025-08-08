@@ -58,19 +58,11 @@ const Header = () => {
                 <Image
                   src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg"
                   alt="Omthentic"
-                  width={200}
-                  height={52}
-                  sizes="(min-width: 1024px) 220px, (min-width: 640px) 200px, 40px"
+                  width={180}
+                  height={44}
+                  sizes="(min-width: 1024px) 220px, (min-width: 640px) 200px, 180px"
                   priority
-                  className="hidden sm:block h-10 sm:h-12 w-auto"
-                />
-                <Image
-                  src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg"
-                  alt="Omthentic"
-                  width={36}
-                  height={36}
-                  priority
-                  className="sm:hidden h-9 w-9"
+                  className="h-8 sm:h-10 lg:h-12 w-auto"
                 />
               </Link>
             </motion.div>
