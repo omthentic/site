@@ -3,6 +3,8 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Menu, X, ChevronRight } from 'lucide-react';
+import Image from 'next/image';
+import Link from 'next/link';
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -48,16 +50,28 @@ const Header = () => {
           <div className="flex items-center justify-between h-16 lg:h-20">
             {/* Logo */}
             <motion.div
-              className="flex items-center space-x-2"
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              className="flex items-center"
+              whileHover={{ scale: 1.02 }}
+              transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg lg:text-xl">O</span>
-              </div>
-              <span className="text-xl lg:text-2xl font-bold text-foreground">
-                Omthentic
-              </span>
+              <Link href="/" aria-label="Omthentic home" className="flex items-center space-x-2">
+                <Image
+                  src="/omthentic/logo-lockup.svg"
+                  alt="Omthentic"
+                  width={160}
+                  height={40}
+                  priority
+                  className="hidden sm:block h-10 w-auto"
+                />
+                <Image
+                  src="/omthentic/logo-icon.svg"
+                  alt="Omthentic"
+                  width={40}
+                  height={40}
+                  priority
+                  className="sm:hidden h-10 w-10"
+                />
+              </Link>
             </motion.div>
 
             {/* Desktop Navigation */}
