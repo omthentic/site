@@ -56,7 +56,7 @@ const Header = () => {
             >
               <Link href="/" aria-label="Omthentic home" className="flex items-center space-x-2">
                 <Image
-                  src="/omthentic/logo-lockup.svg"
+                  src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.svg"
                   alt="Omthentic"
                   width={160}
                   height={40}
@@ -64,7 +64,7 @@ const Header = () => {
                   className="hidden sm:block h-10 w-auto"
                 />
                 <Image
-                  src="/omthentic/logo-icon.svg"
+                  src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg"
                   alt="Omthentic"
                   width={40}
                   height={40}

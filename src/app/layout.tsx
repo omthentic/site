@@ -18,6 +18,17 @@ export const metadata: Metadata = {
     description: "Practice with real-time AI feedback tuned to your unique strengths.",
   },
   viewport: "width=device-width, initial-scale=1",
+  icons: {
+    icon: [
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg', type: 'image/svg+xml' }
+    ],
+    shortcut: [
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg', type: 'image/svg+xml' }
+    ],
+    apple: {
+      url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg',
+    },
+  },
 };
 
 export default function RootLayout({
