@@ -20,13 +20,17 @@ export const metadata: Metadata = {
   viewport: "width=device-width, initial-scale=1",
   icons: {
     icon: [
-      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg', type: 'image/svg+xml' }
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg', type: 'image/svg+xml' },
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.png', type: 'image/png', sizes: '32x32' },
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.png', type: 'image/png', sizes: '48x48' },
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.png', type: 'image/png', sizes: '64x64' }
     ],
     shortcut: [
-      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg', type: 'image/svg+xml' }
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg', type: 'image/svg+xml' },
+      { url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.png', type: 'image/png' }
     ],
     apple: {
-      url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg',
+      url: 'https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.png',
     },
   },
 };

@@ -58,10 +58,11 @@ const Header = () => {
                 <Image
                   src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent.svg"
                   alt="Omthentic"
-                  width={160}
-                  height={40}
+                  width={220}
+                  height={56}
+                  sizes="(min-width: 640px) 220px, 40px"
                   priority
-                  className="hidden sm:block h-10 w-auto"
+                  className="hidden sm:block h-12 w-auto"
                 />
                 <Image
                   src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg"
