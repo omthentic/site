@@ -53,10 +53,10 @@ const Header = () => {
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
             >
               <div className="w-8 h-8 lg:w-10 lg:h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                <span className="text-white font-bold text-lg lg:text-xl">A</span>
+                <span className="text-white font-bold text-lg lg:text-xl">O</span>
               </div>
               <span className="text-xl lg:text-2xl font-bold text-foreground">
-                Articulate
+                Omthentic
               </span>
             </motion.div>
 
@@ -89,7 +89,7 @@ const Header = () => {
                 Sign In
               </motion.button>
               <motion.button
-                className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group focus-ring"
+                className="btn-primary shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group focus-ring"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
                 aria-label="Start practicing for free"
@@ -144,8 +144,8 @@ const Header = () => {
                 >
                   Sign In
                 </button>
-                <motion.button
-                  className="bg-gradient-primary text-white px-6 py-3 rounded-lg font-semibold shadow-card flex items-center justify-center space-x-2 group focus-ring"
+              <motion.button
+                className="btn-primary shadow-card flex items-center justify-center space-x-2 group focus-ring"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   aria-label="Start practicing for free"

@@ -52,10 +52,10 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/articulate' },
-    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/articulate' },
-    { name: 'GitHub', icon: Github, href: 'https://github.com/articulate' },
-    { name: 'Email', icon: Mail, href: 'mailto:hello@articulate.com' },
+    { name: 'Twitter', icon: Twitter, href: 'https://twitter.com/omthentic' },
+    { name: 'LinkedIn', icon: Linkedin, href: 'https://linkedin.com/company/omthentic' },
+    { name: 'GitHub', icon: Github, href: 'https://github.com/omthentic' },
+    { name: 'Email', icon: Mail, href: 'mailto:hello@omthentic.com' },
   ];
 
   return (
@@ -75,9 +75,9 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-6">
                   <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center">
-                    <span className="text-white font-bold text-xl">A</span>
+                    <span className="text-white font-bold text-xl">O</span>
                   </div>
-                  <span className="text-2xl font-bold">Articulate</span>
+                  <span className="text-2xl font-bold">Omthentic</span>
                 </div>
                 <p className="text-gray-400 leading-relaxed mb-6 max-w-md">
                   Transform your communication skills with AI-powered feedback, 
@@ -162,7 +162,7 @@ const Footer = () => {
           <div className="flex flex-col lg:flex-row justify-between items-center space-y-4 lg:space-y-0">
             {/* Copyright */}
             <div className="flex items-center space-x-4 text-gray-400 text-sm">
-              <span>© 2024 Articulate.</span>
+              <span>© 2024 Omthentic.</span>
               <span>All rights reserved.</span>
               <div className="flex items-center space-x-1">
                 <span>Made with</span>

@@ -1,9 +1,8 @@
-// Chronicle Design System - Content Management
-// Authentically Articulate Landing Page Copy
+// Omthentic Brand Copy
 
 export const copy = {
   // New Narrative Elements
-  purpose: "We create solutions that solve meaningful communication problems and empower growth for people who care.",
+  purpose: "AI-powered practice + human-centred guidance that helps people express their most authentic selves in high-stakes moments.",
   
   vision: {
     metric: "Enable 1 million meaningful interviews by 2030",
@@ -44,9 +43,9 @@ export const copy = {
 
   // Hero Section
   hero: {
-    badge: "Future of authentic communication",
-    headline: "Speak with confidence in every medical-school interview.",
-    subheading: "Purpose-built to solve meaningful communication challenges and unlock your next opportunity.",
+    badge: "Speak your truth with confidence.",
+    headline: "Turn nerves into clarity.",
+    subheading: "Practice with real-time AI feedback tuned to your unique strengths.",
     primaryCTA: "Start Practicing Free",
     secondaryCTA: "Watch 60-sec demo"
   },
@@ -91,7 +90,7 @@ export const copy = {
   // Testimonials
   testimonials: [
     {
-      quote: "Articulate transformed how I approach interviews. The AI feedback helped me identify patterns I never noticed, and now I speak with genuine confidence.",
+      quote: "Omthentic transformed how I approach interviews. The AI feedback helped me identify patterns I never noticed, and now I speak with genuine confidence.",
       author: "Sarah Chen",
       role: "Medical Student",
       university: "Stanford University",

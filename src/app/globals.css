@@ -1,5 +1,5 @@
-/* Import Inter font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+/* Import Inter + Plus Jakarta Sans */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@500;600;700&display=swap');
 
 @import "tailwindcss";
 
@@ -7,6 +7,20 @@
   /* Base Theme Colors */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Omthentic Brand Tokens */
+  --om-blue: #2D6FFF;
+  --om-teal: #12D6C0;
+  --om-grad: linear-gradient(90deg, #2D6FFF 0%, #19B9D0 60%, #12D6C0 100%);
+  --midnight: #0B1220;
+  --cloud: #F7FAFC;
+  --slate-900: #0F172A;
+  --slate-600: #475569;
+  --success: #22C55E;
+  --warning: #F59E0B;
+  --danger: #EF4444;
+  --radius: 16px;
+  --shadow: 0 4px 12px rgba(0,0,0,.06);
 
   /* Static Colors (Unchanging in Dark Mode) */
   --static-gray-900: #0F172A;
@@ -59,11 +73,11 @@
   --text-tertiary: var(--gray-500);
   --text-inverse: var(--gray-50);
   
-  /* Legacy color mappings */
-  --primary: var(--primary-500);
-  --primary-dark: var(--primary-600);
-  --accent: var(--accent-500);
-  --accent-dark: var(--accent-600);
+  /* Legacy color mappings → mapped to Omthentic */
+  --primary: var(--om-blue);
+  --primary-dark: #1E54C4; /* darker Om Blue approximation */
+  --accent: var(--om-teal);
+  --accent-dark: #0FA5AF; /* darker Om Teal approximation */
   
   /* Typography Scale */
   --font-size-xs: 0.75rem;    /* 12px */
@@ -113,12 +127,12 @@
   --space-64: 8rem;     /* 128px */
   
   /* Gradients */
-  --gradient-primary: linear-gradient(135deg, var(--primary-500) 0%, var(--primary-400) 100%);
-  --gradient-hero: linear-gradient(135deg, #F7F9FC 0%, #E2E8F0 50%, #CBD5E1 100%);
+  --gradient-primary: var(--om-grad);
+  --gradient-hero: linear-gradient(135deg, #F7FAFC 0%, #E2E8F0 50%, #CBD5E1 100%);
   --gradient-accent: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-400) 100%);
   
   /* Background Colors */
-  --background-primary: #F7F9FC;
+  --background-primary: #F7FAFC; /* Cloud */
   --card-background: #FFFFFF;
   
   /* Shadows - Chronicle Style */
@@ -169,6 +183,7 @@
   --color-card-background: var(--card-background);
   
   --font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-headings: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'Fira Code', 'Consolas', monospace;
   
   --shadow-card: var(--shadow-card);
@@ -313,6 +328,7 @@ html {
   line-height: var(--line-height-xs);
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
+  font-family: var(--font-headings);
 }
 
 .text-h2 {
@@ -320,6 +336,7 @@ html {
   line-height: var(--line-height-sm);
   font-weight: var(--font-weight-bold);
   color: var(--text-primary);
+  font-family: var(--font-headings);
 }
 
 .text-h3 {
@@ -327,6 +344,7 @@ html {
   line-height: var(--line-height-sm);
   font-weight: var(--font-weight-semibold);
   color: var(--text-primary);
+  font-family: var(--font-headings);
 }
 
 .text-h4 {
@@ -334,6 +352,7 @@ html {
   line-height: var(--line-height-base);
   font-weight: var(--font-weight-semibold);
   color: var(--text-primary);
+  font-family: var(--font-headings);
 }
 
 .text-h5 {
@@ -341,6 +360,7 @@ html {
   line-height: var(--line-height-base);
   font-weight: var(--font-weight-medium);
   color: var(--text-primary);
+  font-family: var(--font-headings);
 }
 
 .text-h6 {
@@ -348,6 +368,7 @@ html {
   line-height: var(--line-height-base);
   font-weight: var(--font-weight-medium);
   color: var(--text-primary);
+  font-family: var(--font-headings);
 }
 
 .text-body {
@@ -521,3 +542,16 @@ html {
 .text-static-700 { color: var(--static-gray-700); }
 .text-static-600 { color: var(--static-gray-600); }
 .text-static-400 { color: var(--static-gray-400); }
+
+/* Omthentic UI Utilities */
+.btn-primary { background: var(--om-grad); color: #fff; border-radius: 12px; padding: 12px 20px; font-weight: 600; }
+.btn-primary:hover { filter: brightness(1.03); box-shadow: var(--shadow); }
+.btn-secondary { background: transparent; color: var(--om-blue); border: 1px solid var(--om-blue); border-radius: 12px; padding: 12px 20px; font-weight: 600; }
+.btn-secondary:hover { background: rgba(45,111,255,0.06); }
+.link { color: var(--om-blue); text-decoration: none; }
+.link:hover { text-decoration: underline; }
+.pill { background: var(--cloud); color: var(--om-teal); border: 1px solid var(--om-teal); border-radius: 9999px; padding: 6px 12px; font-weight: 600; font-size: 0.875rem; }
+
+/* Focus ring tuned to Om Blue */
+*:focus-visible { box-shadow: 0 0 0 2px var(--om-blue), 0 0 0 4px rgba(45, 111, 255, 0.35); }
+.focus-ring { @apply ring-2 ring-offset-2 ring-[color:var(--om-blue)]/60; }

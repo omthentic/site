@@ -51,7 +51,7 @@ const Hero = () => {
         <div className="text-center">
           {/* Badge with enhanced animation */}
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 border border-primary-200 text-primary-600 font-medium text-sm mb-8 focus-ring"
+            className="inline-flex items-center px-4 py-2 rounded-full bg-primary-50 border border-primary-200 text-primary-600 font-medium text-sm mb-8 focus-ring pill"
             variants={getAnimation(fadeInUpScale)}
             tabIndex={0}
             role="banner"
@@ -126,7 +126,7 @@ const Hero = () => {
             }}
           >
             <motion.button
-              className="bg-gradient-primary text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+              className="btn-primary rounded-2xl text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
               variants={hoverGlow}
               initial="initial"
               whileHover="hover"
@@ -147,7 +147,7 @@ const Hero = () => {
             </motion.button>
             
             <motion.button
-              className="bg-card border-2 border-gray-200 hover:border-primary-300 text-primary-heading px-8 py-4 rounded-2xl font-semibold text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+              className="btn-secondary bg-card px-8 py-4 rounded-2xl font-semibold text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
               variants={hoverGlow}
               initial="initial"
               whileHover="hover"

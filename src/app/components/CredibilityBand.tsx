@@ -121,7 +121,7 @@ const CredibilityBand = () => {
               Stories of Growth & Confidence
             </h2>
             <p className="text-body max-w-2xl mx-auto">
-              Real students sharing how Articulate transformed their interview experience
+              Real students sharing how Omthentic transformed their interview experience
             </p>
           </div>
 
