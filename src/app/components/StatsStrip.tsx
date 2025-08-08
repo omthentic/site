@@ -54,7 +54,7 @@ const StatsStrip = () => {
                 <stat.icon className="w-6 h-6 text-white" />
               </div>
               
-              <div className="text-3xl lg:text-4xl font-bold text-primary-heading mb-2 group-hover:text-primary transition-colors duration-300">
+              <div className="text-3xl lg:text-4xl font-bold text-primary-heading mb-2 group-hover:text-primary transition-colors duration-300 tabular-nums">
                 {stat.value}
               </div>
               
@@ -73,7 +73,7 @@ const StatsStrip = () => {
           transition={{ duration: 0.6, delay: 0.4 }}
           viewport={{ once: true }}
         >
-          <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm">
+          <div className="inline-flex items-center px-4 py-2 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm tabular-nums">
             <div className="w-2 h-2 bg-accent rounded-full mr-2 animate-pulse" />
             On track for {copy.vision.shortForm}
           </div>

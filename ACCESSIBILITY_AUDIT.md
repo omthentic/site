@@ -1,7 +1,7 @@
 # Accessibility Audit Report - Chronicle Design System
 
 ## Overview
-This document outlines the comprehensive accessibility audit performed on all components of the Authentically Articulate landing page to ensure WCAG AA compliance.
+This document outlines the comprehensive accessibility audit performed on all components of the Omthentic landing page to ensure WCAG AA compliance.
 
 ## Audit Date
 January 1, 2025

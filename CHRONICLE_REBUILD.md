@@ -1,8 +1,8 @@
-# Chronicle Design System Rebuild - Authentically Articulate
+# Chronicle Design System Rebuild - Omthentic
 
 ## Overview
 
-Successfully rebuilt the Authentically Articulate landing page using the Chronicle-style design system while preserving all existing routes and analytics IDs. The rebuild surfaces the refreshed Purpose, Vision, and Values in customer-friendly ways.
+Successfully rebuilt the Omthentic landing page using the Chronicle-style design system while preserving all existing routes and analytics IDs. The rebuild surfaces the refreshed Purpose, Vision, and Values in customer-friendly ways.
 
 ## ✅ Implementation Summary
 

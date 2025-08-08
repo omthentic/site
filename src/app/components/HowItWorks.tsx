@@ -252,7 +252,7 @@ const ReviewMockup = () => {
         </div>
 
         {/* Overall Score */}
-        <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl glow-subtle cursor-pointer">
+          <div className="text-center p-6 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/20 dark:to-purple-800/20 rounded-xl glow-subtle cursor-pointer tabular-nums">
           <div className="text-4xl font-bold text-purple-700 dark:text-purple-300 mb-2">85</div>
           <div className="text-purple-600 dark:text-purple-400 font-medium">Overall Score</div>
           <div className="text-sm text-purple-500 dark:text-purple-400 mt-1">Great improvement!</div>
@@ -260,19 +260,19 @@ const ReviewMockup = () => {
 
         {/* Detailed Metrics */}
         <div className="grid grid-cols-2 gap-4">
-          <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+          <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer tabular-nums">
             <div className="text-2xl font-bold text-green-700 dark:text-green-300">92</div>
             <div className="text-sm text-green-700 dark:text-green-400">Clarity</div>
           </div>
-          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+          <div className="bg-blue-50 dark:bg-blue-900/20 border border-blue-200 dark:border-blue-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer tabular-nums">
             <div className="text-2xl font-bold text-blue-700 dark:text-blue-300">78</div>
             <div className="text-sm text-blue-700 dark:text-blue-400">Confidence</div>
           </div>
-          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+          <div className="bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer tabular-nums">
             <div className="text-2xl font-bold text-yellow-700 dark:text-yellow-300">5</div>
             <div className="text-sm text-yellow-700 dark:text-yellow-400">Filler Words</div>
           </div>
-          <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer">
+          <div className="bg-indigo-50 dark:bg-indigo-900/20 border border-indigo-200 dark:border-indigo-800/30 rounded-lg p-4 text-center glow-subtle cursor-pointer tabular-nums">
             <div className="text-2xl font-bold text-indigo-700 dark:text-indigo-300">Good</div>
             <div className="text-sm text-indigo-700 dark:text-indigo-400">Pace</div>
           </div>
@@ -304,7 +304,7 @@ const RefineMockup = () => {
         </div>
 
         {/* Progress Comparison */}
-        <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-6 glow-subtle cursor-pointer">
+          <div className="bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800/30 rounded-lg p-6 glow-subtle cursor-pointer tabular-nums">
           <h5 className="text-green-900 dark:text-green-200 font-semibold mb-4">Your Progress</h5>
           <div className="flex items-center justify-between">
             <div className="text-center">
