@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Play, Layers, Zap, Users, Wand2, Smartphone, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, Mic, Activity, Users, FileText, Smartphone, Star } from 'lucide-react';
 import NumberStat from './blocks/NumberStat';
 import TrendCard from './blocks/TrendCard';
 import PeopleRow from './blocks/PeopleRow';
@@ -13,10 +13,10 @@ import Footer from './Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
 
 const widgetCards = [
-  { icon: Layers, title: 'Blocks', desc: 'Compose with polished, interactive building blocks.' },
-  { icon: Zap, title: 'Motion', desc: 'Delightful micro‑interactions out of the box.' },
-  { icon: Users, title: 'Collaboration', desc: 'Work together in real‑time with presence.' },
-  { icon: Wand2, title: 'AI Assist', desc: 'Generate, remix and refine with an AI coach.' },
+  { icon: Mic, title: 'Practice Loop', desc: 'Record → review → refine in minutes with guided flows.' },
+  { icon: Activity, title: 'Real‑time Feedback', desc: 'Clarity, pace, filler words and presence—instantly.' },
+  { icon: Users, title: 'Human Coaching', desc: 'Personalised tips and accountability from real coaches.' },
+  { icon: FileText, title: 'Scenario Templates', desc: 'MMI, panel and behavioural prompts with STAR guides.' },
 ];
 
 const templates = [
