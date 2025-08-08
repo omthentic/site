@@ -67,7 +67,7 @@ const PainPromise = () => {
               {painPoints.map((pain, index) => (
                   <motion.div
                     key={pain.title}
-                    className="group flex items-start space-x-4 p-6 bg-card dark:bg-gray-800 rounded-xl glow-subtle cursor-pointer"
+            className="group flex items-start space-x-4 p-6 bg-card rounded-xl glow-subtle cursor-pointer border border-subtle"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
@@ -98,7 +98,7 @@ const PainPromise = () => {
             viewport={{ once: true }}
           >
                         {/* Main Product Interface */}
-            <div className="relative bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+      <div className="relative bg-card rounded-2xl glow-primary border border-subtle p-8">
               {/* Header */}
               <div className="flex items-center justify-between mb-6">
                   <div className="flex items-center space-x-3">

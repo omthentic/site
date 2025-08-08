@@ -87,8 +87,8 @@ const HowItWorks = () => {
                 <motion.button
                   className={`group flex items-center space-x-4 p-6 rounded-xl transition-all duration-300 focus-ring ${
                   activeStep === index
-                    ? 'bg-card dark:bg-gray-800 glow-primary border-2 border-primary/20 dark:border-primary/40'
-                    : 'bg-card/50 dark:bg-gray-800/50 hover:bg-card dark:hover:bg-gray-800 glow-subtle'
+                    ? 'bg-card glow-primary border-2 border-primary/20'
+                    : 'bg-card hover:shadow-hover glow-subtle'
                 }`}
                   onClick={() => setActiveStep(index)}
                   whileTap={{ scale: 0.98 }}
@@ -179,7 +179,7 @@ const RecordMockup = () => {
   const [isRecording, setIsRecording] = useState(false);
 
   return (
-    <div className="bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+    <div className="bg-card rounded-2xl glow-primary border border-subtle p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -240,7 +240,7 @@ const RecordMockup = () => {
 // Review Step Mockup
 const ReviewMockup = () => {
   return (
-    <div className="bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+    <div className="bg-card rounded-2xl glow-primary border border-subtle p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">
@@ -295,7 +295,7 @@ const ReviewMockup = () => {
 // Refine Step Mockup
 const RefineMockup = () => {
   return (
-    <div className="bg-card dark:bg-gray-800 rounded-2xl glow-primary border border-gray-200/50 dark:border-gray-700/50 p-8">
+    <div className="bg-card rounded-2xl glow-primary border border-subtle p-8">
       <div className="space-y-6">
         {/* Header */}
         <div className="flex items-center justify-between">

@@ -4,9 +4,9 @@
 @import "tailwindcss";
 
 :root {
-  /* Base Theme Colors */
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base Theme Colors - Omthentic */
+  --background: #F7FAFC; /* Cloud */
+  --foreground: #0F172A; /* Slate 900 */
 
   /* Omthentic Brand Tokens */
   --om-blue: #2D6FFF;
@@ -128,12 +128,19 @@
   
   /* Gradients */
   --gradient-primary: var(--om-grad);
-  --gradient-hero: linear-gradient(135deg, #F7FAFC 0%, #E2E8F0 50%, #CBD5E1 100%);
-  --gradient-accent: linear-gradient(135deg, var(--accent-500) 0%, var(--accent-400) 100%);
+  --gradient-hero: linear-gradient(135deg, #F7FAFC 0%, #E6EEF7 50%, #D9E5F2 100%);
+  --gradient-accent: linear-gradient(135deg, var(--om-teal) 0%, #19B9D0 60%, var(--om-blue) 100%);
   
-  /* Background Colors */
+  /* Surfaces & Borders */
   --background-primary: #F7FAFC; /* Cloud */
-  --card-background: #FFFFFF;
+  --card-background: #FFFFFF;    /* Cards on light */
+  --border-color: #E2E8F0;       /* Subtle borders on light */
+
+  /* Semantic Text Colors */
+  --text-primary: var(--slate-900);
+  --text-secondary: var(--slate-600);
+  --text-tertiary: #6B7280; /* slate-500 fallback for light */
+  --text-inverse: #FFFFFF;
   
   /* Shadows - Chronicle Style */
   --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
@@ -200,40 +207,29 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Base Theme Colors */
-    --background: #0a0a0a;
-    --foreground: #ededed;
-    
-    /* Reversed Gray Scale for Dark Mode */
-    --gray-50: #0F172A;
-    --gray-100: #1E293B;
-    --gray-200: #334155;
-    --gray-300: #475569;
-    --gray-400: #64748B;
-    --gray-500: #94A3B8;
-    --gray-600: #CBD5E1;
-    --gray-700: #E2E8F0;
-    --gray-800: #F1F5F9;
-    --gray-900: #F8FAFC;
+    /* Base Theme Colors - Dark */
+    --background: #0B1220;      /* Midnight */
+    --foreground: #E6EEF7;      /* Lightened text */
 
-    /* Dark Mode Background Colors */
-    --background-primary: #0a0a0a;
-    --card-background: #1E293B;
+    /* Surfaces & Borders */
+    --background-primary: #0B1220; /* Page bg */
+    --card-background: #0F172A;    /* Elevated cards */
+    --border-color: #1F2A3A;       /* Subtle borders on dark */
 
-    /* Dark Mode Semantic Colors */
-    --text-primary: var(--gray-900);
-    --text-secondary: var(--gray-700);
-    --text-tertiary: var(--gray-500);
-    --text-inverse: var(--gray-50);
+    /* Text colors ensure sufficient contrast on dark */
+    --text-primary: #F7FAFC;  /* Cloud on Midnight */
+    --text-secondary: #CBD5E1; /* slate-300/200 */
+    --text-tertiary: #94A3B8; /* slate-400 */
+    --text-inverse: #0B1220;  /* Inverse on light chips */
 
-    /* Dark Mode Shadows */
-    --shadow-card: 0 4px 12px rgba(0, 0, 0, 0.2);
-    --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.3);
-    --shadow-glow: 0 0 20px rgba(0, 82, 255, 0.2);
-    --shadow-glow-accent: 0 0 20px rgba(18, 212, 160, 0.2);
+    /* Shadows tuned for dark */
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.35);
+    --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.45);
+    --shadow-glow: 0 0 24px rgba(45, 111, 255, 0.25);
+    --shadow-glow-accent: 0 0 24px rgba(18, 214, 192, 0.25);
 
-    /* Dark Mode Gradients */
-    --gradient-hero: linear-gradient(135deg, #0a0a0a 0%, #1E293B 50%, #334155 100%);
+    /* Dark hero gradient to avoid blending */
+    --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #132033 100%);
   }
 }
 
@@ -269,10 +265,10 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Focus styles - Chronicle WCAG AA */
+/* Focus styles - WCAG AA tuned to Om Blue */
 *:focus-visible {
   outline: none;
-  box-shadow: 0 0 0 2px var(--primary), 0 0 0 4px rgba(0, 82, 255, 0.6);
+  box-shadow: 0 0 0 2px var(--om-blue), 0 0 0 4px rgba(45, 111, 255, 0.45);
 }
 
 .focus-ring {
@@ -310,15 +306,18 @@ html {
   background-color: var(--card-background);
   border-radius: var(--radius-card);
   box-shadow: var(--shadow-card);
+  border: 1px solid var(--border-color);
 }
 
+.border-subtle { border-color: var(--border-color); }
+
 .text-primary-heading {
-  color: var(--gray-900);
+  color: var(--text-primary);
   font-weight: 600;
 }
 
 .text-secondary-body {
-  color: var(--gray-700);
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
