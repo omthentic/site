@@ -8,6 +8,7 @@ import Header from '../components/Header';
 import Footer from '../components/Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
 import FeatureExperience from '../components/FeatureExperience';
+import TemplatesExperience from '../components/TemplatesExperience';
 
 const widgetCards = [
   { icon: Layers, title: 'Blocks', desc: 'Compose with polished, interactive building blocks.' },
@@ -64,22 +65,14 @@ export default function Revamp() {
         </div>
       </section>
 
-      {/* WORKFLOW */}
+      {/* TEMPLATES EXPERIENCE */}
       <section className="py-20 bg-background-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid lg:grid-cols-3 gap-8 items-start">
-            {[
-              { n: '01', t: 'Keyboard‑first', d: 'Move fast with shortcuts and focused flows.' },
-              { n: '02', t: 'Bullets to visuals', d: 'Transform any idea into polished outputs.' },
-              { n: '03', t: 'Agent assist', d: 'Insert blocks, research and refine in a click.' },
-            ].map(s => (
-              <motion.div key={s.n} className="bg-card rounded-2xl p-6 border border-subtle shadow-card" variants={getAnimation(fadeInUp)} initial="initial" whileInView="animate" viewport={{ once: true }}>
-                <div className="pill mb-4 tabular-nums">{s.n}</div>
-                <h3 className="text-h5 mb-2">{s.t}</h3>
-                <p className="text-secondary-body text-sm">{s.d}</p>
-              </motion.div>
-            ))}
+          <div className="text-center mb-8">
+            <h2 className="text-h3">Start closer to the finish line</h2>
+            <p className="text-body text-secondary-body">Templates tuned by coaches and verified by outcomes.</p>
           </div>
+          <TemplatesExperience />
         </div>
       </section>
 

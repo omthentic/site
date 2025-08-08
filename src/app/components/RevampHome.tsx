@@ -10,6 +10,7 @@ import PeopleRow from './blocks/PeopleRow';
 import TimelineStep from './blocks/TimelineStep';
 import WaitlistModal from './WaitlistModal';
 import FeatureExperience from './FeatureExperience';
+import TemplatesExperience from './TemplatesExperience';
 import Header from './Header';
 import Footer from './Footer';
 import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
@@ -79,24 +80,14 @@ export default function RevampHome() {
         </div>
       </section>
 
-      {/* TEMPLATES SHOWCASE */}
+      {/* TEMPLATES EXPERIENCE */}
       <section className="py-14 sm:py-20 bg-background-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
+          <div className="text-center mb-8">
             <h2 className="text-h3 mb-3">Start closer to the finish line</h2>
             <p className="text-body text-secondary-body">Templates tuned by coaches and verified by outcomes.</p>
           </div>
-          <motion.div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6" variants={staggerContainer} initial="initial" whileInView="animate" viewport={{ once: true }}>
-            {templates.map((t) => (
-              <motion.div key={t.title} className="bg-card rounded-2xl p-5 border border-subtle shadow-card hover:shadow-hover transition-all">
-                <div className="flex items-center justify-between mb-3">
-                  <div className="pill">{t.tag}</div>
-                </div>
-                <h3 className="text-h5 mb-1">{t.title}</h3>
-                <p className="text-secondary-body text-sm">Open, customize, and practice in minutes.</p>
-              </motion.div>
-            ))}
-          </motion.div>
+          <TemplatesExperience />
         </div>
       </section>
 
