@@ -112,7 +112,7 @@ const Footer = () => {
 
             {/* Footer Links */}
             <div className="lg:col-span-3">
-              <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 sm:gap-8">
                 {footerSections.map((section, sectionIndex) => (
                   <motion.div
                     key={section.title}
@@ -173,7 +173,7 @@ const Footer = () => {
             </div>
 
             {/* Social Links */}
-            <div className="flex items-center space-x-4">
+            <div className="flex items-center space-x-3 sm:space-x-4">
               {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}

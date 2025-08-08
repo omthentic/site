@@ -47,7 +47,7 @@ const Header = () => {
         transition={{ duration: 0.5 }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-center justify-between h-16 lg:h-20">
+          <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
             {/* Logo */}
             <motion.div
               className="flex items-center"
@@ -58,19 +58,19 @@ const Header = () => {
                 <Image
                   src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg"
                   alt="Omthentic"
-                  width={220}
-                  height={56}
-                  sizes="(min-width: 640px) 220px, 40px"
+                  width={200}
+                  height={52}
+                  sizes="(min-width: 1024px) 220px, (min-width: 640px) 200px, 40px"
                   priority
-                  className="hidden sm:block h-12 w-auto"
+                  className="hidden sm:block h-10 sm:h-12 w-auto"
                 />
                 <Image
                   src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg"
                   alt="Omthentic"
-                  width={40}
-                  height={40}
+                  width={36}
+                  height={36}
                   priority
-                  className="sm:hidden h-10 w-10"
+                  className="sm:hidden h-9 w-9"
                 />
               </Link>
             </motion.div>

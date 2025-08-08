@@ -32,7 +32,7 @@ export default function RevampHome() {
       <Header />
 
       {/* HERO */}
-      <section className="relative min-h-[86vh] flex items-center justify-center overflow-hidden bg-background-primary">
+      <section className="relative min-h-[76vh] sm:min-h-[86vh] flex items-center justify-center overflow-hidden bg-background-primary">
         <div className="absolute inset-0 gradient-hero opacity-90" />
         <motion.div
           className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-28 pb-24 text-center"
@@ -52,7 +52,7 @@ export default function RevampHome() {
             Blocks, motion and guided workflows help you turn nerves into clarity—fast.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Link href="#widgets" className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">
               Start free <ArrowRight className="w-5 h-5" />
             </Link>
@@ -71,7 +71,7 @@ export default function RevampHome() {
       </section>
 
       {/* FEATURED BLOCKS */}
-      <section id="widgets" className="py-20 bg-background">
+      <section id="widgets" className="py-14 sm:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-h3 text-primary-heading mb-3">A new, easy way to create</h2>
@@ -93,7 +93,7 @@ export default function RevampHome() {
       </section>
 
       {/* TEMPLATES SHOWCASE */}
-      <section className="py-20 bg-background-primary">
+      <section className="py-14 sm:py-20 bg-background-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-h3 mb-3">Start closer to the finish line</h2>
@@ -114,7 +114,7 @@ export default function RevampHome() {
       </section>
 
       {/* MOBILE */}
-      <section className="py-20 bg-background">
+      <section className="py-14 sm:py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="inline-flex items-center gap-2 pill mb-4"><Smartphone className="w-4 h-4"/> Present anywhere</div>
           <h2 className="text-h3 mb-3">Made for every screen</h2>
@@ -140,7 +140,7 @@ export default function RevampHome() {
       </section>
 
       {/* PEOPLE + TIMELINE */}
-      <section className="py-20 bg-background-primary">
+      <section className="py-14 sm:py-20 bg-background-primary">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-8 items-start">
           <div>
             <h3 className="text-h5 mb-4">Coaches & community</h3>
@@ -162,7 +162,7 @@ export default function RevampHome() {
       </section>
 
       {/* CTA */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-16 sm:py-24 relative overflow-hidden">
         <div className="absolute inset-0 gradient-hero opacity-80" />
         <div className="relative z-10 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-h2 text-white text-contrast-glow mb-4">Start your story</h2>

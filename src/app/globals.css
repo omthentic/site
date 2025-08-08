@@ -218,8 +218,8 @@
 
     /* Text colors ensure sufficient contrast on dark */
     --text-primary: #F7FAFC;  /* Cloud on Midnight */
-    --text-secondary: #CBD5E1; /* slate-300/200 */
-    --text-tertiary: #94A3B8; /* slate-400 */
+    --text-secondary: #D6DFEA; /* slightly brighter than slate-300 */
+    --text-tertiary: #A8B4C4; /* slate-400/350 */
     --text-inverse: #0B1220;  /* Inverse on light chips */
 
     /* Shadows tuned for dark */
@@ -230,6 +230,9 @@
 
     /* Dark hero gradient to avoid blending */
     --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #132033 100%);
+
+    /* Pills adapt to dark */
+    --cloud: #17202E; /* darker pill bg */
   }
 }
 
@@ -344,7 +347,8 @@ html {
 
 /* Typography Scale Utilities */
 .text-h1 {
-  font-size: var(--font-size-6xl);
+  /* Responsive clamp for mobile → desktop */
+  font-size: clamp(2rem, 6vw, 3.75rem);
   line-height: var(--line-height-xs);
   font-weight: 600;
   color: var(--text-primary);
@@ -352,7 +356,7 @@ html {
 }
 
 .text-h2 {
-  font-size: var(--font-size-5xl);
+  font-size: clamp(1.75rem, 5.5vw, 3rem);
   line-height: var(--line-height-sm);
   font-weight: 600;
   color: var(--text-primary);
@@ -360,7 +364,7 @@ html {
 }
 
 .text-h3 {
-  font-size: var(--font-size-4xl);
+  font-size: clamp(1.5rem, 4.5vw, 2.25rem);
   line-height: var(--line-height-sm);
   font-weight: 500;
   color: var(--text-primary);
@@ -376,7 +380,7 @@ html {
 }
 
 .text-h5 {
-  font-size: var(--font-size-2xl);
+  font-size: clamp(1.125rem, 3.5vw, 1.5rem);
   line-height: var(--line-height-base);
   font-weight: var(--font-weight-medium);
   color: var(--text-primary);
@@ -392,14 +396,14 @@ html {
 }
 
 .text-body {
-  font-size: var(--font-size-base);
+  font-size: clamp(0.95rem, 2.7vw, 1rem);
   line-height: var(--line-height-lg);
   font-weight: var(--font-weight-normal);
   color: var(--text-secondary);
 }
 
 .text-body-lg {
-  font-size: var(--font-size-lg);
+  font-size: clamp(1rem, 3vw, 1.125rem);
   line-height: var(--line-height-lg);
   font-weight: var(--font-weight-normal);
   color: var(--text-secondary);
@@ -574,6 +578,11 @@ html {
 
 /* Numeric styles */
 .tabular-nums { font-variant-numeric: tabular-nums; }
+
+/* Semantic text colors */
+.text-success { color: var(--success); }
+.text-warning { color: var(--warning); }
+.text-danger { color: var(--danger); }
 
 /* Focus ring tuned to Om Blue */
 *:focus-visible { box-shadow: 0 0 0 2px var(--om-blue), 0 0 0 4px rgba(45, 111, 255, 0.35); }
