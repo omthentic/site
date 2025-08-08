@@ -18,7 +18,7 @@ const Hero = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-background-primary">
       {/* Animated Background Gradient */}
-      <div className="absolute inset-0 gradient-hero opacity-60" />
+      <div className="absolute inset-0 gradient-hero opacity-80" />
       
       {/* Enhanced Background Pattern with Complex Animations */}
       <div className="absolute inset-0 opacity-10">
@@ -76,7 +76,7 @@ const Hero = () => {
 
           {/* Main Headline with enhanced typography and animation */}
           <motion.h1
-            className="text-h1 mb-6 leading-tight"
+            className="text-h1 mb-6 leading-tight text-white text-contrast-glow"
             variants={getAnimation(fadeInUpScale)}
             style={{
               fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
@@ -93,7 +93,7 @@ const Hero = () => {
 
           {/* Purpose Statement with enhanced animation */}
           <motion.p
-            className="text-body-lg mb-12 max-w-4xl mx-auto leading-relaxed"
+            className="text-body-lg mb-12 max-w-4xl mx-auto leading-relaxed text-gray-200 text-contrast-glow"
             variants={getAnimation(fadeInUpScale)}
             initial={{ opacity: 0, y: 30, filter: 'blur(8px)' }}
             animate={{ 
@@ -126,7 +126,7 @@ const Hero = () => {
             }}
           >
             <motion.button
-              className="btn-primary rounded-2xl text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+              className="btn-primary rounded-2xl text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring ring-2 ring-white/30"
               variants={hoverGlow}
               initial="initial"
               whileHover="hover"
@@ -147,7 +147,7 @@ const Hero = () => {
             </motion.button>
             
             <motion.button
-              className="btn-secondary bg-card px-8 py-4 rounded-2xl font-semibold text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring"
+              className="btn-secondary bg-card px-8 py-4 rounded-2xl font-semibold text-lg shadow-card transition-all duration-300 flex items-center space-x-3 group w-full sm:w-auto focus-ring text-white border-white/50 hover:border-white"
               variants={hoverGlow}
               initial="initial"
               whileHover="hover"
