@@ -88,25 +88,21 @@ const Header = () => {
 
             {/* CTA Button */}
             <div className="hidden lg:flex items-center space-x-4">
-              <Link href={`${APP_URL}/sign-in`} prefetch={false} aria-label="Sign in to your account">
-                <motion.a
-                  className="text-gray-600 hover:text-primary font-medium transition-colors duration-200 focus-ring"
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  Sign In
-                </motion.a>
-              </Link>
-              <Link href={`${APP_URL}/sign-up`} prefetch={false} aria-label="Start practicing for free">
-                <motion.a
-                  className="btn-primary shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group focus-ring"
-                  whileHover={{ scale: 1.05, y: -2 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <span>Start Practicing Free</span>
-                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                </motion.a>
-              </Link>
+              <a
+                href={`${APP_URL}/sign-in`}
+                aria-label="Sign in to your account"
+                className="text-gray-600 hover:text-primary font-medium transition-colors duration-200 focus-ring"
+              >
+                Sign In
+              </a>
+              <a
+                href={`${APP_URL}/sign-up`}
+                aria-label="Start practicing for free"
+                className="btn-primary shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group focus-ring"
+              >
+                <span>Start Practicing Free</span>
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+              </a>
             </div>
 
             {/* Mobile Menu Button */}
@@ -148,21 +144,13 @@ const Header = () => {
                 </motion.a>
               ))}
               <div className="pt-4 border-t border-gray-200/20 flex flex-col space-y-3">
-                <Link href={`${APP_URL}/sign-in`} prefetch={false} aria-label="Sign in to your account" className="text-left">
-                  <motion.a className="text-gray-600 hover:text-primary font-medium py-2 transition-colors duration-200 text-left focus-ring">
-                    Sign In
-                  </motion.a>
-                </Link>
-                <Link href={`${APP_URL}/sign-up`} prefetch={false} aria-label="Start practicing for free">
-                  <motion.a
-                    className="btn-primary shadow-card flex items-center justify-center space-x-2 group focus-ring"
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <span>Start Practicing Free</span>
-                    <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
-                  </motion.a>
-                </Link>
+                <a href={`${APP_URL}/sign-in`} aria-label="Sign in to your account" className="text-left text-gray-600 hover:text-primary font-medium py-2 transition-colors duration-200 text-left focus-ring">
+                  Sign In
+                </a>
+                <a href={`${APP_URL}/sign-up`} aria-label="Start practicing for free" className="btn-primary shadow-card flex items-center justify-center space-x-2 group focus-ring">
+                  <span>Start Practicing Free</span>
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
+                </a>
               </div>
             </nav>
           </div>
