@@ -1,9 +1,34 @@
 import { ArrowUpRight, Mic, Sparkles } from 'lucide-react';
 import Link from 'next/link';
+import { cookies } from 'next/headers';
+
+function readOnboarding() {
+  try {
+    const c = cookies().get('om:onboarding')?.value;
+    if (!c) return null;
+    const json = JSON.parse(Buffer.from(c, 'base64').toString('utf8')) as {
+      goal?: string; focus?: string; strengths?: string[]; details?: string;
+    };
+    return json;
+  } catch {
+    return null;
+  }
+}
 
 export default function Dashboard() {
+  const onboarding = readOnboarding();
+  const headline = onboarding?.goal
+    ? `Welcome back${onboarding.strengths?.length ? ', ' + onboarding.strengths[0] : ''}`
+    : 'Welcome back';
+  const sub = onboarding?.goal
+    ? `Focused on ${onboarding.goal}${onboarding.focus ? ' • ' + onboarding.focus : ''}`
+    : 'Practice a prompt and get instant feedback.';
   return (
     <div className="space-y-6">
+      <div>
+        <h1 className="text-h4 mb-1">{headline}</h1>
+        <p className="text-secondary-body">{sub}</p>
+      </div>
       {/* Header metrics */}
       <div className="grid md:grid-cols-3 gap-4">
         {[
@@ -25,7 +50,7 @@ export default function Dashboard() {
       <div className="bg-card rounded-xl border border-subtle p-5 flex flex-col sm:flex-row items-center justify-between gap-4">
         <div>
           <h2 className="text-h5 mb-1">Jump back in</h2>
-          <p className="text-secondary-body">Practice a prompt and get instant feedback.</p>
+          <p className="text-secondary-body">{sub}</p>
         </div>
         <div className="flex items-center gap-3">
           <Link href="/onboarding" className="gradient-primary text-white px-4 py-2 rounded-lg inline-flex items-center gap-2">
