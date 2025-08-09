@@ -26,7 +26,7 @@ const Header = () => {
     { label: 'About', href: '#about' },
   ];
 
-  const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com';
+  const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.ai';
   return (
     <>
       {/* Progress bar */}
