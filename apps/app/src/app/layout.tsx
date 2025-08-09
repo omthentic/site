@@ -1,7 +1,6 @@
-import type { Metadata } from 'next';
 import '../../../../../packages/ui/styles/globals.css';
 
-export const metadata: Metadata = {
+export const metadata = {
   title: 'Omthentic — App',
   description: 'AI voice coach — app',
 };
