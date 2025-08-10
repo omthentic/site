@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Sparkles, Play, Smartphone, Star } from 'lucide-react';
+import { ArrowRight, Sparkles, Play, Smartphone, Star, Brain, Target, Mic } from 'lucide-react';
 import NumberStat from './blocks/NumberStat';
 import TrendCard from './blocks/TrendCard';
 import PeopleRow from './blocks/PeopleRow';
@@ -22,6 +22,24 @@ const templates = [
   { title: 'Mock Panel', tag: 'New' },
   { title: 'STAR Answer', tag: 'Guided' },
   { title: 'Debrief Review', tag: 'Coach‑verified' },
+];
+
+const painPoints = [
+  {
+    icon: Brain,
+    title: 'Interview Anxiety',
+    desc: 'Nerves can derail even the most prepared candidate. Learn how to stay calm, think clearly, and present your best self.',
+  },
+  {
+    icon: Target,
+    title: 'Missed Opportunities',
+    desc: 'Many talented students miss out on offers due to poor communication skills — even when they know the answers.',
+  },
+  {
+    icon: Mic,
+    title: 'Unpolished Delivery',
+    desc: 'You have great ideas — but in a high-pressure interview, clear, confident articulation makes all the difference.',
+  },
 ];
 
 export default function RevampHome() {
@@ -45,15 +63,15 @@ export default function RevampHome() {
           </motion.div>
 
           <h1 className="text-h1 text-white text-contrast-glow mb-6" style={{ fontSize: 'clamp(2.75rem, 7.5vw, 4.25rem)' }}>
-            Practice that feels effortless.
+            Ace Your Medical School Interview with Confidence
           </h1>
           <p className="text-body-lg text-gray-200 text-contrast-glow max-w-2xl mx-auto mb-10">
-            Practice real interview questions with real‑time AI feedback and coach‑verified tips.
+            Personalised, AI-powered coaching that transforms your interview performance and gives you the competitive edge you need.
           </p>
 
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <a href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/sign-up'} className="btn-primary rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring">
-              Start practicing <ArrowRight className="w-5 h-5" />
+              Start Preparing Free <ArrowRight className="w-5 h-5" />
             </a>
             <a href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/sign-in'} className="btn-secondary bg-card rounded-2xl px-8 py-4 inline-flex items-center gap-2 focus-ring text-white border-white/50">
               <Play className="w-5 h-5" /> Sign in
@@ -67,6 +85,41 @@ export default function RevampHome() {
             <div className="flex items-center gap-1"><Star className="w-4 h-4"/> 4.9/5 rating (2,847)</div>
           </div>
         </motion.div>
+      </section>
+
+      {/* PAIN POINTS */}
+      <section className="py-14 sm:py-20 bg-background">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8">
+            <h2 className="text-h3 text-primary-heading mb-3">Stop letting uncertainty hold you back</h2>
+          </div>
+          <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
+            {painPoints.map((item, idx) => (
+              <motion.div
+                key={item.title}
+                className="group relative rounded-2xl border border-subtle bg-card/60 backdrop-blur-sm p-5 sm:p-6 overflow-hidden"
+                whileHover={{ y: -6, scale: 1.01 }}
+                whileTap={{ scale: 0.99 }}
+                transition={{ type: 'spring', stiffness: 300, damping: 22 }}
+              >
+                <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                  style={{
+                    background:
+                      'radial-gradient(1200px 200px at 50% -10%, rgba(255,255,255,0.08), transparent 60%)',
+                  }}
+                />
+                <div className="relative z-10">
+                  <div className="inline-flex items-center justify-center w-10 h-10 rounded-xl bg-white/5 border border-white/10 text-white mb-4">
+                    {React.createElement(item.icon, { className: 'w-5 h-5' })}
+                  </div>
+                  <h3 className="text-h6 text-primary-heading mb-2">{item.title}</h3>
+                  <p className="text-secondary-body text-sm leading-relaxed">{item.desc}</p>
+                </div>
+                <div className="pointer-events-none absolute inset-0 rounded-2xl ring-1 ring-white/10 group-hover:ring-white/20 transition" />
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* FEATURE EXPERIENCE */}
