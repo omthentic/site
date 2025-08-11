@@ -33,6 +33,10 @@ export default function Revamp() {
   const mediaRecorderRef = React.useRef<MediaRecorder | null>(null);
   const recognitionRef = React.useRef<any>(null);
   const autoStopTimeoutRef = React.useRef<number | null>(null);
+  const audioContextRef = React.useRef<any>(null);
+  const analyserRef = React.useRef<AnalyserNode | null>(null);
+  const rafIdRef = React.useRef<number | null>(null);
+  const [micLevel, setMicLevel] = React.useState(0);
 
   const demoSlides = [
     {
@@ -133,6 +137,30 @@ export default function Revamp() {
       const recorder = new MediaRecorder(stream);
       mediaRecorderRef.current = recorder;
       recorder.start();
+      // Mic level meter via WebAudio
+      const AC: any = (window as any).AudioContext || (window as any).webkitAudioContext;
+      if (AC) {
+        audioContextRef.current = new AC();
+        const source = audioContextRef.current.createMediaStreamSource(stream);
+        const analyser = audioContextRef.current.createAnalyser();
+        analyser.fftSize = 2048;
+        source.connect(analyser);
+        analyserRef.current = analyser;
+        const buffer = new Uint8Array(analyser.fftSize);
+        const tick = () => {
+          if (!analyserRef.current) return;
+          analyserRef.current.getByteTimeDomainData(buffer);
+          let sum = 0;
+          for (let i = 0; i < buffer.length; i++) {
+            const v = (buffer[i] - 128) / 128;
+            sum += v * v;
+          }
+          const rms = Math.sqrt(sum / buffer.length);
+          setMicLevel((prev) => prev * 0.8 + rms * 0.2);
+          rafIdRef.current = requestAnimationFrame(tick);
+        };
+        tick();
+      }
       // Speech recognition if available
       const SR: any = (typeof window !== 'undefined' && ((window as any).webkitSpeechRecognition || (window as any).SpeechRecognition)) || null;
       if (SR) {
@@ -177,6 +205,8 @@ export default function Revamp() {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') mediaRecorderRef.current.stop();
       if (mediaStreamRef.current) mediaStreamRef.current.getTracks().forEach((t) => t.stop());
       if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch {} recognitionRef.current = null; }
+      if (rafIdRef.current) { cancelAnimationFrame(rafIdRef.current); rafIdRef.current = null; }
+      if (audioContextRef.current) { try { audioContextRef.current.close(); } catch {} audioContextRef.current = null; }
     } finally {
       const startedAt = recordingStartRef.current || Date.now();
       const duration = Date.now() - startedAt;
@@ -187,6 +217,8 @@ export default function Revamp() {
       recordingStartRef.current = null;
       mediaRecorderRef.current = null;
       mediaStreamRef.current = null;
+      analyserRef.current = null;
+      setMicLevel(0);
     }
   }
 
@@ -352,6 +384,11 @@ export default function Revamp() {
                   <button onClick={isRecording ? stopTryNow : startTryNow} className={`inline-flex items-center gap-2 rounded-2xl px-4 py-3 focus-ring ${isRecording ? 'btn-secondary' : 'btn-primary'}`}>
                     <Mic className="w-4 h-4" /> {isRecording ? 'Stop' : 'Record 10–15s'}
                   </button>
+                  {isRecording && (
+                    <div className="w-40 h-2 rounded-full bg-white/10 overflow-hidden">
+                      <div className="h-full bg-primary transition-[width] duration-75" style={{ width: `${Math.min(100, Math.max(5, Math.round(micLevel * 140)))}%` }} />
+                    </div>
+                  )}
                   {!isRecording && (
                     <button
                       onClick={() => setTryNowQuestion(sampleQuestions[Math.floor(Math.random() * sampleQuestions.length)])}
@@ -377,6 +414,11 @@ export default function Revamp() {
                         />
                       ))}
                     </div>
+                    {transcript && (
+                      <div className="mt-3 rounded-lg border border-subtle bg-background-primary p-3 text-sm text-secondary-body max-h-24 overflow-auto">
+                        {transcript}
+                      </div>
+                    )}
                   </div>
                 )}
                 {!isRecording && hasDemoFeedback && (
@@ -387,6 +429,12 @@ export default function Revamp() {
                       <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center"><div className="text-xs text-secondary-body">Filler Words</div><div className="text-h6">{feedback.filler}</div></div>
                       <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center"><div className="text-xs text-secondary-body">Confidence</div><div className="text-h6">{feedback.confidence}</div></div>
                     </div>
+                    {transcript && (
+                      <div className="rounded-lg border border-subtle bg-background-primary p-3 text-sm text-secondary-body mb-4 max-h-28 overflow-auto">
+                        <div className="text-[11px] uppercase tracking-wide mb-1">Transcript</div>
+                        {transcript}
+                      </div>
+                    )}
                     <a
                       href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/onboarding'}
                       className="btn-primary rounded-2xl px-6 py-3 inline-flex items-center gap-2 focus-ring"
