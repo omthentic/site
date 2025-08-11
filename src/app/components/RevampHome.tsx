@@ -136,6 +136,8 @@ export default function RevampHome() {
   const analyserRef = React.useRef<AnalyserNode | null>(null);
   const rafIdRef = React.useRef<number | null>(null);
   const [micLevel, setMicLevel] = React.useState(0);
+  const [micError, setMicError] = React.useState<string | null>(null);
+  const [showPermissionHelp, setShowPermissionHelp] = React.useState(false);
 
   function nextSlide() {
     setActiveSlide((s) => (s + 1) % demoSlides.length);
@@ -161,6 +163,8 @@ export default function RevampHome() {
   async function startTryNow() {
     if (isRecording) return;
     try {
+      setMicError(null);
+      setShowPermissionHelp(false);
       setHasDemoFeedback(false);
       setTranscript('');
       setTryNowQuestion(sampleQuestions[Math.floor(Math.random() * sampleQuestions.length)]);
@@ -220,15 +224,9 @@ export default function RevampHome() {
         stopTryNow();
       }, 15000);
     } catch (e) {
-      // Fallback to simulation if permission denied
-      setIsRecording(true);
-      if (autoStopTimeoutRef.current) window.clearTimeout(autoStopTimeoutRef.current);
-      autoStopTimeoutRef.current = window.setTimeout(() => {
-        const mock = computeMockFeedback('', 12000);
-        setFeedback(mock);
-        setIsRecording(false);
-        setHasDemoFeedback(true);
-      }, 12000);
+      setMicError('Microphone permission denied or unavailable in this browser.');
+      setIsRecording(false);
+      setHasDemoFeedback(false);
     }
   }
 
@@ -264,6 +262,12 @@ export default function RevampHome() {
       analyserRef.current = null;
       setMicLevel(0);
     }
+  }
+
+  function simulateNow() {
+    const mock = computeMockFeedback('', 12000);
+    setFeedback(mock);
+    setHasDemoFeedback(true);
   }
 
   React.useEffect(() => {
@@ -446,6 +450,23 @@ export default function RevampHome() {
                     </button>
                   )}
                 </div>
+                {micError && !isRecording && !hasDemoFeedback && (
+                  <div className="mt-3 rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-200 p-3">
+                    <div className="text-sm mb-2">{micError}</div>
+                    <div className="flex flex-wrap items-center gap-2">
+                      <button onClick={startTryNow} className="btn-primary px-3 py-2 rounded-lg">Retry mic</button>
+                      <button onClick={() => setShowPermissionHelp((v)=>!v)} className="btn-secondary px-3 py-2 rounded-lg">{showPermissionHelp? 'Hide help' : 'How to enable mic?'}</button>
+                      <button onClick={simulateNow} className="btn-secondary px-3 py-2 rounded-lg">Simulate without mic</button>
+                    </div>
+                    {showPermissionHelp && (
+                      <div className="mt-3 text-xs text-amber-100/90 space-y-1">
+                        <div>Chrome: Click the lock icon in the address bar → Site settings → Allow Microphone.</div>
+                        <div>Safari (macOS): Safari → Settings for this Website → Microphone → Allow.</div>
+                        <div>Ensure you are on HTTPS and no other app is using the microphone.</div>
+                      </div>
+                    )}
+                  </div>
+                )}
               </div>
               <div>
                 {isRecording && (
