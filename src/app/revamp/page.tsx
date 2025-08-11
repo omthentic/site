@@ -26,6 +26,13 @@ export default function Revamp() {
   const [tryNowQuestion, setTryNowQuestion] = React.useState<string>(sampleQuestions[0]);
   const [isRecording, setIsRecording] = React.useState(false);
   const [hasDemoFeedback, setHasDemoFeedback] = React.useState(false);
+  const [transcript, setTranscript] = React.useState('');
+  const [feedback, setFeedback] = React.useState<{ clarity: number; filler: number; confidence: 'Good' | 'Fair' | 'Strong' }>({ clarity: 80, filler: 2, confidence: 'Good' });
+  const recordingStartRef = React.useRef<number | null>(null);
+  const mediaStreamRef = React.useRef<MediaStream | null>(null);
+  const mediaRecorderRef = React.useRef<MediaRecorder | null>(null);
+  const recognitionRef = React.useRef<any>(null);
+  const autoStopTimeoutRef = React.useRef<number | null>(null);
 
   const demoSlides = [
     {
@@ -101,13 +108,95 @@ export default function Revamp() {
 
   function nextSlide() { setActiveSlide((s) => (s + 1) % demoSlides.length); }
   function prevSlide() { setActiveSlide((s) => (s - 1 + demoSlides.length) % demoSlides.length); }
-  function startTryNow() {
-    if (isRecording) return;
-    setHasDemoFeedback(false);
-    setTryNowQuestion(sampleQuestions[Math.floor(Math.random() * sampleQuestions.length)]);
-    setIsRecording(true);
-    setTimeout(() => { setIsRecording(false); setHasDemoFeedback(true); }, 12000);
+  function computeMockFeedback(text: string, durationMs: number) {
+    const cleaned = (text || '').toLowerCase();
+    const words = cleaned.split(/\s+/).filter(Boolean);
+    const fillers = ['um', 'uh', 'like', 'you know', 'sort of', 'kind of'];
+    const fillerCount = words.reduce((acc, w) => acc + (fillers.includes(w) ? 1 : 0), 0);
+    const wordsPerMin = durationMs > 0 ? Math.round((words.length / durationMs) * 60000) : 0;
+    let clarity = 90;
+    clarity -= Math.min(30, fillerCount * 5);
+    clarity -= wordsPerMin > 190 ? 10 : 0;
+    clarity = Math.max(55, Math.min(95, Math.round(clarity)));
+    const confidence: 'Good' | 'Fair' | 'Strong' = clarity >= 85 && fillerCount <= 1 ? 'Strong' : clarity >= 70 ? 'Good' : 'Fair';
+    return { clarity, filler: fillerCount, confidence };
   }
+
+  async function startTryNow() {
+    if (isRecording) return;
+    try {
+      setHasDemoFeedback(false);
+      setTranscript('');
+      setTryNowQuestion(sampleQuestions[Math.floor(Math.random() * sampleQuestions.length)]);
+      const stream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      mediaStreamRef.current = stream;
+      const recorder = new MediaRecorder(stream);
+      mediaRecorderRef.current = recorder;
+      recorder.start();
+      // Speech recognition if available
+      const SR: any = (typeof window !== 'undefined' && ((window as any).webkitSpeechRecognition || (window as any).SpeechRecognition)) || null;
+      if (SR) {
+        const recognition = new SR();
+        recognition.lang = 'en-US';
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.onresult = (event: any) => {
+          let interim = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            const res = event.results[i];
+            interim += res[0]?.transcript || '';
+          }
+          setTranscript((prev) => (interim && interim.length > prev.length ? interim : prev));
+        };
+        recognition.onerror = () => {};
+        recognition.onend = () => {};
+        recognitionRef.current = recognition;
+        recognition.start();
+      }
+      recordingStartRef.current = Date.now();
+      setIsRecording(true);
+      if (autoStopTimeoutRef.current) window.clearTimeout(autoStopTimeoutRef.current);
+      autoStopTimeoutRef.current = window.setTimeout(() => { stopTryNow(); }, 15000);
+    } catch (e) {
+      // Fallback to simulation
+      setIsRecording(true);
+      if (autoStopTimeoutRef.current) window.clearTimeout(autoStopTimeoutRef.current);
+      autoStopTimeoutRef.current = window.setTimeout(() => {
+        const mock = computeMockFeedback('', 12000);
+        setFeedback(mock);
+        setIsRecording(false);
+        setHasDemoFeedback(true);
+      }, 12000);
+    }
+  }
+
+  function stopTryNow() {
+    if (!isRecording) return;
+    if (autoStopTimeoutRef.current) { window.clearTimeout(autoStopTimeoutRef.current); autoStopTimeoutRef.current = null; }
+    try {
+      if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') mediaRecorderRef.current.stop();
+      if (mediaStreamRef.current) mediaStreamRef.current.getTracks().forEach((t) => t.stop());
+      if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch {} recognitionRef.current = null; }
+    } finally {
+      const startedAt = recordingStartRef.current || Date.now();
+      const duration = Date.now() - startedAt;
+      const mock = computeMockFeedback(transcript, duration);
+      setFeedback(mock);
+      setIsRecording(false);
+      setHasDemoFeedback(true);
+      recordingStartRef.current = null;
+      mediaRecorderRef.current = null;
+      mediaStreamRef.current = null;
+    }
+  }
+
+  React.useEffect(() => {
+    return () => {
+      if (mediaStreamRef.current) mediaStreamRef.current.getTracks().forEach((t) => t.stop());
+      if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch {} recognitionRef.current = null; }
+      if (autoStopTimeoutRef.current) window.clearTimeout(autoStopTimeoutRef.current);
+    };
+  }, []);
   const [compareDay, setCompareDay] = React.useState<1 | 14>(1);
   const pathSteps = [
     { title: 'Discover strengths', desc: 'ShareTree Charametrics baseline' },
@@ -260,12 +349,8 @@ export default function Revamp() {
                   <div className="text-body">{tryNowQuestion}</div>
                 </div>
                 <div className="flex items-center gap-3">
-                  <button
-                    onClick={startTryNow}
-                    disabled={isRecording}
-                    className={`inline-flex items-center gap-2 rounded-2xl px-4 py-3 focus-ring ${isRecording ? 'btn-secondary' : 'btn-primary'}`}
-                  >
-                    <Mic className="w-4 h-4" /> {isRecording ? 'Recording…' : 'Record 10–15s'}
+                  <button onClick={isRecording ? stopTryNow : startTryNow} className={`inline-flex items-center gap-2 rounded-2xl px-4 py-3 focus-ring ${isRecording ? 'btn-secondary' : 'btn-primary'}`}>
+                    <Mic className="w-4 h-4" /> {isRecording ? 'Stop' : 'Record 10–15s'}
                   </button>
                   {!isRecording && (
                     <button
@@ -298,18 +383,9 @@ export default function Revamp() {
                   <div className="rounded-xl border border-subtle bg-card p-5">
                     <div className="text-xs text-secondary-body mb-3">Sample feedback</div>
                     <div className="grid grid-cols-3 gap-3 mb-4">
-                      <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center">
-                        <div className="text-xs text-secondary-body">Clarity</div>
-                        <div className="text-h6">82%</div>
-                      </div>
-                      <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center">
-                        <div className="text-xs text-secondary-body">Filler Words</div>
-                        <div className="text-h6">2</div>
-                      </div>
-                      <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center">
-                        <div className="text-xs text-secondary-body">Confidence</div>
-                        <div className="text-h6">Good</div>
-                      </div>
+                      <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center"><div className="text-xs text-secondary-body">Clarity</div><div className="text-h6">{feedback.clarity}%</div></div>
+                      <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center"><div className="text-xs text-secondary-body">Filler Words</div><div className="text-h6">{feedback.filler}</div></div>
+                      <div className="rounded-xl border border-subtle bg-background-primary p-4 text-center"><div className="text-xs text-secondary-body">Confidence</div><div className="text-h6">{feedback.confidence}</div></div>
                     </div>
                     <a
                       href={(process.env.NEXT_PUBLIC_APP_URL || 'https://app.omthentic.com') + '/onboarding'}
