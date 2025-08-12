@@ -5,7 +5,13 @@ import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronDown, Menu, X, Sparkles, Users, Briefcase, Target, Brain } from 'lucide-react';
 
-const navigation = {
+type DropdownItem =
+  | { title: string; href: string; desc?: string }
+  | { title: string; href: string; desc?: string; icon: React.ComponentType<{ className?: string }> };
+
+type NavSection = { href: string; dropdown: null | DropdownItem[] };
+
+const navigation: Record<string, NavSection> = {
   'Why Omthentic?': {
     href: '/why-omthentic',
     dropdown: null
@@ -94,11 +100,11 @@ export default function ModernHeader() {
                             href={item.href}
                             className="flex items-start gap-3 p-3 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors"
                           >
-                            {item.icon && (
+                            {'icon' in item ? (
                               <div className="w-10 h-10 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-lg flex items-center justify-center mt-0.5">
-                                <item.icon className="w-5 h-5 text-blue-600 dark:text-blue-400" />
+                                {React.createElement(item.icon, { className: 'w-5 h-5 text-blue-600 dark:text-blue-400' })}
                               </div>
-                            )}
+                            ) : null}
                             <div>
                               <div className="font-medium text-gray-900 dark:text-white">{item.title}</div>
                               {item.desc && (
