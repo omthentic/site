@@ -3,74 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Star, Brain, Target, Users, BarChart3, Calendar, MessageSquare, Sparkles, Play, ChevronRight } from 'lucide-react';
+import { ArrowRight, Check, Brain, Target, Users, MessageSquare, Sparkles } from 'lucide-react';
 import ModernHeader from './ModernHeader';
 import ModernFooter from './ModernFooter';
 
-const features = [
-  {
-    icon: Brain,
-    title: 'AI Interview Coach',
-    description: 'Get personalized feedback and coaching powered by advanced AI that understands medical context.',
-  },
-  {
-    icon: Calendar,
-    title: 'Structured Practice Plans',
-    description: 'Follow proven practice schedules designed by medical education experts.',
-  },
-  {
-    icon: MessageSquare,
-    title: 'Real-Time Feedback',
-    description: 'Instant analysis of your responses with actionable improvement suggestions.',
-  },
-  {
-    icon: BarChart3,
-    title: 'Progress Tracking',
-    description: 'Monitor your improvement with detailed analytics and performance metrics.',
-  },
-  {
-    icon: Users,
-    title: 'Peer Comparison',
-    description: 'See how you stack up against other medical students and residents.',
-  },
-  {
-    icon: Target,
-    title: 'Specialty-Specific',
-    description: 'Tailored questions and scenarios for your chosen medical specialty.',
-  },
-];
-
-const testimonials = [
-  {
-    name: 'Dr. Sarah Chen',
-    role: 'Resident, Johns Hopkins',
-    content: 'Omthentic transformed my interview preparation. The AI feedback was incredibly detailed and helped me land my dream residency.',
-    rating: 5,
-  },
-  {
-    name: 'Michael Rodriguez',
-    role: 'Medical Student, Stanford',
-    content: 'The structured practice plans kept me on track. I went from nervous to confident in just 2 weeks.',
-    rating: 5,
-  },
-  {
-    name: 'Dr. Emily Watson',
-    role: 'Fellow, Mayo Clinic',
-    content: 'The specialty-specific questions were spot-on. It felt like having a personal interview coach available 24/7.',
-    rating: 5,
-  },
-];
-
-const stats = [
-  { value: '95%', label: 'Success Rate' },
-  { value: '50K+', label: 'Students Trained' },
-  { value: '4.9/5', label: 'Average Rating' },
-  { value: '2M+', label: 'Practice Sessions' },
-];
-
 export default function ModernHome() {
-  // const [email, setEmail] = useState('');
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
       <ModernHeader />
@@ -79,108 +16,83 @@ export default function ModernHome() {
       <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <div className="text-center">
-            {/* Badge */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-medium mb-6"
             >
               <Sparkles className="w-4 h-4" />
-              AI-Powered Medical Interview Preparation
+              Authentic Communication Technology
             </motion.div>
 
-            {/* Headline */}
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
             >
-              One platform for all your
-              <span className="bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] bg-clip-text text-transparent"> medical interview </span>
-              preparation
+              Unlock Aligned Opportunities Through Authentic Communication
             </motion.h1>
 
-            {/* Subheadline */}
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8"
             >
-              Master your medical school and residency interviews with AI-powered coaching, real-time feedback, and proven practice methods. Built for future doctors by medical professionals.
+              Omthentic AI helps you express what you truly mean, in a way that&rsquo;s heard and understood—turning real self-expression into meaningful opportunities.
             </motion.p>
 
-            {/* CTA Buttons */}
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="flex flex-col sm:flex-row items-center justify-center gap-4"
+              className="flex items-center justify-center"
             >
               <Link
-                href="/sign-up"
-                className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl flex items-center gap-2"
+                href="/onboarding"
+                className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl inline-flex items-center gap-2"
               >
-                Try Omthentic for free
+                Join the Pilot
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <button className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-medium rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all flex items-center gap-2">
-                <Play className="w-5 h-5" />
-                Watch demo
-              </button>
-            </motion.div>
-
-            {/* Trust Indicators */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-              className="mt-8 flex items-center justify-center gap-8 text-sm text-gray-500 dark:text-gray-400"
-            >
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-500" />
-                7 days free trial
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-500" />
-                No credit card required
-              </div>
-              <div className="flex items-center gap-2">
-                <Check className="w-4 h-4 text-green-500" />
-                Cancel anytime
-              </div>
             </motion.div>
           </div>
 
-          {/* Hero Image/Demo */}
+          {/* Split-screen visual: Before vs After */}
           <motion.div
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="mt-16 relative"
+            className="mt-16 grid md:grid-cols-2 gap-6"
           >
-            <div className="absolute inset-0 bg-gradient-to-r from-blue-600/20 to-purple-600/20 blur-3xl" />
-            <div className="relative bg-white dark:bg-gray-900 rounded-2xl shadow-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-              <div className="bg-gray-100 dark:bg-gray-800 px-4 py-3 flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-red-500" />
-                <div className="w-3 h-3 rounded-full bg-yellow-500" />
-                <div className="w-3 h-3 rounded-full bg-green-500" />
+            <div className="relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/10 via-[#19B9D0]/10 to-[#12D6C0]/10" />
+              <div className="relative p-6 h-full flex flex-col gap-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 w-max">Before</div>
+                <div className="flex-1 rounded-xl bg-gray-100 dark:bg-gray-800 p-6">
+                  <div className="text-gray-700 dark:text-gray-300 text-lg mb-2">Awkward, stressful conversation</div>
+                  <div className="text-gray-500 dark:text-gray-400">Hesitant pauses, unclear intent, tension rising.</div>
+                </div>
+                <div className="grid grid-cols-3 gap-3 text-sm">
+                  <div className="rounded-lg bg-red-50 dark:bg-red-900/20 p-3 text-red-700 dark:text-red-300">Misunderstood</div>
+                  <div className="rounded-lg bg-yellow-50 dark:bg-yellow-900/20 p-3 text-yellow-700 dark:text-yellow-300">Scripted</div>
+                  <div className="rounded-lg bg-gray-50 dark:bg-gray-900/40 p-3 text-gray-600 dark:text-gray-300">Anxious</div>
+                </div>
               </div>
-              <div className="p-8">
-                <div className="grid grid-cols-3 gap-4">
-                  <div className="bg-gradient-to-br from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-xl p-6">
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">85%</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Confidence Score</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 dark:from-green-900/20 dark:to-emerald-900/20 rounded-xl p-6">
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">12</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Sessions Completed</div>
-                  </div>
-                  <div className="bg-gradient-to-br from-orange-50 to-red-50 dark:from-orange-900/20 dark:to-red-900/20 rounded-xl p-6">
-                    <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">4.8</div>
-                    <div className="text-sm text-gray-600 dark:text-gray-400">Average Score</div>
-                  </div>
+            </div>
+            <div className="relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/10 via-[#19B9D0]/10 to-[#12D6C0]/10" />
+              <div className="relative p-6 h-full flex flex-col gap-4">
+                <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 w-max">After</div>
+                <div className="flex-1 rounded-xl bg-white dark:bg-gray-900 p-6 border border-gray-200 dark:border-gray-800">
+                  <div className="text-gray-900 dark:text-white text-lg mb-2">Confident, natural exchange</div>
+                  <div className="text-gray-600 dark:text-gray-400">Clear intent, active listening, genuine connection.</div>
+                </div>
+                <div className="grid grid-cols-3 gap-3 text-sm">
+                  <div className="rounded-lg bg-emerald-50 dark:bg-emerald-900/20 p-3 text-emerald-700 dark:text-emerald-300">Understood</div>
+                  <div className="rounded-lg bg-cyan-50 dark:bg-cyan-900/20 p-3 text-cyan-700 dark:text-cyan-300">Authentic</div>
+                  <div className="rounded-lg bg-blue-50 dark:bg-blue-900/20 p-3 text-blue-700 dark:text-blue-300">Aligned</div>
                 </div>
               </div>
             </div>
@@ -188,127 +100,114 @@ export default function ModernHome() {
         </div>
       </section>
 
-      {/* Stats Section */}
+      {/* Why It Matters */}
       <section className="py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <motion.div
-                key={stat.label}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="text-center"
-              >
-                <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">{stat.value}</div>
-                <div className="text-sm text-gray-600 dark:text-gray-400">{stat.label}</div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Features Grid */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Everything you need to ace your interview
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Comprehensive tools designed specifically for medical professionals
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {features.map((feature, index) => (
-              <motion.div
-                key={feature.title}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-gray-800 rounded-xl p-6 border border-gray-200 dark:border-gray-700 hover:shadow-xl transition-all"
-              >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-100 to-purple-100 dark:from-blue-900/30 dark:to-purple-900/30 rounded-xl flex items-center justify-center mb-4">
-                  <feature.icon className="w-6 h-6 text-blue-600 dark:text-blue-400" />
-                </div>
-                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                  {feature.title}
-                </h3>
-                <p className="text-gray-600 dark:text-gray-400">
-                  {feature.description}
-                </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonials */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Trusted by future doctors worldwide
-            </h2>
-                <p className="text-xl text-gray-600 dark:text-gray-400">
-                  Join thousands who&rsquo;ve successfully prepared with Omthentic
-            </p>
-          </div>
-
-          <div className="grid lg:grid-cols-3 gap-6">
-            {testimonials.map((testimonial, index) => (
-              <motion.div
-                key={testimonial.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                viewport={{ once: true }}
-                className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700"
-              >
-                <div className="flex items-center gap-1 mb-4">
-                  {[...Array(testimonial.rating)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
-                  ))}
-                </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">{testimonial.content}</p>
-                <div>
-                  <div className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
-                  <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Start preparing smarter today
-          </h2>
-          <p className="text-xl text-gray-600 dark:text-gray-400 mb-8">
-            Join thousands of medical students and residents who are acing their interviews
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Why It Matters</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            In a world overflowing with noise and scripted interactions, genuine communication stands out. Whether it&rsquo;s acing a medical school interview, leading a high-stakes meeting, or having a heartfelt conversation, your ability to express yourself authentically is the bridge to opportunities that truly align with you.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/sign-up"
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-xl shadow-blue-600/25 flex items-center gap-2"
-            >
-              Try Omthentic for free
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            Omthentic AI gives you that bridge by:
+          </p>
+          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Revealing your unique character strengths through ShareTree&rsquo;s Charametrics.</li>
+            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Matching you with a personalised AI coach built around your strengths and growth areas.</li>
+            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Helping you prepare for the conversations that matter most.</li>
+          </ul>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mt-6">
+            When you speak from your true self, the right people and opportunities find you.
+          </p>
+        </div>
+      </section>
+
+      {/* How It Works */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">How It Works</h2>
+          <div className="grid md:grid-cols-3 gap-6">
+            <div className="rounded-2xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center mb-4"><Users className="w-6 h-6 text-white" /></div>
+              <div className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Profile</div>
+              <div className="text-gray-600 dark:text-gray-400">Discover your unique character strengths with Charametrics, giving you deep self-awareness and clarity.</div>
+            </div>
+            <div className="rounded-2xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center mb-4"><Brain className="w-6 h-6 text-white" /></div>
+              <div className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Tailored AI Coach</div>
+              <div className="text-gray-600 dark:text-gray-400">Get matched with an AI-powered communication coach that understands your strengths and helps you grow where it matters most.</div>
+            </div>
+            <div className="rounded-2xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center mb-4"><Target className="w-6 h-6 text-white" /></div>
+              <div className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Real-World Success</div>
+              <div className="text-gray-600 dark:text-gray-400">Practice in safe, guided scenarios and bring those skills into real conversations—unlocking opportunities that align with your values and goals.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* About */}
+      <section className="py-20 bg-gray-50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">About Omthentic AI</h2>
+          <div className="text-lg text-gray-700 dark:text-gray-300 space-y-4">
+            <p><span className="font-semibold">Our Mission:</span> Our mission is to help every individual authentically express what they genuinely mean, in a way that&rsquo;s truly heard and understood—turning real self-expression into aligned opportunities for connection and growth.</p>
+            <p>We&rsquo;re a purpose-built organisation that believes better conversations create a better world. By blending advanced AI with human insight, we help people navigate high-stakes moments with authenticity, confidence, and clarity.</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Join the Pilot */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
+          <div>
+            <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Join the Pilot</h2>
+            <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">Be one of the first to experience Omthentic AI through our Medical Entrance Interview Pilot Program.</p>
+            <ul className="space-y-3 text-gray-700 dark:text-gray-300 mb-8">
+              <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Free personalised AI coaching based on your character strengths.</li>
+              <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Practical, real-world tools for communicating authentically under pressure.</li>
+              <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Early access to our platform and direct influence on its development.</li>
+            </ul>
+            <Link href="/onboarding" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl">
+              Apply Now
               <ArrowRight className="w-5 h-5" />
             </Link>
-            <Link
-              href="/pricing"
-              className="px-8 py-4 text-gray-700 dark:text-gray-300 font-medium hover:text-gray-900 dark:hover:text-white transition-all flex items-center gap-2"
-            >
-              View pricing
-              <ChevronRight className="w-5 h-5" />
-            </Link>
           </div>
+          <div className="rounded-2xl border border-gray-200 dark:border-gray-700 p-6 bg-white dark:bg-gray-900">
+            <div className="grid grid-cols-2 gap-4">
+              <div className="rounded-xl p-5 bg-gradient-to-br from-[#2D6FFF]/10 via-[#19B9D0]/10 to-[#12D6C0]/10">
+                <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Coach Intro</div>
+                <div className="text-lg font-semibold text-gray-900 dark:text-white">Your AI Coach</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Built around your Charametrics profile</div>
+              </div>
+              <div className="rounded-xl p-5 bg-gray-50 dark:bg-gray-800">
+                <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Practice</div>
+                <div className="text-lg font-semibold text-gray-900 dark:text-white">Guided Scenarios</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Safe spaces to try hard conversations</div>
+              </div>
+              <div className="rounded-xl p-5 bg-gray-50 dark:bg-gray-800">
+                <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Feedback</div>
+                <div className="text-lg font-semibold text-gray-900 dark:text-white">Clear, Actionable</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">From intent to delivery</div>
+              </div>
+              <div className="rounded-xl p-5 bg-gradient-to-br from-[#2D6FFF]/10 via-[#19B9D0]/10 to-[#12D6C0]/10">
+                <div className="text-sm text-gray-600 dark:text-gray-400 mb-1">Outcomes</div>
+                <div className="text-lg font-semibold text-gray-900 dark:text-white">Aligned Opportunities</div>
+                <div className="text-sm text-gray-500 dark:text-gray-400 mt-2">Confidence for what matters</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Final CTA Quote */}
+      <section className="py-20 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-4xl mx-auto text-center">
+          <blockquote className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-6">“When you speak your truth, the right opportunities listen.”</blockquote>
+          <p className="text-gray-600 dark:text-gray-400 mb-8">Join Omthentic AI and discover what&rsquo;s possible when you communicate authentically.</p>
+          <Link href="/onboarding" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl">
+            Join the Pilot
+            <ArrowRight className="w-5 h-5" />
+          </Link>
         </div>
       </section>
 
