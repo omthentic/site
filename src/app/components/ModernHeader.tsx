@@ -85,8 +85,7 @@ const primaryNav: PrimaryNavItem[] = [
         {
           groupLabel: 'About',
           items: [
-            { label: 'Our Mission', path: '/company/mission' },
-            { label: 'Impact & Values', path: '/company/impact' },
+            { label: 'About Us', path: '/about' },
             { label: 'Careers', path: '/company/careers' },
             { label: 'Press & Media', path: '/company/press' },
             { label: 'Contact', path: '/company/contact' },
