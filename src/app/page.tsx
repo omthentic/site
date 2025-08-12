@@ -1,5 +1,5 @@
-import RevampHome from './components/RevampHome';
+import ModernHome from './components/ModernHome';
 
 export default function Home() {
-  return <RevampHome />;
+  return <ModernHome />;
 }
