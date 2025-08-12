@@ -43,11 +43,12 @@ const primaryNav: PrimaryNavItem[] = [
         {
           groupLabel: 'Moments that matter',
           items: [
-            { label: 'Medical Entrance Interviews (Pilot)', path: '/solutions/medical-interviews', badge: 'Pilot' },
-            { label: 'Job & Career Interviews', path: '/solutions/job-interviews' },
-            { label: 'Leadership & Team Conversations', path: '/solutions/leadership' },
-            { label: 'Performance & Feedback', path: '/solutions/feedback' },
-            { label: 'Personal & Relationship Communication', path: '/solutions/relationships', optional: true },
+            { label: 'Medical Entrance Interviews (Current Pilot)', path: '/solutions/medical-interviews' },
+            { label: 'Leadership & Team Communication', path: '/solutions/leadership' },
+            { label: 'Performance Reviews & Feedback Conversations', path: '/solutions/feedback' },
+            { label: 'Healthcare & Patient Communication (New — based on top vertical ranking)', path: '/solutions/healthcare' },
+            { label: 'Personal & Relationship Communication', path: '/solutions/relationships' },
+            { label: 'Parenting Communication Training', path: '/solutions/parenting' },
           ],
         },
       ],

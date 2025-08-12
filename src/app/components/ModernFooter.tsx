@@ -139,10 +139,7 @@ export default function ModernFooter() {
                 Cookie Policy
               </Link>
             </div>
-            <div className="flex items-center gap-2">
-              <span>Backed by</span>
-              <div className="font-semibold text-gray-900 dark:text-white">Y Combinator</div>
-            </div>
+            
           </div>
         </div>
       </div>
