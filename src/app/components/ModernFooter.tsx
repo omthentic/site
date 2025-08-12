@@ -24,7 +24,7 @@ const footerLinks = {
     { name: 'Blog', href: '/resources/blog' },
     { name: 'How to Use', href: '/resources/how-to-use' },
     { name: 'Success Stories', href: '/resources/success-stories' },
-    { name: 'Interview Tips', href: '/resources/interview-tips' },
+    { name: 'Communication Tips', href: '/resources/interview-tips' },
     { name: 'Community', href: '/community' },
   ],
   Company: [
@@ -59,7 +59,7 @@ export default function ModernFooter() {
               <span className="font-semibold text-lg text-gray-900 dark:text-white">Omthentic</span>
             </Link>
             <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-xs">
-              Master your medical interviews with AI-powered coaching and proven practice methods.
+              Authentic communication technology that helps you express what you truly mean—and be heard.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -100,10 +100,10 @@ export default function ModernFooter() {
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
               <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                Stay updated with interview tips
+                Stay updated with authentic communication insights
               </h3>
               <p className="text-sm text-gray-600 dark:text-gray-400">
-                Get weekly insights and strategies delivered to your inbox
+                Practical tips and stories to help you communicate with clarity and confidence
               </p>
             </div>
             <form className="flex gap-2 w-full md:w-auto">
