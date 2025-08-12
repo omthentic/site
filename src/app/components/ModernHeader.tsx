@@ -51,11 +51,17 @@ export default function ModernHeader() {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">O</span>
-              </div>
-              <span className="font-semibold text-lg text-gray-900 dark:text-white">Omthentic</span>
+            <Link href="/" className="flex items-center gap-3">
+              <img
+                src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg?updatedAt=1754619654095"
+                alt="Omthentic"
+                className="h-8 w-auto hidden sm:block"
+              />
+              <img
+                src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg?updatedAt=1754618772489"
+                alt="Omthentic"
+                className="h-8 w-8 sm:hidden"
+              />
             </Link>
           </div>
 
