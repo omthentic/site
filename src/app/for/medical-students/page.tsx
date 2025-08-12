@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, CheckCircle, Calendar, Brain, Target, Clock, Users, Award, TrendingUp, BookOpen } from 'lucide-react';
+import { ArrowRight, CheckCircle, Brain, Target, Clock, Award, BookOpen } from 'lucide-react';
 import ModernHeader from '../../components/ModernHeader';
 import ModernFooter from '../../components/ModernFooter';
 import Link from 'next/link';
@@ -158,9 +158,7 @@ export default function MedicalStudentsPage() {
                     <span className="font-semibold text-gray-900 dark:text-white">MMI Station</span>
                   </div>
                   <div className="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
-                    <p className="text-sm text-gray-700 dark:text-gray-300">
-                      "You witness a classmate cheating during an important exam. What would you do?"
-                    </p>
+                    <p className="text-sm text-gray-700 dark:text-gray-300">&quot;You witness a classmate cheating during an important exam. What would you do?&quot;</p>
                   </div>
                   <div className="space-y-2">
                     <div className="flex items-center justify-between text-sm">
@@ -298,8 +296,8 @@ export default function MedicalStudentsPage() {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Success Stories from Medical Students
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Join thousands who've successfully prepared with Omthentic
+                <p className="text-xl text-gray-600 dark:text-gray-400">
+                  Join thousands who&rsquo;ve successfully prepared with Omthentic
             </p>
           </div>
 

@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowRight, Users, DollarSign, Award, Heart, Zap, Gift, TrendingUp, Star, CheckCircle } from 'lucide-react';
+import { ArrowRight, Users, DollarSign, Award, Heart, Zap, Gift, Star, CheckCircle } from 'lucide-react';
 import ModernHeader from '../components/ModernHeader';
 import ModernFooter from '../components/ModernFooter';
 import Link from 'next/link';
@@ -209,7 +209,7 @@ export default function AmbassadorPage() {
               Top Performing Ambassadors
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              See what's possible when you join our program
+              See what&rsquo;s possible when you join our program
             </p>
           </div>
 
@@ -275,7 +275,7 @@ export default function AmbassadorPage() {
               Who Can Become an Ambassador?
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              We're looking for passionate individuals who want to make a difference
+              We&rsquo;re looking for passionate individuals who want to make a difference
             </p>
           </div>
 
@@ -300,7 +300,7 @@ export default function AmbassadorPage() {
               Apply to Become an Ambassador
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-8">
-              Fill out the form below and we'll review your application within 48 hours
+              Fill out the form below and we&rsquo;ll review your application within 48 hours
             </p>
 
             <form className="space-y-6">

@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Link from 'next/link';
-import { Twitter, Linkedin, Youtube, Github, Mail } from 'lucide-react';
+import { Twitter, Linkedin, Youtube, Github } from 'lucide-react';
 
 const footerLinks = {
   Product: [

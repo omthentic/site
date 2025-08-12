@@ -2,7 +2,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Check, Zap, Shield, Award, Users, Target, Brain, Heart, TrendingUp, Clock } from 'lucide-react';
+import { Check, Shield, Award, Users, Target, Brain, Clock } from 'lucide-react';
 import ModernHeader from '../components/ModernHeader';
 import ModernFooter from '../components/ModernFooter';
 import Link from 'next/link';
@@ -82,7 +82,7 @@ export default function WhyOmthentic() {
             transition={{ delay: 0.1 }}
             className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto"
           >
-            We're not just another interview prep tool. We're your personal AI coach, 
+            We&rsquo;re not just another interview prep tool. We&rsquo;re your personal AI coach, 
             designed specifically for the unique challenges of medical interviews.
           </motion.p>
         </div>
@@ -96,7 +96,7 @@ export default function WhyOmthentic() {
               Built Different, Built Better
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-400">
-              Here's what makes Omthentic the smart choice for your medical career
+              Here&rsquo;s what makes Omthentic the smart choice for your medical career
             </p>
           </div>
 

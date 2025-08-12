@@ -31,9 +31,9 @@ export default function Revamp() {
   const recordingStartRef = React.useRef<number | null>(null);
   const mediaStreamRef = React.useRef<MediaStream | null>(null);
   const mediaRecorderRef = React.useRef<MediaRecorder | null>(null);
-  const recognitionRef = React.useRef<any>(null);
+  const recognitionRef = React.useRef<Window['SpeechRecognition'] | Window['webkitSpeechRecognition'] | null>(null);
   const autoStopTimeoutRef = React.useRef<number | null>(null);
-  const audioContextRef = React.useRef<any>(null);
+  const audioContextRef = React.useRef<AudioContext | null>(null);
   const analyserRef = React.useRef<AnalyserNode | null>(null);
   const rafIdRef = React.useRef<number | null>(null);
   const [micLevel, setMicLevel] = React.useState(0);
@@ -142,11 +142,12 @@ export default function Revamp() {
       mediaRecorderRef.current = recorder;
       recorder.start();
       // Mic level meter via WebAudio
-      const AC: any = (window as any).AudioContext || (window as any).webkitAudioContext;
+      const AC = (window as any).AudioContext || (window as any).webkitAudioContext;
       if (AC) {
         audioContextRef.current = new AC();
-        const source = audioContextRef.current.createMediaStreamSource(stream);
-        const analyser = audioContextRef.current.createAnalyser();
+        const ctx = audioContextRef.current as AudioContext;
+        const source = ctx.createMediaStreamSource(stream);
+        const analyser = ctx.createAnalyser();
         analyser.fftSize = 2048;
         source.connect(analyser);
         analyserRef.current = analyser;
@@ -166,9 +167,12 @@ export default function Revamp() {
         tick();
       }
       // Speech recognition if available
-      const SR: any = (typeof window !== 'undefined' && ((window as any).webkitSpeechRecognition || (window as any).SpeechRecognition)) || null;
+      const SR:
+        | (new () => SpeechRecognition)
+        | undefined =
+        (typeof window !== 'undefined' && ((window as any).webkitSpeechRecognition || (window as any).SpeechRecognition)) || null;
       if (SR) {
-        const recognition = new SR();
+        const recognition = new (SR as any)();
         recognition.lang = 'en-US';
         recognition.continuous = true;
         recognition.interimResults = true;
@@ -202,7 +206,9 @@ export default function Revamp() {
     try {
       if (mediaRecorderRef.current && mediaRecorderRef.current.state !== 'inactive') mediaRecorderRef.current.stop();
       if (mediaStreamRef.current) mediaStreamRef.current.getTracks().forEach((t) => t.stop());
-      if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch {} recognitionRef.current = null; }
+      const recog: any = (recognitionRef.current as unknown) as { stop?: () => void };
+      if (recog && typeof recog.stop === 'function') { try { recog.stop!(); } catch {} }
+      recognitionRef.current = null;
       if (rafIdRef.current) { cancelAnimationFrame(rafIdRef.current); rafIdRef.current = null; }
       if (audioContextRef.current) { try { audioContextRef.current.close(); } catch {} audioContextRef.current = null; }
     } finally {
@@ -229,7 +235,9 @@ export default function Revamp() {
   React.useEffect(() => {
     return () => {
       if (mediaStreamRef.current) mediaStreamRef.current.getTracks().forEach((t) => t.stop());
-      if (recognitionRef.current) { try { recognitionRef.current.stop(); } catch {} recognitionRef.current = null; }
+      const cleanupRecog: any = (recognitionRef.current as unknown) as { stop?: () => void };
+      if (cleanupRecog && typeof cleanupRecog.stop === 'function') { try { cleanupRecog.stop!(); } catch {} }
+      recognitionRef.current = null;
       if (autoStopTimeoutRef.current) window.clearTimeout(autoStopTimeoutRef.current);
     };
   }, []);

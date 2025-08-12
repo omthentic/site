@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion, AnimatePresence } from 'framer-motion';
-import { ChevronDown, Menu, X, ArrowRight, Sparkles, Users, Code, Briefcase, Target, Brain, Zap } from 'lucide-react';
+import { ChevronDown, Menu, X, Sparkles, Users, Briefcase, Target, Brain } from 'lucide-react';
 
 const navigation = {
   'Why Omthentic?': {

@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Star, Zap, Brain, Target, Clock, Users, BarChart3, Calendar, MessageSquare, Sparkles, Play, ChevronRight } from 'lucide-react';
+import { ArrowRight, Check, Star, Brain, Target, Users, BarChart3, Calendar, MessageSquare, Sparkles, Play, ChevronRight } from 'lucide-react';
 import ModernHeader from './ModernHeader';
 import ModernFooter from './ModernFooter';
 
@@ -69,7 +69,7 @@ const stats = [
 ];
 
 export default function ModernHome() {
-  const [email, setEmail] = useState('');
+  // const [email, setEmail] = useState('');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
@@ -253,8 +253,8 @@ export default function ModernHome() {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               Trusted by future doctors worldwide
             </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-400">
-              Join thousands who've successfully prepared with Omthentic
+                <p className="text-xl text-gray-600 dark:text-gray-400">
+                  Join thousands who&rsquo;ve successfully prepared with Omthentic
             </p>
           </div>
 
