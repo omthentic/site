@@ -49,9 +49,9 @@ export default function ModernFooter() {
     <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-8 mb-8">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 mb-8">
           {/* Brand Column */}
-          <div className="col-span-2">
+          <div className="col-span-2 sm:col-span-3 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
               <div className="w-8 h-8 bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">O</span>
@@ -110,11 +110,11 @@ export default function ModernFooter() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 flex-1 md:w-64"
+                className="px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 flex-1 min-w-0 md:w-64"
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-lg hover:brightness-105 transition-all"
+                className="px-5 sm:px-6 py-2 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-lg hover:brightness-105 transition-all whitespace-nowrap"
               >
                 Subscribe
               </button>

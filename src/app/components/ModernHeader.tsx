@@ -114,15 +114,15 @@ export default function ModernHeader() {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800">
-      <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
+      <nav className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-3">
               <img
                 src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg?updatedAt=1754619654095"
                 alt="Omthentic"
-                className="h-8 w-auto hidden sm:block"
+                className="h-7 sm:h-8 w-auto hidden sm:block"
               />
               <img
                 src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg?updatedAt=1754618772489"

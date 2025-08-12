@@ -246,6 +246,14 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Better tap highlight behavior on mobile */
+button, a { -webkit-tap-highlight-color: transparent; }
+
+/* Support small viewport units for mobile browsers */
+@supports (height: 100svh) {
+  .min-h-screen { min-height: 100svh; }
+}
+
 /* Custom scrollbar */
 ::-webkit-scrollbar {
   width: 6px;
@@ -267,6 +275,8 @@ body {
 /* Smooth scroll behavior */
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
 
 /* Focus styles - WCAG AA tuned to Om Blue */

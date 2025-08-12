@@ -29,7 +29,7 @@ export default function ModernHome() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
+              className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
             >
               Unlock Aligned Opportunities Through Authentic Communication
             </motion.h1>
@@ -51,7 +51,7 @@ export default function ModernHome() {
             >
               <Link
                 href="/onboarding"
-                className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl inline-flex items-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl inline-flex items-center justify-center gap-2"
               >
                 Join the Pilot
                 <ArrowRight className="w-5 h-5" />
@@ -67,7 +67,7 @@ export default function ModernHome() {
             className="mt-16 grid md:grid-cols-2 gap-6"
           >
             <div className="relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/10 via-[#19B9D0]/10 to-[#12D6C0]/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/15 via-[#19B9D0]/15 to-[#12D6C0]/15" />
               <div className="relative p-6 h-full flex flex-col gap-4">
                 <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-red-100 text-red-700 w-max">Before</div>
                 <div className="flex-1 rounded-xl bg-gray-100 dark:bg-gray-800 p-6">
@@ -82,7 +82,7 @@ export default function ModernHome() {
               </div>
             </div>
             <div className="relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
-              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/10 via-[#19B9D0]/10 to-[#12D6C0]/10" />
+              <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/15 via-[#19B9D0]/15 to-[#12D6C0]/15" />
               <div className="relative p-6 h-full flex flex-col gap-4">
                 <div className="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-emerald-100 text-emerald-700 w-max">After</div>
                 <div className="flex-1 rounded-xl bg-white dark:bg-gray-900 p-6 border border-gray-200 dark:border-gray-800">
@@ -101,7 +101,7 @@ export default function ModernHome() {
       </section>
 
       {/* Why It Matters */}
-      <section className="py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+      <section className="py-16 sm:py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Why It Matters</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
@@ -122,7 +122,7 @@ export default function ModernHome() {
       </section>
 
       {/* How It Works */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">How It Works</h2>
           <div className="grid md:grid-cols-3 gap-6">
@@ -146,7 +146,7 @@ export default function ModernHome() {
       </section>
 
       {/* About */}
-      <section className="py-20 bg-gray-50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 bg-gray-50 dark:bg-gray-800/50 px-4 sm:px-6 lg:px-8">
         <div className="max-w-5xl mx-auto">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">About Omthentic AI</h2>
           <div className="text-lg text-gray-700 dark:text-gray-300 space-y-4">
@@ -157,7 +157,7 @@ export default function ModernHome() {
       </section>
 
       {/* Join the Pilot */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
           <div>
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">Join the Pilot</h2>
