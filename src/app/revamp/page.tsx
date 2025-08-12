@@ -237,11 +237,12 @@ export default function Revamp() {
     setHasDemoFeedback(true);
   }
 
+  // Cleanup
   React.useEffect(() => {
     return () => {
       if (mediaStreamRef.current) mediaStreamRef.current.getTracks().forEach((t) => t.stop());
-      const cleanupRecog: any = (recognitionRef.current as unknown) as { stop?: () => void };
-      if (cleanupRecog && typeof cleanupRecog.stop === 'function') { try { cleanupRecog.stop!(); } catch {} }
+      const cleanupRecog = recognitionRef.current as { stop?: () => void } | null;
+      if (cleanupRecog && typeof cleanupRecog.stop === 'function') { try { cleanupRecog.stop(); } catch {} }
       recognitionRef.current = null;
       if (autoStopTimeoutRef.current) window.clearTimeout(autoStopTimeoutRef.current);
     };
@@ -254,12 +255,13 @@ export default function Revamp() {
     { title: 'Coach tips', desc: 'Actionable refinements each session' },
   ];
   const [activePathIndex, setActivePathIndex] = React.useState(0);
+  // Auto-advance tailored path
   React.useEffect(() => {
     const id = setInterval(() => {
       setActivePathIndex((i) => (i + 1) % pathSteps.length);
     }, 2200);
     return () => clearInterval(id);
-  }, []);
+  }, [pathSteps.length]);
   return (
     <main className="min-h-screen bg-background">
       <Header />
