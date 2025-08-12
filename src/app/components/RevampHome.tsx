@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import Link from 'next/link';
+// import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Play, Smartphone, Star, Brain, Target, Mic, ChevronLeft, ChevronRight, CheckCircle2, BarChart3, GitCompare, Route } from 'lucide-react';
 import NumberStat from './blocks/NumberStat';
@@ -9,19 +9,19 @@ import TrendCard from './blocks/TrendCard';
 import PeopleRow from './blocks/PeopleRow';
 import TimelineStep from './blocks/TimelineStep';
 import WaitlistModal from './WaitlistModal';
-import FeatureExperience from './FeatureExperience';
+// import FeatureExperience from './FeatureExperience';
 import Header from './Header';
 import Footer from './Footer';
-import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
+import { getAnimation, fadeInUpScale, fadeInUp } from '../lib/animations';
 
 // Interactive block experience mirrored from revamp page
 
-const templates = [
-  { title: 'Interview Pitch', tag: 'Popular' },
-  { title: 'Mock Panel', tag: 'New' },
-  { title: 'STAR Answer', tag: 'Guided' },
-  { title: 'Debrief Review', tag: 'Coach‑verified' },
-];
+// const templates = [
+//   { title: 'Interview Pitch', tag: 'Popular' },
+//   { title: 'Mock Panel', tag: 'New' },
+//   { title: 'STAR Answer', tag: 'Guided' },
+//   { title: 'Debrief Review', tag: 'Coach‑verified' },
+// ];
 
 const painPoints = [
   {
@@ -350,7 +350,7 @@ export default function RevampHome() {
             <h2 className="text-h3 text-primary-heading mb-3">Stop letting uncertainty hold you back</h2>
           </div>
           <div className="grid md:grid-cols-3 gap-4 sm:gap-6">
-            {painPoints.map((item, idx) => (
+            {painPoints.map((item) => (
               <motion.div
                 key={item.title}
                 className="group relative rounded-2xl border border-subtle bg-card/60 backdrop-blur-sm p-5 sm:p-6 overflow-hidden"

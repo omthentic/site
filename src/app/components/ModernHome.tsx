@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { ArrowRight, Check, Star, Brain, Target, Users, BarChart3, Calendar, MessageSquare, Sparkles, Play, ChevronRight } from 'lucide-react';
@@ -273,7 +273,7 @@ export default function ModernHome() {
                     <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <p className="text-gray-700 dark:text-gray-300 mb-4">"{testimonial.content}"</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-4">{testimonial.content}</p>
                 <div>
                   <div className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
                   <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.role}</div>

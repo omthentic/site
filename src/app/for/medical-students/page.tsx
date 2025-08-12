@@ -311,7 +311,7 @@ export default function MedicalStudentsPage() {
                 viewport={{ once: true }}
                 className="bg-white dark:bg-gray-900 rounded-xl p-6 border border-gray-200 dark:border-gray-700"
               >
-                <p className="text-gray-700 dark:text-gray-300 mb-6">"{testimonial.content}"</p>
+                <p className="text-gray-700 dark:text-gray-300 mb-6">{testimonial.content}</p>
                 <div className="flex items-center gap-3">
                   <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full" />
                   <div>

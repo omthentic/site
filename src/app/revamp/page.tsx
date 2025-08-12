@@ -6,15 +6,15 @@ import { motion } from 'framer-motion';
 import { ArrowRight, Sparkles, Play, Layers, Zap, Users, Wand2, Smartphone, Brain, Target, Mic, ChevronLeft, ChevronRight, CheckCircle2, BarChart3, GitCompare, Route } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import { getAnimation, fadeInUpScale, fadeInUp, staggerContainer } from '../lib/animations';
-import FeatureExperience from '../components/FeatureExperience';
+import { getAnimation, fadeInUpScale, fadeInUp } from '../lib/animations';
+// import FeatureExperience from '../components/FeatureExperience';
 
-const widgetCards = [
-  { icon: Layers, title: 'Blocks', desc: 'Compose with polished, interactive building blocks.' },
-  { icon: Zap, title: 'Motion', desc: 'Delightful micro‑interactions out of the box.' },
-  { icon: Users, title: 'Collaboration', desc: 'Work together in real‑time with presence.' },
-  { icon: Wand2, title: 'AI Assist', desc: 'Generate, remix and refine with an AI coach.' },
-];
+// const widgetCards = [
+//   { icon: Layers, title: 'Blocks', desc: 'Compose with polished, interactive building blocks.' },
+//   { icon: Zap, title: 'Motion', desc: 'Delightful micro‑interactions out of the box.' },
+//   { icon: Users, title: 'Collaboration', desc: 'Work together in real‑time with presence.' },
+//   { icon: Wand2, title: 'AI Assist', desc: 'Generate, remix and refine with an AI coach.' },
+// ];
 
 export default function Revamp() {
   const [activeSlide, setActiveSlide] = React.useState(0);
