@@ -46,7 +46,6 @@ const primaryNav: PrimaryNavItem[] = [
             { label: 'Medical Entrance Interviews (Current Pilot)', path: '/solutions/medical-interviews' },
             { label: 'Leadership & Team Communication', path: '/solutions/leadership' },
             { label: 'Performance Reviews & Feedback Conversations', path: '/solutions/feedback' },
-            { label: 'Healthcare & Patient Communication (New — based on top vertical ranking)', path: '/solutions/healthcare' },
             { label: 'Personal & Relationship Communication', path: '/solutions/relationships' },
             { label: 'Parenting Communication Training', path: '/solutions/parenting' },
           ],
@@ -88,6 +87,7 @@ const primaryNav: PrimaryNavItem[] = [
           items: [
             { label: 'About Us', path: '/about' },
             { label: 'Careers', path: '/company/careers' },
+            { label: 'Our Partners', path: '/company/partners' },
             { label: 'Press & Media', path: '/company/press' },
             { label: 'Contact', path: '/company/contact' },
           ],
@@ -122,12 +122,12 @@ export default function ModernHeader() {
               <img
                 src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg?updatedAt=1754619654095"
                 alt="Omthentic"
-                className="h-7 sm:h-8 w-auto hidden sm:block"
+                className="h-10 sm:h-11 w-auto hidden sm:block"
               />
               <img
                 src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg?updatedAt=1754618772489"
                 alt="Omthentic"
-                className="h-8 w-8 sm:hidden"
+                className="h-10 w-10 sm:hidden"
               />
             </Link>
           </div>
