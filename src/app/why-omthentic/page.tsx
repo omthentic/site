@@ -110,7 +110,7 @@ export default function WhyOmthentic() {
                 viewport={{ once: true }}
                 className="bg-gray-50 dark:bg-gray-800 rounded-xl p-6"
               >
-                <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] rounded-xl flex items-center justify-center mb-4">
                   <reason.icon className="w-6 h-6 text-white" />
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
@@ -244,7 +244,7 @@ export default function WhyOmthentic() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
               href="/sign-up"
-              className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-xl shadow-blue-600/25"
+              className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl"
             >
               Start Your Free Trial
             </Link>

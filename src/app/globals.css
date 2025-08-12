@@ -11,7 +11,8 @@
   /* Omthentic Brand Tokens */
   --om-blue: #2D6FFF;
   --om-teal: #12D6C0;
-  --om-grad: linear-gradient(90deg, #2D6FFF 0%, #19B9D0 60%, #12D6C0 100%);
+  /* Blue -> Cyan -> Teal per logo */
+  --om-grad: linear-gradient(90deg, #2D6FFF 0%, #19B9D0 55%, #12D6C0 100%);
   --midnight: #0B1220;
   --cloud: #F7FAFC;
   --slate-900: #0F172A;
@@ -129,7 +130,7 @@
   /* Gradients */
   --gradient-primary: var(--om-grad);
   --gradient-hero: linear-gradient(135deg, #F7FAFC 0%, #E6EEF7 50%, #D9E5F2 100%);
-  --gradient-accent: linear-gradient(135deg, var(--om-teal) 0%, #19B9D0 60%, var(--om-blue) 100%);
+  --gradient-accent: linear-gradient(135deg, var(--om-blue) 0%, #19B9D0 55%, var(--om-teal) 100%);
   
   /* Surfaces & Borders */
   --background-primary: #F7FAFC; /* Cloud */
@@ -151,8 +152,8 @@
   --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.1), 0 10px 10px rgba(0, 0, 0, 0.04);
   --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
   --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.08);
-  --shadow-glow: 0 0 20px rgba(0, 82, 255, 0.15);
-  --shadow-glow-accent: 0 0 20px rgba(18, 212, 160, 0.15);
+  --shadow-glow: 0 0 20px rgba(25, 185, 208, 0.18);
+  --shadow-glow-accent: 0 0 20px rgba(18, 214, 192, 0.18);
   
   /* Border Radius - Chronicle Style */
   --radius-none: 0;
@@ -229,7 +230,7 @@
     --shadow-glow-accent: 0 0 24px rgba(18, 214, 192, 0.25);
 
     /* Dark hero gradient to avoid blending */
-    --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #132033 100%);
+  --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #0C1B24 100%);
 
     /* Pills adapt to dark */
     --cloud: #17202E; /* darker pill bg */

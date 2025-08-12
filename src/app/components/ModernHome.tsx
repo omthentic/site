@@ -97,7 +97,7 @@ export default function ModernHome() {
               className="text-5xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
             >
               One platform for all your
-              <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent"> medical interview </span>
+              <span className="bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] bg-clip-text text-transparent"> medical interview </span>
               preparation
             </motion.h1>
 
@@ -120,7 +120,7 @@ export default function ModernHome() {
             >
               <Link
                 href="/sign-up"
-                className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-xl shadow-blue-600/25 flex items-center gap-2"
+                className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl flex items-center gap-2"
               >
                 Try Omthentic for free
                 <ArrowRight className="w-5 h-5" />

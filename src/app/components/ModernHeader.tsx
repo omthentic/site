@@ -137,7 +137,7 @@ export default function ModernHeader() {
             </Link>
             <Link
               href="/sign-up"
-              className="px-5 py-2.5 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-sm font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg shadow-blue-600/25"
+              className="px-5 py-2.5 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white text-sm font-medium rounded-lg hover:brightness-105 transition-all shadow-lg"
             >
               Try for free
             </Link>

@@ -40,7 +40,7 @@ export default function TeamsPage() {
               A modern program for universities, societies and training groups to elevate outcomes—consistently.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-xl shadow-blue-600/25 flex items-center justify-center gap-2">
+              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl flex items-center justify-center gap-2">
                 Talk to us
                 <ArrowRight className="w-5 h-5" />
               </Link>
@@ -66,7 +66,7 @@ export default function TeamsPage() {
         <div className="max-w-5xl mx-auto grid md:grid-cols-2 gap-8">
           {benefits.map((b) => (
             <div key={b.title} className="flex gap-4">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-600 to-purple-600 flex items-center justify-center"><b.icon className="w-6 h-6 text-white" /></div>
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center"><b.icon className="w-6 h-6 text-white" /></div>
               <div>
                 <div className="text-lg font-semibold text-gray-900 dark:text-white mb-1">{b.title}</div>
                 <div className="text-gray-600 dark:text-gray-400">{b.description}</div>
@@ -93,7 +93,7 @@ export default function TeamsPage() {
         </div>
       </section>
 
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-4">Build a program that delivers outcomes</h2>
           <p className="text-white/90 mb-8">We partner with schools, societies and training programs</p>

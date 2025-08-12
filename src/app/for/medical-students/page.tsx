@@ -114,7 +114,7 @@ export default function MedicalStudentsPage() {
               >
                 <Link
                   href="/sign-up"
-                  className="px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-xl hover:from-blue-700 hover:to-purple-700 transition-all shadow-xl shadow-blue-600/25 flex items-center justify-center gap-2"
+                  className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl flex items-center justify-center gap-2"
                 >
                   Start Free Trial
                   <ArrowRight className="w-5 h-5" />
@@ -242,7 +242,7 @@ export default function MedicalStudentsPage() {
                 className="flex gap-4"
               >
                 <div className="flex-shrink-0">
-                  <div className="w-12 h-12 bg-gradient-to-br from-blue-600 to-purple-600 rounded-xl flex items-center justify-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] rounded-xl flex items-center justify-center">
                     <benefit.icon className="w-6 h-6 text-white" />
                   </div>
                 </div>
@@ -313,7 +313,7 @@ export default function MedicalStudentsPage() {
               >
                 <p className="text-gray-700 dark:text-gray-300 mb-6">{testimonial.content}</p>
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] rounded-full" />
                   <div>
                     <div className="font-semibold text-gray-900 dark:text-white">{testimonial.name}</div>
                     <div className="text-sm text-gray-600 dark:text-gray-400">{testimonial.school}</div>
@@ -326,7 +326,7 @@ export default function MedicalStudentsPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-blue-600 to-purple-600">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0]">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl font-bold text-white mb-4">
             Start Your Medical School Journey Today

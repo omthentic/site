@@ -53,7 +53,7 @@ export default function ModernFooter() {
           {/* Brand Column */}
           <div className="col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-purple-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">O</span>
               </div>
               <span className="font-semibold text-lg text-gray-900 dark:text-white">Omthentic</span>
@@ -114,7 +114,7 @@ export default function ModernFooter() {
               />
               <button
                 type="submit"
-                className="px-6 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all"
+                className="px-6 py-2 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-lg hover:brightness-105 transition-all"
               >
                 Subscribe
               </button>
