@@ -62,7 +62,7 @@ const faqs = [
   },
   {
     question: 'How do I track my referrals?',
-    answer: 'You'll get access to a personalized dashboard with real-time tracking of clicks, conversions, and earnings.',
+    answer: "You'll get access to a personalized dashboard with real-time tracking of clicks, conversions, and earnings.",
   },
   {
     question: 'When do I get paid?',
@@ -70,7 +70,7 @@ const faqs = [
   },
   {
     question: 'What support will I receive?',
-    answer: 'You'll get access to marketing materials, training resources, and direct support from our ambassador team.',
+    answer: "You'll get access to marketing materials, training resources, and direct support from our ambassador team.",
   },
   {
     question: 'Can international students apply?',
