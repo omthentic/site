@@ -40,12 +40,12 @@ export default function TeamsPage() {
               A modern program for universities, societies and training groups to elevate outcomes—consistently.
             </motion.p>
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.3 }} className="flex flex-col sm:flex-row gap-4">
-              <Link href="/contact" className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl flex items-center justify-center gap-2">
+              <Link href="/company/contact" className="px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl flex items-center justify-center gap-2">
                 Talk to us
                 <ArrowRight className="w-5 h-5" />
               </Link>
-              <Link href="/demo" className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-medium rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all flex items-center justify-center gap-2">
-                Watch Demo
+              <Link href="/resources/program-overview.pdf" className="px-8 py-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white font-medium rounded-xl border border-gray-200 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700 transition-all flex items-center justify-center gap-2">
+                Download Program Overview
               </Link>
             </motion.div>
           </div>
@@ -98,8 +98,8 @@ export default function TeamsPage() {
           <h2 className="text-4xl font-bold text-white mb-4">Build a program that delivers outcomes</h2>
           <p className="text-white/90 mb-8">We partner with schools, societies and training programs</p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link href="/contact" className="px-8 py-4 bg-white text-blue-600 font-medium rounded-xl hover:bg-gray-100 transition-all shadow-xl">Talk to us</Link>
-            <Link href="/pricing" className="px-8 py-4 text-white font-medium hover:text-white/80 transition-all">View Pricing →</Link>
+            <Link href="/company/contact" className="px-8 py-4 bg-white text-blue-600 font-medium rounded-xl hover:bg-gray-100 transition-all shadow-xl">Talk to us</Link>
+            <Link href="/resources/program-overview.pdf" className="px-8 py-4 text-white font-medium hover:text-white/80 transition-all">Download Program Overview →</Link>
           </div>
         </div>
       </section>

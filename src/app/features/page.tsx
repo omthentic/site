@@ -45,6 +45,10 @@ export default function FeaturesPage() {
               <div key={i} className="flex items-center gap-3"><CheckCircle className="w-5 h-5 text-green-500" /><span className="text-gray-700 dark:text-gray-300">{i}</span></div>
             ))}
           </div>
+          <div className="mt-8 flex items-center justify-center gap-3">
+            <Link href="/sign-up" className="px-6 py-3 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white rounded-lg font-semibold">Start Free</Link>
+            <Link href="/demo" className="px-6 py-3 rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white">Watch Demo</Link>
+          </div>
         </div>
       </section>
 

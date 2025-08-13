@@ -10,8 +10,8 @@ export default function SecurityPage() {
       <ModernHeader />
       <section className="pt-32 pb-12 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">Security & Privacy</h1>
-          <p className="text-lg text-gray-600 dark:text-gray-400">Your voice and data are protected. We use industry best practices and privacy by design.</p>
+          <h1 className="text-5xl font-bold text-gray-900 dark:text-white mb-4">Security & Data Protection at Omthentic AI</h1>
+          <p className="text-lg text-gray-600 dark:text-gray-400">Your trust is our priority. We designed Omthentic AI to keep your data secure, private, and under your control.</p>
         </div>
       </section>
       <section className="py-12 px-4 sm:px-6 lg:px-8">
@@ -26,15 +26,19 @@ export default function SecurityPage() {
         <div className="max-w-5xl mx-auto mt-8 space-y-4 text-gray-700 dark:text-gray-300">
           <div className="rounded-2xl p-6 border bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Hosting & Regions</h2>
-            <p>Hosted on trusted cloud infrastructure with regional data residency in AU/EU/US on request.</p>
+            <p>All data is hosted on secure servers in AWS Sydney, Australia (other regions such as EU/US available on request).</p>
           </div>
           <div className="rounded-2xl p-6 border bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Data Retention & Deletion</h2>
-            <p>Default retention 12 months for training sessions unless you delete earlier. Account deletion requests actioned within 30 days. Backups purged within 60 days.</p>
+            <p>Practice session data is stored for 12 months by default, then securely deleted. Deletion requests are processed within 5 business days.</p>
           </div>
           <div className="rounded-2xl p-6 border bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
             <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Subprocessors</h2>
-            <p>We maintain an up‑to‑date list of subprocessors with purpose and region. Contact privacy@omthentic.com for the current list and notifications.</p>
+            <p>We use trusted partners to support core functionality. See our <a href="/privacy" className="underline">Privacy Policy</a> for the current list.</p>
+          </div>
+          <div className="rounded-2xl p-6 border bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700">
+            <h2 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Incident Response</h2>
+            <p>In the unlikely event of a security breach, we notify affected users within 72 hours.</p>
           </div>
         </div>
       </section>

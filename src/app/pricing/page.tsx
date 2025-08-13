@@ -45,6 +45,10 @@ export default function PricingPage() {
       {/* Comparison table */}
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto overflow-x-auto">
+          <div className="text-center mb-4">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Compare Plans — Find Your Perfect Fit</h2>
+            <p className="text-gray-600 dark:text-gray-400">Choose the plan that matches your goals — from getting started for free to unlocking unlimited practice and team-wide collaboration.</p>
+          </div>
           <table className="w-full text-left border-collapse">
             <thead>
               <tr className="text-sm text-gray-500 dark:text-gray-400">
@@ -56,10 +60,15 @@ export default function PricingPage() {
             </thead>
             <tbody className="text-gray-800 dark:text-gray-200">
               {[
-                { label: 'Sessions per month', starter: '10', pro: 'Unlimited', team: 'Unlimited' },
-                { label: 'Real-time feedback', starter: 'Core', pro: 'Advanced', team: 'Advanced + Coach Review' },
-                { label: 'Analytics', starter: 'Basic', pro: 'Advanced', team: 'Org-wide' },
-                { label: 'Collaboration', starter: '-', pro: '-', team: 'Cohorts & Assignments' },
+                { label: 'Guided Practice Plans', starter: '✅', pro: '✅', team: '✅' },
+                { label: 'AI Coach Feedback', starter: '✅', pro: '✅ (Advanced metrics)', team: '✅ (Custom metrics)' },
+                { label: 'Session Recording', starter: '5 per month', pro: 'Unlimited', team: 'Unlimited' },
+                { label: 'Analytics Dashboard', starter: 'Basic', pro: 'Advanced (trend charts, exports)', team: 'Team & Cohort Analytics' },
+                { label: 'Export & Share Feedback', starter: '❌', pro: '✅', team: '✅' },
+                { label: 'Priority Support', starter: '❌', pro: '✅', team: '✅' },
+                { label: 'Team Assignments & Tracking', starter: '❌', pro: '❌', team: '✅' },
+                { label: 'Custom Content & Rubrics', starter: '❌', pro: '❌', team: '✅' },
+                { label: 'Onboarding Session', starter: '❌', pro: '❌', team: '✅' },
               ].map((row) => (
                 <tr key={row.label} className="border-t border-gray-200 dark:border-gray-800">
                   <td className="py-3 pr-4 text-sm">{row.label}</td>

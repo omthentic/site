@@ -33,7 +33,7 @@ const footerLinks = {
     { name: 'Contact', href: '/contact' },
     { name: 'Privacy Policy', href: '/privacy' },
     { name: 'Terms of Service', href: '/terms' },
-    { name: 'Security', href: '/security' },
+    { name: 'Security', href: '/trust/security' },
   ],
 };
 
