@@ -5,6 +5,7 @@ import { motion } from 'framer-motion';
 import { CheckCircle, Brain, BarChart3, Mic, Sparkles } from 'lucide-react';
 import ModernHeader from '../components/ModernHeader';
 import ModernFooter from '../components/ModernFooter';
+import Link from 'next/link';
 
 const featureCards = [
   { icon: Brain, title: 'AI Coaching', desc: 'Personalised guidance that evaluates clarity, confidence and structure.' },

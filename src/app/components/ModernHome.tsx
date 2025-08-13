@@ -3,7 +3,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { ArrowRight, Check, Brain, Target, Users, MessageSquare, Sparkles } from 'lucide-react';
+import { ArrowRight, Check, Brain, Target, Users, Sparkles } from 'lucide-react';
 import ModernHeader from './ModernHeader';
 import ModernFooter from './ModernFooter';
 

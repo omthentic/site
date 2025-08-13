@@ -119,11 +119,13 @@ export default function ModernHeader() {
           {/* Logo */}
           <div className="flex items-center">
             <Link href="/" className="flex items-center gap-3">
+              {/* Using img intentionally for external CDN; consider next/image if you host locally */}
               <img
                 src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg?updatedAt=1754619654095"
                 alt="Omthentic"
                 className="h-10 sm:h-11 w-auto hidden sm:block"
               />
+              {/* Using img intentionally for external CDN; consider next/image if you host locally */}
               <img
                 src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg?updatedAt=1754618772489"
                 alt="Omthentic"

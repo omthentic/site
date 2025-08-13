@@ -1,4 +1,4 @@
-/* eslint-disable @next/next/no-img-element */
+/* removed unused eslint-disable */
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
