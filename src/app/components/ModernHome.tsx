@@ -13,11 +13,11 @@ export default function ModernHome() {
       <ModernHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+      <section className="relative pt-32 pb-20 overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <iframe
-            src="https://iframe.mediadelivery.net/play/485393/fa3da3d5-7bbc-42d6-a9be-bc899be7fd8c?autoplay=true&muted=true&loop=true&controls=false"
+            src="https://iframe.mediadelivery.net/play/485393/fa3da3d5-7bbc-42d6-a9be-bc899be7fd8c?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&preload=auto"
             className="w-full h-full object-cover"
             style={{
               position: 'absolute',
@@ -28,14 +28,15 @@ export default function ModernHome() {
               border: 'none',
               pointerEvents: 'none'
             }}
-            allow="autoplay; fullscreen; picture-in-picture"
+            allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope"
             allowFullScreen
+            loading="eager"
             title="Background Video"
           />
           {/* Video Overlay */}
           <div className="absolute inset-0 bg-black/50 z-10" />
         </div>
-        <div className="relative z-20 max-w-7xl mx-auto">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -52,7 +53,7 @@ export default function ModernHome() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6"
             >
-              Unlock Aligned Opportunities Through Authentic Communication
+              AI shouldn't make us less human—it should help us be more.
             </motion.h1>
 
             <motion.p
@@ -61,7 +62,7 @@ export default function ModernHome() {
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
             >
-              Omthentic AI helps you express what you truly mean, in a way that&rsquo;s heard and understood—turning real self-expression into meaningful opportunities.
+              Speak your truth with confidence. Omthentic AI amplifies who you are—your values, your style, your strength—so when you do speak, you're not just heard; you resonate.
             </motion.p>
 
             <motion.div
