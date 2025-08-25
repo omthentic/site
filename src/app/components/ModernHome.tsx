@@ -13,13 +13,33 @@ export default function ModernHome() {
       <ModernHeader />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+      <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
+        {/* Background Video */}
+        <div className="absolute inset-0 z-0">
+          <iframe
+            src="https://iframe.mediadelivery.net/play/485393/e5a75478-bec0-4d04-b3e9-9d68b3622251"
+            className="w-full h-full object-cover"
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: '100%',
+              height: '100%',
+              border: 'none',
+              pointerEvents: 'none'
+            }}
+            allow="autoplay; fullscreen"
+            allowFullScreen
+          />
+          {/* Video Overlay */}
+          <div className="absolute inset-0 bg-black/50 z-10" />
+        </div>
+        <div className="relative z-20 max-w-7xl mx-auto">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              className="inline-flex items-center gap-2 px-4 py-2 bg-cyan-100 dark:bg-cyan-900/30 text-cyan-700 dark:text-cyan-300 rounded-full text-sm font-medium mb-6"
+              className="inline-flex items-center gap-2 px-4 py-2 bg-white/20 backdrop-blur-sm text-white rounded-full text-sm font-medium mb-6"
             >
               <Sparkles className="w-4 h-4" />
               Authentic Communication Technology
@@ -29,7 +49,7 @@ export default function ModernHome() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
-              className="text-4xl sm:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-6"
+              className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6"
             >
               Unlock Aligned Opportunities Through Authentic Communication
             </motion.h1>
@@ -38,7 +58,7 @@ export default function ModernHome() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8"
+              className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
             >
               Omthentic AI helps you express what you truly mean, in a way that&rsquo;s heard and understood—turning real self-expression into meaningful opportunities.
             </motion.p>
