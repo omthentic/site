@@ -12,30 +12,6 @@ type PrimaryNavItem = { label: string; path: string; dropdown?: Dropdown; option
 
 const primaryNav: PrimaryNavItem[] = [
   {
-    label: 'Product',
-    path: '/product',
-    dropdown: {
-      columns: [
-        {
-          groupLabel: 'Explore',
-          items: [
-            { label: 'Overview', path: '/product' },
-            { label: 'How it works', path: '/product/how-it-works' },
-            { label: 'Tailored AI Coach', path: '/product/coach' },
-            { label: 'Charametrics by ShareTree', path: '/product/charametrics' },
-            { label: 'Security & Privacy', path: '/trust/security' },
-          ],
-        },
-        {
-          groupLabel: 'Roadmap',
-          items: [
-            { label: 'What’s next', path: '/product/roadmap', badge: 'New', optional: true },
-          ],
-        },
-      ],
-    },
-  },
-  {
     label: 'Solutions',
     path: '/solutions',
     dropdown: {
@@ -53,7 +29,6 @@ const primaryNav: PrimaryNavItem[] = [
       ],
     },
   },
-  { label: 'Pricing', path: '/pricing' },
   {
     label: 'Resources',
     path: '/resources',
@@ -94,7 +69,6 @@ const primaryNav: PrimaryNavItem[] = [
         },
       ],
     },
-    optional: true,
   },
 ];
 
@@ -118,7 +92,7 @@ export default function ModernHeader() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Left Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
-            {primaryNav.slice(0, 2).map((nav) => (
+            {primaryNav.map((nav) => (
               <div key={nav.label} className="relative">
                 {nav.dropdown ? (
                   <button
@@ -190,68 +164,9 @@ export default function ModernHeader() {
           </div>
 
           {/* Right Navigation */}
-          <div className="hidden lg:flex items-center space-x-8">
-            {primaryNav.slice(2).map((nav) => (
-              <div key={nav.label} className="relative">
-                {nav.dropdown ? (
-                  <button
-                    className="px-3 py-2 text-sm font-medium text-white hover:text-gray-200 flex items-center gap-1 transition-colors"
-                    onMouseEnter={() => setActiveDropdown(nav.label)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    {nav.label}
-                    <ChevronDown className="w-3 h-3" />
-                  </button>
-                ) : (
-                  <Link
-                    href={nav.path}
-                    className="px-3 py-2 text-sm font-medium text-white hover:text-gray-200 transition-colors"
-                  >
-                    {nav.label}
-                  </Link>
-                )}
-
-                {/* Dropdown Mega Menu */}
-                <AnimatePresence>
-                  {nav.dropdown && activeDropdown === nav.label && (
-                    <motion.div
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      exit={{ opacity: 0, y: -10 }}
-                      transition={{ duration: 0.15 }}
-                      className="absolute top-full right-0 mt-2 w-[720px] bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-800 overflow-hidden"
-                      onMouseEnter={() => setActiveDropdown(nav.label)}
-                      onMouseLeave={() => setActiveDropdown(null)}
-                    >
-                      <div className="grid grid-cols-2 gap-0 p-6">
-                        {nav.dropdown.columns.map((col) => (
-                          <div key={col.groupLabel} className="px-2">
-                            <div className="px-2 py-1 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400 mb-2">{col.groupLabel}</div>
-                            <ul className="space-y-1">
-                              {col.items.map((item) => (
-                                <li key={item.label}>
-                                  <Link href={item.path} className="flex items-center justify-between gap-3 px-2 py-2 rounded-lg hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors">
-                                    <span className="text-sm text-gray-700 dark:text-gray-300">{item.label}</span>
-                                    {item.badge ? (
-                                      <span className="text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white">
-                                        {item.badge}
-                                      </span>
-                                    ) : null}
-                                  </Link>
-                                </li>
-                              ))}
-                            </ul>
-                          </div>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ))}
-            
+          <div className="hidden lg:flex items-center space-x-4">
             {/* CTA Buttons */}
-            <div className="flex items-center space-x-4 ml-8">
+            <div className="flex items-center space-x-4">
               {utilityNav.map((u) => (
                 u.style === 'primary' ? (
                   <Link key={u.label} href={u.path} className="px-6 py-2.5 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white text-sm font-medium rounded-full hover:brightness-105 transition-all shadow-lg">
