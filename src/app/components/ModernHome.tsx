@@ -16,22 +16,21 @@ export default function ModernHome() {
       <section className="relative pt-32 pb-20 overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
-          <iframe
-            src="https://iframe.mediadelivery.net/play/485393/fa3da3d5-7bbc-42d6-a9be-bc899be7fd8c?autoplay=1&muted=1&loop=1&controls=0&playsinline=1&preload=auto"
+          <video
+            src="/videos/HD Hero Vid v1.0.mp4"
             className="w-full h-full object-cover"
             style={{
               position: 'absolute',
               top: 0,
               left: 0,
               width: '100%',
-              height: '100%',
-              border: 'none',
-              pointerEvents: 'none'
+              height: '100%'
             }}
-            allow="autoplay; fullscreen; picture-in-picture; accelerometer; gyroscope"
-            allowFullScreen
-            loading="eager"
-            title="Background Video"
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
           />
           {/* Video Overlay */}
           <div className="absolute inset-0 bg-black/50 z-10" />
