@@ -113,7 +113,7 @@ export default function ModernHeader() {
   };
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-b border-gray-200 dark:border-gray-800">
+    <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-14 sm:h-16">
           {/* Logo */}
@@ -140,7 +140,7 @@ export default function ModernHeader() {
               <div key={nav.label} className="relative">
                 {nav.dropdown ? (
                   <button
-                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white flex items-center gap-1 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="px-4 py-2 text-sm font-medium text-white hover:text-gray-200 flex items-center gap-1 rounded-lg hover:bg-white/10 transition-colors"
                     onMouseEnter={() => setActiveDropdown(nav.label)}
                     onMouseLeave={() => setActiveDropdown(null)}
                   >
@@ -150,7 +150,7 @@ export default function ModernHeader() {
                 ) : (
                   <Link
                     href={nav.path}
-                    className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    className="px-4 py-2 text-sm font-medium text-white hover:text-gray-200 rounded-lg hover:bg-white/10 transition-colors"
                   >
                     {nav.label}
                   </Link>
@@ -204,7 +204,7 @@ export default function ModernHeader() {
                   {u.label}
                 </Link>
               ) : (
-                <Link key={u.label} href={u.path} className="px-4 py-2 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white">
+                <Link key={u.label} href={u.path} className="px-4 py-2 text-sm font-medium text-white hover:text-gray-200">
                   {u.label}
                 </Link>
               )
@@ -213,7 +213,7 @@ export default function ModernHeader() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/10 text-white"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}

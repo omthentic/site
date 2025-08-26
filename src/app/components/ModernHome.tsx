@@ -52,7 +52,7 @@ export default function ModernHome() {
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6"
             >
-              AI shouldn&rsquo;t make us less human&mdash;it should help us be more.
+              AI shouldn&rsquo;t make us less human. It should help us be more.
             </motion.h1>
 
             <motion.p
@@ -61,7 +61,7 @@ export default function ModernHome() {
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
             >
-              Speak your truth with confidence. Omthentic AI amplifies who you are&mdash;your values, your style, your strength&mdash;so when you do speak, you&rsquo;re not just heard; you resonate.
+              Omthentic AI amplifies who you are. Your values, your style, your strength. When you do speak, you&rsquo;re not just heard; you&rsquo;re understood.
             </motion.p>
 
             <motion.div
