@@ -51,6 +51,7 @@ export default function ModernHome() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 }}
               className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6"
+              style={{ fontFamily: 'var(--font-hero)' }}
             >
               AI shouldn&rsquo;t make us less human. It should help us be more.
             </motion.h1>
@@ -60,6 +61,7 @@ export default function ModernHome() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
               className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
+              style={{ fontFamily: 'var(--font-hero)' }}
             >
               Omthentic AI amplifies who you are. Your values, your style, your strength. When you do speak, you&rsquo;re not just heard; you&rsquo;re understood.
             </motion.p>
