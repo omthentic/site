@@ -191,8 +191,8 @@
   --color-background-primary: var(--background-primary);
   --color-card-background: var(--card-background);
   
-  --font-sans: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-headings: 'Plus Jakarta Sans', Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-sans: 'nb-international-pro', 'Nb international pro webfont', Arial, sans-serif;
+  --font-headings: 'nb-international-pro', 'Nb international pro webfont', Arial, sans-serif;
   --font-hero: 'nb-international-pro', 'Nb international pro webfont', Arial, sans-serif;
   --font-mono: 'Fira Code', 'Consolas', monospace;
   
