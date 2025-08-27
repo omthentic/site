@@ -17,7 +17,7 @@ export default function ModernHome() {
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video
-            src="/videos/4K Hero Background v2.1.mp4"
+            src="/videos/4K Hero_Background v2.1.mp4"
             className="w-full h-full object-cover"
             style={{
               position: 'absolute',
