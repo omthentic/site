@@ -82,13 +82,41 @@ export default function ModernHome() {
             </motion.div>
           </div>
 
-          {/* Split-screen visual: Before vs After */}
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5 }}
-            className="mt-16 grid md:grid-cols-2 gap-6"
-          >
+          {/* Split-screen visual: Before vs After - REMOVED FROM HERE */}
+        </div>
+      </section>
+
+      {/* Why It Matters */}
+      <section className="py-16 sm:py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Why It Matters</h2>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
+            In a world overflowing with noise and scripted interactions, genuine communication stands out. Whether it&rsquo;s acing a medical school interview, leading a high-stakes meeting, or having a heartfelt conversation, your ability to express yourself authentically is the bridge to opportunities that truly align with you.
+          </p>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
+            Omthentic AI gives you that bridge by:
+          </p>
+          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
+            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Revealing your unique character strengths through ShareTree&rsquo;s Charametrics.</li>
+            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Matching you with a personalised AI coach built around your strengths and growth areas.</li>
+            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Helping you prepare for the conversations that matter most.</li>
+          </ul>
+          <p className="text-lg text-gray-700 dark:text-gray-300 mt-6">
+            When you speak from your true self, the right people and opportunities find you.
+          </p>
+        </div>
+      </section>
+
+      {/* Before vs After Comparison - ADDED HERE */}
+      <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">See the Difference</h2>
+            <p className="text-lg text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+              Experience the transformation from awkward interactions to confident, authentic communication.
+            </p>
+          </div>
+          <div className="grid md:grid-cols-2 gap-6">
             <div className="relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden">
               <div className="absolute inset-0 bg-gradient-to-br from-[#2D6FFF]/15 via-[#19B9D0]/15 to-[#12D6C0]/15" />
               <div className="relative p-6 h-full flex flex-col gap-4">
@@ -119,28 +147,7 @@ export default function ModernHome() {
                 </div>
               </div>
             </div>
-          </motion.div>
-        </div>
-      </section>
-
-      {/* Why It Matters */}
-      <section className="py-16 sm:py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Why It Matters</h2>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
-            In a world overflowing with noise and scripted interactions, genuine communication stands out. Whether it&rsquo;s acing a medical school interview, leading a high-stakes meeting, or having a heartfelt conversation, your ability to express yourself authentically is the bridge to opportunities that truly align with you.
-          </p>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mb-6">
-            Omthentic AI gives you that bridge by:
-          </p>
-          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Revealing your unique character strengths through ShareTree&rsquo;s Charametrics.</li>
-            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Matching you with a personalised AI coach built around your strengths and growth areas.</li>
-            <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Helping you prepare for the conversations that matter most.</li>
-          </ul>
-          <p className="text-lg text-gray-700 dark:text-gray-300 mt-6">
-            When you speak from your true self, the right people and opportunities find you.
-          </p>
+          </div>
         </div>
       </section>
 
