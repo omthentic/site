@@ -53,7 +53,7 @@ export default function ModernHome() {
               className="text-4xl sm:text-6xl lg:text-7xl font-bold text-white mb-6"
               style={{ fontFamily: 'var(--font-hero)' }}
             >
-              AI shouldn&rsquo;t make us less human. It should help us be more.
+              AI shouldn&rsquo;t replace your voice. It should help help you find it.
             </motion.h1>
 
             <motion.p
