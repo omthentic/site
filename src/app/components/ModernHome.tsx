@@ -13,7 +13,7 @@ export default function ModernHome() {
       <ModernHeader />
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
         {/* Background Video */}
         <div className="absolute inset-0 z-0">
           <video
@@ -35,7 +35,7 @@ export default function ModernHome() {
           {/* Video Overlay */}
           <div className="absolute inset-0 bg-black/50 z-10" />
         </div>
-        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex-grow flex flex-col justify-center py-16">
           <div className="text-center">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -81,8 +81,16 @@ export default function ModernHome() {
               </Link>
             </motion.div>
           </div>
-
-          {/* Split-screen visual: Before vs After - REMOVED FROM HERE */}
+        </div>
+        
+        {/* Scroll indicator */}
+        <div className="relative z-20 flex justify-center pb-8">
+          <div className="animate-bounce flex flex-col items-center">
+            <span className="text-white text-sm mb-2">Scroll to explore</span>
+            <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+            </svg>
+          </div>
         </div>
       </section>
 
