@@ -63,7 +63,7 @@ export default function ModernHome() {
               className="text-xl text-gray-200 max-w-3xl mx-auto mb-8"
               style={{ fontFamily: 'var(--font-hero)' }}
             >
-              Omthentic AI amplifies who you are. Your values, your style, your strength. When you do speak, you&rsquo;re not just heard; you&rsquo;re understood.
+              Omthentic helps you say what you truly mean, in the moments that matter most.
             </motion.p>
 
             <motion.div
