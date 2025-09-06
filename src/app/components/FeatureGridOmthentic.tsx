@@ -81,7 +81,11 @@ export default function FeatureGridOmthentic() {
                   item.accentTo
                 }
               />
-              <div className="relative p-6 sm:p-8 flex flex-col h-full">
+              {/* Subtle grid overlay for depth */}
+              <div className="absolute inset-0 opacity-[0.08] dark:opacity-[0.06] pointer-events-none"
+                   style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px', color: '#0f172a' }} />
+
+              <div className="relative p-6 sm:p-8 flex flex-col h-full shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)]">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center">
                     <item.icon className="w-6 h-6 text-white" />
@@ -94,10 +98,21 @@ export default function FeatureGridOmthentic() {
                   {item.description}
                 </p>
 
+                {/* Animated accents */}
+                <div className="pointer-events-none absolute -right-6 -bottom-6 w-40 h-40 rounded-full bg-gradient-to-tr from-[#19B9D0]/30 to-[#12D6C0]/30 blur-2xl animate-pulse" />
+                <motion.div
+                  className="pointer-events-none absolute left-6 bottom-6 h-6 w-20 rounded-full bg-gradient-to-r from-white/30 to-transparent"
+                  initial={{ opacity: 0.2, x: -8 }}
+                  animate={{ opacity: [0.2, 0.6, 0.2], x: [ -8, 8, -8 ] }}
+                  transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
+                />
+
+                {/* CTA */}
                 <div className="mt-6">
-                  <button className="px-4 py-2 text-sm font-medium rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition">
+                  <a href="#" className="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg border border-gray-200 dark:border-gray-700 text-gray-900 dark:text-white hover:bg-gray-100 dark:hover:bg-gray-800 transition">
                     Learn More
-                  </button>
+                    <svg className="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
+                  </a>
                 </div>
               </div>
             </motion.div>
