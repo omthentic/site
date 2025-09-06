@@ -59,7 +59,7 @@ export default function FeatureGridOmthentic() {
         </div>
 
         {/* Mosaic grid: 2x2 with asymmetric heights like the reference */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 auto-rows-fr gap-6">
           {items.map((item, idx) => (
             <motion.div
               key={item.title}
@@ -67,10 +67,7 @@ export default function FeatureGridOmthentic() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className={
-                'relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900 ' +
-                (idx === 0 ? 'md:row-span-2' : '')
-              }
+              className={'relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900'}
             >
               {/* Abstract background */}
               <div
