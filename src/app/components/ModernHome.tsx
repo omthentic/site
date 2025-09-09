@@ -7,6 +7,7 @@ import { ArrowRight, Check, Brain, Target, Users, Sparkles } from 'lucide-react'
 import ModernHeader from './ModernHeader';
 import ModernFooter from './ModernFooter';
 import FeatureGridOmthentic from './FeatureGridOmthentic';
+import HowWeHelp from './HowWeHelp';
 
 export default function ModernHome() {
   return (
@@ -116,8 +117,8 @@ export default function ModernHome() {
         </div>
       </section>
 
-      {/* Feature Grid (How We Help) */}
-      <FeatureGridOmthentic />
+      {/* How We Help: Toggleable stages */}
+      <HowWeHelp />
 
       {/* Before vs After Comparison - ADDED HERE */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
