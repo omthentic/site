@@ -174,7 +174,7 @@ const ArticleContent = () => (
         <h2 className="text-3xl font-bold text-[var(--text)] mb-6">Practical Strategies for Interview Day</h2>
         <h3 className="text-2xl font-semibold text-[var(--text)] mb-4">The Power of the Pause</h3>
         <p className="text-[var(--text-muted)] mb-4 leading-relaxed">
-          Don't fear silence. A thoughtful pause shows you're considering the question deeply rather than rushing to fill the space with words.
+          Don&apos;t fear silence. A thoughtful pause shows you&apos;re considering the question deeply rather than rushing to fill the space with words.
         </p>
 
         <h3 className="text-2xl font-semibold text-[var(--text)] mb-4">Body Language Speaks Volumes</h3>
@@ -187,7 +187,7 @@ const ArticleContent = () => (
       <section id="section-5" className="mb-12">
         <h2 className="text-3xl font-bold text-[var(--text)] mb-6">Post-Interview Reflection and Growth</h2>
         <p className="text-[var(--text-muted)] mb-4 leading-relaxed">
-          The interview doesn't end when you walk out the door. Use the experience as a learning opportunity for your future in medicine.
+          The interview doesn&apos;t end when you walk out the door. Use the experience as a learning opportunity for your future in medicine.
         </p>
         <div className="card-app p-6">
           <h3 className="text-xl font-semibold text-[var(--text)] mb-4">Reflection Framework</h3>
@@ -204,7 +204,7 @@ const ArticleContent = () => (
       <section id="section-6" className="mb-12">
         <h2 className="text-3xl font-bold text-[var(--text)] mb-6">Conclusion: Your Path to Success</h2>
         <p className="text-[var(--text-muted)] mb-6 leading-relaxed">
-          Success in Australian medical interviews isn't about having the "right" answers—it's about bringing your authentic self to the conversation. When you communicate genuinely, you demonstrate the empathy, resilience, and self-awareness that define great physicians.
+          Success in Australian medical interviews isn&apos;t about having the &ldquo;right&rdquo; answers&mdash;it&apos;s about bringing your authentic self to the conversation. When you communicate genuinely, you demonstrate the empathy, resilience, and self-awareness that define great physicians.
         </p>
         <div className="bg-gradient-to-r from-[var(--brand)] to-[var(--indigo-500)] text-white p-8 rounded-2xl">
           <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Interview Performance?</h3>
@@ -352,7 +352,7 @@ const ArticleFooter = () => {
       >
         <h3 className="text-xl font-bold text-[var(--text)] mb-4">Comments</h3>
         <p className="text-[var(--text-muted)]">
-          Comments are currently disabled for this article. We'd love to hear your thoughts—feel free to reach out via our contact page.
+          Comments are currently disabled for this article. We&apos;d love to hear your thoughts&mdash;feel free to reach out via our contact page.
         </p>
       </motion.div>
     </div>

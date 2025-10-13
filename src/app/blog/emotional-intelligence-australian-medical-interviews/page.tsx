@@ -148,7 +148,7 @@ const ArticleContent = () => (
       <section id="section-2" className="mb-12">
         <h2 className="text-3xl font-bold text-[var(--text)] mb-6">Why EQ Matters More Than You Think</h2>
         <p className="text-[var(--text-muted)] mb-4 leading-relaxed">
-          Dr. Daniel Goleman's groundbreaking work on emotional intelligence revealed that EQ accounts for 58% of professional success, while IQ contributes only 20%. In medicine, this gap is even more pronounced.
+          Dr. Daniel Goleman&apos;s groundbreaking work on emotional intelligence revealed that EQ accounts for 58% of professional success, while IQ contributes only 20%. In medicine, this gap is even more pronounced.
         </p>
         <h3 className="text-2xl font-semibold text-[var(--text)] mb-4">The EQ Advantage in Medical Practice</h3>
         <div className="bg-[var(--surface)] rounded-lg p-6 mb-6">
@@ -234,7 +234,7 @@ const ArticleContent = () => (
 
         <h3 className="text-2xl font-semibold text-[var(--text)] mb-4">Active Listening Exercises</h3>
         <p className="text-[var(--text-muted)] mb-4 leading-relaxed">
-          Practice truly hearing others by paraphrasing what they've said and asking clarifying questions that show genuine interest.
+          Practice truly hearing others by paraphrasing what they&apos;ve said and asking clarifying questions that show genuine interest.
         </p>
 
         <div className="bg-[var(--surface)] rounded-lg p-6 my-6">
@@ -242,9 +242,9 @@ const ArticleContent = () => (
           <p className="text-[var(--text-muted)] mb-3">For the next week, practice this simple technique:</p>
           <ol className="list-decimal pl-6 space-y-2 text-[var(--text-muted)]">
             <li>Before responding in any conversation, pause and identify your emotional state</li>
-            <li>Ask yourself: "What is this person really feeling?"</li>
+            <li>Ask yourself: &ldquo;What is this person really feeling?&rdquo;</li>
             <li>Respond with genuine empathy rather than just facts</li>
-            <li>Reflect afterward: "How did that make them feel heard?"</li>
+            <li>Reflect afterward: &ldquo;How did that make them feel heard?&rdquo;</li>
           </ol>
         </div>
       </section>
@@ -258,8 +258,8 @@ const ArticleContent = () => (
         </p>
 
         <div className="bg-[var(--blue-50)] border-l-4 border-[var(--brand)] p-6 rounded-r-lg my-6">
-          <p className="text-[var(--text)] mb-2"><strong>Instead of:</strong> "The correct answer is..."</p>
-          <p className="text-[var(--text)]"><strong>Say:</strong> "This situation involves real people with complex emotions. I would first acknowledge everyone's feelings before making a decision..."</p>
+          <p className="text-[var(--text)] mb-2"><strong>Instead of:</strong> &ldquo;The correct answer is...&rdquo;</p>
+          <p className="text-[var(--text)]"><strong>Say:</strong> &ldquo;This situation involves real people with complex emotions. I would first acknowledge everyone&apos;s feelings before making a decision...&rdquo;</p>
         </div>
       </section>
 
@@ -293,7 +293,7 @@ const ArticleContent = () => (
       <section id="section-7" className="mb-12">
         <h2 className="text-3xl font-bold text-[var(--text)] mb-6">Conclusion: The EQ Advantage</h2>
         <p className="text-[var(--text-muted)] mb-6 leading-relaxed">
-          Emotional intelligence isn't just a "nice to have" skill—it's the foundation of excellent medical practice. In Australian medical interviews, demonstrating high EQ can be the deciding factor between acceptance and rejection.
+          Emotional intelligence isn&apos;t just a &ldquo;nice to have&rdquo; skill&mdash;it&apos;s the foundation of excellent medical practice. In Australian medical interviews, demonstrating high EQ can be the deciding factor between acceptance and rejection.
         </p>
         <div className="bg-gradient-to-r from-[var(--brand)] to-[var(--indigo-500)] text-white p-8 rounded-2xl">
           <h3 className="text-2xl font-bold mb-4">Ready to Develop Your EQ?</h3>
@@ -441,7 +441,7 @@ const ArticleFooter = () => {
       >
         <h3 className="text-xl font-bold text-[var(--text)] mb-4">Comments</h3>
         <p className="text-[var(--text-muted)]">
-          Comments are currently disabled for this article. We'd love to hear your thoughts—feel free to reach out via our contact page.
+          Comments are currently disabled for this article. We&apos;d love to hear your thoughts&mdash;feel free to reach out via our contact page.
         </p>
       </motion.div>
     </div>

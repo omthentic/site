@@ -121,11 +121,11 @@ const ArticleContent = () => (
           Most medical school applicants approach interview preparation the same way: memorize answers, practice responses, and hope for the best. Yet research shows this mechanical approach often backfires, leading to robotic, inauthentic performances that fail to impress interviewers.
         </p>
         <p className="text-[var(--text-muted)] mb-4 leading-relaxed">
-          The paradox? The more you try to control your responses, the less genuine you appear. Meaningful preparation isn't about scripting answers—it's about developing the mental frameworks and self-awareness that allow you to respond authentically under pressure.
+          The paradox? The more you try to control your responses, the less genuine you appear. Meaningful preparation isn&apos;t about scripting answers&mdash;it&apos;s about developing the mental frameworks and self-awareness that allow you to respond authentically under pressure.
         </p>
         <div className="bg-[var(--warning)]/10 border-l-4 border-[var(--warning)] p-6 rounded-r-lg my-6">
           <p className="text-[var(--text)]">
-            "I've interviewed hundreds of candidates who knew all the 'right' answers but couldn't engage in genuine conversation. The students who succeed are those who prepare their minds, not just their responses."
+            &ldquo;I&apos;ve interviewed hundreds of candidates who knew all the &apos;right&apos; answers but couldn&apos;t engage in genuine conversation. The students who succeed are those who prepare their minds, not just their responses.&rdquo;
           </p>
           <p className="text-[var(--text-muted)] text-sm mt-2">— Dr. Robert Martinez, Medical School Admissions Director</p>
         </div>
@@ -142,7 +142,7 @@ const ArticleContent = () => (
             </div>
             <ul className="space-y-2 text-[var(--text-muted)] text-sm">
               <li>• Memorizing scripted responses</li>
-              <li>• Focusing on "correct" answers</li>
+              <li>• Focusing on &ldquo;correct&rdquo; answers</li>
               <li>• Anxiety about forgetting material</li>
               <li>• Robotic, inauthentic delivery</li>
               <li>• Poor adaptation to unexpected questions</li>
@@ -193,10 +193,10 @@ const ArticleContent = () => (
           <h4 className="font-semibold text-[var(--text)] mb-3">Values Exercise</h4>
           <p className="text-[var(--text-muted)] mb-3">Complete these sentences authentically:</p>
           <ul className="space-y-2 text-[var(--text-muted)]">
-            <li>• "I want to become a doctor because..."</li>
-            <li>• "The most important aspect of patient care is..."</li>
-            <li>• "When I'm stressed, I..."</li>
-            <li>• "I handle ethical dilemmas by..."</li>
+            <li>• &ldquo;I want to become a doctor because...&rdquo;</li>
+            <li>• &ldquo;The most important aspect of patient care is...&rdquo;</li>
+            <li>• &ldquo;When I&apos;m stressed, I...&rdquo;</li>
+            <li>• &ldquo;I handle ethical dilemmas by...&rdquo;</li>
           </ul>
         </div>
 
@@ -304,7 +304,7 @@ const ArticleContent = () => (
       <section id="section-8" className="mb-12">
         <h2 className="text-3xl font-bold text-[var(--text)] mb-6">Conclusion: Long-term Success Mindset</h2>
         <p className="text-[var(--text-muted)] mb-6 leading-relaxed">
-          Meaningful preparation isn't just about acing your medical school interview—it's about developing the mindset and skills that will serve you throughout your medical career. The authenticity, self-awareness, and communication skills you build will benefit every patient interaction and professional relationship.
+          Meaningful preparation isn&apos;t just about acing your medical school interview&mdash;it&apos;s about developing the mindset and skills that will serve you throughout your medical career. The authenticity, self-awareness, and communication skills you build will benefit every patient interaction and professional relationship.
         </p>
         <div className="bg-gradient-to-r from-[var(--brand)] to-[var(--indigo-500)] text-white p-8 rounded-2xl">
           <h3 className="text-2xl font-bold mb-4">Ready to Transform Your Preparation?</h3>
@@ -451,7 +451,7 @@ const ArticleFooter = () => {
       >
         <h3 className="text-xl font-bold text-[var(--text)] mb-4">Comments</h3>
         <p className="text-[var(--text-muted)]">
-          Comments are currently disabled for this article. We'd love to hear your thoughts—feel free to reach out via our contact page.
+          Comments are currently disabled for this article. We&apos;d love to hear your thoughts&mdash;feel free to reach out via our contact page.
         </p>
       </motion.div>
     </div>
