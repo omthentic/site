@@ -74,14 +74,14 @@ const Header = () => {
                 <motion.a
                   key={item.label}
                   href={item.href}
-                  className="text-gray-600 hover:text-primary font-medium transition-colors duration-200 relative group"
+                  className="text-gray-600 hover:text-[var(--brand)] font-medium transition-colors duration-200 relative group"
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
                   whileHover={{ y: -2 }}
                 >
                   {item.label}
-                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary group-hover:w-full transition-all duration-300" />
+                  <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[var(--brand)] group-hover:w-full transition-all duration-300" />
                 </motion.a>
               ))}
             </nav>
@@ -89,18 +89,18 @@ const Header = () => {
             {/* CTA Button */}
             <div className="hidden lg:flex items-center space-x-4">
               <a
-                href={`${APP_URL}/sign-in`}
+                href="https://app.omthentic.ai/auth"
                 aria-label="Sign in to your account"
                 className="text-gray-600 hover:text-primary font-medium transition-colors duration-200 focus-ring"
               >
                 Sign In
               </a>
               <a
-                href={`${APP_URL}/sign-up`}
+                href="https://app.omthentic.ai/auth"
                 aria-label="Start practicing for free"
-                className="btn-primary shadow-card hover:shadow-hover transition-all duration-300 flex items-center space-x-2 group focus-ring"
+                className="button-primary flex items-center space-x-2 group focus-ring"
               >
-                <span>Start Practicing Free</span>
+                <span>Start Practicing</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
               </a>
             </div>
@@ -144,11 +144,11 @@ const Header = () => {
                 </motion.a>
               ))}
               <div className="pt-4 border-t border-gray-200/20 flex flex-col space-y-3">
-                <a href={`${APP_URL}/sign-in`} aria-label="Sign in to your account" className="text-left text-gray-600 hover:text-primary font-medium py-2 transition-colors duration-200 text-left focus-ring">
+                <a href="https://app.omthentic.ai/auth" aria-label="Sign in to your account" className="text-left text-gray-600 hover:text-primary font-medium py-2 transition-colors duration-200 text-left focus-ring">
                   Sign In
                 </a>
-                <a href={`${APP_URL}/sign-up`} aria-label="Start practicing for free" className="btn-primary shadow-card flex items-center justify-center space-x-2 group focus-ring">
-                  <span>Start Practicing Free</span>
+                <a href="https://app.omthentic.ai/auth" aria-label="Start practicing for free" className="button-primary flex items-center justify-center space-x-2 group focus-ring">
+                  <span>Start Practicing</span>
                   <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-200" />
                 </a>
               </div>

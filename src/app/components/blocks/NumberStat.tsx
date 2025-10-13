@@ -33,16 +33,15 @@ export default function NumberStat({ value, label, countTo, suffix = '', duratio
 
   return (
     <motion.div
-      className="bg-card rounded-2xl p-6 border border-subtle text-center shadow-card transition-all"
+      className="card-app text-center"
       initial={{ opacity: 0, y: 12 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
-      whileHover={{ y: -4, boxShadow: 'var(--shadow-hover)' }}
     >
-      <div className="text-4xl font-extrabold text-primary-heading tabular-nums mb-2">
+      <div className="text-5xl font-extrabold text-[var(--text)] tabular-nums mb-3">
         {hasCount ? display : value}
       </div>
-      <div className="text-secondary-body text-sm">{label}</div>
+      <div className="text-[var(--text-muted)] text-sm font-medium">{label}</div>
     </motion.div>
   );
 }

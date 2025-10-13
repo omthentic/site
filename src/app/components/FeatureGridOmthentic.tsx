@@ -49,11 +49,11 @@ const items: FeatureCard[] = [
 
 export default function FeatureGridOmthentic() {
   return (
-    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50 dark:bg-gray-900">
+    <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-subtle)]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-10 text-center">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white">How We Help</h2>
-          <p className="mt-3 text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text)]">How We Help</h2>
+          <p className="mt-3 text-[var(--text-muted)] max-w-2xl mx-auto">
             Practical, beautifully crafted tools that empower authentic communication in the moments that matter.
           </p>
         </div>
@@ -67,7 +67,7 @@ export default function FeatureGridOmthentic() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className={'relative rounded-2xl border border-gray-200 dark:border-gray-800 overflow-hidden bg-white dark:bg-gray-900'}
+              className={'card-app overflow-hidden'}
             >
               {/* Abstract background */}
               <div
@@ -82,16 +82,16 @@ export default function FeatureGridOmthentic() {
               <div className="absolute inset-0 opacity-[0.08] dark:opacity-[0.06] pointer-events-none"
                    style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, currentColor 1px, transparent 0)', backgroundSize: '24px 24px', color: '#0f172a' }} />
 
-              <div className="relative p-6 sm:p-8 flex flex-col h-full shadow-[0_10px_40px_-10px_rgba(0,0,0,0.2)]">
+              <div className="relative p-6 sm:p-8 flex flex-col h-full">
                 <div className="flex items-center gap-3 mb-3">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center">
+                  <div className="w-12 h-12 rounded-xl bg-[var(--brand)] flex items-center justify-center">
                     <item.icon className="w-6 h-6 text-white" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 dark:text-white">
+                  <h3 className="text-xl sm:text-2xl font-semibold text-[var(--text)]">
                     {item.title}
                   </h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-400 max-w-prose">
+                <p className="text-[var(--text-muted)] max-w-prose">
                   {item.description}
                 </p>
 

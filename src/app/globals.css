@@ -6,21 +6,39 @@
 
 :root {
   /* Base Theme Colors - Omthentic */
-  --background: #F7FAFC; /* Cloud */
-  --foreground: #0F172A; /* Slate 900 */
+  --background: #FFFFFF;
+  --foreground: #0F172A;
 
-  /* Omthentic Brand Tokens */
-  --om-blue: #2D6FFF;
+  /* New Blue Brand System */
+  --blue-50: #EFF6FF;
+  --blue-100: #DBEAFE;
+  --blue-200: #BFDBFE;
+  --blue-300: #93C5FD;
+  --blue-400: #60A5FA;
+  --blue-500: #3B82F6;
+  --blue-600: #2563EB;
+  --blue-700: #1D4ED8;
+  --blue-800: #1E40AF;
+  --blue-900: #1E3A8A;
+
+  /* Accent (Indigo for gradients) */
+  --indigo-500: #6366F1;
+  --indigo-600: #4F46E5;
+
+  /* Semantic colors */
+  --success: #10B981;
+  --warning: #F59E0B;
+  --error: #EF4444;
+
+  /* Legacy Omthentic tokens (mapped to blue) */
+  --om-blue: var(--blue-600);
   --om-teal: #12D6C0;
-  /* Blue -> Cyan -> Teal per logo */
-  --om-grad: linear-gradient(90deg, #2D6FFF 0%, #19B9D0 55%, #12D6C0 100%);
+  --om-grad: linear-gradient(90deg, var(--blue-600) 0%, var(--indigo-500) 55%, var(--indigo-600) 100%);
   --midnight: #0B1220;
   --cloud: #F7FAFC;
   --slate-900: #0F172A;
   --slate-600: #475569;
-  --success: #22C55E;
-  --warning: #F59E0B;
-  --danger: #EF4444;
+  --danger: var(--error);
   --radius: 16px;
   --shadow: 0 4px 12px rgba(0,0,0,.06);
 
@@ -167,6 +185,33 @@
   --radius-3xl: 1.5rem;   /* 24px */
   --radius-full: 9999px;
   --radius-card: var(--radius-2xl);
+
+  /* App-Aligned Design Tokens */
+  --bg: #FFFFFF;
+  --bg-subtle: #F8FAFF;
+  --surface: #FFFFFF;
+  --surface-muted: #F1F5F9;
+  --text: #0F172A;
+  --text-muted: #475569;
+  --brand: var(--blue-600);
+  --brand-contrast: #FFFFFF;
+  --ring: var(--blue-300);
+  --border: #E2E8F0;
+  --shadow-color: 2, 6, 23;
+  
+  /* App-aligned radii */
+  --radius-app-sm: 8px;
+  --radius-app: 12px;
+  --radius-app-lg: 16px;
+  --radius-app-xl: 20px;
+
+  /* App-aligned shadows */
+  --shadow-app-sm: 0 1px 2px rgba(var(--shadow-color), 0.06);
+  --shadow-app-md: 0 6px 20px rgba(var(--shadow-color), 0.08);
+  
+  /* Container widths */
+  --container: 1120px;
+  --container-wide: 1280px;
 }
 
 @theme inline {
@@ -217,7 +262,7 @@
     /* Surfaces & Borders */
     --background-primary: #0B1220; /* Page bg */
     --card-background: #0F172A;    /* Elevated cards */
-    --border-color: #1F2A3A;       /* Subtle borders on dark */
+    --border-color: #1F2937;       /* Subtle borders on dark */
 
     /* Text colors ensure sufficient contrast on dark */
     --text-primary: #F7FAFC;  /* Cloud on Midnight */
@@ -228,14 +273,26 @@
     /* Shadows tuned for dark */
     --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.35);
     --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.45);
-    --shadow-glow: 0 0 24px rgba(45, 111, 255, 0.25);
+    --shadow-glow: 0 0 24px rgba(59, 130, 246, 0.25);
     --shadow-glow-accent: 0 0 24px rgba(18, 214, 192, 0.25);
 
     /* Dark hero gradient to avoid blending */
-  --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #0C1B24 100%);
+    --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #0C1B24 100%);
 
     /* Pills adapt to dark */
     --cloud: #17202E; /* darker pill bg */
+    
+    /* App-Aligned Dark Mode */
+    --bg: #0B1220;
+    --bg-subtle: #0F172A;
+    --surface: #111827;
+    --surface-muted: #0F172A;
+    --text: #E5E7EB;
+    --text-muted: #9CA3AF;
+    --brand: var(--blue-500);
+    --brand-contrast: #0B1220;
+    --ring: var(--blue-400);
+    --border: #1F2937;
   }
 }
 
@@ -597,6 +654,132 @@ html {
 .text-warning { color: var(--warning); }
 .text-danger { color: var(--danger); }
 
-/* Focus ring tuned to Om Blue */
-*:focus-visible { box-shadow: 0 0 0 2px var(--om-blue), 0 0 0 4px rgba(45, 111, 255, 0.35); }
-.focus-ring { @apply ring-2 ring-offset-2 ring-[color:var(--om-blue)]/60; }
+/* Focus ring tuned to brand blue */
+*:focus-visible { 
+  outline: none;
+  box-shadow: 0 0 0 2px var(--brand), 0 0 0 4px rgba(37, 99, 235, 0.35); 
+}
+.focus-ring { 
+  @apply ring-2 ring-offset-2 ring-[color:var(--brand)]/60; 
+}
+
+/* App-Aligned Component Styles */
+.button-primary {
+  background: var(--brand);
+  color: var(--brand-contrast);
+  border-radius: var(--radius-app);
+  box-shadow: var(--shadow-app-sm);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button-primary:hover {
+  background: var(--blue-700);
+  box-shadow: var(--shadow-app-md);
+  transform: translateY(-1px);
+}
+
+.button-primary:focus-visible {
+  box-shadow: 0 0 0 2px var(--brand-contrast), 0 0 0 4px var(--brand);
+}
+
+.button-secondary {
+  background: transparent;
+  color: var(--brand);
+  border: 1px solid var(--brand);
+  border-radius: var(--radius-app);
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button-secondary:hover {
+  background: var(--blue-50);
+  border-color: var(--blue-700);
+  color: var(--blue-700);
+}
+
+.button-tertiary {
+  background: transparent;
+  color: var(--brand);
+  border: none;
+  padding: 12px 24px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.button-tertiary:hover {
+  background: var(--blue-50);
+  color: var(--blue-700);
+}
+
+.card-app {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-app-lg);
+  box-shadow: var(--shadow-app-md);
+  padding: 24px;
+  transition: all 0.3s ease;
+}
+
+.card-app:hover {
+  box-shadow: 0 10px 30px rgba(var(--shadow-color), 0.12);
+  transform: translateY(-2px);
+}
+
+.badge-app {
+  background: var(--blue-50);
+  color: var(--blue-700);
+  border-radius: var(--radius-app-sm);
+  padding: 4px 12px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.progress-bar {
+  background: var(--surface-muted);
+  height: 4px;
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: var(--brand);
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.3s ease;
+}
+
+.stepper-indicator {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background: var(--brand);
+  color: var(--brand-contrast);
+  border-radius: 50%;
+  font-weight: 700;
+  font-size: 0.875rem;
+}
+
+.stepper-indicator.inactive {
+  background: var(--surface-muted);
+  color: var(--text-muted);
+}
+
+.cta-gradient {
+  background: linear-gradient(135deg, var(--blue-600) 0%, var(--indigo-500) 100%);
+  color: white;
+  border-radius: var(--radius-app-lg);
+  padding: 48px;
+  box-shadow: var(--shadow-app-md);
+}

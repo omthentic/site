@@ -15,29 +15,30 @@ const tiers = [
 
 export default function PricingPage() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-950 dark:to-gray-900">
+    <div className="min-h-screen bg-[var(--bg)]">
       <ModernHeader />
       <section className="pt-32 pb-10 px-4 sm:px-6 lg:px-8 text-center">
         <div className="max-w-3xl mx-auto">
-          <h1 className="text-5xl sm:text-6xl font-bold text-gray-900 dark:text-white mb-4">Simple, fair pricing</h1>
-          <p className="text-xl text-gray-600 dark:text-gray-400">Choose a plan that grows with your goals.</p>
+          <h1 className="text-5xl sm:text-6xl font-bold text-[var(--text)] mb-4">Simple, fair pricing</h1>
+          <p className="text-xl text-[var(--text-muted)]">Start free. Upgrade when you want deeper insights and full-length mock interviews.</p>
         </div>
       </section>
       <section className="py-14 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
           {tiers.map((t) => (
-            <motion.div key={t.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`rounded-2xl p-6 border ${t.highlight ? 'bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white border-transparent' : 'bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-700'} `}>
-              <div className="text-lg font-semibold mb-1">{t.name}</div>
-              <div className="text-4xl font-bold mb-1">{t.price}<span className="text-base font-medium opacity-80">{t.period}</span></div>
+            <motion.div key={t.name} initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className={`card-app ${t.highlight ? 'ring-2 ring-[var(--brand)] relative' : ''}`}>
+              {t.highlight && <div className="absolute -top-3 left-1/2 -translate-x-1/2 badge-app">Most Popular</div>}
+              <div className="text-lg font-semibold mb-1 text-[var(--text)]">{t.name}</div>
+              <div className="text-4xl font-bold mb-1 text-[var(--text)]">{t.price}<span className="text-base font-medium text-[var(--text-muted)]">{t.period}</span></div>
               <ul className="space-y-2 my-4">
                 {t.features.map((f) => (
                   <li key={f} className="flex items-center gap-2">
-                    <Check className={`w-5 h-5 ${t.highlight ? 'text-white' : 'text-green-500'}`} />
-                    <span className={t.highlight ? 'text-white/90' : 'text-gray-700 dark:text-gray-300'}>{f}</span>
+                    <Check className="w-5 h-5 text-[var(--success)]" />
+                    <span className="text-[var(--text-muted)]">{f}</span>
                   </li>
                 ))}
               </ul>
-              <Link href={t.audience === 'b2b' ? '/company/contact' : '/sign-up'} className={`inline-block w-full text-center px-4 py-3 rounded-xl font-semibold ${t.highlight ? 'bg-white text-blue-600' : 'bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white'}`}>{t.cta}</Link>
+              <Link href={t.audience === 'b2b' ? '/company/contact' : '/sign-up'} className={`inline-block w-full text-center ${t.highlight ? 'button-primary' : 'button-secondary'}`}>{t.cta}</Link>
             </motion.div>
           ))}
         </div>
@@ -46,8 +47,8 @@ export default function PricingPage() {
       <section className="pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto overflow-x-auto">
           <div className="text-center mb-4">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">Compare Plans — Find Your Perfect Fit</h2>
-            <p className="text-gray-600 dark:text-gray-400">Choose the plan that matches your goals — from getting started for free to unlocking unlimited practice and team-wide collaboration.</p>
+            <h2 className="text-3xl font-bold text-[var(--text)] mb-2">Compare Plans — Find Your Perfect Fit</h2>
+            <p className="text-[var(--text-muted)]">Choose the plan that matches your goals — from getting started for free to unlocking unlimited practice and team-wide collaboration.</p>
           </div>
           <table className="w-full text-left border-collapse">
             <thead>

@@ -73,8 +73,8 @@ const primaryNav: PrimaryNavItem[] = [
 ];
 
 const utilityNav: { label: string; path: string; style?: 'primary' }[] = [
-  { label: 'Sign in', path: '/login' },
-  { label: 'Get started', path: '/get-started', style: 'primary' },
+  { label: 'Sign in', path: 'https://app.omthentic.ai/auth' },
+  { label: 'Start Practicing', path: 'https://app.omthentic.ai/auth', style: 'primary' },
 ];
 
 export default function ModernHeader() {
@@ -120,7 +120,7 @@ export default function ModernHeader() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-[720px] bg-white dark:bg-gray-900 rounded-xl shadow-xl border border-gray-200 dark:border-gray-800 overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-[720px] bg-[var(--surface)] rounded-xl shadow-xl border border-[var(--border)] overflow-hidden"
                       onMouseEnter={() => setActiveDropdown(nav.label)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
@@ -169,7 +169,7 @@ export default function ModernHeader() {
             <div className="flex items-center space-x-4">
               {utilityNav.map((u) => (
                 u.style === 'primary' ? (
-                  <Link key={u.label} href={u.path} className="px-6 py-2.5 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white text-sm font-medium rounded-full hover:brightness-105 transition-all shadow-lg">
+                  <Link key={u.label} href={u.path} className="button-primary">
                     {u.label}
                   </Link>
                 ) : (
@@ -238,7 +238,7 @@ export default function ModernHeader() {
                 <div className="flex gap-2">
                   {utilityNav.map((u) => (
                     u.style === 'primary' ? (
-                      <Link key={u.label} href={u.path} className="flex-1 px-4 py-3 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white text-sm font-medium rounded-lg text-center shadow-lg">
+                      <Link key={u.label} href={u.path} className="flex-1 button-primary text-center">
                         {u.label}
                       </Link>
                     ) : (

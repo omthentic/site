@@ -76,9 +76,9 @@ export default function ModernHome() {
             >
               <Link
                 href="/onboarding"
-                className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl inline-flex items-center justify-center gap-2"
+                className="button-primary inline-flex items-center justify-center gap-2"
               >
-                Join the Pilot
+                Start Practicing
                 <ArrowRight className="w-5 h-5" />
               </Link>
             </motion.div>
@@ -96,8 +96,111 @@ export default function ModernHome() {
         </div>
       </section>
 
+      {/* App-Aligned Action Cards */}
+      <section className="py-20 bg-[var(--bg-subtle)]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text)] mb-4">Your AI coach for medical interviews</h2>
+            <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+              Practice authentic scenarios, get actionable feedback, and track progress.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-6 mb-16">
+            {/* Start Practicing Card */}
+            <Link href="https://app.omthentic.ai/auth" className="card-app group cursor-pointer">
+              <div className="w-14 h-14 rounded-xl bg-[var(--blue-600)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[var(--text)] mb-2">Start Practicing</h3>
+              <p className="text-[var(--text-muted)]">Begin with personal questions or medical scenarios</p>
+            </Link>
+
+            {/* Take Assessment Card */}
+            <Link href="https://app.omthentic.ai/auth" className="card-app group cursor-pointer">
+              <div className="w-14 h-14 rounded-xl bg-[var(--indigo-500)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[var(--text)] mb-2">Take Assessment</h3>
+              <p className="text-[var(--text-muted)]">Complete your character profile for personalized feedback</p>
+            </Link>
+
+            {/* Set Goals Card */}
+            <Link href="https://app.omthentic.ai/auth" className="card-app group cursor-pointer">
+              <div className="w-14 h-14 rounded-xl bg-[var(--success)] flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
+                <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-[var(--text)] mb-2">Set Goals</h3>
+              <p className="text-[var(--text-muted)]">Configure your daily practice goals and preferences</p>
+            </Link>
+          </div>
+
+          {/* Quick Start Guide */}
+          <div className="card-app max-w-4xl mx-auto">
+            <div className="flex items-center gap-3 mb-6">
+              <div className="w-10 h-10 rounded-full bg-[var(--blue-100)] flex items-center justify-center">
+                <svg className="w-5 h-5 text-[var(--blue-600)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
+                </svg>
+              </div>
+              <h3 className="text-2xl font-bold text-[var(--text)]">Quick Start Guide</h3>
+            </div>
+            <div className="space-y-4">
+              {[
+                'Complete your character assessment for personalized AI feedback',
+                'Choose a practice mode: Personal Questions, Medical Scenarios, or Mock Interview',
+                'Receive detailed AI feedback on Content, Structure, and Presentation',
+                'Track your progress, earn points, and level up as you improve'
+              ].map((step, idx) => (
+                <div key={idx} className="flex items-start gap-3">
+                  <div className="stepper-indicator flex-shrink-0">{idx + 1}</div>
+                  <p className="text-[var(--text-muted)] pt-1">{step}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How Scoring Works */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl sm:text-4xl font-bold text-[var(--text)] mb-4">How Our Scoring Works</h2>
+            <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto">
+              Build confidence with practice that mirrors real interviews.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-[var(--blue-600)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+              <h3 className="text-xl font-bold text-[var(--text)] mb-2">Content (0-5)</h3>
+              <p className="text-[var(--text-muted)]">Quality and relevance of your response.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-[var(--success)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+              <h3 className="text-xl font-bold text-[var(--text)] mb-2">Structure (0-5)</h3>
+              <p className="text-[var(--text-muted)]">Organization and clarity of your answer.</p>
+            </div>
+            <div className="text-center">
+              <div className="w-16 h-16 rounded-full bg-[var(--indigo-500)] text-white flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+              <h3 className="text-xl font-bold text-[var(--text)] mb-2">Presentation (0-5)</h3>
+              <p className="text-[var(--text-muted)]">Communication style and delivery.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why It Matters */}
-      <section className="py-16 sm:py-20 bg-white dark:bg-gray-900 border-y border-gray-200 dark:border-gray-800">
+      <section className="py-16 sm:py-20 bg-[var(--bg-subtle)] border-y border-[var(--border)]">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6">Why It Matters</h2>
           <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
@@ -165,24 +268,27 @@ export default function ModernHome() {
       </section>
 
       {/* How It Works */}
-      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8">
+      <section className="py-16 sm:py-20 px-4 sm:px-6 lg:px-8 bg-[var(--bg-subtle)]">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-12">How It Works</h2>
+          <h2 className="text-4xl font-bold text-[var(--text)] mb-4 text-center">How It Works</h2>
+          <p className="text-lg text-[var(--text-muted)] max-w-2xl mx-auto text-center mb-12">
+            Choose a mode, answer 3–5 questions, and receive targeted feedback—no scheduling required.
+          </p>
           <div className="grid md:grid-cols-3 gap-6">
-            <div className="rounded-2xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center mb-4"><Users className="w-6 h-6 text-white" /></div>
-              <div className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Profile</div>
-              <div className="text-gray-600 dark:text-gray-400">Discover your unique character strengths with Charametrics, giving you deep self-awareness and clarity.</div>
+            <div className="card-app">
+              <div className="w-12 h-12 rounded-xl bg-[var(--blue-600)] flex items-center justify-center mb-4"><Users className="w-6 h-6 text-white" /></div>
+              <div className="text-xl font-semibold text-[var(--text)] mb-2">Profile</div>
+              <div className="text-[var(--text-muted)]">Discover your unique character strengths with Charametrics, giving you deep self-awareness and clarity.</div>
             </div>
-            <div className="rounded-2xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center mb-4"><Brain className="w-6 h-6 text-white" /></div>
-              <div className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Tailored AI Coach</div>
-              <div className="text-gray-600 dark:text-gray-400">Get matched with an AI-powered communication coach that understands your strengths and helps you grow where it matters most.</div>
+            <div className="card-app">
+              <div className="w-12 h-12 rounded-xl bg-[var(--indigo-500)] flex items-center justify-center mb-4"><Brain className="w-6 h-6 text-white" /></div>
+              <div className="text-xl font-semibold text-[var(--text)] mb-2">Tailored AI Coach</div>
+              <div className="text-[var(--text-muted)]">Get matched with an AI-powered communication coach that understands your strengths and helps you grow where it matters most.</div>
             </div>
-            <div className="rounded-2xl p-6 border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] flex items-center justify-center mb-4"><Target className="w-6 h-6 text-white" /></div>
-              <div className="text-xl font-semibold text-gray-900 dark:text-white mb-2">Real-World Success</div>
-              <div className="text-gray-600 dark:text-gray-400">Practice in safe, guided scenarios and bring those skills into real conversations—unlocking opportunities that align with your values and goals.</div>
+            <div className="card-app">
+              <div className="w-12 h-12 rounded-xl bg-[var(--success)] flex items-center justify-center mb-4"><Target className="w-6 h-6 text-white" /></div>
+              <div className="text-xl font-semibold text-[var(--text)] mb-2">Real-World Success</div>
+              <div className="text-[var(--text-muted)]">Practice in safe, guided scenarios and bring those skills into real conversations—unlocking opportunities that align with your values and goals.</div>
             </div>
           </div>
         </div>
@@ -210,8 +316,8 @@ export default function ModernHome() {
               <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Practical, real-world tools for communicating authentically under pressure.</li>
               <li className="flex items-start gap-3"><Check className="w-5 h-5 mt-1 text-emerald-500" /> Early access to our platform and direct influence on its development.</li>
             </ul>
-            <Link href="/onboarding" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl">
-              Apply Now
+            <Link href="/onboarding" className="button-primary inline-flex items-center gap-2">
+              Start Practicing
               <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
@@ -247,8 +353,8 @@ export default function ModernHome() {
         <div className="max-w-4xl mx-auto text-center">
           <blockquote className="text-2xl sm:text-3xl font-semibold text-gray-900 dark:text-white mb-6">“When you speak your truth, the right opportunities listen.”</blockquote>
           <p className="text-gray-600 dark:text-gray-400 mb-8">Join Omthentic AI and discover what&rsquo;s possible when you communicate authentically.</p>
-          <Link href="/onboarding" className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-xl hover:brightness-105 transition-all shadow-xl">
-            Join the Pilot
+          <Link href="/onboarding" className="button-primary inline-flex items-center gap-2">
+            Start Practicing
             <ArrowRight className="w-5 h-5" />
           </Link>
         </div>

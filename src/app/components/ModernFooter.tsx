@@ -46,20 +46,20 @@ const socialLinks = [
 
 export default function ModernFooter() {
   return (
-    <footer className="bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800">
+    <footer className="bg-[var(--surface)] border-t border-[var(--border)]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Main Footer Content */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-6 sm:gap-8 mb-8">
           {/* Brand Column */}
           <div className="col-span-2 sm:col-span-3 md:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-gradient-to-br from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-[var(--brand)] rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-sm">O</span>
               </div>
-              <span className="font-semibold text-lg text-gray-900 dark:text-white">Omthentic</span>
+              <span className="font-semibold text-lg text-[var(--text)]">Omthentic</span>
             </Link>
-            <p className="text-gray-600 dark:text-gray-400 mb-4 max-w-xs">
-              Authentic communication technology that helps you express what you truly mean—and be heard.
+            <p className="text-[var(--text-muted)] mb-4 max-w-xs">
+              Your AI coach for medical interviews. Practice authentic scenarios, get actionable feedback, and track progress.
             </p>
             <div className="flex items-center gap-4">
               {socialLinks.map((social) => (
@@ -99,22 +99,22 @@ export default function ModernFooter() {
         <div className="border-t border-gray-200 dark:border-gray-800 pt-8 mb-8">
           <div className="flex flex-col md:flex-row items-center justify-between gap-4">
             <div>
-              <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
-                Stay updated with authentic communication insights
+              <h3 className="font-semibold text-[var(--text)] mb-1">
+                Stay updated with interview tips
               </h3>
-              <p className="text-sm text-gray-600 dark:text-gray-400">
-                Practical tips and stories to help you communicate with clarity and confidence
+              <p className="text-sm text-[var(--text-muted)]">
+                Get interview tips and new scenarios. 1–2 emails per month.
               </p>
             </div>
             <form className="flex gap-2 w-full md:w-auto">
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="px-4 py-2 bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-lg text-gray-900 dark:text-white placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-600 flex-1 min-w-0 md:w-64"
+                className="px-4 py-2 bg-[var(--surface-muted)] border border-[var(--border)] rounded-lg text-[var(--text)] placeholder-[var(--text-muted)] focus:outline-none focus:ring-2 focus:ring-[var(--ring)] flex-1 min-w-0 md:w-64"
               />
               <button
                 type="submit"
-                className="px-5 sm:px-6 py-2 bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white font-medium rounded-lg hover:brightness-105 transition-all whitespace-nowrap"
+                className="button-primary whitespace-nowrap"
               >
                 Subscribe
               </button>
