@@ -89,7 +89,7 @@ export default function ModernHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto">
-        <div className="flex items-center justify-between h-16 lg:h-20 backdrop-blur-md bg-black/20 border-b border-white/10 rounded-b-2xl mx-4 px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16 lg:h-20 backdrop-blur-md bg-black/50 border-b border-white/10 rounded-b-2xl mx-4 px-6 lg:px-8">
           {/* Left Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {primaryNav.map((nav) => (
@@ -198,7 +198,7 @@ export default function ModernHeader() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-black/90 backdrop-blur-md border-t border-white/10 rounded-b-2xl mx-4 mt-2"
+            className="lg:hidden bg-black/80 backdrop-blur-md border-t border-white/10 rounded-b-2xl mx-4 mt-2"
           >
             <div className="px-4 py-4 space-y-2 pb-24">
               {primaryNav.map((nav) => (
