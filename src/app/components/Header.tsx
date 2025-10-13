@@ -38,7 +38,7 @@ const Header = () => {
       />
       
       <motion.header
-        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-40 transition-all duration-300 rounded-b-2xl mx-4 ${
           scrolled
             ? 'bg-white/90 backdrop-blur-md border-b border-gray-200/20'
             : 'bg-white/80 backdrop-blur-md border-b border-gray-200/10'
@@ -47,7 +47,7 @@ const Header = () => {
         animate={{ y: 0 }}
         transition={{ duration: 0.5 }}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6 sm:px-8 lg:px-10">
           <div className="flex items-center justify-between h-14 sm:h-16 lg:h-20">
             {/* Logo */}
             <motion.div
@@ -107,7 +107,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus-ring"
+              className="lg:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus-ring mr-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileTap={{ scale: 0.95 }}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -128,7 +128,7 @@ const Header = () => {
           }}
           transition={{ duration: 0.3 }}
         >
-          <div className="px-4 py-4 bg-background border-t border-gray-200/20 backdrop-blur-md">
+          <div className="mx-4 rounded-b-2xl px-6 py-4 bg-white/90 border-t border-gray-200/20 backdrop-blur-md">
             <nav className="flex flex-col space-y-4">
               {navItems.map((item, index) => (
                 <motion.a
