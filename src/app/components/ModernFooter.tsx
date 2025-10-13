@@ -21,7 +21,7 @@ const footerLinks = {
     { name: 'Teams', href: '/for/teams' },
   ],
   Resources: [
-    { name: 'Blog', href: '/resources/blog' },
+    { name: 'Blog', href: '/blog' },
     { name: 'How to Use', href: '/resources/how-to-use' },
     { name: 'Success Stories', href: '/resources/success-stories' },
     { name: 'Communication Tips', href: '/resources/interview-tips' },

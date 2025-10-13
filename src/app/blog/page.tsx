@@ -215,49 +215,48 @@ export default function BlogIndexPage() {
           {/* Articles Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredPosts.map((post, index) => (
-              <motion.article
-                key={post.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.05 }}
-                className="card-app group cursor-pointer hover:shadow-lg transition-all"
-              >
-                <div className="aspect-video bg-gradient-to-br from-[var(--blue-50)] to-[var(--indigo-50)] rounded-t-2xl mb-4 flex items-center justify-center">
-                  <div className="w-12 h-12 bg-[var(--brand)] rounded-full flex items-center justify-center">
-                    <Tag className="w-6 h-6 text-white" />
-                  </div>
-                </div>
-
-                <div className="p-6">
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="badge-app">{post.category}</span>
-                  </div>
-
-                  <h3 className="text-lg font-bold text-[var(--text)] mb-3 group-hover:text-[var(--brand)] transition-colors line-clamp-2">
-                    {post.title}
-                  </h3>
-
-                  <p className="text-[var(--text-muted)] mb-4 line-clamp-3 text-sm">
-                    {post.excerpt}
-                  </p>
-
-                  <div className="flex items-center justify-between text-xs text-[var(--text-muted)] mb-4">
-                    <div className="flex items-center gap-3">
-                      <span>{post.author}</span>
-                      <span>{new Date(post.date).toLocaleDateString()}</span>
+              <Link href={`/blog/${post.slug}`} className="block">
+                <motion.article
+                  key={post.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ delay: index * 0.05 }}
+                  className="card-app group cursor-pointer hover:shadow-lg transition-all"
+                >
+                  <div className="aspect-video bg-gradient-to-br from-[var(--blue-50)] to-[var(--indigo-50)] rounded-t-2xl mb-4 flex items-center justify-center">
+                    <div className="w-12 h-12 bg-[var(--brand)] rounded-full flex items-center justify-center">
+                      <Tag className="w-6 h-6 text-white" />
                     </div>
-                    <span>{post.readTime}</span>
                   </div>
 
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-2 text-[var(--brand)] font-medium text-sm group-hover:gap-3 transition-all"
-                  >
-                    Read More
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </motion.article>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="badge-app">{post.category}</span>
+                    </div>
+
+                    <h3 className="text-lg font-bold text-[var(--text)] mb-3 group-hover:text-[var(--brand)] transition-colors line-clamp-2">
+                      {post.title}
+                    </h3>
+
+                    <p className="text-[var(--text-muted)] mb-4 line-clamp-3 text-sm">
+                      {post.excerpt}
+                    </p>
+
+                    <div className="flex items-center justify-between text-xs text-[var(--text-muted)] mb-4">
+                      <div className="flex items-center gap-3">
+                        <span>{post.author}</span>
+                        <span>{new Date(post.date).toLocaleDateString()}</span>
+                      </div>
+                      <span>{post.readTime}</span>
+                    </div>
+
+                    <div className="inline-flex items-center gap-2 text-[var(--brand)] font-medium text-sm group-hover:gap-3 transition-all">
+                      Read More
+                      <ArrowRight className="w-3 h-3" />
+                    </div>
+                  </div>
+                </motion.article>
+              </Link>
             ))}
           </div>
 
