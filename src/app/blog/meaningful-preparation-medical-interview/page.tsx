@@ -311,7 +311,7 @@ const ArticleContent = () => (
           <p className="mb-6 opacity-90">
             Join successful medical students who discovered the power of meaningful preparation and authentic communication.
           </p>
-          <Link href="/onboarding" className="inline-flex items-center gap-2 bg-white text-[var(--brand)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+          <Link href="/app/onboarding" className="inline-flex items-center gap-2 bg-white text-[var(--brand)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
             Start Meaningful Preparation
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -326,17 +326,12 @@ const ArticleFooter = () => {
     {
       title: 'How to Succeed in Your Medical Interview in Australia: The Power of Authentic Communication',
       slug: 'how-to-succeed-medical-interview-australia',
-      category: 'Interview Success'
+      category: 'Interview Preparation'
     },
     {
       title: 'Emotional Intelligence: The Missing Skill in Australian Medical Interviews',
       slug: 'emotional-intelligence-australian-medical-interviews',
-      category: 'Emotional Intelligence'
-    },
-    {
-      title: 'The Psychology of First Impressions in Medical Interviews',
-      slug: 'psychology-first-impressions',
-      category: 'Psychology'
+      category: 'AI & Technology'
     }
   ];
 

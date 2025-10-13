@@ -23,35 +23,35 @@ interface BlogPost {
 const blogPosts: BlogPost[] = [
   {
     id: '1',
-    title: 'The Future of AI-Powered Medical Interviews',
-    excerpt: 'How artificial intelligence is revolutionizing medical school admissions and what it means for aspiring healthcare professionals.',
-    author: 'Dr. Sarah Chen',
+    title: 'How to Succeed in Your Medical Interview in Australia: The Power of Authentic Communication',
+    excerpt: 'Discover why genuine communication trumps memorized responses in Australian medical interviews and how to harness your authentic voice for success.',
+    author: 'Dr. Sarah Mitchell',
     date: '2024-01-15',
-    readTime: '8 min read',
-    category: 'AI & Technology',
+    readTime: '12 min read',
+    category: 'Interview Preparation',
     featured: true,
     image: '/images/blog/ai-medical-interviews.jpg',
     slug: 'how-to-succeed-medical-interview-australia'
   },
   {
     id: '2',
-    title: 'Building Authentic Communication in Healthcare Teams',
-    excerpt: 'Strategies for fostering genuine connections in high-stakes medical environments where every interaction matters.',
-    author: 'Dr. Michael Rodriguez',
+    title: 'Emotional Intelligence: The Missing Skill in Australian Medical Interviews',
+    excerpt: 'Why EQ trumps IQ in medical school admissions and how developing emotional intelligence can transform your interview performance and future medical career.',
+    author: 'Dr. Michael Chen',
     date: '2024-01-12',
-    readTime: '6 min read',
-    category: 'Healthcare Communication',
+    readTime: '10 min read',
+    category: 'AI & Technology',
     featured: true,
     image: '/images/blog/healthcare-communication.jpg',
     slug: 'emotional-intelligence-australian-medical-interviews'
   },
   {
     id: '3',
-    title: 'MMI Success: Beyond Memorized Responses',
-    excerpt: 'Why authentic communication trumps scripted answers in Multiple Mini Interviews and how to prepare effectively.',
-    author: 'Dr. Priya Patel',
+    title: 'Meaningful Preparation: The Mindset Shift That Transforms Your Medical Interview',
+    excerpt: 'Discover how shifting from mechanical practice to meaningful preparation can dramatically improve your medical school interview performance and long-term success.',
+    author: 'Dr. Amanda Foster',
     date: '2024-01-10',
-    readTime: '10 min read',
+    readTime: '11 min read',
     category: 'Interview Preparation',
     featured: false,
     image: '/images/blog/mmi-success.jpg',
@@ -59,7 +59,7 @@ const blogPosts: BlogPost[] = [
   },
 ];
 
-const categories = ['All', 'AI & Technology', 'Healthcare Communication', 'Interview Preparation'];
+const categories = ['All', 'AI & Technology', 'Interview Preparation'];
 
 export default function BlogIndexPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');

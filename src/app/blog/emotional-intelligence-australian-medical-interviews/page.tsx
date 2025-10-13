@@ -300,7 +300,7 @@ const ArticleContent = () => (
           <p className="mb-6 opacity-90">
             Join medical students worldwide who are building the emotional intelligence skills that will define their careers.
           </p>
-          <Link href="/onboarding" className="inline-flex items-center gap-2 bg-white text-[var(--brand)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+          <Link href="/app/onboarding" className="inline-flex items-center gap-2 bg-white text-[var(--brand)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
             Start Building EQ
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -315,17 +315,12 @@ const ArticleFooter = () => {
     {
       title: 'How to Succeed in Your Medical Interview in Australia: The Power of Authentic Communication',
       slug: 'how-to-succeed-medical-interview-australia',
-      category: 'Interview Success'
+      category: 'Interview Preparation'
     },
     {
       title: 'Meaningful Preparation: The Mindset Shift That Transforms Your Medical Interview',
       slug: 'meaningful-preparation-medical-interview',
       category: 'Interview Preparation'
-    },
-    {
-      title: 'The Psychology of First Impressions in Medical Interviews',
-      slug: 'psychology-first-impressions',
-      category: 'Psychology'
     }
   ];
 

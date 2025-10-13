@@ -211,7 +211,7 @@ const ArticleContent = () => (
           <p className="mb-6 opacity-90">
             Join thousands of successful medical students who discovered the power of authentic communication.
           </p>
-          <Link href="/onboarding" className="inline-flex items-center gap-2 bg-white text-[var(--brand)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
+          <Link href="/app/onboarding" className="inline-flex items-center gap-2 bg-white text-[var(--brand)] px-6 py-3 rounded-lg font-semibold hover:bg-gray-50 transition-colors">
             Start Your Journey
             <ArrowRight className="w-4 h-4" />
           </Link>
@@ -226,17 +226,12 @@ const ArticleFooter = () => {
     {
       title: 'Emotional Intelligence: The Missing Skill in Australian Medical Interviews',
       slug: 'emotional-intelligence-australian-medical-interviews',
-      category: 'Psychology'
+      category: 'AI & Technology'
     },
     {
       title: 'Meaningful Preparation: The Mindset Shift That Transforms Your Medical Interview',
       slug: 'meaningful-preparation-medical-interview',
       category: 'Interview Preparation'
-    },
-    {
-      title: 'The Psychology of First Impressions in Medical Interviews',
-      slug: 'psychology-first-impressions',
-      category: 'Psychology'
     }
   ];
 
