@@ -89,7 +89,7 @@ export default function ModernHeader() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16 lg:h-20">
+        <div className="flex items-center justify-between h-16 lg:h-20 backdrop-blur-md bg-black/20 border-b border-white/10">
           {/* Left Navigation */}
           <div className="hidden lg:flex items-center space-x-8">
             {primaryNav.map((nav) => (
@@ -120,7 +120,7 @@ export default function ModernHeader() {
                       animate={{ opacity: 1, y: 0 }}
                       exit={{ opacity: 0, y: -10 }}
                       transition={{ duration: 0.15 }}
-                      className="absolute top-full left-0 mt-2 w-[720px] bg-[var(--surface)] rounded-xl shadow-xl border border-[var(--border)] overflow-hidden"
+                      className="absolute top-full left-0 mt-2 w-[720px] bg-white/95 backdrop-blur-md rounded-xl shadow-xl border border-white/20 overflow-hidden"
                       onMouseEnter={() => setActiveDropdown(nav.label)}
                       onMouseLeave={() => setActiveDropdown(null)}
                     >
@@ -183,7 +183,7 @@ export default function ModernHeader() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-2 rounded-lg hover:bg-white/10 text-white transition-colors"
+            className="lg:hidden p-2 rounded-lg hover:bg-white/20 text-white transition-colors backdrop-blur-sm"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -198,18 +198,18 @@ export default function ModernHeader() {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800"
+            className="lg:hidden bg-black/90 backdrop-blur-md border-t border-white/10"
           >
             <div className="px-4 py-4 space-y-2 pb-24">
               {primaryNav.map((nav) => (
-                <div key={nav.label} className="border-b border-gray-200 dark:border-gray-800">
+                <div key={nav.label} className="border-b border-white/10">
                   {nav.dropdown ? (
-                    <button onClick={() => toggleMobileSection(nav.label)} className="w-full flex items-center justify-between px-3 py-3 text-left text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <button onClick={() => toggleMobileSection(nav.label)} className="w-full flex items-center justify-between px-3 py-3 text-left text-sm font-medium text-white hover:text-gray-200">
                       <span>{nav.label}</span>
-                      <ChevronDown className={`w-4 h-4 transition-transform ${openMobileSections[nav.label] ? 'rotate-180' : ''}`} />
+                      <ChevronDown className={`w-4 h-4 transition-transform text-white ${openMobileSections[nav.label] ? 'rotate-180' : ''}`} />
                     </button>
                   ) : (
-                    <Link href={nav.path} className="block px-3 py-3 text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <Link href={nav.path} className="block px-3 py-3 text-sm font-medium text-white hover:text-gray-200">
                       {nav.label}
                     </Link>
                   )}
@@ -217,13 +217,13 @@ export default function ModernHeader() {
                     <div className="ml-2 pb-3 space-y-3">
                       {nav.dropdown.columns.map((col) => (
                         <div key={col.groupLabel}>
-                          <div className="px-3 pt-2 text-xs font-semibold uppercase tracking-wide text-gray-500 dark:text-gray-400">{col.groupLabel}</div>
+                          <div className="px-3 pt-2 text-xs font-semibold uppercase tracking-wide text-gray-300">{col.groupLabel}</div>
                           <div className="mt-1 space-y-1">
                             {col.items.map((item) => (
-                              <Link key={item.label} href={item.path} className="block px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-800 rounded-lg">
+                              <Link key={item.label} href={item.path} className="block px-4 py-2 text-sm text-gray-200 hover:bg-white/10 hover:text-white rounded-lg transition-colors">
                                 {item.label}
                                 {item.badge ? (
-                                  <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-gradient-to-r from-[#2D6FFF] via-[#19B9D0] to-[#12D6C0] text-white align-middle">{item.badge}</span>
+                                  <span className="ml-2 text-[10px] px-2 py-0.5 rounded-full bg-white/20 text-white align-middle">{item.badge}</span>
                                 ) : null}
                               </Link>
                             ))}
@@ -242,7 +242,7 @@ export default function ModernHeader() {
                         {u.label}
                       </Link>
                     ) : (
-                      <Link key={u.label} href={u.path} className="flex-1 px-4 py-3 bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white text-sm font-medium rounded-lg text-center">
+                      <Link key={u.label} href={u.path} className="flex-1 px-4 py-3 bg-white/10 text-white text-sm font-medium rounded-lg text-center hover:bg-white/20 transition-colors">
                         {u.label}
                       </Link>
                     )

@@ -75,7 +75,7 @@ export default function ModernHome() {
               className="flex items-center justify-center"
             >
               <Link
-                href="/onboarding"
+                href="https://app.omthentic.ai/auth/"
                 className="button-primary inline-flex items-center justify-center gap-2"
               >
                 Start Practicing
