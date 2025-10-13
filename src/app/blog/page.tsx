@@ -31,7 +31,7 @@ const blogPosts: BlogPost[] = [
     category: 'AI & Technology',
     featured: true,
     image: '/images/blog/ai-medical-interviews.jpg',
-    slug: 'future-ai-medical-interviews'
+    slug: 'how-to-succeed-medical-interview-australia'
   },
   {
     id: '2',
@@ -43,7 +43,7 @@ const blogPosts: BlogPost[] = [
     category: 'Healthcare Communication',
     featured: true,
     image: '/images/blog/healthcare-communication.jpg',
-    slug: 'authentic-communication-healthcare'
+    slug: 'emotional-intelligence-australian-medical-interviews'
   },
   {
     id: '3',
@@ -55,47 +55,11 @@ const blogPosts: BlogPost[] = [
     category: 'Interview Preparation',
     featured: false,
     image: '/images/blog/mmi-success.jpg',
-    slug: 'mmi-success-authentic-communication'
+    slug: 'meaningful-preparation-medical-interview'
   },
-  {
-    id: '4',
-    title: 'The Psychology of First Impressions in Medical Interviews',
-    excerpt: 'Understanding how interviewers form opinions in the first 30 seconds and how to make them count in your favor.',
-    author: 'Dr. James Wilson',
-    date: '2024-01-08',
-    readTime: '7 min read',
-    category: 'Psychology',
-    featured: false,
-    image: '/images/blog/first-impressions.jpg',
-    slug: 'psychology-first-impressions'
-  },
-  {
-    id: '5',
-    title: 'From Pre-Med to MD: Communication Skills That Matter',
-    excerpt: 'The communication competencies that separate successful medical students from the rest, and how to develop them.',
-    author: 'Dr. Lisa Thompson',
-    date: '2024-01-05',
-    readTime: '9 min read',
-    category: 'Medical Education',
-    featured: false,
-    image: '/images/blog/pre-med-communication.jpg',
-    slug: 'pre-med-communication-skills'
-  },
-  {
-    id: '6',
-    title: 'Ethical AI in Medical Education: Balancing Technology and Humanity',
-    excerpt: 'Exploring the responsible use of AI in medical training while preserving the essential human elements of healthcare.',
-    author: 'Dr. David Kim',
-    date: '2024-01-03',
-    readTime: '12 min read',
-    category: 'AI Ethics',
-    featured: false,
-    image: '/images/blog/ai-ethics.jpg',
-    slug: 'ethical-ai-medical-education'
-  }
 ];
 
-const categories = ['All', 'AI & Technology', 'Healthcare Communication', 'Interview Preparation', 'Psychology', 'Medical Education', 'AI Ethics'];
+const categories = ['All', 'AI & Technology', 'Healthcare Communication', 'Interview Preparation'];
 
 export default function BlogIndexPage() {
   const [selectedCategory, setSelectedCategory] = useState('All');
