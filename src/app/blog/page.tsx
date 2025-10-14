@@ -6,6 +6,7 @@ import { Search, Calendar, Clock, ArrowRight, Filter, User, Tag } from 'lucide-r
 import ModernHeader from '../components/ModernHeader';
 import ModernFooter from '../components/ModernFooter';
 import Link from 'next/link';
+import { useRouter } from 'next/navigation';
 
 interface BlogPost {
   id: string;
@@ -62,6 +63,7 @@ const blogPosts: BlogPost[] = [
 const categories = ['All', 'AI & Technology', 'Interview Preparation'];
 
 export default function BlogIndexPage() {
+  const router = useRouter();
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 
@@ -134,9 +136,12 @@ export default function BlogIndexPage() {
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="card-app overflow-hidden group cursor-pointer"
+                  className="card-app overflow-hidden group cursor-pointer hover:shadow-lg"
+                  onClick={() => router.push(`/blog/${post.slug}`)}
+                  whileHover={{ y: -4 }}
+                  whileTap={{ scale: 0.98 }}
                 >
-                  <div className="aspect-video bg-gradient-to-br from-[var(--blue-100)] to-[var(--indigo-100)] rounded-t-2xl mb-6 flex items-center justify-center">
+                  <div className="aspect-video bg-gradient-to-br from-[var(--blue-100)] to-[var(--indigo-100)] rounded-t-2xl mb-6 flex items-center justify-center pointer-events-none">
                     <div className="w-16 h-16 bg-[var(--brand)] rounded-full flex items-center justify-center">
                       <span className="text-white font-bold text-xl">O</span>
                     </div>
@@ -223,7 +228,7 @@ export default function BlogIndexPage() {
                 transition={{ delay: index * 0.05 }}
                 whileHover={{ y: -4 }}
                 whileTap={{ scale: 0.98 }}
-                onClick={() => window.location.href = `/blog/${post.slug}`}
+                onClick={() => router.push(`/blog/${post.slug}`)}
               >
                   <div className="aspect-video bg-gradient-to-br from-[var(--blue-50)] to-[var(--indigo-50)] rounded-t-2xl mb-4 flex items-center justify-center pointer-events-none">
                     <div className="w-12 h-12 bg-[var(--brand)] rounded-full flex items-center justify-center">
