@@ -13,6 +13,7 @@ import { ArrowLeft, ArrowRight, Clock } from 'lucide-react';
 import rehypeSlug from 'rehype-slug';
 import rehypeAutolinkHeadings from 'rehype-autolink-headings';
 import remarkGfm from 'remark-gfm';
+import type { PluggableList } from 'unified';
 
 const mdxComponents = {
   Callout,
@@ -25,8 +26,8 @@ const mdxComponents = {
 
 const mdxOptions = {
   mdxOptions: {
-    remarkPlugins: [remarkGfm] as any[],
-    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]] as any[],
+    remarkPlugins: [remarkGfm] as PluggableList,
+    rehypePlugins: [rehypeSlug, [rehypeAutolinkHeadings, { behavior: 'wrap' }]] as PluggableList,
   },
 };
 
