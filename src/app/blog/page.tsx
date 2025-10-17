@@ -320,3 +320,23 @@ export default function BlogIndexPage() {
 }
 
 
+Role: Senior product designer + frontend dev.
+Context: Build a distinct Omthentic look inspired by Brilliant’s clarity (not its brand).
+Stack: Next.js App Router, TypeScript, Tailwind, shadcn/ui.
+
+Produce:
+
+tailwind.config.ts (tokens)
+
+app/globals.css + styles/tokens.css (CSS variables, dark mode via class)
+
+/app/(marketing)/tokens/page.tsx (live token gallery)
+
+README_TOKENS.md
+
+Tokens:
+Colors: --brand, --brand-foreground, --accent, --bg, --bg-elev, --text, --muted, --success, --warn, --error.
+Radius: 8/16/24/32px. Shadows e1–e4. Motion: 120/200/300ms, ease .2,.8,.2,1.
+Type: Inter or Plus Jakarta Sans; heading/body scale. AA contrast.
+
+Constraints: Mobile-first; prefers-reduced-motion; Lighthouse style-only page ≥90.

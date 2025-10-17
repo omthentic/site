@@ -17,7 +17,6 @@ import { Check, Copy, Moon, Sun } from 'lucide-react';
 
 export default function TokensPage() {
   const [darkMode, setDarkMode] = useState(false);
-  const [copiedToken, setCopiedToken] = useState<string | null>(null);
 
   const toggleDarkMode = () => {
     setDarkMode(!darkMode);
@@ -91,16 +90,6 @@ export default function TokensPage() {
         </Section>
       </main>
 
-      {/* Copy Toast */}
-      {copiedToken && (
-        <div
-          className="fixed bottom-8 right-8 px-4 py-3 rounded-md shadow-e3 flex items-center gap-2 animate-slide-up"
-          style={{ background: 'var(--success-bg)', color: 'var(--success-foreground)' }}
-        >
-          <Check size={18} />
-          <span>Copied: {copiedToken}</span>
-        </div>
-      )}
     </div>
   );
 }
@@ -260,7 +249,7 @@ function TypographyDemo() {
           Font Stack
         </h4>
         <code className="text-sm" style={{ color: 'var(--text-secondary)' }}>
-          font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif
+          font-family: &apos;Inter&apos;, -apple-system, BlinkMacSystemFont, &apos;Segoe UI&apos;, sans-serif
         </code>
       </div>
     </div>
