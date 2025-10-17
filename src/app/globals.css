@@ -803,3 +803,128 @@ html {
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
+
+/* ========================================
+   MDX PROSE STYLES
+   ======================================== */
+
+.prose {
+  --prose-body: var(--text);
+  --prose-headings: var(--text);
+  --prose-links: var(--brand);
+  --prose-bold: var(--text);
+  --prose-code: var(--text);
+  --prose-pre-bg: var(--bg-elev);
+  --prose-quotes: var(--text-secondary);
+  color: var(--prose-body);
+}
+
+.prose h2 {
+  scroll-margin-top: 6rem;
+  font-weight: 700;
+  color: var(--prose-headings);
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.prose h3 {
+  scroll-margin-top: 6rem;
+  font-weight: 600;
+  color: var(--prose-headings);
+  margin-top: 1.6em;
+  margin-bottom: 0.8em;
+}
+
+.prose a {
+  color: var(--prose-links);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  transition: opacity 0.2s;
+}
+
+.prose a:hover {
+  opacity: 0.8;
+}
+
+.prose code {
+  background-color: var(--bg-subtle);
+  padding: 0.2em 0.4em;
+  border-radius: 0.25rem;
+  font-size: 0.875em;
+  color: var(--prose-code);
+}
+
+.prose pre {
+  background-color: var(--prose-pre-bg);
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  overflow-x: auto;
+}
+
+.prose pre code {
+  background-color: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.prose img {
+  border-radius: 0.5rem;
+  margin: 1.5em 0;
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--prose-bold);
+}
+
+.prose ul,
+.prose ol {
+  margin: 1.5em 0;
+  padding-left: 1.5em;
+}
+
+.prose li {
+  margin: 0.5em 0;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--brand);
+  padding-left: 1rem;
+  font-style: italic;
+  color: var(--prose-quotes);
+  margin: 1.5em 0;
+}
+
+/* Color variants for MDX components */
+.bg-info-bg {
+  background-color: rgba(13, 148, 136, 0.1);
+}
+
+.text-info-foreground {
+  color: var(--text);
+}
+
+.bg-success-bg {
+  background-color: rgba(16, 185, 129, 0.1);
+}
+
+.text-success-foreground {
+  color: var(--text);
+}
+
+.bg-warning-bg {
+  background-color: rgba(245, 158, 11, 0.1);
+}
+
+.text-warning-foreground {
+  color: var(--text);
+}
+
+.bg-error-bg {
+  background-color: rgba(239, 68, 68, 0.1);
+}
+
+.text-error-foreground {
+  color: var(--text);
+}
