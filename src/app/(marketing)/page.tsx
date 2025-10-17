@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Grid } from '@/components/ui/Grid';
@@ -66,39 +67,49 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <Section spacing="xl" background="subtle">
+      <Section spacing="xl" background="default">
         <Container>
-          <div className="max-w-4xl mx-auto text-center">
-            <Badge variant="brand" size="md" rounded="full" className="mb-6 animate-fade-in">
-              <Sparkles size={16} className="inline mr-2" />
-              AI-Powered Communication Training
-            </Badge>
-            
-            <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 text-[var(--text)] animate-slide-up">
-              Express the real you—clearly, confidently, and when it counts
-            </h1>
-            
-            <p className="text-xl sm:text-2xl text-[var(--text-secondary)] mb-10 leading-relaxed animate-slide-up">
-              Bite-size learning and feedback that turn strengths into opportunities.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
-              <Button variant="primary" size="lg" asChild>
-                <Link href="/app/sign-up">
-                  Start Your Path
-                  <ArrowRight size={20} />
-                </Link>
-              </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/how-it-works">
-                  See How It Works
-                </Link>
-              </Button>
+          <div className="max-w-6xl mx-auto">
+            {/* Hero Image */}
+            <div className="relative w-full mb-12 animate-fade-in">
+              <div className="rounded-2xl overflow-hidden shadow-e3 bg-white">
+                <Image
+                  src="/images/speak so you're heard.png"
+                  alt="Speak so you're heard - Authentic communication that opens aligned opportunities"
+                  width={1200}
+                  height={630}
+                  priority
+                  className="w-full h-auto"
+                  style={{ maxHeight: '500px', objectFit: 'contain' }}
+                />
+              </div>
             </div>
 
-            <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Free 7-day trial • No credit card required
-            </p>
+            {/* Supporting Text & CTA */}
+            <div className="max-w-3xl mx-auto text-center animate-slide-up">
+              <p className="text-xl sm:text-2xl text-[var(--text-secondary)] mb-10 leading-relaxed">
+                Master the art of authentic communication. From medical interviews to leadership conversations, 
+                our AI coach helps you reflect, frame, and deliver with confidence.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
+                <Button variant="primary" size="lg" asChild>
+                  <Link href="/app/sign-up">
+                    Get Started
+                    <ArrowRight size={20} />
+                  </Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild>
+                  <Link href="/how-it-works">
+                    See How It Works
+                  </Link>
+                </Button>
+              </div>
+
+              <p className="mt-6 text-sm text-[var(--text-muted)]">
+                Free 7-day trial • No credit card required
+              </p>
+            </div>
           </div>
         </Container>
       </Section>

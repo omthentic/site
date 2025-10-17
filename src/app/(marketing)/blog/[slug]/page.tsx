@@ -4,7 +4,6 @@ import Link from 'next/link';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
-import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Callout, InlineNote, ProsCons, Step, Steps, BlockQuote } from '@/components/mdx';
 import { getAllPosts, getPostBySlug, getSurroundingPosts, formatDate, extractTableOfContents } from '@/lib/mdx/utils';

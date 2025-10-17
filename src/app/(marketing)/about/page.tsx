@@ -1,13 +1,11 @@
 import { Metadata } from 'next';
-import Link from 'next/link';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
 import { Grid } from '@/components/ui/Grid';
-import { Button } from '@/components/ui/Button';
 import { Badge } from '@/components/ui/Badge';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/Card';
 import { CTA } from '@/components/marketing/CTA';
-import { ArrowRight, Heart, Users, Target, Zap } from 'lucide-react';
+import { Heart, Users, Target, Zap } from 'lucide-react';
 
 export const metadata: Metadata = {
   title: 'About Us | Omthentic',
