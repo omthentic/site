@@ -1,5 +1,6 @@
 import { Metadata } from 'next';
 import Link from 'next/link';
+
 import Image from 'next/image';
 import { Container } from '@/components/ui/Container';
 import { Section } from '@/components/ui/Section';
@@ -85,13 +86,8 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Supporting Text & CTA */}
+            {/* CTA */}
             <div className="max-w-3xl mx-auto text-center animate-slide-up">
-              <p className="text-xl sm:text-2xl text-[var(--text-secondary)] mb-10 leading-relaxed">
-                Master the art of authentic communication. From medical interviews to leadership conversations, 
-                our AI coach helps you reflect, frame, and deliver with confidence.
-              </p>
-
               <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
                 <Button variant="primary" size="lg" asChild>
                   <Link href="/app/sign-up">
