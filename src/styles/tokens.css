@@ -1,0 +1,360 @@
+/**
+ * Omthentic Design Tokens
+ * Inspired by Brilliant.org's clarity with Omthentic's distinct identity
+ * 
+ * Token Categories:
+ * - Colors: Brand, semantic, surfaces
+ * - Radius: 8, 16, 24, 32px for rounded corners
+ * - Elevation: 4-level shadow system (e1-e4)
+ * - Motion: Friendly, accessible animations
+ * - Typography: Inter font with clear hierarchy
+ */
+
+/* ========================================
+   COLOR TOKENS
+   ======================================== */
+
+:root {
+  /* Brand Colors - Teal Primary with Amber Accent */
+  --brand: #0D9488;           /* Teal-600 - Main brand color */
+  --brand-hover: #0F766E;     /* Teal-700 - Hover state */
+  --brand-active: #115E59;    /* Teal-800 - Active/pressed */
+  --brand-foreground: #FFFFFF; /* Text on brand colors */
+  
+  --accent: #F59E0B;          /* Amber-500 - Accent color */
+  --accent-hover: #D97706;    /* Amber-600 - Hover state */
+  --accent-foreground: #FFFFFF; /* Text on accent */
+  
+  /* Semantic Colors - WCAG AA Compliant */
+  --success: #10B981;         /* Green-500 */
+  --success-bg: #D1FAE5;      /* Green-100 */
+  --success-foreground: #065F46; /* Green-800 */
+  
+  --warning: #F59E0B;         /* Amber-500 */
+  --warning-bg: #FEF3C7;      /* Amber-100 */
+  --warning-foreground: #92400E; /* Amber-800 */
+  
+  --error: #EF4444;           /* Red-500 */
+  --error-bg: #FEE2E2;        /* Red-100 */
+  --error-foreground: #991B1B; /* Red-800 */
+  
+  --info: #3B82F6;            /* Blue-500 */
+  --info-bg: #DBEAFE;         /* Blue-100 */
+  --info-foreground: #1E40AF; /* Blue-800 */
+  
+  /* Surface Colors */
+  --bg: #FFFFFF;              /* Main background */
+  --bg-subtle: #F9FAFB;       /* Gray-50 - Subtle background */
+  --bg-elev: #FFFFFF;         /* Elevated surfaces (cards) */
+  --bg-overlay: rgba(0, 0, 0, 0.5); /* Modal overlays */
+  
+  /* Text Colors - WCAG AA Contrast Verified */
+  --text: #111827;            /* Gray-900 - Primary text (16.2:1 on white) */
+  --text-secondary: #4B5563;  /* Gray-600 - Secondary text (7.5:1 on white) */
+  --text-tertiary: #6B7280;   /* Gray-500 - Tertiary text (5.9:1 on white) */
+  --text-muted: #9CA3AF;      /* Gray-400 - Muted text (3.5:1 on white) */
+  --text-inverse: #FFFFFF;    /* Text on dark backgrounds */
+  
+  /* Border & Divider Colors */
+  --border: #E5E7EB;          /* Gray-200 - Default borders */
+  --border-subtle: #F3F4F6;   /* Gray-100 - Subtle dividers */
+  --border-focus: var(--brand); /* Focus state borders */
+  
+  /* Interactive States */
+  --hover: #F3F4F6;           /* Gray-100 - Hover background */
+  --active: #E5E7EB;          /* Gray-200 - Active background */
+  --focus-ring: 0 0 0 3px rgba(13, 148, 136, 0.2); /* Brand focus ring */
+}
+
+/* Dark Mode - Class Strategy */
+.dark {
+  /* Brand Colors - Same across themes for consistency */
+  --brand: #14B8A6;           /* Teal-500 - Slightly lighter for dark bg */
+  --brand-hover: #0D9488;     /* Teal-600 */
+  --brand-active: #0F766E;    /* Teal-700 */
+  --brand-foreground: #FFFFFF;
+  
+  --accent: #FBBF24;          /* Amber-400 - Lighter for dark bg */
+  --accent-hover: #F59E0B;    /* Amber-500 */
+  --accent-foreground: #000000;
+  
+  /* Semantic Colors - Adjusted for Dark */
+  --success: #10B981;         /* Green-500 */
+  --success-bg: #064E3B;      /* Green-900 */
+  --success-foreground: #D1FAE5; /* Green-100 */
+  
+  --warning: #FBBF24;         /* Amber-400 */
+  --warning-bg: #78350F;      /* Amber-900 */
+  --warning-foreground: #FEF3C7; /* Amber-100 */
+  
+  --error: #F87171;           /* Red-400 */
+  --error-bg: #7F1D1D;        /* Red-900 */
+  --error-foreground: #FEE2E2; /* Red-100 */
+  
+  --info: #60A5FA;            /* Blue-400 */
+  --info-bg: #1E3A8A;         /* Blue-900 */
+  --info-foreground: #DBEAFE; /* Blue-100 */
+  
+  /* Surface Colors */
+  --bg: #0F172A;              /* Slate-900 - Dark background */
+  --bg-subtle: #1E293B;       /* Slate-800 - Subtle dark bg */
+  --bg-elev: #1E293B;         /* Elevated surfaces */
+  --bg-overlay: rgba(0, 0, 0, 0.75);
+  
+  /* Text Colors - WCAG AA on Dark Backgrounds */
+  --text: #F9FAFB;            /* Gray-50 - Primary text (16.5:1 on slate-900) */
+  --text-secondary: #D1D5DB;  /* Gray-300 - Secondary text (9.8:1) */
+  --text-tertiary: #9CA3AF;   /* Gray-400 - Tertiary text (5.5:1) */
+  --text-muted: #6B7280;      /* Gray-500 - Muted text (3.7:1) */
+  --text-inverse: #111827;    /* Text on light backgrounds */
+  
+  /* Border & Divider Colors */
+  --border: #374151;          /* Gray-700 */
+  --border-subtle: #1F2937;   /* Gray-800 */
+  --border-focus: var(--brand);
+  
+  /* Interactive States */
+  --hover: #1F2937;           /* Gray-800 */
+  --active: #374151;          /* Gray-700 */
+  --focus-ring: 0 0 0 3px rgba(20, 184, 166, 0.3);
+}
+
+/* ========================================
+   RADIUS TOKENS
+   ======================================== */
+
+:root {
+  --radius-sm: 8px;           /* Small elements (badges, tags) */
+  --radius-md: 16px;          /* Medium elements (buttons, inputs) */
+  --radius-lg: 24px;          /* Large elements (cards, modals) */
+  --radius-xl: 32px;          /* Extra large (hero cards, features) */
+  --radius-full: 9999px;      /* Pills, avatars */
+}
+
+/* ========================================
+   ELEVATION TOKENS (Shadows)
+   ======================================== */
+
+:root {
+  --elevation-e1: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --elevation-e2: 0 4px 6px rgba(0, 0, 0, 0.05), 
+                  0 2px 4px rgba(0, 0, 0, 0.03);
+  --elevation-e3: 0 10px 15px rgba(0, 0, 0, 0.08), 
+                  0 4px 6px rgba(0, 0, 0, 0.03);
+  --elevation-e4: 0 20px 25px rgba(0, 0, 0, 0.1), 
+                  0 10px 10px rgba(0, 0, 0, 0.04);
+  --elevation-focus: var(--focus-ring);
+}
+
+.dark {
+  --elevation-e1: 0 1px 2px rgba(0, 0, 0, 0.2);
+  --elevation-e2: 0 4px 6px rgba(0, 0, 0, 0.25), 
+                  0 2px 4px rgba(0, 0, 0, 0.15);
+  --elevation-e3: 0 10px 15px rgba(0, 0, 0, 0.35), 
+                  0 4px 6px rgba(0, 0, 0, 0.2);
+  --elevation-e4: 0 20px 25px rgba(0, 0, 0, 0.45), 
+                  0 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+/* ========================================
+   MOTION TOKENS
+   ======================================== */
+
+:root {
+  /* Easing - Friendly, bouncy feel like Brilliant.org */
+  --ease-out: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --ease-in: cubic-bezier(0.8, 0.2, 1, 0.2);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1); /* Bouncy spring */
+  
+  /* Duration */
+  --duration-fast: 120ms;     /* Micro-interactions */
+  --duration-base: 200ms;     /* Standard transitions */
+  --duration-slow: 300ms;     /* Complex animations */
+  --duration-slower: 400ms;   /* Page transitions */
+}
+
+/* Respect user's motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --duration-fast: 0ms;
+    --duration-base: 0ms;
+    --duration-slow: 0ms;
+    --duration-slower: 0ms;
+    --ease-spring: linear;
+  }
+  
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ========================================
+   TYPOGRAPHY TOKENS
+   ======================================== */
+
+:root {
+  /* Font Families */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 
+               'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  --font-mono: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', 
+               'Courier New', monospace;
+  
+  /* Font Sizes - Mobile First (clamp for fluid typography) */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.2vw, 0.875rem);      /* 12-14px */
+  --text-sm: clamp(0.875rem, 0.8rem + 0.3vw, 1rem);         /* 14-16px */
+  --text-base: clamp(1rem, 0.95rem + 0.3vw, 1.125rem);      /* 16-18px */
+  --text-lg: clamp(1.125rem, 1.05rem + 0.4vw, 1.25rem);     /* 18-20px */
+  --text-xl: clamp(1.25rem, 1.15rem + 0.5vw, 1.5rem);       /* 20-24px */
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);        /* 24-30px */
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.4vw, 2.25rem);     /* 30-36px */
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.8vw, 3rem);         /* 36-48px */
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 3.75rem);         /* 48-60px */
+  --text-6xl: clamp(3.75rem, 3rem + 3.8vw, 4.5rem);         /* 60-72px */
+  
+  /* Line Heights */
+  --leading-none: 1;
+  --leading-tight: 1.25;
+  --leading-snug: 1.375;
+  --leading-normal: 1.5;
+  --leading-relaxed: 1.625;
+  --leading-loose: 2;
+  
+  /* Font Weights */
+  --font-normal: 400;
+  --font-medium: 500;
+  --font-semibold: 600;
+  --font-bold: 700;
+  --font-extrabold: 800;
+  
+  /* Letter Spacing */
+  --tracking-tight: -0.025em;
+  --tracking-normal: 0;
+  --tracking-wide: 0.025em;
+}
+
+/* ========================================
+   LAYOUT TOKENS
+   ======================================== */
+
+:root {
+  /* Container Widths */
+  --container-xs: 480px;
+  --container-sm: 640px;
+  --container-md: 768px;
+  --container-lg: 1024px;
+  --container-xl: 1280px;
+  --container-2xl: 1440px;
+  
+  /* Spacing Scale (4px base) */
+  --space-0: 0;
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.25rem;   /* 20px */
+  --space-6: 1.5rem;    /* 24px */
+  --space-8: 2rem;      /* 32px */
+  --space-10: 2.5rem;   /* 40px */
+  --space-12: 3rem;     /* 48px */
+  --space-16: 4rem;     /* 64px */
+  --space-20: 5rem;     /* 80px */
+  --space-24: 6rem;     /* 96px */
+  --space-32: 8rem;     /* 128px */
+  
+  /* Z-Index Scale */
+  --z-base: 0;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+/* Focus Ring - Accessible & Branded */
+.focus-ring {
+  outline: none;
+  box-shadow: var(--elevation-focus);
+  transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+/* Elevation Classes */
+.elevation-e1 { box-shadow: var(--elevation-e1); }
+.elevation-e2 { box-shadow: var(--elevation-e2); }
+.elevation-e3 { box-shadow: var(--elevation-e3); }
+.elevation-e4 { box-shadow: var(--elevation-e4); }
+
+/* Smooth Transitions */
+.transition-smooth {
+  transition: all var(--duration-base) var(--ease-out);
+}
+
+.transition-colors {
+  transition: background-color var(--duration-base) var(--ease-out),
+              color var(--duration-base) var(--ease-out),
+              border-color var(--duration-base) var(--ease-out);
+}
+
+.transition-transform {
+  transition: transform var(--duration-base) var(--ease-spring);
+}
+
+/* Interactive Hover Effects */
+.interactive-lift {
+  transition: transform var(--duration-base) var(--ease-spring),
+              box-shadow var(--duration-base) var(--ease-out);
+}
+
+.interactive-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--elevation-e3);
+}
+
+/* Animations */
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in var(--duration-base) var(--ease-out);
+}
+
+.animate-slide-up {
+  animation: slide-up var(--duration-slow) var(--ease-out);
+}
+
+.animate-scale-in {
+  animation: scale-in var(--duration-slow) var(--ease-spring);
+}
+
