@@ -108,7 +108,7 @@ export function Footer({
                         className={cn(
                           'text-sm',
                           'text-[var(--text-secondary)] hover:text-[var(--brand)]',
-                          'transition-colors focus-ring rounded-sm'
+                          'transition-colors focus-ring'
                         )}
                         {...(link.external && { 
                           target: '_blank', 
@@ -142,7 +142,7 @@ export function Footer({
                     className={cn(
                       'text-sm',
                       'text-[var(--text-muted)] hover:text-[var(--text-secondary)]',
-                      'transition-colors focus-ring rounded-sm'
+                      'transition-colors focus-ring'
                     )}
                   >
                     {link.label}

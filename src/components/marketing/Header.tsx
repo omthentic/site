@@ -63,7 +63,7 @@ export function Header({
               'flex items-center gap-2',
               'font-bold text-xl',
               'text-[var(--text)] hover:text-[var(--brand)]',
-              'transition-colors focus-ring rounded-sm'
+              'transition-colors focus-ring'
             )}
           >
             {logo || (

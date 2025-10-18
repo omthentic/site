@@ -70,7 +70,7 @@ export function NavMenu({ links, ctaLabel, ctaHref, className }: NavMenuProps) {
             className={cn(
               'text-sm font-medium',
               'text-[var(--text-secondary)] hover:text-[var(--brand)]',
-              'transition-colors focus-ring rounded-sm px-1'
+              'transition-colors focus-ring px-1'
             )}
             {...(link.external && { target: '_blank', rel: 'noopener noreferrer' })}
           >
