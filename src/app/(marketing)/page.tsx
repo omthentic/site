@@ -69,43 +69,41 @@ export default function HomePage() {
     <div>
       {/* Hero Section */}
       <Section spacing="xl" background="default">
+        {/* Full-width Hero Image */}
+        <div className="relative w-full animate-fade-in">
+          <div className="w-full overflow-hidden shadow-e3 bg-white">
+            <Image
+              src="/images/speak so you're heard.png"
+              alt="Speak so you're heard - Authentic communication that opens aligned opportunities"
+              width={1200}
+              height={630}
+              priority
+              className="w-full h-auto"
+              style={{ maxHeight: '500px', objectFit: 'contain' }}
+            />
+          </div>
+        </div>
+
+        {/* CTA Section */}
         <Container>
-          <div className="max-w-6xl mx-auto">
-            {/* Hero Image */}
-            <div className="relative w-full mb-12 animate-fade-in">
-              <div className="rounded-2xl overflow-hidden shadow-e3 bg-white">
-                <Image
-                  src="/images/speak so you're heard.png"
-                  alt="Speak so you're heard - Authentic communication that opens aligned opportunities"
-                  width={1200}
-                  height={630}
-                  priority
-                  className="w-full h-auto"
-                  style={{ maxHeight: '500px', objectFit: 'contain' }}
-                />
-              </div>
+          <div className="max-w-3xl mx-auto text-center animate-slide-up">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
+              <Button variant="primary" size="lg" asChild>
+                <Link href="/app/sign-up">
+                  Get Started
+                  <ArrowRight size={20} />
+                </Link>
+              </Button>
+              <Button variant="outline" size="lg" asChild>
+                <Link href="/how-it-works">
+                  See How It Works
+                </Link>
+              </Button>
             </div>
 
-            {/* CTA */}
-            <div className="max-w-3xl mx-auto text-center animate-slide-up">
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
-                <Button variant="primary" size="lg" asChild>
-                  <Link href="/app/sign-up">
-                    Get Started
-                    <ArrowRight size={20} />
-                  </Link>
-                </Button>
-                <Button variant="outline" size="lg" asChild>
-                  <Link href="/how-it-works">
-                    See How It Works
-                  </Link>
-                </Button>
-              </div>
-
-              <p className="mt-6 text-sm text-[var(--text-muted)]">
-                Free 7-day trial • No credit card required
-              </p>
-            </div>
+            <p className="mt-6 text-sm text-[var(--text-muted)]">
+              Free 7-day trial • No credit card required
+            </p>
           </div>
         </Container>
       </Section>
