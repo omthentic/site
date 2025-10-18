@@ -83,6 +83,13 @@ export default function HomePage() {
           </div>
         </div>
 
+        {/* Subheadline */}
+        <div className="max-w-4xl mx-auto text-center animate-fade-in">
+          <p className="text-xl text-[var(--text-secondary)] leading-relaxed mb-8">
+            Improve your communication in a personalised and insightful environment. Master your authentic communication style in 15 minutes a day
+          </p>
+        </div>
+
         {/* CTA Section */}
         <Container>
           <div className="max-w-3xl mx-auto text-center animate-slide-up">
