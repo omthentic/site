@@ -73,7 +73,7 @@ export default function HomePage() {
         <div className="relative w-full animate-fade-in">
           <div className="w-full overflow-hidden">
             <Image
-              src="/images/hero_v3.png"
+              src="/images/hero_v3.svg"
               alt="Omthentic - Express yourself clearly and confidently"
               width={1200}
               height={630}
