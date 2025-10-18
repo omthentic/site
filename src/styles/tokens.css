@@ -286,8 +286,14 @@
 /* Focus Ring - Accessible & Branded */
 .focus-ring {
   outline: none;
-  box-shadow: var(--elevation-focus);
+  /* Remove default box shadow to avoid persistent green boxes */
+  box-shadow: none;
   transition: box-shadow var(--duration-fast) var(--ease-out);
+}
+
+/* Only show the focus ring when keyboard focusing */
+.focus-ring:focus-visible {
+  box-shadow: var(--elevation-focus);
 }
 
 /* Elevation Classes */
