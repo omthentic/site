@@ -14,11 +14,11 @@ interface ButtonAsChildProps {
 }
 
 const variantClasses = {
-  primary: 'bg-brand hover:bg-brand-hover active:bg-brand-active text-brand-foreground shadow-e2 hover:shadow-e3',
-  secondary: 'bg-[var(--bg-subtle)] hover:bg-[var(--hover)] text-[var(--text)] border border-[var(--border)]',
+  primary: 'bg-brand hover:bg-brand-hover active:bg-brand-active text-brand-foreground shadow-e2 hover:shadow-e3 border-0',
+  secondary: 'bg-[var(--bg-subtle)] hover:bg-[var(--hover)] text-[var(--text)] border-0',
   outline: 'border-2 border-[var(--brand)] text-[var(--brand)] hover:bg-[var(--brand)] hover:text-[var(--brand-foreground)]',
-  ghost: 'text-[var(--text)] hover:bg-[var(--hover)] hover:text-[var(--brand)]',
-  accent: 'bg-accent hover:bg-accent-hover text-accent-foreground shadow-e2',
+  ghost: 'text-[var(--text)] hover:bg-[var(--hover)] hover:text-[var(--brand)] border-0',
+  accent: 'bg-accent hover:bg-accent-hover text-accent-foreground shadow-e2 border-0',
 };
 
 const sizeClasses = {
@@ -46,7 +46,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
       // Base styles
       'inline-flex items-center justify-center gap-2',
       'font-semibold rounded-md',
-      'transition-smooth focus-visible:outline-none',
+      'transition-smooth focus-ring',
       'disabled:opacity-50 disabled:cursor-not-allowed',
       // Variant and size
       variantClasses[variant],
