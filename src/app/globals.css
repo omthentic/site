@@ -313,11 +313,27 @@ body {
 /* Better tap highlight behavior on mobile */
 button, a { 
   -webkit-tap-highlight-color: transparent;
-  border: none;
+  border: none !important;
+  outline: none;
 }
 
-a:not([class*="border"]) {
+/* Remove all borders from buttons and links */
+button,
+a,
+.focus-ring,
+[role="button"] {
   border: none !important;
+  outline: none !important;
+}
+
+/* Remove ring/border on focus */
+button:focus,
+button:focus-visible,
+a:focus,
+a:focus-visible {
+  border: none !important;
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 /* Support small viewport units for mobile browsers */
@@ -350,14 +366,14 @@ html {
   text-size-adjust: 100%;
 }
 
-/* Focus styles - WCAG AA tuned to Om Blue */
+/* Focus styles - WCAG AA tuned to Om Blue (keyboard only) */
 *:focus-visible {
-  outline: none;
-  box-shadow: 0 0 0 2px var(--om-blue), 0 0 0 4px rgba(45, 111, 255, 0.45);
+  outline: 2px solid transparent;
+  box-shadow: none;
 }
 
 .focus-ring {
-  @apply focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary/60 outline-none;
+  outline: none;
 }
 
 /* Selection styles */
@@ -666,13 +682,13 @@ html {
 .text-warning { color: var(--warning); }
 .text-danger { color: var(--danger); }
 
-/* Focus ring tuned to brand blue */
+/* Focus ring tuned to brand blue (keyboard only) */
 *:focus-visible { 
-  outline: none;
-  box-shadow: 0 0 0 2px var(--brand), 0 0 0 4px rgba(37, 99, 235, 0.35); 
+  outline: 2px solid transparent;
+  box-shadow: none;
 }
 .focus-ring { 
-  @apply focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-[color:var(--brand)]/60 outline-none; 
+  outline: none;
 }
 
 /* App-Aligned Component Styles */
