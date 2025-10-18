@@ -86,7 +86,7 @@ export default function HomePage() {
         {/* Subheadline */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
           <p className="text-xl text-[var(--text-secondary)] leading-relaxed mb-8">
-            Improve your communication in a personalised and insightful environment. Master your authentic communication style in 15 minutes a day
+          Bite-size learning and feedback that turn strengths into opportunities. Master high-stakes conversations with AI-powered practice.
           </p>
         </div>
 
