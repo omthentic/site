@@ -311,7 +311,14 @@ body {
 }
 
 /* Better tap highlight behavior on mobile */
-button, a { -webkit-tap-highlight-color: transparent; }
+button, a { 
+  -webkit-tap-highlight-color: transparent;
+  border: none;
+}
+
+a:not([class*="border"]) {
+  border: none !important;
+}
 
 /* Support small viewport units for mobile browsers */
 @supports (height: 100svh) {
