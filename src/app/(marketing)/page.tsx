@@ -71,15 +71,14 @@ export default function HomePage() {
       <Section spacing="xl" background="default">
         {/* Full-width Hero Image */}
         <div className="relative w-full animate-fade-in">
-          <div className="w-full overflow-hidden shadow-e3 bg-white">
+          <div className="w-full overflow-hidden">
             <Image
-              src="/images/speak so you're heard.png"
-              alt="Speak so you're heard - Authentic communication that opens aligned opportunities"
+              src="/images/hero_v3.svg"
+              alt="Omthentic - Express yourself clearly and confidently"
               width={1200}
               height={630}
               priority
               className="w-full h-auto"
-              style={{ maxHeight: '500px', objectFit: 'contain' }}
             />
           </div>
         </div>
