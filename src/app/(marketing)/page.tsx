@@ -85,31 +85,22 @@ export default function HomePage() {
 
         {/* Subheadline */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <p className="text-xl text-[var(--text-secondary)] leading-relaxed mb-8">
-          Bite-size learning and feedback that turn strengths into opportunities. Master high-stakes conversations with AI-powered practice.
+          <p className="text-xl text-black leading-relaxed mb-8">
+            Bite-size learning and feedback that turn strengths into opportunities. Master high-stakes conversations with AI-powered practice.
           </p>
         </div>
 
         {/* CTA Section */}
         <Container>
           <div className="max-w-3xl mx-auto text-center animate-slide-up">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-scale-in">
+            <div className="flex justify-center items-center animate-scale-in">
               <Button variant="primary" size="lg" asChild>
                 <Link href="/app/sign-up">
                   Get Started
                   <ArrowRight size={20} />
                 </Link>
               </Button>
-              <Button variant="outline" size="lg" asChild>
-                <Link href="/how-it-works">
-                  See How It Works
-                </Link>
-              </Button>
             </div>
-
-            <p className="mt-6 text-sm text-[var(--text-muted)]">
-              Free 7-day trial • No credit card required
-            </p>
           </div>
         </Container>
       </Section>
