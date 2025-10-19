@@ -59,11 +59,11 @@ const Header = () => {
                 <Image
                   src="/images/Omthentic Horizontal.svg"
                   alt="Omthentic"
-                  width={180}
-                  height={44}
-                  sizes="(min-width: 1024px) 220px, (min-width: 640px) 180px, 140px"
+                  width={270}
+                  height={66}
+                  sizes="(min-width: 1024px) 330px, (min-width: 640px) 270px, 210px"
                   priority
-                  className="h-7 sm:h-9 lg:h-11 w-auto"
+                  className="h-10 sm:h-13 lg:h-16 w-auto"
                 />
               </Link>
             </motion.div>

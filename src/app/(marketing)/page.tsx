@@ -100,7 +100,7 @@ export default function HomePage() {
                 className="bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold rounded-full px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg animate-electric-pulse border-0 min-h-[48px] touch-manipulation"
                 asChild
               >
-                <Link href="/app/sign-up">
+                <Link href="https://app.omthentic.ai">
                   Get Started
                   <ArrowRight size={20} className="ml-2" />
                 </Link>
@@ -323,7 +323,7 @@ export default function HomePage() {
             variant="gradient"
             title="Ready to express yourself with confidence?"
             description="Join thousands of students and professionals who are mastering high-stakes conversations."
-            primaryAction={{ label: 'Start Your Free Trial', href: '/app/sign-up' }}
+            primaryAction={{ label: 'Start Your Free Trial', href: 'https://app.omthentic.ai' }}
             secondaryAction={{ label: 'View Pricing', href: '/pricing' }}
           />
         </Container>

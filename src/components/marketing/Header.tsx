@@ -28,7 +28,7 @@ export function Header({
   logoText = 'Omthentic',
   links, 
   ctaLabel = 'Get Started',
-  ctaHref = '/app/sign-up',
+  ctaHref = 'https://app.omthentic.ai',
   sticky = true 
 }: HeaderProps) {
   const [scrolled, setScrolled] = useState(false);

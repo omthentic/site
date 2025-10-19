@@ -77,7 +77,7 @@ const Footer = () => {
               >
                 <div className="flex items-center space-x-3 mb-5 sm:mb-6">
                   <Link href="/" aria-label="Omthentic home" className="flex items-center space-x-3 touch-manipulation">
-                    <Image src="/images/Omthentic Horizontal.svg" alt="Omthentic" width={180} height={44} className="h-8 sm:h-10 lg:h-11 w-auto" />
+                    <Image src="/images/Omthentic Horizontal.svg" alt="Omthentic" width={270} height={66} className="h-12 sm:h-15 lg:h-16 w-auto" />
                   </Link>
                 </div>
                 <p className="text-gray-400 text-sm sm:text-base leading-relaxed mb-5 sm:mb-6 max-w-md">

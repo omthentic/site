@@ -158,7 +158,7 @@ export default function ModernHeader() {
               <img
                 src="/images/Omthentic Horizontal.svg"
                 alt="Omthentic"
-                className="h-6 sm:h-7 lg:h-8 w-auto"
+                className="h-9 sm:h-10 lg:h-12 w-auto"
               />
             </Link>
           </div>

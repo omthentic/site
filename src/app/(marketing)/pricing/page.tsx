@@ -60,7 +60,7 @@ export default function PricingPage() {
                   'Mobile app access',
                 ],
                 cta: 'Start Free',
-                ctaHref: '/app/sign-up',
+                ctaHref: 'https://app.omthentic.ai',
               },
               {
                 name: 'Pro',
@@ -78,7 +78,7 @@ export default function PricingPage() {
                   'Video playback & analysis',
                 ],
                 cta: 'Start Free Trial',
-                ctaHref: '/app/sign-up',
+                ctaHref: 'https://app.omthentic.ai',
                 highlighted: true,
                 badge: 'Most Popular',
               },
@@ -162,7 +162,7 @@ export default function PricingPage() {
             variant="gradient"
             title="Ready to start practicing?"
             description="Join thousands who are building confidence with Omthentic. Start your free 7-day trial today."
-            primaryAction={{ label: 'Start Free Trial', href: '/app/sign-up' }}
+            primaryAction={{ label: 'Start Free Trial', href: 'https://app.omthentic.ai' }}
             secondaryAction={{ label: 'Contact Sales', href: '/contact' }}
           />
         </Container>

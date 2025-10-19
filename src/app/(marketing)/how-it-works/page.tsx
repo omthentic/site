@@ -216,7 +216,7 @@ export default function HowItWorksPage() {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="primary" size="lg" asChild>
-                  <Link href="/app/sign-up">
+                  <Link href="https://app.omthentic.ai">
                     Start Free Trial
                     <ArrowRight size={20} />
                   </Link>

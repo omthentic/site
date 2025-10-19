@@ -53,7 +53,7 @@ export default function IndividualsPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button variant="primary" size="lg" asChild>
-                <Link href="/app/sign-up">
+                <Link href="https://app.omthentic.ai">
                   Start Free Trial
                   <ArrowRight size={20} />
                 </Link>
@@ -230,7 +230,7 @@ export default function IndividualsPage() {
                 Join thousands of individuals who are communicating with confidence. Free 7-day trial, no credit card required.
               </p>
               <Button variant="secondary" size="lg" asChild>
-                <Link href="/app/sign-up">
+                <Link href="https://app.omthentic.ai">
                   Start Free Trial
                   <ArrowRight size={20} />
                 </Link>
