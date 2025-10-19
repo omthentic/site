@@ -266,39 +266,74 @@
 
     /* Surfaces & Borders */
     --background-primary: #0B1220; /* Page bg */
-    --card-background: #0F172A;    /* Elevated cards */
-    --border-color: #1F2937;       /* Subtle borders on dark */
+    --card-background: #1F2937;    /* Elevated cards */
+    --border-color: #374151;       /* Subtle borders on dark */
 
     /* Text colors ensure sufficient contrast on dark */
-    --text-primary: #F7FAFC;  /* Cloud on Midnight */
-    --text-secondary: #D6DFEA; /* slightly brighter than slate-300 */
-    --text-tertiary: #A8B4C4; /* slate-400/350 */
+    --text-primary: #F9FAFB;  /* Nearly white for maximum readability */
+    --text-secondary: #E5E7EB; /* Light gray for secondary text */
+    --text-tertiary: #D1D5DB; /* Medium gray for tertiary text */
     --text-inverse: #0B1220;  /* Inverse on light chips */
 
     /* Shadows tuned for dark */
-    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.35);
-    --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.45);
-    --shadow-glow: 0 0 24px rgba(59, 130, 246, 0.25);
-    --shadow-glow-accent: 0 0 24px rgba(18, 214, 192, 0.25);
+    --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.5);
+    --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.6);
+    --shadow-glow: 0 0 24px rgba(59, 130, 246, 0.3);
+    --shadow-glow-accent: 0 0 24px rgba(18, 214, 192, 0.3);
 
     /* Dark hero gradient to avoid blending */
     --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #0C1B24 100%);
 
     /* Pills adapt to dark */
-    --cloud: #17202E; /* darker pill bg */
+    --cloud: #1F2937; /* darker pill bg */
     
     /* App-Aligned Dark Mode */
     --bg: #0B1220;
-    --bg-subtle: #0F172A;
-    --surface: #111827;
-    --surface-muted: #0F172A;
-    --text: #E5E7EB;
-    --text-muted: #9CA3AF;
-    --brand: var(--blue-500);
+    --bg-subtle: #1F2937;
+    --bg-elev: #374151;
+    --surface: #1F2937;
+    --surface-muted: #374151;
+    --text: #F9FAFB;
+    --text-muted: #D1D5DB;
+    --brand: var(--blue-400);
     --brand-contrast: #0B1220;
+    --brand-hover: var(--blue-300);
+    --brand-active: var(--blue-500);
     --ring: var(--blue-400);
-    --border: #1F2937;
+    --border: #374151;
+    --hover: rgba(59, 130, 246, 0.1);
   }
+}
+
+.dark {
+  /* Explicit dark mode class support */
+  --background: #0B1220;
+  --foreground: #E6EEF7;
+  --background-primary: #0B1220;
+  --card-background: #1F2937;
+  --border-color: #374151;
+  --text-primary: #F9FAFB;
+  --text-secondary: #E5E7EB;
+  --text-tertiary: #D1D5DB;
+  --text-inverse: #0B1220;
+  --shadow-card: 0 4px 16px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 10px 28px rgba(0, 0, 0, 0.6);
+  --gradient-hero: linear-gradient(135deg, #0B1220 0%, #0F172A 60%, #0C1B24 100%);
+  --cloud: #1F2937;
+  --bg: #0B1220;
+  --bg-subtle: #1F2937;
+  --bg-elev: #374151;
+  --surface: #1F2937;
+  --surface-muted: #374151;
+  --text: #F9FAFB;
+  --text-muted: #D1D5DB;
+  --brand: var(--blue-400);
+  --brand-contrast: #0B1220;
+  --brand-hover: var(--blue-300);
+  --brand-active: var(--blue-500);
+  --ring: var(--blue-400);
+  --border: #374151;
+  --hover: rgba(59, 130, 246, 0.1);
 }
 
 body {
@@ -737,7 +772,7 @@ html {
 /* App-Aligned Component Styles */
 .button-primary {
   background: var(--brand);
-  color: var(--brand-contrast);
+  color: white;
   border-radius: var(--radius-app);
   box-shadow: var(--shadow-app-sm);
   padding: 12px 24px;
@@ -749,13 +784,34 @@ html {
 }
 
 .button-primary:hover {
-  background: var(--blue-700);
+  background: var(--brand-hover, var(--blue-700));
   box-shadow: var(--shadow-app-md);
   transform: translateY(-1px);
 }
 
+.button-primary:active {
+  background: var(--brand-active, var(--blue-800));
+}
+
 .button-primary:focus-visible {
-  box-shadow: 0 0 0 2px var(--brand-contrast), 0 0 0 4px var(--brand);
+  box-shadow: 0 0 0 2px var(--bg), 0 0 0 4px var(--brand);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button-primary {
+    background: var(--blue-500);
+    color: white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .button-primary:hover {
+    background: var(--blue-400);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.4);
+  }
+  
+  .button-primary:active {
+    background: var(--blue-600);
+  }
 }
 
 .button-secondary {
@@ -774,6 +830,19 @@ html {
   background: var(--blue-50);
   border-color: var(--blue-700);
   color: var(--blue-700);
+}
+
+@media (prefers-color-scheme: dark) {
+  .button-secondary {
+    color: var(--blue-400);
+    border-color: var(--blue-400);
+  }
+  
+  .button-secondary:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: var(--blue-300);
+    color: var(--blue-300);
+  }
 }
 
 .button-tertiary {
@@ -806,6 +875,19 @@ html {
   transform: translateY(-2px);
 }
 
+@media (prefers-color-scheme: dark) {
+  .card-app {
+    background: var(--surface);
+    border-color: var(--border);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-app:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+    border-color: var(--blue-500);
+  }
+}
+
 .badge-app {
   background: var(--blue-50);
   color: var(--blue-700);
@@ -813,6 +895,13 @@ html {
   padding: 4px 12px;
   font-size: 0.875rem;
   font-weight: 600;
+}
+
+@media (prefers-color-scheme: dark) {
+  .badge-app {
+    background: rgba(59, 130, 246, 0.2);
+    color: var(--blue-300);
+  }
 }
 
 .progress-bar {
@@ -853,6 +942,13 @@ html {
   border-radius: var(--radius-app-lg);
   padding: 48px;
   box-shadow: var(--shadow-app-md);
+}
+
+@media (prefers-color-scheme: dark) {
+  .cta-gradient {
+    background: linear-gradient(135deg, var(--blue-600) 0%, var(--indigo-600) 100%);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+  }
 }
 
 /* Blog-specific utilities */
@@ -993,4 +1089,38 @@ html {
 
 .text-error-foreground {
   color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-info-bg {
+    background-color: rgba(13, 148, 136, 0.2);
+  }
+  
+  .text-info-foreground {
+    color: #5EEAD4;
+  }
+  
+  .bg-success-bg {
+    background-color: rgba(16, 185, 129, 0.2);
+  }
+  
+  .text-success-foreground {
+    color: #6EE7B7;
+  }
+  
+  .bg-warning-bg {
+    background-color: rgba(245, 158, 11, 0.2);
+  }
+  
+  .text-warning-foreground {
+    color: #FCD34D;
+  }
+  
+  .bg-error-bg {
+    background-color: rgba(239, 68, 68, 0.2);
+  }
+  
+  .text-error-foreground {
+    color: #FCA5A5;
+  }
 }

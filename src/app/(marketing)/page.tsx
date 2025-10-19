@@ -72,20 +72,30 @@ export default function HomePage() {
         {/* Full-width Hero Image */}
         <div className="relative w-full animate-fade-in px-4 sm:px-0">
           <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
+            {/* Light mode hero */}
             <Image
               src="/images/hero_v3.svg"
               alt="Omthentic - Express yourself clearly and confidently"
               width={1200}
               height={630}
               priority
-              className="w-full h-auto"
+              className="w-full h-auto dark:hidden"
+            />
+            {/* Dark mode hero */}
+            <Image
+              src="/images/Hero_dark_v3.svg"
+              alt="Omthentic - Express yourself clearly and confidently"
+              width={1200}
+              height={630}
+              priority
+              className="w-full h-auto hidden dark:block"
             />
           </div>
         </div>
 
         {/* Subheadline */}
         <div className="max-w-4xl mx-auto text-center animate-fade-in px-4">
-          <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed mb-6 sm:mb-8">
+          <p className="text-base sm:text-lg md:text-xl text-gray-900 dark:text-gray-100 leading-relaxed mb-6 sm:mb-8">
             Bite-size learning and feedback that turn strengths into opportunities. Master high-stakes conversations with AI-powered practice.
           </p>
         </div>
