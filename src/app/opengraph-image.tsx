@@ -66,7 +66,7 @@ export default async function OGImage() {
               alt="Omthentic"
               width={200}
               height={48}
-              src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg"
+              src="/images/Omthentic Horizontal.svg"
               style={{ display: 'block' }}
             />
           </div>

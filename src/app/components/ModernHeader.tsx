@@ -156,8 +156,8 @@ export default function ModernHeader() {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <img
-                src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg?updatedAt=1754619654095"
-                alt="Omthentic" 
+                src="/images/Omthentic Horizontal.svg"
+                alt="Omthentic"
                 className="h-8 w-auto"
               />
             </Link>

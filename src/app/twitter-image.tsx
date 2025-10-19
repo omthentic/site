@@ -26,7 +26,7 @@ export default async function TwitterImage() {
       >
         <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(800px 500px at 70% 30%, rgba(18,214,192,.2), transparent 60%), radial-gradient(900px 600px at 20% 80%, rgba(45,111,255,.22), transparent 60%)' }} />
         <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: 960 }}>
-          <img alt="Omthentic" width={200} height={48} src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Logo%20Transparent%20H.svg" />
+          <img alt="Omthentic" width={200} height={48} src="/images/Omthentic Horizontal.svg" />
           <h1 style={{ margin: 0, fontSize: 66, lineHeight: 1.1, color: '#F7FAFC', fontWeight: 800 }}>
             Speak your truth with confidence
           </h1>

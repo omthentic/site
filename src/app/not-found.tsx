@@ -37,7 +37,7 @@ export default function NotFound() {
       >
         <div className="flex justify-center mb-8">
           <Image
-            src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg"
+            src="/images/Omthentic Icon.svg"
             alt="Omthentic icon"
             width={64}
             height={64}

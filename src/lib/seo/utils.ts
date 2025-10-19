@@ -70,7 +70,7 @@ export function generatePostJSONLD(post: MDXPost) {
       name: SITE_NAME,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/omthentic/logo-lockup.svg`,
+        url: `${SITE_URL}/images/Omthentic Horizontal.svg`,
       },
     },
     mainEntityOfPage: {
@@ -90,7 +90,7 @@ export function generateOrganizationJSONLD() {
     '@type': 'Organization',
     name: SITE_NAME,
     url: SITE_URL,
-    logo: `${SITE_URL}/omthentic/logo-lockup.svg`,
+    logo: `${SITE_URL}/images/Omthentic Horizontal.svg`,
     description: 'AI-powered communication training platform',
     sameAs: [
       'https://twitter.com/omthentic',

@@ -9,7 +9,7 @@ export default function DemoIndex() {
     <main className="min-h-screen flex items-center justify-center px-4 py-10 bg-background-primary">
       <div className="max-w-sm w-full bg-card rounded-2xl border border-subtle shadow-card p-6">
         <div className="flex flex-col items-center mb-6">
-          <Image src="https://ik.imagekit.io/mwp/Omthentic/Omthentic%20Icon.svg" alt="Omthentic" width={64} height={64} />
+          <Image src="/images/Omthentic Icon.svg" alt="Omthentic" width={64} height={64} />
           <h1 className="mt-4 text-h3">Omthentic</h1>
           <p className="text-secondary-body text-sm">Welcome back</p>
         </div>
