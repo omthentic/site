@@ -132,6 +132,7 @@ export default function MarketingLayout({
   return (
     <>
       <Header
+        logo={<img src="/images/Omthentic Horizontal.svg" alt="Omthentic" className="h-7 sm:h-8 w-auto" />}
         links={navLinks}
         ctaLabel="Get Started"
         ctaHref="/app/sign-up"
@@ -139,6 +140,7 @@ export default function MarketingLayout({
       />
       <main>{children}</main>
       <Footer
+        logo={<img src="/images/Omthentic Horizontal.svg" alt="Omthentic" className="h-8 w-auto" />}
         sections={footerSections}
         socialLinks={socialLinks}
         legalLinks={legalLinks}
