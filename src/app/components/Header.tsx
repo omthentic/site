@@ -55,15 +55,15 @@ const Header = () => {
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400, damping: 20 }}
             >
-              <Link href="/" aria-label="Omthentic home" className="flex items-center space-x-2">
+              <Link href="/" aria-label="Omthentic home" className="flex items-center space-x-2 touch-manipulation">
                 <Image
                   src="/images/Omthentic Horizontal.svg"
                   alt="Omthentic"
                   width={180}
                   height={44}
-                  sizes="(min-width: 1024px) 220px, (min-width: 640px) 200px, 180px"
+                  sizes="(min-width: 1024px) 220px, (min-width: 640px) 180px, 140px"
                   priority
-                  className="h-8 sm:h-10 lg:h-12 w-auto"
+                  className="h-7 sm:h-9 lg:h-11 w-auto"
                 />
               </Link>
             </motion.div>
@@ -107,7 +107,7 @@ const Header = () => {
 
             {/* Mobile Menu Button */}
             <motion.button
-              className="lg:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus-ring mr-2"
+              className="lg:hidden p-3 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus-ring touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               whileTap={{ scale: 0.95 }}
               aria-label={isMenuOpen ? "Close menu" : "Open menu"}

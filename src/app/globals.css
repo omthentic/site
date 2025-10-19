@@ -310,6 +310,34 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Mobile-specific optimizations */
+@media (max-width: 640px) {
+  body {
+    font-size: 16px; /* Prevents iOS auto-zoom on inputs */
+  }
+}
+
+/* Touch manipulation for better mobile UX */
+.touch-manipulation {
+  touch-action: manipulation; /* Removes 300ms delay on mobile */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Improved text rendering on mobile */
+@media (max-width: 768px) {
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+  }
+  
+  p {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+}
+
 /* Better tap highlight behavior on mobile */
 button, a { 
   -webkit-tap-highlight-color: transparent;
@@ -610,6 +638,21 @@ html {
 .animate-gradient {
   background-size: 200% 200%;
   animation: gradient-pulse 10s ease infinite;
+}
+
+@keyframes electric-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4), 0 0 40px rgba(16, 185, 129, 0.2), 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(16, 185, 129, 0.6), 0 0 60px rgba(16, 185, 129, 0.3), 0 6px 16px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+  }
+}
+
+.animate-electric-pulse {
+  animation: electric-pulse 3s ease-in-out infinite;
 }
 
 /* Default animation state */

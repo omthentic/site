@@ -70,8 +70,8 @@ export default function HomePage() {
       {/* Hero Section */}
       <Section spacing="xl" background="default">
         {/* Full-width Hero Image */}
-        <div className="relative w-full animate-fade-in">
-          <div className="w-full overflow-hidden">
+        <div className="relative w-full animate-fade-in px-4 sm:px-0">
+          <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
             <Image
               src="/images/hero_v3.svg"
               alt="Omthentic - Express yourself clearly and confidently"
@@ -84,8 +84,8 @@ export default function HomePage() {
         </div>
 
         {/* Subheadline */}
-        <div className="max-w-4xl mx-auto text-center animate-fade-in">
-          <p className="text-xl text-black leading-relaxed mb-8">
+        <div className="max-w-4xl mx-auto text-center animate-fade-in px-4">
+          <p className="text-base sm:text-lg md:text-xl text-black leading-relaxed mb-6 sm:mb-8">
             Bite-size learning and feedback that turn strengths into opportunities. Master high-stakes conversations with AI-powered practice.
           </p>
         </div>
@@ -97,12 +97,12 @@ export default function HomePage() {
               <Button
                 variant="primary"
                 size="lg"
-                className="bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold rounded-full px-12 py-5 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border-0"
+                className="bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold rounded-full px-8 sm:px-12 py-4 sm:py-5 text-base sm:text-lg animate-electric-pulse border-0 min-h-[48px] touch-manipulation"
                 asChild
               >
                 <Link href="/app/sign-up">
                   Get Started
-                  <ArrowRight size={20} />
+                  <ArrowRight size={20} className="ml-2" />
                 </Link>
               </Button>
             </div>
@@ -129,36 +129,36 @@ export default function HomePage() {
       {/* How It Works */}
       <Section spacing="xl">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[var(--text)]">
+          <div className="text-center mb-12 sm:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-[var(--text)]">
               How It Works
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
               Three simple steps to transform how you communicate
             </p>
           </div>
 
           <Grid cols={3} gap="xl">
             {howItWorks.map((item) => (
-              <div key={item.step} className="text-center">
-                <div className="w-16 h-16 rounded-full bg-brand text-brand-foreground flex items-center justify-center text-2xl font-bold mx-auto mb-6 shadow-e2">
+              <div key={item.step} className="text-center px-4">
+                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-brand text-brand-foreground flex items-center justify-center text-xl sm:text-2xl font-bold mx-auto mb-4 sm:mb-6 shadow-e2">
                   {item.step}
                 </div>
-                <h3 className="text-2xl font-semibold mb-4 text-[var(--text)]">
+                <h3 className="text-xl sm:text-2xl font-semibold mb-3 sm:mb-4 text-[var(--text)]">
                   {item.title}
                 </h3>
-                <p className="text-[var(--text-secondary)] leading-relaxed">
+                <p className="text-sm sm:text-base text-[var(--text-secondary)] leading-relaxed">
                   {item.description}
                 </p>
               </div>
             ))}
           </Grid>
 
-          <div className="text-center mt-12">
-            <Button variant="outline" size="lg" asChild>
+          <div className="text-center mt-8 sm:mt-12 px-4">
+            <Button variant="outline" size="lg" className="min-h-[48px] touch-manipulation" asChild>
               <Link href="/how-it-works">
                 Explore the Full Process
-                <ArrowRight size={20} />
+                <ArrowRight size={20} className="ml-2" />
               </Link>
             </Button>
           </div>
@@ -168,11 +168,11 @@ export default function HomePage() {
       {/* Path Cards */}
       <Section spacing="xl" background="subtle">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[var(--text)]">
+          <div className="text-center mb-12 sm:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-[var(--text)]">
               Choose Your Path
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
               Tailored experiences for every stage of your journey
             </p>
           </div>
@@ -181,27 +181,27 @@ export default function HomePage() {
             {paths.map((path) => (
               <Card key={path.title} variant="interactive">
                 <CardHeader>
-                  <div className="w-16 h-16 rounded-lg bg-brand/10 flex items-center justify-center text-brand mb-4">
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-lg bg-brand/10 flex items-center justify-center text-brand mb-3 sm:mb-4">
                     {path.icon}
                   </div>
-                  <CardTitle>{path.title}</CardTitle>
-                  <CardDescription>{path.description}</CardDescription>
+                  <CardTitle className="text-xl sm:text-2xl">{path.title}</CardTitle>
+                  <CardDescription className="text-sm sm:text-base">{path.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  <ul className="space-y-3">
+                  <ul className="space-y-2 sm:space-y-3">
                     {path.features.map((feature) => (
-                      <li key={feature} className="flex items-center gap-2 text-sm text-[var(--text-secondary)]">
-                        <CheckCircle size={18} className="text-success flex-shrink-0" />
-                        {feature}
+                      <li key={feature} className="flex items-start gap-2 text-xs sm:text-sm text-[var(--text-secondary)]">
+                        <CheckCircle size={16} className="text-success flex-shrink-0 mt-0.5" />
+                        <span>{feature}</span>
                       </li>
                     ))}
                   </ul>
                 </CardContent>
                 <CardFooter>
-                  <Button variant="outline" fullWidth asChild>
+                  <Button variant="outline" fullWidth className="min-h-[44px] touch-manipulation" asChild>
                     <Link href={path.href}>
                       Learn More
-                      <ArrowRight size={18} />
+                      <ArrowRight size={18} className="ml-2" />
                     </Link>
                   </Button>
                 </CardFooter>
@@ -214,11 +214,11 @@ export default function HomePage() {
       {/* Testimonials */}
       <Section spacing="xl">
         <Container>
-          <div className="text-center mb-16">
-            <h2 className="text-4xl sm:text-5xl font-bold mb-4 text-[var(--text)]">
+          <div className="text-center mb-12 sm:mb-16 px-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-3 sm:mb-4 text-[var(--text)]">
               What Our Users Say
             </h2>
-            <p className="text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-[var(--text-secondary)] max-w-2xl mx-auto">
               Real stories from people who transformed their communication
             </p>
           </div>
@@ -253,15 +253,15 @@ export default function HomePage() {
       <Section spacing="lg" background="subtle">
         <Container>
           <div className="max-w-4xl mx-auto">
-            <div className="text-center mb-12">
-              <Badge variant="accent" size="md" rounded="full" className="mb-4">
-                <Target size={16} className="inline mr-2" />
+            <div className="text-center mb-10 sm:mb-12 px-4">
+              <Badge variant="accent" size="md" rounded="full" className="mb-3 sm:mb-4">
+                <Target size={14} className="inline mr-2" />
                 Free Resources
               </Badge>
-              <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[var(--text)]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3 sm:mb-4 text-[var(--text)]">
                 Learn from Our Experts
               </h2>
-              <p className="text-lg text-[var(--text-secondary)]">
+              <p className="text-base sm:text-lg text-[var(--text-secondary)]">
                 Guides, tips, and insights to help you communicate with confidence
               </p>
             </div>
@@ -270,10 +270,10 @@ export default function HomePage() {
               <Card variant="elevated">
                 <CardHeader>
                   <Badge variant="info" size="sm" className="mb-2">Guide</Badge>
-                  <CardTitle>Mastering Medical Interviews</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">Mastering Medical Interviews</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-[var(--text-secondary)]">
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)]">
                     Essential strategies for medical school and residency interviews.
                   </p>
                 </CardContent>
@@ -282,10 +282,10 @@ export default function HomePage() {
               <Card variant="elevated">
                 <CardHeader>
                   <Badge variant="success" size="sm" className="mb-2">Tips</Badge>
-                  <CardTitle>Body Language Basics</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">Body Language Basics</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-[var(--text-secondary)]">
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)]">
                     Non-verbal communication tips that make a lasting impression.
                   </p>
                 </CardContent>
@@ -294,21 +294,21 @@ export default function HomePage() {
               <Card variant="elevated">
                 <CardHeader>
                   <Badge variant="warning" size="sm" className="mb-2">Case Study</Badge>
-                  <CardTitle>From Nervous to Confident</CardTitle>
+                  <CardTitle className="text-lg sm:text-xl">From Nervous to Confident</CardTitle>
                 </CardHeader>
                 <CardContent>
-                  <p className="text-sm text-[var(--text-secondary)]">
+                  <p className="text-xs sm:text-sm text-[var(--text-secondary)]">
                     How one student transformed their interview performance.
                   </p>
                 </CardContent>
               </Card>
             </Grid>
 
-            <div className="text-center mt-8">
-              <Button variant="outline" asChild>
+            <div className="text-center mt-6 sm:mt-8 px-4">
+              <Button variant="outline" className="min-h-[44px] touch-manipulation" asChild>
                 <Link href="/resources">
                   Browse All Resources
-                  <ArrowRight size={18} />
+                  <ArrowRight size={18} className="ml-2" />
                 </Link>
               </Button>
             </div>

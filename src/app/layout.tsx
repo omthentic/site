@@ -19,7 +19,13 @@ export const metadata: Metadata = {
     description: "Practice real interview questions with AI feedback and coach‑verified tips.",
     images: ["/twitter-image"],
   },
-  viewport: "width=device-width, initial-scale=1",
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5,
+    userScalable: true,
+    viewportFit: "cover",
+  },
   icons: {
     icon: [
       { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml' },

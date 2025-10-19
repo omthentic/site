@@ -154,11 +154,11 @@ export default function ModernHeader() {
 
           {/* Center Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href="/" className="flex items-center touch-manipulation">
               <img
                 src="/images/Omthentic Horizontal.svg"
                 alt="Omthentic"
-                className="h-8 w-auto"
+                className="h-6 sm:h-7 lg:h-8 w-auto"
               />
             </Link>
           </div>
@@ -183,8 +183,10 @@ export default function ModernHeader() {
 
           {/* Mobile menu button */}
           <button
-            className="lg:hidden p-3 rounded-lg hover:bg-white/20 text-white transition-colors backdrop-blur-sm mr-2"
+            className="lg:hidden p-3 rounded-lg hover:bg-white/20 text-white transition-colors backdrop-blur-sm touch-manipulation min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+            aria-expanded={mobileMenuOpen}
           >
             {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
           </button>
