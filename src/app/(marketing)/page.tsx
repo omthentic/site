@@ -94,7 +94,12 @@ export default function HomePage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center animate-slide-up">
             <div className="flex justify-center items-center animate-scale-in">
-              <Button variant="primary" size="lg" asChild>
+              <Button
+                variant="primary"
+                size="lg"
+                className="bg-[#10B981] hover:bg-[#059669] active:bg-[#047857] text-white font-bold rounded-full px-12 py-5 text-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-200 border-0"
+                asChild
+              >
                 <Link href="/app/sign-up">
                   Get Started
                   <ArrowRight size={20} />
