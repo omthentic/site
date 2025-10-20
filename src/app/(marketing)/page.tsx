@@ -68,7 +68,7 @@ export default function HomePage() {
   return (
     <div>
       {/* Hero Section */}
-      <Section spacing="xl" background="default">
+      <Section spacing="md" background="default" className="-mt-8">
         {/* Full-width Hero Image */}
         <div className="relative w-full animate-fade-in px-4 sm:px-0">
           <div className="w-full overflow-hidden rounded-lg sm:rounded-xl">
