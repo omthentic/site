@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Search, Calendar, Clock, ArrowRight, Filter, User, Tag } from 'lucide-react';
+import { Search, Calendar, Clock, ArrowRight, User, Tag } from 'lucide-react';
 import ModernHeader from '../components/ModernHeader';
 import ModernFooter from '../components/ModernFooter';
 import Link from 'next/link';
