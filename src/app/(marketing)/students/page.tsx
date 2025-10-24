@@ -30,7 +30,7 @@ export default function StudentsPage() {
             <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-8 max-w-3xl mx-auto">
               Medical interviews are high stakes. Omthentic gives you unlimited reps, instant feedback, and the confidence to turn nerves into offers.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <div className="flex justify-center items-center">
               <Button
                 variant="primary"
                 size="lg"
@@ -38,18 +38,8 @@ export default function StudentsPage() {
                 asChild
               >
                 <Link href="https://app.omthentic.ai">
-                  Start free practice
-                  <ArrowRight size={20} className="ml-2" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="min-h-[48px] touch-manipulation"
-                asChild
-              >
-                <Link href="#pricing">
                   Get Season Pass — $97
+                  <ArrowRight size={20} className="ml-2" />
                 </Link>
               </Button>
             </div>
@@ -333,12 +323,12 @@ export default function StudentsPage() {
         <Container>
           <div className="max-w-3xl mx-auto text-center">
             <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-[var(--text)]">
-              Start practising today
+              Ready to feel prepared?
             </h2>
             <p className="text-base sm:text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
-              No trial period. No recurring charges. One Season Pass, unlimited practice until offers roll in.
+              No recurring charges. One Season Pass, unlimited practice until offers roll in.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <div className="flex justify-center items-center">
               <Button
                 variant="primary"
                 size="lg"
@@ -346,18 +336,8 @@ export default function StudentsPage() {
                 asChild
               >
                 <Link href="https://app.omthentic.ai">
-                  Start free practice
+                  Get Season Pass — $97
                   <ArrowRight size={20} className="ml-2" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="min-h-[48px] touch-manipulation"
-                asChild
-              >
-                <Link href="#pricing">
-                  Unlock Season Pass — $97
                 </Link>
               </Button>
             </div>

@@ -32,7 +32,7 @@ export default function ParentsPage() {
             <p className="text-base sm:text-lg md:text-xl text-[var(--text-secondary)] leading-relaxed mb-8 max-w-3xl mx-auto">
               Medical interviews decide outcomes. Omthentic gives your child the practice, feedback, and confidence to turn preparation into offers.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <div className="flex justify-center items-center">
               <Button
                 variant="primary"
                 size="lg"
@@ -40,18 +40,8 @@ export default function ParentsPage() {
                 asChild
               >
                 <Link href="https://app.omthentic.ai">
-                  Start free practice
-                  <ArrowRight size={20} className="ml-2" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="min-h-[48px] touch-manipulation"
-                asChild
-              >
-                <Link href="#pricing">
                   Get Season Pass — $97
+                  <ArrowRight size={20} className="ml-2" />
                 </Link>
               </Button>
             </div>
@@ -318,7 +308,7 @@ export default function ParentsPage() {
             <p className="text-base sm:text-lg text-[var(--text-secondary)] mb-8 max-w-2xl mx-auto">
               No subscriptions. No upsells during checkout. One Season Pass, unlimited practice until offers arrive.
             </p>
-            <div className="flex flex-col sm:flex-row justify-center items-center gap-4">
+            <div className="flex justify-center items-center">
               <Button
                 variant="primary"
                 size="lg"
@@ -326,18 +316,8 @@ export default function ParentsPage() {
                 asChild
               >
                 <Link href="https://app.omthentic.ai">
-                  Start free practice
+                  Get Season Pass — $97
                   <ArrowRight size={20} className="ml-2" />
-                </Link>
-              </Button>
-              <Button
-                variant="outline"
-                size="lg"
-                className="min-h-[48px] touch-manipulation"
-                asChild
-              >
-                <Link href="#pricing">
-                  Unlock Season Pass — $97
                 </Link>
               </Button>
             </div>
