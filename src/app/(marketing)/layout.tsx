@@ -19,11 +19,11 @@ export function getOGImage(title: string, description?: string): string {
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://omthentic.ai'),
   title: {
-    default: 'Omthentic | Master Communication Skills',
+    default: 'Medical School Interview Practice (MMI) | Omthentic',
     template: '%s | Omthentic',
   },
-  description: 'Build confidence in high-stakes conversations with AI-powered practice and feedback.',
-  keywords: ['communication skills', 'interview prep', 'AI coaching', 'feedback', 'practice'],
+  description: 'Practise medical school interviews with 400+ MMI scenarios. Season Pass $97 for Oct–Jan. Built on 15+ years coaching 1,000+ students.',
+  keywords: ['MMI', 'medical school interview', 'medical interview prep', 'interview practice', 'med school Australia', 'med school New Zealand', 'med school UK'],
   authors: [{ name: 'Omthentic' }],
   creator: 'Omthentic',
   publisher: 'Omthentic',
@@ -36,8 +36,8 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: '/',
     siteName: 'Omthentic',
-    title: 'Omthentic | Master Communication Skills',
-    description: 'Build confidence in high-stakes conversations with AI-powered practice and feedback.',
+    title: 'Medical School Interview Practice (MMI) | Omthentic',
+    description: 'Practise medical school interviews with 400+ MMI scenarios. Season Pass $97 for Oct–Jan.',
     images: [
       {
         url: '/og-image.png',
@@ -49,8 +49,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Omthentic | Master Communication Skills',
-    description: 'Build confidence in high-stakes conversations with AI-powered practice and feedback.',
+    title: 'Medical School Interview Practice (MMI) | Omthentic',
+    description: 'Practise medical school interviews with 400+ MMI scenarios. Season Pass $97 for Oct–Jan.',
     images: ['/og-image.png'],
     creator: '@omthentic',
   },
@@ -71,9 +71,10 @@ export default function MarketingLayout({
   // Navigation links
   const navLinks = [
     { label: 'Product', href: '/product' },
-    { label: 'Solutions', href: '/solutions' },
-    { label: 'Pricing', href: '/pricing' },
-    { label: 'Resources', href: '/resources' },
+    { label: 'Students', href: '/students' },
+    { label: 'Parents', href: '/parents' },
+    { label: 'Pricing', href: '/#pricing' },
+    { label: 'Resources', href: '/blog' },
     { label: 'About', href: '/about' },
   ];
 
@@ -82,37 +83,32 @@ export default function MarketingLayout({
     {
       title: 'Product',
       links: [
-        { label: 'Features', href: '/features' },
-        { label: 'How it Works', href: '/product/how-it-works' },
-        { label: 'Pricing', href: '/pricing' },
-        { label: 'Roadmap', href: '/roadmap' },
+        { label: 'How it Works', href: '/#how-it-works' },
+        { label: 'Pricing', href: '/#pricing' },
+        { label: 'School Packs', href: '/product/school-packs' },
       ],
     },
     {
-      title: 'Solutions',
+      title: 'For You',
       links: [
-        { label: 'Medical Interviews', href: '/solutions/medical-interviews' },
-        { label: 'Job Interviews', href: '/solutions/job-interviews' },
-        { label: 'Leadership', href: '/solutions/leadership' },
-        { label: 'Relationships', href: '/solutions/relationships' },
+        { label: 'Students', href: '/students' },
+        { label: 'Parents', href: '/parents' },
       ],
     },
     {
       title: 'Resources',
       links: [
         { label: 'Blog', href: '/blog' },
-        { label: 'Guides', href: '/resources/guides' },
-        { label: 'Case Studies', href: '/resources/case-studies' },
-        { label: 'Help Center', href: '/help' },
+        { label: 'Help Centre', href: '/help' },
       ],
     },
     {
       title: 'Company',
       links: [
         { label: 'About', href: '/about' },
-        { label: 'Careers', href: '/careers' },
         { label: 'Contact', href: '/contact' },
-        { label: 'Press', href: '/company/press' },
+        { label: 'Privacy', href: '/privacy' },
+        { label: 'Terms', href: '/terms' },
       ],
     },
   ];
@@ -134,17 +130,30 @@ export default function MarketingLayout({
       <Header
         logo={<img src="/images/Omthentic Horizontal.svg" alt="Omthentic" className="h-10 sm:h-12 w-auto" />}
         links={navLinks}
-        ctaLabel="Get Started"
+        ctaLabel="Get the Season Pass"
         ctaHref="https://app.omthentic.ai"
         sticky
       />
-      <main>{children}</main>
+      <main className="pb-20 md:pb-0">{children}</main>
+      
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 md:hidden bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-800 shadow-lg">
+        <div className="px-4 py-3">
+          <a
+            href="https://app.omthentic.ai"
+            className="block w-full bg-[#10B981] hover:bg-[#059669] text-white font-bold text-center py-3 px-6 rounded-full transition-colors touch-manipulation"
+          >
+            Season Pass $97 — Unlock now
+          </a>
+        </div>
+      </div>
+      
       <Footer
         logo={<img src="/images/Omthentic Horizontal.svg" alt="Omthentic" className="h-12 w-auto" />}
         sections={footerSections}
         socialLinks={socialLinks}
         legalLinks={legalLinks}
-        description="Build confidence in high-stakes conversations with AI-powered practice and feedback."
+        description="Practise medical school interviews with instant feedback. Season Pass $97 for Oct–Jan."
       />
     </>
   );
