@@ -92,23 +92,19 @@ export default function HomePage() {
       <section className="hero hero-orb">
         <OrbHero />
         <div className="orb-stage">
-          <Reveal className="eyebrow">Aligned authenticity</Reveal>
-          <Reveal as="h1" className="wordmark" style={{ transitionDelay: ".1s" }}>
+          <Reveal as="h1" className="wordmark">
             Omthentic
           </Reveal>
-          <Reveal as="p" className="orb-tag" style={{ transitionDelay: ".2s" }}>
+          <Reveal as="p" className="orb-tag" style={{ transitionDelay: ".1s" }}>
             The discipline of meaning what you make, and making what you mean.
           </Reveal>
-          <Reveal className="hero-cta" style={{ transitionDelay: ".3s" }}>
+          <Reveal className="hero-cta" style={{ transitionDelay: ".2s" }}>
             <Link href="/contact" className="btn btn-primary">
               Start a conversation
             </Link>
             <Link href="/vision" className="btn btn-ghost">
               Read the manifesto
             </Link>
-          </Reveal>
-          <Reveal className="orb-foot" style={{ transitionDelay: ".4s" }}>
-            Four ventures · More forthcoming
           </Reveal>
         </div>
       </section>
