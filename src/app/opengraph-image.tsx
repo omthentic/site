@@ -1,9 +1,8 @@
-/* removed unused eslint-disable */
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Omthentic — Speak your truth with confidence';
+export const alt = 'Omthentic — Aligned authenticity';
 export const size = {
   width: 1200,
   height: 630,
@@ -11,9 +10,6 @@ export const size = {
 export const contentType = 'image/png';
 
 export default async function OGImage() {
-  const gradient = 'linear-gradient(135deg, #0B1220 0%, #0F172A 50%, #132033 100%)';
-  const pillBg = 'rgba(13, 110, 253, 0.15)';
-
   return new ImageResponse(
     (
       <div
@@ -23,33 +19,34 @@ export default async function OGImage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          backgroundImage: gradient,
+          background: '#100806',
           position: 'relative',
         }}
       >
-        {/* teal/blue orbs */}
         <div
           style={{
             position: 'absolute',
-            top: -80,
-            right: -60,
-            width: 380,
-            height: 380,
+            top: -120,
+            right: -100,
+            width: 460,
+            height: 460,
             borderRadius: 9999,
-            filter: 'blur(80px)',
-            background: 'radial-gradient(circle at 30% 30%, #19B9D0, transparent 60%)',
+            filter: 'blur(120px)',
+            background: 'radial-gradient(circle at 40% 40%, #d4a574, transparent 60%)',
+            opacity: 0.4,
           }}
         />
         <div
           style={{
             position: 'absolute',
-            bottom: -80,
-            left: -60,
-            width: 320,
-            height: 320,
+            bottom: -140,
+            left: -100,
+            width: 400,
+            height: 400,
             borderRadius: 9999,
-            filter: 'blur(90px)',
-            background: 'radial-gradient(circle at 60% 60%, #2D6FFF, transparent 60%)',
+            filter: 'blur(130px)',
+            background: 'radial-gradient(circle at 60% 60%, #8a5a3b, transparent 60%)',
+            opacity: 0.35,
           }}
         />
 
@@ -57,56 +54,33 @@ export default async function OGImage() {
           style={{
             display: 'flex',
             flexDirection: 'column',
-            gap: 24,
+            gap: 28,
             width: 960,
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-            <img
-              alt="Omthentic"
-              width={200}
-              height={48}
-              src="/images/Omthentic Horizontal.svg"
-              style={{ display: 'block' }}
-            />
+          <div style={{ display: 'flex', fontSize: 26, letterSpacing: 8, color: '#d4a574' }}>
+            ·  Ω  ·  OMTHENTIC
           </div>
-
-          <div
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: 10,
-              alignSelf: 'flex-start',
-              padding: '8px 14px',
-              borderRadius: 9999,
-              background: pillBg,
-              color: '#E6EEF7',
-              fontSize: 22,
-            }}
-          >
-            Speak your truth with confidence
-          </div>
-
           <h1
             style={{
               margin: 0,
-              fontSize: 72,
-              lineHeight: 1.1,
-              color: '#F7FAFC',
-              fontWeight: 800,
+              fontSize: 80,
+              lineHeight: 1.05,
+              color: '#f1e6d3',
+              fontWeight: 400,
+              fontStyle: 'italic',
             }}
           >
-            Practice real interview questions with AI feedback
+            Aligned authenticity.
           </h1>
-
           <p
             style={{
               margin: 0,
-              color: '#D6DFEA',
-              fontSize: 28,
+              color: 'rgba(241,230,211,0.7)',
+              fontSize: 30,
             }}
           >
-            Coach‑verified tips • Confidence, clarity & pace scores
+            A house of technologies that close the distance between intention and expression.
           </p>
         </div>
       </div>
@@ -116,5 +90,3 @@ export default async function OGImage() {
     }
   );
 }
-
-

@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Omthentic
 
-## Getting Started
+The editorial site for the Omthentic house — a set of ventures built around
+*aligned authenticity*: closing the distance between intention and expression.
 
-First, run the development server:
+Built with Next.js (App Router) and Tailwind CSS v4. The site is four pages —
+**Index**, **Vision**, **Companies**, and **Contact** — all under the
+`(omthentic)` route group, with a self-contained design system in
+`src/app/(omthentic)/omthentic.css`.
+
+## Getting started
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Structure
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+src/app/
+  (omthentic)/            # the editorial site
+    _components/          # AlignmentField, ResonanceHero, Reveal, SiteNav, …
+    omthentic.css         # scoped design system (fonts, Ember palette)
+    page.tsx              # index
+    vision/ companies/ contact/
+  layout.tsx              # root html/body + metadata
+  globals.css             # minimal base + Tailwind
+```
 
-## Learn More
+## Scripts
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- `npm run dev` — dev server (Turbopack)
+- `npm run build` — production build
+- `npm run start` — serve the production build
