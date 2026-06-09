@@ -113,6 +113,19 @@ export default function HomePage() {
         </div>
       </section>
 
+      <section className="intro">
+        <div className="wrap">
+          <Reveal as="h2" className="intro-head">
+            Technology in resonance with who you truly are.
+          </Reveal>
+          <Reveal as="p" className="lead" style={{ transitionDelay: ".1s" }}>
+            Omthentic builds the companies that return communication to its
+            source: aligned, authentic, alive. We make technologies that help
+            people become more of who they already are.
+          </Reveal>
+        </div>
+      </section>
+
       <section id="what">
         <div className="wrap">
           <div className="sec-head">
