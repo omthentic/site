@@ -182,10 +182,7 @@ export default function HomePage() {
             <Reveal className="eyebrow">The ventures</Reveal>
             <Reveal as="h2">One intention, many instruments.</Reveal>
             <Reveal as="p" className="lead">
-              Four independent companies on a shared foundation.{" "}
-              <span style={{ color: "var(--accent)" }}>
-                Names are placeholders, swap for the real ventures.
-              </span>
+              Four independent companies on a shared foundation.
             </Reveal>
           </div>
           <div className="vstrip">
