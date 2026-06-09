@@ -2,16 +2,7 @@ import Link from "next/link";
 import { Reveal } from "./_components/Reveal";
 import { VentureGlyph } from "./_components/VentureGlyph";
 import { SignalForm } from "./_components/SignalForm";
-
-const stats = [
-  {
-    accent: true,
-    k: "One intention",
-    v: "Every venture inherits the same constraint: alignment before scale.",
-  },
-  { k: "Four ventures", v: "Independent companies, one shared source layer." },
-  { k: "Decade horizon", v: "We weigh decisions by how they sound in ten years." },
-];
+import { OrbHero } from "./_components/OrbHero";
 
 const props = [
   {
@@ -98,35 +89,26 @@ const paths = [
 export default function HomePage() {
   return (
     <main>
-      <section className="hero">
-        <div className="wrap hero-grid">
-          <div>
-            <Reveal className="eyebrow">The parent house</Reveal>
-            <Reveal as="h1" style={{ transitionDelay: ".1s" }}>
-              A house for technology that keeps people true.
-            </Reveal>
-            <Reveal as="p" className="lead" style={{ transitionDelay: ".2s" }}>
-              Omthentic builds and backs companies solving one problem from many
-              angles: how to keep human communication authentic as AI
-              accelerates. This is the short version; the full conviction lives
-              in the manifesto.
-            </Reveal>
-            <Reveal className="hero-cta" style={{ transitionDelay: ".2s" }}>
-              <Link href="/contact" className="btn btn-primary">
-                Start a conversation
-              </Link>
-              <Link href="/vision" className="btn btn-ghost">
-                Read the manifesto
-              </Link>
-            </Reveal>
-          </div>
-          <Reveal as="aside" className="hero-aside" style={{ transitionDelay: ".2s" }}>
-            {stats.map((s) => (
-              <div key={s.k} className={`stat-card${s.accent ? " accent" : ""}`}>
-                <div className="k">{s.k}</div>
-                <div className="v">{s.v}</div>
-              </div>
-            ))}
+      <section className="hero hero-orb">
+        <OrbHero />
+        <div className="orb-stage">
+          <Reveal className="eyebrow">Aligned authenticity</Reveal>
+          <Reveal as="h1" className="wordmark" style={{ transitionDelay: ".1s" }}>
+            Omthentic
+          </Reveal>
+          <Reveal as="p" className="orb-tag" style={{ transitionDelay: ".2s" }}>
+            The discipline of meaning what you make, and making what you mean.
+          </Reveal>
+          <Reveal className="hero-cta" style={{ transitionDelay: ".3s" }}>
+            <Link href="/contact" className="btn btn-primary">
+              Start a conversation
+            </Link>
+            <Link href="/vision" className="btn btn-ghost">
+              Read the manifesto
+            </Link>
+          </Reveal>
+          <Reveal className="orb-foot" style={{ transitionDelay: ".4s" }}>
+            Four ventures · More forthcoming
           </Reveal>
         </div>
       </section>
