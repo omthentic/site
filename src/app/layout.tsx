@@ -2,21 +2,25 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Omthentic — Speak your truth with confidence",
-  description: "AI-powered practice + human‑centred guidance to help you express your most authentic self in high‑stakes moments.",
-  keywords: "communication skills, interview coaching, public speaking, confidence building, AI feedback, authenticity",
-  authors: [{ name: "Omthentic Team" }],
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"),
+  title: "Omthentic — Aligned authenticity",
+  description:
+    "A house of aligned technologies that close the distance between intention and expression. Home to InterviewMD and Prepbond.",
+  keywords: "aligned authenticity, Omthentic, InterviewMD, Prepbond, communication, becoming",
+  authors: [{ name: "The Stewards of Omthentic" }],
   openGraph: {
-    title: "Omthentic — Speak your truth with confidence",
-    description: "Practice real interview questions with AI feedback and coach‑verified tips.",
+    title: "Omthentic — Aligned authenticity",
+    description:
+      "A house of aligned technologies. Ventures that bring people more honestly into contact with themselves and each other.",
     type: "website",
-    url: "https://omthentic.com",
+    url: "https://omthentic.ai",
     images: [{ url: "/opengraph-image" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omthentic — Speak your truth with confidence",
-    description: "Practice real interview questions with AI feedback and coach‑verified tips.",
+    title: "Omthentic — Aligned authenticity",
+    description:
+      "A house of aligned technologies. Ventures that bring people more honestly into contact with themselves.",
     images: ["/twitter-image"],
   },
   viewport: {

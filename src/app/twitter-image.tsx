@@ -1,9 +1,8 @@
-/* removed unused eslint-disable */
 import { ImageResponse } from 'next/og';
 
 export const runtime = 'edge';
 
-export const alt = 'Omthentic — Speak your truth with confidence';
+export const alt = 'Omthentic — Aligned authenticity';
 export const size = {
   width: 1200,
   height: 630,
@@ -20,18 +19,36 @@ export default async function TwitterImage() {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          background: 'linear-gradient(135deg, #0B1220 0%, #0F172A 50%, #132033 100%)',
+          background: '#100806',
           position: 'relative',
         }}
       >
-        <div style={{ position: 'absolute', inset: 0, background: 'radial-gradient(800px 500px at 70% 30%, rgba(18,214,192,.2), transparent 60%), radial-gradient(900px 600px at 20% 80%, rgba(45,111,255,.22), transparent 60%)' }} />
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 20, width: 960 }}>
-          <img alt="Omthentic" width={200} height={48} src="/images/Omthentic Horizontal.svg" />
-          <h1 style={{ margin: 0, fontSize: 66, lineHeight: 1.1, color: '#F7FAFC', fontWeight: 800 }}>
-            Speak your truth with confidence
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background:
+              'radial-gradient(800px 500px at 70% 30%, rgba(212,165,116,.22), transparent 60%), radial-gradient(900px 600px at 20% 80%, rgba(138,90,59,.20), transparent 60%)',
+          }}
+        />
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 24, width: 960 }}>
+          <div style={{ display: 'flex', fontSize: 24, letterSpacing: 8, color: '#d4a574' }}>
+            ·  Ω  ·  OMTHENTIC
+          </div>
+          <h1
+            style={{
+              margin: 0,
+              fontSize: 72,
+              lineHeight: 1.05,
+              color: '#f1e6d3',
+              fontWeight: 400,
+              fontStyle: 'italic',
+            }}
+          >
+            Aligned authenticity.
           </h1>
-          <p style={{ margin: 0, color: '#D6DFEA', fontSize: 26 }}>
-            Practice real interview questions with real‑time AI feedback
+          <p style={{ margin: 0, color: 'rgba(241,230,211,0.7)', fontSize: 28 }}>
+            Closing the distance between intention and expression.
           </p>
         </div>
       </div>
@@ -39,5 +56,3 @@ export default async function TwitterImage() {
     { ...size }
   );
 }
-
-
