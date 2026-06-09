@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"),
   title: "Omthentic — Aligned authenticity",
   description:
-    "A house of aligned technologies that close the distance between intention and expression. Home to InterviewMD and Prepbond.",
+    "A parent house for aligned, authentic, communication-based technologies. Home to the ventures that return people to themselves.",
   keywords: "aligned authenticity, Omthentic, InterviewMD, Prepbond, communication, becoming",
   authors: [{ name: "The Stewards of Omthentic" }],
   openGraph: {

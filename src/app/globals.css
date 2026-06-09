@@ -7,8 +7,8 @@ html {
 }
 
 body {
-  background: #100806;
-  color: #f1e6d3;
+  background: oklch(15% 0.022 280);
+  color: oklch(95% 0.01 280);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }

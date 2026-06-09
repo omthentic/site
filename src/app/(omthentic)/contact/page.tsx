@@ -1,79 +1,75 @@
 import type { Metadata } from "next";
-import { AlignmentField } from "../_components/AlignmentField";
-import { ContactForm } from "../_components/ContactForm";
-import { LiveTime } from "../_components/LiveTime";
+import { Reveal } from "../_components/Reveal";
+import { SignalForm } from "../_components/SignalForm";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "If something rang true, write. There is no front desk here — the same handful of people read every message.",
+    "Leave a frequency. Omthentic reaches the investors, builders, and early believers genuinely aligned with this.",
 };
+
+const channels = [
+  {
+    meta: "For investors",
+    title: "Back the long resonance",
+    body: "We share our thesis, structure, and the case for a house built on alignment.",
+    href: "mailto:invest@omthentic.ai",
+    label: "invest@omthentic.ai →",
+  },
+  {
+    meta: "For builders",
+    title: "Join the founding circle",
+    body: "Engineers, designers, and researchers who want their work to mean something.",
+    href: "mailto:build@omthentic.ai",
+    label: "build@omthentic.ai →",
+  },
+  {
+    meta: "For believers",
+    title: "Walk with us early",
+    body: "Follow the manifesto as it becomes real, and shape it while it is still soft.",
+    href: "mailto:hello@omthentic.ai",
+    label: "Join the circle →",
+  },
+];
 
 export default function ContactPage() {
   return (
-    <main className="contact-wrap">
-      <section className="contact-left">
-        <AlignmentField
-          density={0.5}
-          speed={0.8}
-          pull={0.8}
-          spread={1.2}
-          style={{ position: "absolute", inset: 0, opacity: 0.35, zIndex: 0 }}
-        />
+    <main>
+      <section className="join" id="join">
+        <div className="wrap">
+          <Reveal
+            className="eyebrow"
+            style={{ justifyContent: "center", display: "flex", marginBottom: "clamp(24px,3vh,36px)" }}
+          >
+            Resonate with us
+          </Reveal>
+          <Reveal as="h2">If something here moved you, that was the point.</Reveal>
+          <Reveal as="p" className="lead">
+            Leave a frequency. We will reach the people who are genuinely aligned
+            with this: investors, builders, and early believers who feel the same
+            pull.
+          </Reveal>
+          <Reveal>
+            <SignalForm />
+          </Reveal>
 
-        <div>
-          <div className="eyebrow">
-            <span className="dot" />
-            IV — Begin
-          </div>
-          <h1>
-            If something rang true, <em>write</em>.
-          </h1>
-          <p className="lede">
-            There is no front desk here. The same handful of people read every
-            message. We reply when we can hold the reply with our whole
-            attention — usually within a week.
-          </p>
-        </div>
-
-        <div className="contact-channels">
-          <div className="channel">
-            <span className="ck">General</span>
-            <a className="cv" href="mailto:hello@omthentic.com">
-              hello@omthentic.com
-              <em>For introductions, questions, and quiet correspondence.</em>
-            </a>
-          </div>
-          <div className="channel">
-            <span className="ck">Joining</span>
-            <a className="cv" href="mailto:join@omthentic.com">
-              join@omthentic.com
-              <em>If you suspect your work belongs alongside ours.</em>
-            </a>
-          </div>
-          <div className="channel">
-            <span className="ck">Press</span>
-            <a className="cv" href="mailto:press@omthentic.com">
-              press@omthentic.com
-              <em>We do interviews rarely, and on the record.</em>
-            </a>
-          </div>
-          <div className="channel">
-            <span className="ck">Locale</span>
-            <span className="cv">
-              London &nbsp;·&nbsp; Global
-              <em>
-                <LiveTime /> &nbsp;·&nbsp; the bell still rings here
-              </em>
-            </span>
+          <div className="channels">
+            {channels.map((c, i) => (
+              <Reveal
+                key={c.title}
+                className="channel"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="mono-meta">{c.meta}</div>
+                <h3>{c.title}</h3>
+                <p>{c.body}</p>
+                <a className="link" href={c.href}>
+                  {c.label}
+                </a>
+              </Reveal>
+            ))}
           </div>
         </div>
-      </section>
-
-      <section className="contact-right">
-        <h2>A letter</h2>
-        <p className="formhead">No fields are required. Tell us what feels honest.</p>
-        <ContactForm />
       </section>
     </main>
   );

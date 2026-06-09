@@ -1,455 +1,261 @@
 import Link from "next/link";
-import { ResonanceHero } from "./_components/ResonanceHero";
-import { AlignmentField } from "./_components/AlignmentField";
 import { Reveal } from "./_components/Reveal";
+import { VentureGlyph } from "./_components/VentureGlyph";
+import { SignalForm } from "./_components/SignalForm";
+
+const stats = [
+  {
+    accent: true,
+    k: "One intention",
+    v: "Every venture inherits the same constraint: alignment before scale.",
+  },
+  { k: "Four ventures", v: "Independent companies, one shared source layer." },
+  { k: "Decade horizon", v: "We weigh decisions by how they sound in ten years." },
+];
+
+const props = [
+  {
+    icon: (
+      <svg className="ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <circle cx="18" cy="18" r="14" stroke="var(--accent-line)" strokeWidth="1.3" />
+        <circle cx="18" cy="18" r="5" stroke="var(--accent)" strokeWidth="1.3" />
+      </svg>
+    ),
+    title: "Aligned by design",
+    body: "The human is the point, ahead of any metric. Every product moves people toward presence.",
+  },
+  {
+    icon: (
+      <svg className="ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M6 18c5-9 19-9 24 0M6 18c5 9 19 9 24 0" stroke="var(--accent)" strokeWidth="1.3" />
+      </svg>
+    ),
+    title: "Communication-first",
+    body: "We build at the source, where intention becomes expression, instead of adding to the noise of being online.",
+  },
+  {
+    icon: (
+      <svg className="ico" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+        <path d="M18 5v26M5 18h26" stroke="var(--accent-line)" strokeWidth="1.3" />
+        <circle cx="18" cy="18" r="7" stroke="var(--accent)" strokeWidth="1.3" />
+      </svg>
+    ),
+    title: "Authenticity as a moat",
+    body: "In a world of infinite copies, what is genuinely yours becomes priceless. We make realness the product.",
+  },
+];
+
+const thesis = [
+  {
+    meta: "The threat",
+    title: "Synthesis is everywhere",
+    body: "When anything can be generated, every signal becomes suspect, and trust, the basis of communication, is the first casualty.",
+  },
+  {
+    meta: "The opening",
+    title: "Realness goes premium",
+    body: "Scarcity flips. What is genuinely, verifiably yours becomes the thing people will pay for and stay for.",
+  },
+  {
+    meta: "The window",
+    title: "The defaults are forming",
+    body: "The norms for how AI mediates connection are being set right now. We intend to set them toward alignment before they harden.",
+  },
+];
+
+const ventures = [
+  { name: "attune" as const, title: "Attune", body: "Communication tools that read intention beyond words.", tag: "Authentic comms" },
+  { name: "veridian" as const, title: "Veridian", body: "An identity layer for being genuinely yourself online.", tag: "Authentic identity" },
+  { name: "lumen" as const, title: "Lumen", body: "Reflective software for inner alignment and attention.", tag: "Aligned living" },
+  { name: "concord" as const, title: "Concord", body: "The shared models, research, and infrastructure.", tag: "Core platform" },
+];
+
+const paths = [
+  {
+    meta: "For investors",
+    title: "Back the long resonance",
+    body: "The thesis, the structure, and the case for a house built on alignment over hype.",
+    href: "mailto:invest@omthentic.ai",
+    label: "invest@omthentic.ai →",
+  },
+  {
+    meta: "For builders",
+    title: "Join the founding circle",
+    body: "Engineers, designers, researchers who want their work to actually mean something.",
+    href: "mailto:build@omthentic.ai",
+    label: "build@omthentic.ai →",
+  },
+  {
+    meta: "For believers",
+    title: "Walk with us early",
+    body: "Follow the manifesto as it becomes real, and help shape it while it is still soft.",
+    href: "/contact",
+    label: "Join the circle →",
+    internal: true,
+  },
+];
 
 export default function HomePage() {
   return (
-    <>
-      <header className="hero">
-        <ResonanceHero
-          className="hero-canvas"
-          spawnInterval={1.7}
-          grow={165}
-          pulseRate={1.25}
-        />
-
-        <div className="hero-inner">
-          <div className="hero-center reveal is-in">
-            <h1 className="hero-wordmark">
-              <span className="accent-lead">Om</span>
-              <span className="om">thentic</span>
-            </h1>
-            <p className="hero-sub">
-              Aligned&nbsp;authenticity — the discipline of meaning what you
-              make, and making what you mean.
-            </p>
-          </div>
-
-          <div className="hero-foot">
-            <div className="col" style={{ textAlign: "center", margin: "0 auto" }}>
-              <strong>Two ventures</strong>
-              <br />
-              InterviewMD · Prepbond
-              <br />
-              More forthcoming.
-            </div>
-          </div>
-        </div>
-      </header>
-
-      <section className="section section--tall">
-        <div className="shell">
-          <div className="grid-12">
-            <Reveal style={{ gridColumn: "2 / span 1" }}>
-              <div className="eyebrow">II — Statement</div>
+    <main>
+      <section className="hero">
+        <div className="wrap hero-grid">
+          <div>
+            <Reveal className="eyebrow">The parent house</Reveal>
+            <Reveal as="h1" style={{ transitionDelay: ".1s" }}>
+              A house for technology that keeps people true.
             </Reveal>
-            <div style={{ gridColumn: "3 / span 9" }}>
-              <Reveal as="p" className="display display-l">
-                Every technology is a sentence the world will read. We build
-                sentences that mean what they say.
-              </Reveal>
-              <Reveal
-                as="p"
-                className="lede"
-                delay={2}
-                style={{ marginTop: 56, color: "var(--ink-dim)" }}
-              >
-                Omthentic is the parent vessel for ventures that close the
-                distance between intention and expression. We do not move fast.
-                We move{" "}
-                <em style={{ color: "var(--accent)", fontStyle: "italic" }}>
-                  into resonance
-                </em>
-                .
-              </Reveal>
-            </div>
+            <Reveal as="p" className="lead" style={{ transitionDelay: ".2s" }}>
+              Omthentic builds and backs companies solving one problem from many
+              angles: how to keep human communication authentic as AI
+              accelerates. This is the short version; the full conviction lives
+              in the manifesto.
+            </Reveal>
+            <Reveal className="hero-cta" style={{ transitionDelay: ".2s" }}>
+              <Link href="/contact" className="btn btn-primary">
+                Start a conversation
+              </Link>
+              <Link href="/vision" className="btn btn-ghost">
+                Read the manifesto
+              </Link>
+            </Reveal>
           </div>
+          <Reveal as="aside" className="hero-aside" style={{ transitionDelay: ".2s" }}>
+            {stats.map((s) => (
+              <div key={s.k} className={`stat-card${s.accent ? " accent" : ""}`}>
+                <div className="k">{s.k}</div>
+                <div className="v">{s.v}</div>
+              </div>
+            ))}
+          </Reveal>
         </div>
       </section>
 
-      <div className="shell">
-        <div className="rule" />
-      </div>
-
-      <section className="section" id="ventures">
-        <div className="shell">
-          <div className="grid-12" style={{ marginBottom: 56 }}>
-            <Reveal style={{ gridColumn: "2 / span 1" }}>
-              <div className="eyebrow">III — Ventures</div>
-            </Reveal>
-            <Reveal style={{ gridColumn: "3 / span 8" }} delay={1}>
-              <h2 className="display display-m" style={{ maxWidth: "22ch" }}>
-                Each company is a frequency — a particular way of being heard.
-              </h2>
+      <section id="what">
+        <div className="wrap">
+          <div className="sec-head">
+            <Reveal className="eyebrow">What we are</Reveal>
+            <Reveal as="h2">A house built on one conviction.</Reveal>
+            <Reveal as="p" className="lead">
+              Omthentic raises ventures that each protect a different face of
+              authentic human communication, and shares the philosophy,
+              research, and infrastructure between them.
             </Reveal>
           </div>
-
-          <div className="shell-inner">
-            <Reveal as={Link} className="co-card" href="/companies#interviewmd">
-              <span className="num">01</span>
-              <div>
-                <div className="name">
-                  Interview<span className="ital">MD</span>
-                </div>
-                <div className="desc">
-                  An interview practice for clinicians — where what you&apos;ve
-                  actually lived in medicine becomes the language you use to be
-                  chosen.
-                </div>
-                <div className="meta">
-                  <span>
-                    <strong>Sector</strong> &nbsp; Medical careers
-                  </span>
-                  <span>
-                    <strong>Phase</strong> &nbsp; In operation
-                  </span>
-                  <span>
-                    <strong>Stewards</strong> &nbsp; 04
-                  </span>
-                </div>
-              </div>
-              <span className="visit">Enter →</span>
-            </Reveal>
-
-            <Reveal
-              as={Link}
-              className="co-card"
-              delay={1}
-              href="/companies#prepbond"
-            >
-              <span className="num">02</span>
-              <div>
-                <div className="name">
-                  Prep<span className="ital">bond</span>
-                </div>
-                <div className="desc">
-                  A preparation companion that bonds a person to the version of
-                  themselves they&apos;re rehearsing toward. Quiet, recursive,
-                  alive.
-                </div>
-                <div className="meta">
-                  <span>
-                    <strong>Sector</strong> &nbsp; Personal practice
-                  </span>
-                  <span>
-                    <strong>Phase</strong> &nbsp; Early access
-                  </span>
-                  <span>
-                    <strong>Stewards</strong> &nbsp; 03
-                  </span>
-                </div>
-              </div>
-              <span className="visit">Enter →</span>
-            </Reveal>
-
-            <Reveal className="co-card" delay={2} style={{ opacity: 0.55 }}>
-              <span className="num">03</span>
-              <div>
-                <div className="name italic faint">— forthcoming —</div>
-                <div className="desc">
-                  A third venture is in incubation. We do not announce until the
-                  work is honest.
-                </div>
-                <div className="meta">
-                  <span>
-                    <strong>Phase</strong> &nbsp; Listening
-                  </span>
-                </div>
-              </div>
-              <span className="visit dim">∅</span>
-            </Reveal>
-          </div>
-        </div>
-      </section>
-
-      <div className="shell">
-        <div className="rule" />
-      </div>
-
-      <section
-        className="section"
-        id="principles"
-        style={{ position: "relative", overflow: "hidden" }}
-      >
-        <AlignmentField
-          className="bg-field"
-          density={0.5}
-          speed={0.8}
-          pull={0.8}
-          spread={1.2}
-        />
-
-        <div className="shell" style={{ position: "relative", zIndex: 1 }}>
-          <div className="grid-12" style={{ marginBottom: 56 }}>
-            <Reveal style={{ gridColumn: "2 / span 1" }}>
-              <div className="eyebrow">IV — Tenets</div>
-            </Reveal>
-            <Reveal style={{ gridColumn: "3 / span 8" }} delay={1}>
-              <h2 className="display display-m" style={{ maxWidth: "24ch" }}>
-                What we hold — five tenets that govern every line of code, every
-                interaction, every hire.
-              </h2>
-            </Reveal>
-          </div>
-
-          <div style={{ margin: "0 auto", maxWidth: 1200 }}>
-            {[
-              {
-                n: "i.",
-                t: (
-                  <>
-                    <em>Alignment</em> precedes ability.
-                  </>
-                ),
-                d: "A talented system that points the wrong direction is a sharper mistake. We choose the slow correctness of pointing true.",
-                delay: 0,
-              },
-              {
-                n: "ii.",
-                t: (
-                  <>
-                    The product is the <em>person</em>.
-                  </>
-                ),
-                d: "Our software's purpose is to leave the user more themselves than it found them. Tools are temporary. Becoming is the work.",
-                delay: 1,
-              },
-              {
-                n: "iii.",
-                t: (
-                  <>
-                    Communication is <em>sacred infrastructure</em>.
-                  </>
-                ),
-                d: "Every interface mediates how a soul meets the world. We treat it with the seriousness of architecture and the care of a letter.",
-                delay: 2,
-              },
-              {
-                n: "iv.",
-                t: (
-                  <>
-                    Resonance over <em>reach</em>.
-                  </>
-                ),
-                d: "A million people unmoved is a louder kind of silence. We measure ourselves by the depth of recognition we produce, not the volume.",
-                delay: 3,
-              },
-              {
-                n: "v.",
-                t: (
-                  <>
-                    We build as if the future is <em>watching</em>.
-                  </>
-                ),
-                d: "Because it is. The artifacts we make outlive our intentions; we hold ourselves to the standard of what will be inherited.",
-                delay: 4,
-              },
-            ].map((p) => (
+          <div className="props">
+            {props.map((p, i) => (
               <Reveal
                 as="article"
-                className="principle"
-                key={p.n}
-                delay={p.delay}
+                key={p.title}
+                className="prop"
+                style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="pn">{p.n}</div>
-                <div>
-                  <div className="pt">{p.t}</div>
-                  <p className="pd">{p.d}</p>
-                </div>
+                {p.icon}
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="shell">
-        <div className="rule" />
-      </div>
-
-      <section className="section">
-        <div className="shell">
-          <div className="grid-12" style={{ marginBottom: 80 }}>
-            <Reveal style={{ gridColumn: "2 / span 1" }}>
-              <div className="eyebrow">V — Method</div>
-            </Reveal>
-            <Reveal style={{ gridColumn: "3 / span 8" }} delay={1}>
-              <h2 className="display display-m" style={{ maxWidth: "24ch" }}>
-                How a venture is born from this house — three movements, in
-                order.
-              </h2>
-            </Reveal>
-          </div>
-
-          <div className="grid-12">
-            {[
-              {
-                col: "3 / span 3",
-                k: "01  /  Listen",
-                h: "A held silence.",
-                p: "Before code: time with the person whose problem we mean to honor. We do not move until the shape of the thing is clear to all who must carry it.",
-                delay: 0,
-              },
-              {
-                col: "6 / span 3",
-                k: "02  /  Render",
-                h: "The small honest object.",
-                p: "We craft the first version as if it were the last — small, complete, and in possession of itself. Nothing extends until the core resonates.",
-                delay: 1,
-              },
-              {
-                col: "9 / span 3",
-                k: "03  /  Release",
-                h: "Into the right hands.",
-                p: "We do not broadcast. We place. The earliest people to hold a venture set its grain forever; we choose them with the patience of an editor.",
-                delay: 2,
-              },
-            ].map((m) => (
-              <Reveal key={m.k} style={{ gridColumn: m.col }} delay={m.delay}>
-                <div className="mono dim" style={{ marginBottom: 18 }}>
-                  {m.k}
-                </div>
-                <h3
-                  className="display display-m"
-                  style={{
-                    fontSize: "clamp(24px, 2.2vw, 36px)",
-                    margin: "0 0 18px",
-                  }}
-                >
-                  {m.h}
-                </h3>
-                <p className="dim" style={{ fontSize: 15, lineHeight: 1.6 }}>
-                  {m.p}
-                </p>
+      <section className="thesis" id="why">
+        <div className="wrap">
+          <Reveal className="eyebrow" style={{ marginBottom: "clamp(26px,4vh,40px)" }}>
+            Why now
+          </Reveal>
+          <Reveal as="p" className="big">
+            The wave that makes inauthenticity infinite makes{" "}
+            <span className="hl">authenticity</span> the most valuable thing a
+            technology can offer.
+          </Reveal>
+          <div className="thesis-cols">
+            {thesis.map((t, i) => (
+              <Reveal key={t.title} style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="mono-meta">{t.meta}</div>
+                <h3>{t.title}</h3>
+                <p>{t.body}</p>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="shell">
-        <div className="rule" />
-      </div>
-
-      <section className="section" id="stewards">
-        <div className="shell">
-          <div className="grid-12" style={{ marginBottom: 80 }}>
-            <Reveal style={{ gridColumn: "2 / span 1" }}>
-              <div className="eyebrow">VI — Stewards</div>
-            </Reveal>
-            <Reveal style={{ gridColumn: "3 / span 8" }} delay={1}>
-              <h2 className="display display-m" style={{ maxWidth: "24ch" }}>
-                A small house. Each person here was chosen for the way they
-                listen.
-              </h2>
+      <section id="ventures">
+        <div className="wrap">
+          <div className="sec-head">
+            <Reveal className="eyebrow">The ventures</Reveal>
+            <Reveal as="h2">One intention, many instruments.</Reveal>
+            <Reveal as="p" className="lead">
+              Four independent companies on a shared foundation.{" "}
+              <span style={{ color: "var(--accent)" }}>
+                Names are placeholders, swap for the real ventures.
+              </span>
             </Reveal>
           </div>
-
-          <div className="grid-12">
-            {[
-              {
-                col: "3 / span 2",
-                glyph: "a",
-                name: "A. Renard",
-                role: "Founder  ·  Director of Resonance",
-                delay: 0,
-                italic: false,
-              },
-              {
-                col: "5 / span 2",
-                glyph: "m",
-                name: "M. Halász",
-                role: "Architecture  ·  Practice",
-                delay: 1,
-                italic: false,
-              },
-              {
-                col: "7 / span 2",
-                glyph: "s",
-                name: "S. Okonkwo",
-                role: "Language  ·  Editorial",
-                delay: 2,
-                italic: false,
-              },
-              {
-                col: "9 / span 2",
-                glyph: "+",
-                name: "A seat held",
-                role: "For one we have not yet met",
-                delay: 3,
-                italic: true,
-              },
-            ].map((s) => (
+          <div className="vstrip">
+            {ventures.map((v, i) => (
               <Reveal
-                key={s.name}
-                className="steward"
-                style={{ gridColumn: s.col }}
-                delay={s.delay}
+                as="article"
+                key={v.title}
+                className="vcard"
+                style={{ transitionDelay: `${i * 0.1}s` }}
               >
-                <div className="portrait">
-                  <div className="glyph">{s.glyph}</div>
-                </div>
-                <div className={`sname${s.italic ? " italic dim" : ""}`}>
-                  {s.name}
-                </div>
-                <div className="srole">{s.role}</div>
+                <VentureGlyph name={v.name} />
+                <h3>{v.title}</h3>
+                <p>{v.body}</p>
+                <div className="t">{v.tag}</div>
               </Reveal>
             ))}
           </div>
         </div>
       </section>
 
-      <div className="shell">
-        <div className="rule" />
-      </div>
-
-      <section
-        className="section section--tall"
-        style={{ position: "relative", overflow: "hidden" }}
-      >
-        <AlignmentField
-          className="bg-field"
-          density={0.5}
-          speed={0.8}
-          pull={0.8}
-          spread={1.2}
-          style={{ opacity: 0.35 }}
-        />
-        <div className="shell" style={{ position: "relative", zIndex: 1 }}>
-          <div className="grid-12">
-            <Reveal style={{ gridColumn: "2 / span 1" }}>
-              <div className="eyebrow">VII — Invitation</div>
-            </Reveal>
-            <div style={{ gridColumn: "3 / span 9" }}>
-              <Reveal
-                as="p"
-                className="display display-xl"
-                style={{ maxWidth: "16ch" }}
-              >
-                If you recognize the work, you are already part of it.
+      <section id="ways">
+        <div className="wrap">
+          <div className="sec-head">
+            <Reveal className="eyebrow">Ways in</Reveal>
+            <Reveal as="h2">Three doors into the same house.</Reveal>
+          </div>
+          <div className="paths">
+            {paths.map((p, i) => (
+              <Reveal key={p.title} className="path" style={{ transitionDelay: `${i * 0.1}s` }}>
+                <div className="mono-meta">{p.meta}</div>
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+                {p.internal ? (
+                  <Link className="link" href={p.href}>
+                    {p.label}
+                  </Link>
+                ) : (
+                  <a className="link" href={p.href}>
+                    {p.label}
+                  </a>
+                )}
               </Reveal>
-              <Reveal
-                delay={2}
-                style={{
-                  marginTop: 64,
-                  display: "flex",
-                  gap: 18,
-                  flexWrap: "wrap",
-                  alignItems: "center",
-                }}
-              >
-                <Link className="btn" href="/contact">
-                  <span>Begin a conversation</span>
-                  <span className="arrow" />
-                </Link>
-                <Link className="link-arrow" href="/vision">
-                  Read the full vision
-                </Link>
-              </Reveal>
-            </div>
+            ))}
           </div>
         </div>
       </section>
-    </>
+
+      <section className="join" id="cta">
+        <div className="wrap">
+          <Reveal
+            className="eyebrow"
+            style={{ display: "flex", justifyContent: "center", marginBottom: "clamp(22px,3vh,34px)" }}
+          >
+            Resonate with us
+          </Reveal>
+          <Reveal as="h2">If something here moved you, that was the point.</Reveal>
+          <Reveal as="p" className="lead">
+            Leave a frequency. We reach out to the people genuinely aligned with
+            this.
+          </Reveal>
+          <Reveal>
+            <SignalForm />
+          </Reveal>
+        </div>
+      </section>
+    </main>
   );
 }

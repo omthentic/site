@@ -1,72 +1,48 @@
 import Link from "next/link";
-import { LiveTime } from "./LiveTime";
+import { BrandMark } from "./BrandMark";
 
 export function SiteFooter() {
   return (
     <footer className="foot">
-      <div className="foot-wordmark" aria-hidden="true">
-        Omthentic.
-      </div>
-      <div className="foot-grid" style={{ position: "relative", zIndex: 1 }}>
-        <div>
-          <h4>The house</h4>
-          <p
-            className="dim"
-            style={{ maxWidth: "32ch", fontSize: 15, lineHeight: 1.55 }}
-          >
-            Omthentic is a quiet parent — a vessel for ventures that bring
-            people more honestly into contact with themselves and each other.
-          </p>
+      <div className="wrap">
+        <div className="foot-in">
+          <div>
+            <div className="brand">
+              <BrandMark />
+              Omthentic
+            </div>
+            <p className="tag">
+              A parent house for aligned, authentic, communication-based
+              technologies.
+            </p>
+          </div>
+          <div className="foot-links">
+            <div className="foot-col">
+              <h4>The house</h4>
+              <Link href="/vision">Manifesto</Link>
+              <Link href="/vision#principles">Principles</Link>
+              <Link href="/vision#frameworks">Frameworks</Link>
+              <Link href="/companies#whynow">Why now</Link>
+            </div>
+            <div className="foot-col">
+              <h4>Ventures</h4>
+              <Link href="/companies#ventures">Attune</Link>
+              <Link href="/companies#ventures">Veridian</Link>
+              <Link href="/companies#ventures">Lumen</Link>
+              <Link href="/companies#ventures">Concord</Link>
+            </div>
+            <div className="foot-col">
+              <h4>Connect</h4>
+              <a href="mailto:invest@omthentic.ai">Investors</a>
+              <a href="mailto:build@omthentic.ai">Builders</a>
+              <Link href="/contact">Believers</Link>
+            </div>
+          </div>
         </div>
-        <div>
-          <h4>Pages</h4>
-          <ul>
-            <li>
-              <Link href="/">Index</Link>
-            </li>
-            <li>
-              <Link href="/vision">Vision</Link>
-            </li>
-            <li>
-              <Link href="/companies">Companies</Link>
-            </li>
-            <li>
-              <Link href="/contact">Contact</Link>
-            </li>
-          </ul>
+        <div className="foot-base">
+          <span>© 2026 Omthentic. Built in resonance.</span>
+          <span>Om · authentic · aligned</span>
         </div>
-        <div>
-          <h4>Ventures</h4>
-          <ul>
-            <li>
-              <Link href="/companies#interviewmd">InterviewMD</Link>
-            </li>
-            <li>
-              <Link href="/companies#prepbond">Prepbond</Link>
-            </li>
-            <li>
-              <span className="dim">— forthcoming —</span>
-            </li>
-          </ul>
-        </div>
-        <div>
-          <h4>Index</h4>
-          <ul>
-            <li>
-              <span className="dim">Time</span> &nbsp; <LiveTime />
-            </li>
-            <li>
-              <span className="dim">Locale</span> &nbsp; London · Global
-            </li>
-            <li>
-              <span className="dim">Edition</span> &nbsp; MMXXVI
-            </li>
-          </ul>
-        </div>
-      </div>
-      <div className="foot-bottom">
-        <div>© Omthentic · A house of aligned technologies</div>
-        <div>v 0.1 · listening</div>
       </div>
     </footer>
   );

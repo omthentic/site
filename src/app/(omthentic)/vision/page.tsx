@@ -1,158 +1,186 @@
 import type { Metadata } from "next";
-import { AlignmentField } from "../_components/AlignmentField";
 import { Reveal } from "../_components/Reveal";
 
 export const metadata: Metadata = {
   title: "Vision",
   description:
-    "What we are for. A long letter to the people who already suspect what we suspect.",
+    "The Omthentic manifesto, the principles every venture inherits, and the mental models we think with.",
 };
+
+const principles = [
+  {
+    num: "01",
+    title: "Alignment before scale",
+    body: "A misaligned thing that grows fast becomes a faster misalignment. We earn the right to scale by first being true.",
+  },
+  {
+    num: "02",
+    title: "The human is the point",
+    body: "The person on the other side is the reason the system exists at all, ahead of engagement, retention, or any metric.",
+  },
+  {
+    num: "03",
+    title: "Authenticity is a technology",
+    body: "Being real is the hardest thing to build, and the thing we choose to be best at.",
+  },
+  {
+    num: "04",
+    title: "Resonance over reach",
+    body: "We would rather move one person to their core than touch a million on the surface. Depth is our distribution.",
+  },
+  {
+    num: "05",
+    title: "Build the source, not the noise",
+    body: "Most software adds to the noise of being alive. We build at the source, where intention becomes expression.",
+  },
+  {
+    num: "06",
+    title: "Purpose compounds",
+    body: "Small, aligned acts repeated over a long horizon outrun any sprint. We are building for decades, not quarters.",
+  },
+];
+
+const models = [
+  {
+    meta: "Model · Signal & noise",
+    title: "The Authenticity Gradient",
+    body: "Every interaction sits somewhere between performance and presence. We design to move people one step toward presence.",
+  },
+  {
+    meta: "Model · Alignment",
+    title: "The Alignment Stack",
+    body: "Intention → expression → interface → outcome. A feature is only finished when all four layers say the same thing.",
+  },
+  {
+    meta: "Model · Time",
+    title: "The Long Resonance",
+    body: "We weigh decisions by how they sound in ten years, not how they spike this week. Compounding alignment is the only durable moat.",
+  },
+];
 
 export default function VisionPage() {
   return (
-    <>
-      <section className="vision-hero">
-        <AlignmentField className="field-bg" style={{ opacity: 0.6 }} />
-        <div className="inner reveal is-in">
-          <div className="eyebrow" style={{ marginBottom: 28 }}>
-            <span className="dot" />
-            II — Vision
-          </div>
-          <h1>
-            What we are <em>for</em>.
-          </h1>
-          <p>
-            A long letter, written slowly, to the people who already suspect
-            what we suspect.
-          </p>
+    <main>
+      <section className="manifesto" id="manifesto">
+        <div className="wrap">
+          <Reveal className="eyebrow" style={{ marginBottom: "clamp(40px,8vh,80px)" }}>
+            Manifesto
+          </Reveal>
+          <Reveal as="p" className="verse">
+            We are surrounded by technology that fractures attention, flattens
+            the voice, and quietly rewards the inauthentic.
+          </Reveal>
+          <Reveal as="p" className="verse dim indent">
+            We believe the opposite is possible.
+          </Reveal>
+          <Reveal as="p" className="verse">
+            That a tool can return you to yourself. That communication, at its
+            source, is <span className="hl">resonance</span>: two beings
+            vibrating in truth.
+          </Reveal>
+          <Reveal as="p" className="verse dim indent">
+            Our name holds it: <span className="hl">Om</span>, the oldest sound,
+            and <span className="hl">authentic</span>, the oldest promise.
+          </Reveal>
+          <Reveal as="p" className="verse">
+            Omthentic exists to build that source into software, and to raise the
+            ventures brave enough to keep it sacred.
+          </Reveal>
+          <Reveal className="sig">
+            <div className="mono-meta">The founding intention</div>
+          </Reveal>
         </div>
       </section>
 
-      <div className="shell">
-        <div className="rule" />
-      </div>
-
-      <article className="manifesto">
-        <Reveal as="section" className="stanza">
-          <div className="num">i.</div>
-          <div>
-            <h3>The premise.</h3>
-            <p>
-              Most of what we call communication is performance — a costume worn
-              so the world will let us in. Our species has built extraordinary
-              technologies for the performance, and very few for the underneath.
-            </p>
-            <p>
-              We think this is the central wound of the present moment: a
-              civilization in which it is easier to be <em>seen</em> than to be{" "}
-              <em>known</em>.
-            </p>
+      <section id="principles">
+        <div className="wrap">
+          <div className="sec-head">
+            <Reveal className="eyebrow">Principles &amp; beliefs</Reveal>
+            <Reveal as="h2">What we hold true before we hold anything else.</Reveal>
+            <Reveal as="p" className="lead">
+              Every Omthentic venture inherits these constraints, the ones we
+              protect even when it costs us.
+            </Reveal>
           </div>
-        </Reveal>
-
-        <Reveal as="section" className="stanza">
-          <div className="num">ii.</div>
-          <div>
-            <h3>The wager.</h3>
-            <p>
-              That there is a different way to use machines. Not to amplify the
-              costume, but to <em>quiet</em> it. Not to optimize the surface,
-              but to thin it, until what is true underneath can pass through.
-            </p>
-            <p>
-              We call this <em>aligned authenticity</em> — the practiced state
-              of being whose outer expression and inner intention finally agree.
-              Omthentic exists to make that state more available.
-            </p>
+          <div className="principles-grid">
+            {principles.map((p, i) => (
+              <Reveal
+                as="article"
+                key={p.num}
+                className="principle"
+                style={{ transitionDelay: `${(i % 2) * 0.1}s` }}
+              >
+                <span className="num">{p.num}</span>
+                <h3>{p.title}</h3>
+                <p>{p.body}</p>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
+        </div>
+      </section>
 
-        <Reveal as="section" className="stanza">
-          <div className="num">iii.</div>
-          <div>
-            <h3>The instrument.</h3>
-            <p>
-              Each company in this house is a particular instrument for the same
-              work. Not a brand portfolio. A set of tunings.
-            </p>
-            <p>
-              <em>InterviewMD</em> helps clinicians speak the truth of their
-              practice in a system that rewards the false. <em>Prepbond</em>{" "}
-              helps a person prepare for a moment by becoming, in advance, the
-              one who can meet it. Future ventures will sound different. The
-              pitch beneath them will not.
-            </p>
+      <section id="frameworks">
+        <div className="wrap">
+          <div className="sec-head">
+            <Reveal className="eyebrow">Mental models &amp; frameworks</Reveal>
+            <Reveal as="h2">The instruments we think with.</Reveal>
+            <Reveal as="p" className="lead">
+              A shared set of models keeps a group of companies coherent. These
+              are the lenses every team uses to decide what is worth building.
+            </Reveal>
           </div>
-        </Reveal>
 
-        <Reveal as="p" className="pullquote">
-          We build technology
-          <br />
-          that <em>remembers</em>
-          <br />
-          what it is for.
-        </Reveal>
-
-        <Reveal as="section" className="stanza">
-          <div className="num">iv.</div>
-          <div>
-            <h3>The discipline.</h3>
-            <p>
-              We refuse the metrics that have ruined the discourse — engagement,
-              dwell, churn, scroll. They measure the costume. We measure the
-              meeting.
-            </p>
-            <p>
-              A successful Omthentic product leaves its user{" "}
-              <em>recognizing themselves</em> in a way they could not before —
-              and then, often, putting the tool down. We are comfortable with
-              this. Software in service of becoming is software that knows when
-              to leave.
-            </p>
+          <div className="frame-wrap">
+            <Reveal>
+              <svg
+                className="resonance-diagram"
+                viewBox="0 0 400 400"
+                role="img"
+                aria-label="The Resonance Model: alignment radiating from self through voice and technology into the world"
+              >
+                <circle className="ring pulse-ring" cx="200" cy="200" r="180" stroke="var(--accent-line)" />
+                <circle className="ring pulse-ring b" cx="200" cy="200" r="180" stroke="var(--accent-line)" />
+                <circle className="ring pulse-ring c" cx="200" cy="200" r="180" stroke="var(--accent-line)" />
+                <circle className="ring" cx="200" cy="200" r="180" />
+                <circle className="ring" cx="200" cy="200" r="128" />
+                <circle className="ring glow" cx="200" cy="200" r="76" />
+                <circle className="core-dot" cx="200" cy="200" r="5" />
+                <text className="lbl core" x="200" y="186" textAnchor="middle">Self</text>
+                <text className="lbl" x="200" y="135" textAnchor="middle">Voice</text>
+                <text className="lbl" x="200" y="83" textAnchor="middle">Technology</text>
+                <text className="lbl" x="200" y="34" textAnchor="middle">World</text>
+              </svg>
+            </Reveal>
+            <Reveal className="frame-copy" style={{ transitionDelay: ".1s" }}>
+              <div className="mono-meta">Framework 01</div>
+              <h2>The Resonance Model</h2>
+              <p className="lead">
+                Everything we build moves outward from the same center. When the
+                self is aligned, the voice is true; when the voice is true,
+                technology can carry it; when technology carries it faithfully,
+                it changes the world without distorting the person. Break the
+                chain anywhere and you get noise. Keep it whole and you get
+                resonance.
+              </p>
+            </Reveal>
           </div>
-        </Reveal>
 
-        <Reveal as="section" className="stanza">
-          <div className="num">v.</div>
-          <div>
-            <h3>The horizon.</h3>
-            <p>
-              We are building for the slow century. We assume nothing about
-              scale and everything about depth. We hire the way a monastery
-              accepts novices. We choose investors by who they would still be if
-              their fund failed.
-            </p>
-            <p>
-              If this sounds quiet, it is. If it sounds patient, it must be. The
-              technologies that will be <em>worth</em> inheriting were never
-              made in haste.
-            </p>
+          <div className="models">
+            {models.map((m, i) => (
+              <Reveal
+                as="article"
+                key={m.title}
+                className="model"
+                style={{ transitionDelay: `${i * 0.1}s` }}
+              >
+                <div className="mono-meta">{m.meta}</div>
+                <h3>{m.title}</h3>
+                <p>{m.body}</p>
+              </Reveal>
+            ))}
           </div>
-        </Reveal>
-
-        <Reveal as="section" className="stanza">
-          <div className="num">vi.</div>
-          <div>
-            <h3>An invitation.</h3>
-            <p>
-              We do not need many people. We need the right ones — engineers who
-              think like editors, designers who think like therapists, operators
-              who think like gardeners. People who suspect the next decade of
-              technology will be defined not by what it can do but by what it
-              refuses to do.
-            </p>
-            <p>
-              If something in this letter rang true, it is because you already
-              knew it. Write to us. We are listening.
-            </p>
-          </div>
-        </Reveal>
-
-        <Reveal className="signature">
-          <div className="glyph">·  Ω  ·</div>
-          <div className="from">— The Stewards of Omthentic · MMXXVI</div>
-        </Reveal>
-      </article>
-    </>
+        </div>
+      </section>
+    </main>
   );
 }
