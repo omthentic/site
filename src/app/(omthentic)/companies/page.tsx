@@ -11,28 +11,28 @@ export const metadata: Metadata = {
 
 const ventures = [
   {
+    name: "interviewmd" as const,
+    title: "InterviewMD",
+    desc: "Helping people win the highest-stakes interviews by becoming genuinely themselves, not by performing a polished mask. First market: medical school admissions. Fifteen years of method, 1,000+ students, 14,000+ coaching hours, now amplified by AI.",
+    tag: "Live · Venture 01",
+  },
+  {
     name: "attune" as const,
-    title: "Attune",
-    desc: "Communication tools that read intention beyond words, so what you mean is what arrives.",
-    tag: "Authentic comms",
+    title: "High-stakes interviews",
+    desc: "The same method extended to every room where a person is tempted to perform instead of be: other admissions, then career interviews.",
+    tag: "Horizon",
   },
   {
     name: "veridian" as const,
-    title: "Veridian",
-    desc: "An identity layer for being genuinely yourself online, with presence you actually own.",
-    tag: "Authentic identity",
-  },
-  {
-    name: "lumen" as const,
-    title: "Lumen",
-    desc: "Reflective software for inner alignment, bringing attention back to what actually matters to you.",
-    tag: "Aligned living",
+    title: "Authentic identity",
+    desc: "Helping people be genuinely themselves, with presence and a voice they actually own.",
+    tag: "Horizon",
   },
   {
     name: "concord" as const,
-    title: "Concord",
-    desc: "The shared foundation of models, infrastructure, and research every Omthentic venture is built on.",
-    tag: "Core platform",
+    title: "The shared foundation",
+    desc: "The method, models, research, and infrastructure every Omthentic venture is built on.",
+    tag: "Core",
   },
 ];
 
@@ -57,21 +57,21 @@ const why = [
 const team = [
   {
     glyph: "◈",
-    name: "Founder Name",
+    name: "Shanaka Jayakody",
     role: "Founder & Steward",
-    body: "Holds the intention across every venture. Placeholder bio, replace with the real story.",
+    body: "Fifteen years ago, refused to perform in his own medical interviews and was accepted to all of them. Has since guided 1,000+ students from rehearsed and robotic to confident and in flow. Holds the intention across every venture.",
   },
   {
     glyph: "✦",
-    name: "Co-founder Name",
+    name: "The seat is open",
     role: "Product & Design",
-    body: "Translates the philosophy into things people can actually feel. Placeholder bio.",
+    body: "Someone who can translate this philosophy into things people can actually feel. We name people here only when they are real.",
   },
   {
     glyph: "◇",
-    name: "Co-founder Name",
+    name: "The seat is open",
     role: "Engineering & Research",
-    body: "Builds the source layer the ventures stand on. Placeholder bio.",
+    body: "Someone who can build the source layer the ventures stand on without ever letting the tool become a mask.",
   },
   {
     glyph: "+",
@@ -89,15 +89,16 @@ export default function CompaniesPage() {
           <div className="ventures-head">
             <div className="sec-head" style={{ marginBottom: 0, maxWidth: "54ch" }}>
               <Reveal className="eyebrow">The ventures</Reveal>
-              <Reveal as="h2">One intention, many instruments.</Reveal>
+              <Reveal as="h2">One conviction, proven one venture at a time.</Reveal>
               <Reveal as="p" className="lead">
-                Omthentic is a parent company. Each venture is an independent
-                company solving a different face of the same problem: how to keep
-                human communication true as technology accelerates.
+                Omthentic is a parent company. We earn each new venture by proving
+                the last. One is live today, solving the same problem every future
+                venture will: how to stay genuinely yourself when the pressure to
+                perform is highest.
               </Reveal>
             </div>
             <Reveal className="mono-meta" style={{ paddingBottom: 6 }}>
-              Placeholder names, swap for real ventures
+              One venture live, the rest on the horizon
             </Reveal>
           </div>
 

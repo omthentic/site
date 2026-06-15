@@ -10,17 +10,17 @@ export const metadata: Metadata = {
     process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"
   ),
   title: {
-    default: "Omthentic — Technology in resonance with who you truly are",
+    default: "Omthentic — You are already enough",
     template: "%s — Omthentic",
   },
   description:
-    "Omthentic is the parent house behind aligned, authentic, communication-based technologies. A manifesto, a set of principles, and the ventures we build to return people to themselves.",
+    "Omthentic is a venture house built on one conviction: you are already enough. We build technology that amplifies who you are instead of helping you hide. A manifesto, a set of principles, and the ventures that prove it.",
   openGraph: {
     type: "website",
     siteName: "Omthentic",
-    title: "Omthentic — Technology in resonance with who you truly are",
+    title: "Omthentic — You are already enough",
     description:
-      "A parent house for aligned, authentic, communication-based technologies. For investors, builders, and early believers.",
+      "A venture house built on one conviction: you are already enough. We build technology that amplifies who you are, not who you fear you are not.",
   },
 };
 

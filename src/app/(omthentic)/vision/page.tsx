@@ -70,21 +70,28 @@ export default function VisionPage() {
             We are surrounded by technology that fractures attention, flattens
             the voice, and quietly rewards the inauthentic.
           </Reveal>
+          <Reveal as="p" className="verse">
+            Technology is not the enemy. It is an amplifier, and most of it has
+            been pointed at helping us hide: to look better than we are, to cover
+            the quiet fear that we are not enough.
+          </Reveal>
           <Reveal as="p" className="verse dim indent">
             We believe the opposite is possible.
           </Reveal>
           <Reveal as="p" className="verse">
-            That a tool can return you to yourself. That communication, at its
-            source, is <span className="hl">resonance</span>: two beings
-            vibrating in truth.
+            That a tool can return you to yourself, and amplify who you already
+            are instead of compensating for who you fear you are not. That
+            expression, at its source, is <span className="hl">resonance</span>:
+            two beings vibrating in truth.
           </Reveal>
           <Reveal as="p" className="verse dim indent">
             Our name holds it: <span className="hl">Om</span>, the oldest sound,
             and <span className="hl">authentic</span>, the oldest promise.
           </Reveal>
           <Reveal as="p" className="verse">
-            Omthentic exists to build that source into software, and to raise the
-            ventures brave enough to keep it sacred.
+            We start from one fact, that you are already enough, and build from
+            there. Omthentic exists to build that conviction into software, and
+            to raise the ventures brave enough to keep it sacred.
           </Reveal>
           <Reveal className="sig">
             <div className="mono-meta">The founding intention</div>

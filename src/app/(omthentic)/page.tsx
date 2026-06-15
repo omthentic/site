@@ -21,8 +21,8 @@ const props = [
         <path d="M6 18c5-9 19-9 24 0M6 18c5 9 19 9 24 0" stroke="var(--accent)" strokeWidth="1.3" />
       </svg>
     ),
-    title: "Communication-first",
-    body: "We build at the source, where intention becomes expression, instead of adding to the noise of being online.",
+    title: "Amplify, never compensate",
+    body: "Technology should express more of who you already are, not hide the gap between who you are and who you fear you must be.",
   },
   {
     icon: (
@@ -55,10 +55,10 @@ const thesis = [
 ];
 
 const ventures = [
-  { name: "attune" as const, title: "Attune", body: "Communication tools that read intention beyond words.", tag: "Authentic comms" },
-  { name: "veridian" as const, title: "Veridian", body: "An identity layer for being genuinely yourself online.", tag: "Authentic identity" },
-  { name: "lumen" as const, title: "Lumen", body: "Reflective software for inner alignment and attention.", tag: "Aligned living" },
-  { name: "concord" as const, title: "Concord", body: "The shared models, research, and infrastructure.", tag: "Core platform" },
+  { name: "interviewmd" as const, title: "InterviewMD", body: "Helping people win the highest-stakes interviews by becoming genuinely themselves. First market: medical school admissions.", tag: "Live · Venture 01" },
+  { name: "attune" as const, title: "High-stakes interviews", body: "The same method, extended to every room where a person is tempted to perform instead of be.", tag: "Horizon" },
+  { name: "veridian" as const, title: "Authentic identity", body: "Helping people be genuinely themselves, with presence they actually own.", tag: "Horizon" },
+  { name: "concord" as const, title: "The shared foundation", body: "The method, models, and research every venture is built on.", tag: "Core" },
 ];
 
 const paths = [
@@ -96,7 +96,8 @@ export default function HomePage() {
             Omthentic
           </Reveal>
           <Reveal as="p" className="orb-tag" style={{ transitionDelay: ".1s" }}>
-            The discipline of meaning what you make, and making what you mean.
+            You are already enough. We build the technology that helps you
+            express it.
           </Reveal>
           <Reveal className="hero-cta" style={{ transitionDelay: ".2s" }}>
             <Link href="/contact" className="btn btn-primary">
@@ -112,12 +113,13 @@ export default function HomePage() {
       <section className="intro">
         <div className="wrap">
           <Reveal as="h2" className="intro-head">
-            Technology in resonance with who you truly are.
+            Technology that amplifies who you are, not who you fear you are not.
           </Reveal>
           <Reveal as="p" className="lead" style={{ transitionDelay: ".1s" }}>
-            Omthentic builds the companies that return communication to its
-            source: aligned, authentic, alive. We make technologies that help
-            people become more of who they already are.
+            Most technology is getting better at helping us hide. Omthentic
+            builds the opposite: technology that amplifies who you already are
+            instead of compensating for who you fear you are not. We start from
+            one fact, that you are already enough, and build from there.
           </Reveal>
         </div>
       </section>
@@ -129,7 +131,7 @@ export default function HomePage() {
             <Reveal as="h2">A house built on one conviction.</Reveal>
             <Reveal as="p" className="lead">
               Omthentic raises ventures that each protect a different face of
-              authentic human communication, and shares the philosophy,
+              authentic human expression, and shares the philosophy, method,
               research, and infrastructure between them.
             </Reveal>
           </div>
@@ -176,9 +178,9 @@ export default function HomePage() {
         <div className="wrap">
           <div className="sec-head">
             <Reveal className="eyebrow">The ventures</Reveal>
-            <Reveal as="h2">One intention, many instruments.</Reveal>
+            <Reveal as="h2">One conviction, proven one venture at a time.</Reveal>
             <Reveal as="p" className="lead">
-              Four independent companies on a shared foundation.
+              One venture is live today. The rest we name only when they are real.
             </Reveal>
           </div>
           <div className="vstrip">

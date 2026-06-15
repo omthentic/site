@@ -1,9 +1,16 @@
-type Name = "attune" | "veridian" | "lumen" | "concord";
+type Name = "interviewmd" | "attune" | "veridian" | "lumen" | "concord";
 
 const className = "glyph";
 
 export function VentureGlyph({ name }: { name: Name }) {
   switch (name) {
+    case "interviewmd":
+      return (
+        <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden="true">
+          <circle cx="24" cy="24" r="20" stroke="var(--accent-line)" strokeWidth="1.2" />
+          <path d="M24 13v11l7 5" stroke="var(--accent)" strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round" />
+        </svg>
+      );
     case "attune":
       return (
         <svg className={className} viewBox="0 0 48 48" fill="none" aria-hidden="true">

@@ -11,24 +11,24 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"),
-  title: "Omthentic — Aligned authenticity",
+  title: "Omthentic — You are already enough",
   description:
-    "A parent house for aligned, authentic, communication-based technologies. Home to the ventures that return people to themselves.",
-  keywords: "aligned authenticity, Omthentic, InterviewMD, Prepbond, communication, becoming",
+    "A venture house built on one conviction: you are already enough. We build technology that amplifies who you are instead of helping you hide.",
+  keywords: "Omthentic, InterviewMD, authenticity, amplification, becoming yourself, high-stakes interviews",
   authors: [{ name: "The Stewards of Omthentic" }],
   openGraph: {
-    title: "Omthentic — Aligned authenticity",
+    title: "Omthentic — You are already enough",
     description:
-      "A house of aligned technologies. Ventures that bring people more honestly into contact with themselves and each other.",
+      "A venture house built on one conviction. We build technology that amplifies who you are, not who you fear you are not.",
     type: "website",
     url: "https://omthentic.ai",
     images: [{ url: "/opengraph-image" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omthentic — Aligned authenticity",
+    title: "Omthentic — You are already enough",
     description:
-      "A house of aligned technologies. Ventures that bring people more honestly into contact with themselves.",
+      "A venture house built on one conviction: you are already enough. Technology that amplifies who you are.",
     images: ["/twitter-image"],
   },
   icons: {
