@@ -36,6 +36,7 @@ export function SiteFooter() {
               <a href="mailto:invest@omthentic.ai">Investors</a>
               <a href="mailto:build@omthentic.ai">Builders</a>
               <Link href="/contact">Believers</Link>
+              <a href="https://www.shanakajayakody.com/">Founder</a>
             </div>
           </div>
         </div>

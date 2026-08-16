@@ -54,12 +54,19 @@ const why = [
   },
 ];
 
-const team = [
+const team: {
+  glyph: string;
+  name: string;
+  role: string;
+  body: string;
+  url?: string;
+}[] = [
   {
     glyph: "◈",
     name: "Shanaka Jayakody",
     role: "Founder & Steward",
     body: "Fifteen years ago, refused to perform in his own medical interviews and was accepted to all of them. Has since guided 1,000+ students from rehearsed and robotic to confident and in flow. Holds the intention across every venture.",
+    url: "https://www.shanakajayakody.com/",
   },
   {
     glyph: "✦",
@@ -156,7 +163,9 @@ export default function CompaniesPage() {
                 style={{ transitionDelay: `${i * 0.1}s` }}
               >
                 <div className="avatar">{m.glyph}</div>
-                <h3>{m.name}</h3>
+                <h3>
+                  {m.url ? <a href={m.url}>{m.name}</a> : m.name}
+                </h3>
                 <div className="role">{m.role}</div>
                 <p>{m.body}</p>
               </Reveal>
