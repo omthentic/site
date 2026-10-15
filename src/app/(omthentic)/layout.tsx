@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { SITE_URL } from "@/lib/site";
 import "./omthentic.css";
 import { SiteNav } from "./_components/SiteNav";
 import { SiteFooter } from "./_components/SiteFooter";
@@ -6,9 +7,7 @@ import { DeepField } from "./_components/DeepField";
 import { ScrollProgress } from "./_components/ScrollProgress";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"
-  ),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Omthentic — You are already enough",
     template: "%s — Omthentic",

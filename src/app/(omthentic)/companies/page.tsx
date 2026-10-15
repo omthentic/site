@@ -5,6 +5,7 @@ import { VentureGlyph } from "../_components/VentureGlyph";
 
 export const metadata: Metadata = {
   title: "Companies",
+  alternates: { canonical: "/companies" },
   description:
     "The ventures Omthentic raises, why now is the moment, and the people assembled around the conviction.",
 };
@@ -13,7 +14,7 @@ const ventures = [
   {
     name: "interviewmd" as const,
     title: "InterviewMD",
-    desc: "Helping people win the highest-stakes interviews by becoming genuinely themselves, not by performing a polished mask. First market: medical school admissions. Fifteen years of method, 1,000+ students, 14,000+ coaching hours, now amplified by AI.",
+    desc: "Helping people win the highest-stakes interviews by becoming genuinely themselves, not by performing a polished mask. First market: medical school admissions. Fifteen years of method, 1,100+ students, 14,000+ coaching hours, now amplified by AI.",
     tag: "Live · Venture 01",
   },
   {
@@ -65,8 +66,8 @@ const team: {
     glyph: "◈",
     name: "Shanaka Jayakody",
     role: "Founder & Steward",
-    body: "Fifteen years ago, refused to perform in his own medical interviews and was accepted to all of them. Has since guided 1,000+ students from rehearsed and robotic to confident and in flow. Holds the intention across every venture.",
-    url: "https://www.shanakajayakody.com/",
+    body: "Fifteen years ago, refused to perform in his own medical interviews and was accepted to all of them. Has since guided 1,100+ students from rehearsed and robotic to confident and in flow. Holds the intention across every venture.",
+    url: "/shanaka-jayakody",
   },
   {
     glyph: "✦",

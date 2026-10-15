@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { SITE_URL } from "@/lib/site";
 import "./globals.css";
 
 export const viewport: Viewport = {
@@ -10,7 +11,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"),
+  metadataBase: new URL(SITE_URL),
   title: "Omthentic — You are already enough",
   description:
     "A venture house built on one conviction: you are already enough. We build technology that amplifies who you are instead of helping you hide.",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
     description:
       "A venture house built on one conviction. We build technology that amplifies who you are, not who you fear you are not.",
     type: "website",
-    url: "https://omthentic.ai",
+    url: SITE_URL,
     images: [{ url: "/opengraph-image" }],
   },
   twitter: {

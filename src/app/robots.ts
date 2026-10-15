@@ -1,6 +1,6 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://omthentic.ai';
 
 export default function robots(): MetadataRoute.Robots {
   return {

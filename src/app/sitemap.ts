@@ -1,9 +1,9 @@
 import { MetadataRoute } from 'next';
+import { SITE_URL } from '@/lib/site';
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://omthentic.ai';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ['', '/vision', '/companies', '/contact'].map((route) => ({
+  return ['', '/vision', '/companies', '/contact', '/shanaka-jayakody'].map((route) => ({
     url: `${SITE_URL}${route}`,
     lastModified: new Date(),
     changeFrequency: 'monthly' as const,

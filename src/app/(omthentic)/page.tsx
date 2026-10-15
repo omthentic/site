@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { Reveal } from "./_components/Reveal";
 import { VentureGlyph } from "./_components/VentureGlyph";
@@ -85,6 +86,10 @@ const paths = [
     internal: true,
   },
 ];
+
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+};
 
 export default function HomePage() {
   return (

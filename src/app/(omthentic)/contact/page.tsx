@@ -4,6 +4,7 @@ import { SignalForm } from "../_components/SignalForm";
 
 export const metadata: Metadata = {
   title: "Contact",
+  alternates: { canonical: "/contact" },
   description:
     "Leave a frequency. Omthentic reaches the investors, builders, and early believers genuinely aligned with this.",
 };

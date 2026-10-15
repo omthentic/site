@@ -3,6 +3,7 @@ import { Reveal } from "../_components/Reveal";
 
 export const metadata: Metadata = {
   title: "Vision",
+  alternates: { canonical: "/vision" },
   description:
     "The Omthentic manifesto, the principles every venture inherits, and the mental models we think with.",
 };
