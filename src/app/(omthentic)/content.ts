@@ -1,6 +1,6 @@
 export const proof = [
   { value: "15", unit: "years", label: "Developing the method" },
-  { value: "1,000+", unit: "", label: "Students guided" },
+  { value: "1,100+", unit: "", label: "Students guided" },
   { value: "14,000+", unit: "hours", label: "Of one-to-one coaching" },
 ];
 

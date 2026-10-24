@@ -1,3 +1,4 @@
+import { SITE_URL } from "@/lib/site";
 import type { Metadata, Viewport } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
@@ -26,9 +27,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai",
-  ),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Omthentic — More human. By design.",
     template: "%s — Omthentic",

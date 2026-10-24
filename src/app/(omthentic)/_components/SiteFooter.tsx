@@ -14,6 +14,7 @@ export function SiteFooter() {
           <div className="footer-links">
             <Link href="/vision">Our approach</Link>
             <Link href="/companies">Ventures</Link>
+            <Link href="/shanaka-jayakody">Founder</Link>
             <Link href="/contact">
               Get in touch <Arrow diagonal />
             </Link>

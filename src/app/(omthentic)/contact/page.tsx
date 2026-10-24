@@ -5,6 +5,7 @@ import { Reveal } from "../_components/Reveal";
 import { contactEmail, founderUrl } from "../content";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/contact" },
   title: "Let’s talk",
   description:
     "Connect with Omthentic founder Shanaka Jayakody about building, backing or collaborating on technology for human potential.",

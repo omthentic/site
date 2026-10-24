@@ -54,6 +54,6 @@ Images are served through Next.js Image with responsive sizes. The hero image is
 
 ## Deployment
 
-The existing hosting workflow uses Vercel, with production deployments from `main`. This rebuild is developed on a separate branch and does not publish automatically until integrated into the deployment branch.
+The existing hosting workflow uses Vercel, with production deployments from `main`. Production uses the canonical host `https://www.omthentic.ai`. The founder profile at `/shanaka-jayakody` retains its structured data and is included in the sitemap.
 
 `NEXT_PUBLIC_SITE_URL` optionally overrides the metadata and sitemap base URL; it defaults to `https://omthentic.ai`.

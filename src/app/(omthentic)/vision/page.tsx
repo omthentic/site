@@ -5,6 +5,7 @@ import { Invitation } from "../_components/Invitation";
 import { principles } from "../content";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/vision" },
   title: "Our approach",
   description:
     "You are already enough. The belief behind Omthentic and the principles that guide every venture we build.",

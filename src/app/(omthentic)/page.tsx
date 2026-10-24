@@ -1,9 +1,12 @@
+import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { Arrow } from "./_components/Arrow";
 import { Reveal } from "./_components/Reveal";
 import { Invitation } from "./_components/Invitation";
 import { principles, proof } from "./content";
+
+export const metadata: Metadata = { alternates: { canonical: "/" } };
 
 export default function HomePage() {
   return (

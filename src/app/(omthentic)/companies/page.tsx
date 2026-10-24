@@ -4,9 +4,10 @@ import Link from "next/link";
 import { Arrow } from "../_components/Arrow";
 import { Reveal } from "../_components/Reveal";
 import { Invitation } from "../_components/Invitation";
-import { proof, founderUrl } from "../content";
+import { proof } from "../content";
 
 export const metadata: Metadata = {
+  alternates: { canonical: "/companies" },
   title: "Ventures",
   description:
     "Meet InterviewMD, the first Omthentic venture. Medical school interview preparation grounded in fifteen years of working with people.",
@@ -117,14 +118,9 @@ export default function CompaniesPage() {
               important conversations of their lives. Omthentic carries that
               work forward.
             </p>
-            <a
-              className="text-link"
-              href={founderUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
+            <Link className="text-link" href="/shanaka-jayakody">
               Meet Shanaka Jayakody <Arrow diagonal />
-            </a>
+            </Link>
           </Reveal>
         </div>
       </section>
