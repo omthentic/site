@@ -1,193 +1,164 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Reveal } from "../_components/Reveal";
+import { Invitation } from "../_components/Invitation";
+import { principles } from "../content";
 
 export const metadata: Metadata = {
-  title: "Vision",
+  title: "Our approach",
   description:
-    "The Omthentic manifesto, the principles every venture inherits, and the mental models we think with.",
+    "You are already enough. The belief behind Omthentic and the principles that guide every venture we build.",
 };
 
-const principles = [
-  {
-    num: "01",
-    title: "Alignment before scale",
-    body: "A misaligned thing that grows fast becomes a faster misalignment. We earn the right to scale by first being true.",
-  },
-  {
-    num: "02",
-    title: "The human is the point",
-    body: "The person on the other side is the reason the system exists at all, ahead of engagement, retention, or any metric.",
-  },
-  {
-    num: "03",
-    title: "Authenticity is a technology",
-    body: "Being real is the hardest thing to build, and the thing we choose to be best at.",
-  },
-  {
-    num: "04",
-    title: "Resonance over reach",
-    body: "We would rather move one person to their core than touch a million on the surface. Depth is our distribution.",
-  },
-  {
-    num: "05",
-    title: "Build the source, not the noise",
-    body: "Most software adds to the noise of being alive. We build at the source, where intention becomes expression.",
-  },
-  {
-    num: "06",
-    title: "Purpose compounds",
-    body: "Small, aligned acts repeated over a long horizon outrun any sprint. We are building for decades, not quarters.",
-  },
-];
-
-const models = [
-  {
-    meta: "Model · Signal & noise",
-    title: "The Authenticity Gradient",
-    body: "Every interaction sits somewhere between performance and presence. We design to move people one step toward presence.",
-  },
-  {
-    meta: "Model · Alignment",
-    title: "The Alignment Stack",
-    body: "Intention → expression → interface → outcome. A feature is only finished when all four layers say the same thing.",
-  },
-  {
-    meta: "Model · Time",
-    title: "The Long Resonance",
-    body: "We weigh decisions by how they sound in ten years, not how they spike this week. Compounding alignment is the only durable moat.",
-  },
+const vows = [
+  [
+    "A person, before a metric.",
+    "We begin with a person’s life, not a target for engagement. A useful product should leave someone more capable when they close it.",
+  ],
+  [
+    "Growth, from a good place.",
+    "You can be whole and still have room to grow. We create from curiosity and possibility, without asking people to believe they are missing something.",
+  ],
+  [
+    "Depth, before reach.",
+    "Make something that matters deeply to one person. Understand why it works. Earn the right to bring it to more people.",
+  ],
+  [
+    "Integrity, even when it costs.",
+    "We will pass on a feature, a deal or an opportunity if it asks us to compromise the person using our work.",
+  ],
 ];
 
 export default function VisionPage() {
   return (
-    <main>
-      <section className="manifesto" id="manifesto">
-        <div className="wrap">
-          <Reveal className="eyebrow" style={{ marginBottom: "clamp(40px,8vh,80px)" }}>
-            Manifesto
+    <main id="main-content">
+      <section className="wrap page-hero vision-hero">
+        <p className="eyebrow">
+          <span className="status-dot" /> Our point of view
+        </p>
+        <h1>
+          You are
+          <br />
+          already <span className="soft-word">enough.</span>
+        </h1>
+        <div className="vision-hero-foot">
+          <p>Four words. The starting point for everything we make.</p>
+          <a href="#belief" className="text-link">
+            Read our approach <span aria-hidden="true">↓</span>
+          </a>
+        </div>
+      </section>
+      <section className="vision-photo image-frame">
+        <Image
+          src="/images/forest.jpg"
+          alt="Sunlight illuminating trees and new growth on the forest floor"
+          fill
+          priority
+          sizes="100vw"
+          className="parallax-image"
+        />
+        <div className="image-shade" />
+        <p>Whole, and still growing.</p>
+      </section>
+      <section className="wrap manifesto-section section-space" id="belief">
+        <Reveal>
+          <p className="eyebrow">The belief</p>
+          <p className="margin-note">
+            Om, the oldest sound.
+            <br />
+            Authentic, the oldest promise.
+          </p>
+        </Reveal>
+        <div className="manifesto-copy">
+          <Reveal>
+            <h2>
+              You don’t need
+              <br />
+              to become someone else.
+            </h2>
+            <p className="large-copy">
+              There is a familiar pressure to perform. To sound more impressive.
+              To borrow someone else’s certainty. To show the version of
+              yourself you think the room wants.
+            </p>
+            <p>
+              We’ve seen what happens when that pressure lifts. The voice
+              settles. The conversation changes. A person finds something more
+              useful than a perfect answer: confidence in what they actually
+              think.
+            </p>
+            <p>
+              That is what we build for. Technology that helps you express what
+              is already there, and gives you more room to act on it.
+            </p>
           </Reveal>
-          <Reveal as="p" className="verse">
-            We are surrounded by technology that fractures attention, flattens
-            the voice, and quietly rewards the inauthentic.
+          <Reveal className="manifesto-pullquote">
+            <blockquote>
+              You can already swim
+              <br />
+              across the river.
+              <br />
+              <span className="soft-word">We build the boat.</span>
+            </blockquote>
+            <p>
+              The work is still yours. A good tool simply extends your reach.
+            </p>
           </Reveal>
-          <Reveal as="p" className="verse">
-            Technology is not the enemy. It is an amplifier, and most of it has
-            been pointed at helping us hide: to look better than we are, to cover
-            the quiet fear that we are not enough.
-          </Reveal>
-          <Reveal as="p" className="verse dim indent">
-            We believe the opposite is possible.
-          </Reveal>
-          <Reveal as="p" className="verse">
-            That a tool can return you to yourself, and amplify who you already
-            are instead of compensating for who you fear you are not. That
-            expression, at its source, is <span className="hl">resonance</span>:
-            two beings vibrating in truth.
-          </Reveal>
-          <Reveal as="p" className="verse dim indent">
-            Our name holds it: <span className="hl">Om</span>, the oldest sound,
-            and <span className="hl">authentic</span>, the oldest promise.
-          </Reveal>
-          <Reveal as="p" className="verse">
-            We start from one fact, that you are already enough, and build from
-            there. Omthentic exists to build that conviction into software, and
-            to raise the ventures brave enough to keep it sacred.
-          </Reveal>
-          <Reveal className="sig">
-            <div className="mono-meta">The founding intention</div>
+          <Reveal>
+            <h3>Build to be needed less.</h3>
+            <p>
+              Our work succeeds when you carry the confidence with you. Into the
+              interview. Into the next conversation. Into the part of life where
+              the tool is no longer there.
+            </p>
+            <p>
+              Every venture begins with that responsibility. We want the people
+              who use our work to leave with more trust in themselves.
+            </p>
           </Reveal>
         </div>
       </section>
-
-      <section id="principles">
+      <section className="principles-section section-space" id="principles">
         <div className="wrap">
-          <div className="sec-head">
-            <Reveal className="eyebrow">Principles &amp; beliefs</Reveal>
-            <Reveal as="h2">What we hold true before we hold anything else.</Reveal>
-            <Reveal as="p" className="lead">
-              Every Omthentic venture inherits these constraints, the ones we
-              protect even when it costs us.
-            </Reveal>
+          <Reveal className="section-heading">
+            <div>
+              <p className="eyebrow">The practice</p>
+              <h2>Belief becomes behavior.</h2>
+            </div>
+          </Reveal>
+          <div className="vow-grid">
+            {vows.map(([title, body], i) => (
+              <Reveal className="vow" key={title}>
+                <span className="eyebrow">0{i + 1}</span>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </Reveal>
+            ))}
           </div>
-          <div className="principles-grid">
-            {principles.map((p, i) => (
-              <Reveal
-                as="article"
-                key={p.num}
-                className="principle"
-                style={{ transitionDelay: `${(i % 2) * 0.1}s` }}
-              >
-                <span className="num">{p.num}</span>
+        </div>
+      </section>
+      <section className="wrap method-section section-space" id="frameworks">
+        <Reveal>
+          <p className="eyebrow">From belief to product</p>
+          <h2>
+            Keep the person
+            <br />
+            at the center.
+          </h2>
+        </Reveal>
+        <div className="method-steps">
+          {principles.map((p, i) => (
+            <Reveal key={p.title} className="method-step">
+              <span className="eyebrow">0{i + 1}</span>
+              <div>
                 <h3>{p.title}</h3>
                 <p>{p.body}</p>
-              </Reveal>
-            ))}
-          </div>
+              </div>
+            </Reveal>
+          ))}
         </div>
       </section>
-
-      <section id="frameworks">
-        <div className="wrap">
-          <div className="sec-head">
-            <Reveal className="eyebrow">Mental models &amp; frameworks</Reveal>
-            <Reveal as="h2">The instruments we think with.</Reveal>
-            <Reveal as="p" className="lead">
-              A shared set of models keeps a group of companies coherent. These
-              are the lenses every team uses to decide what is worth building.
-            </Reveal>
-          </div>
-
-          <div className="frame-wrap">
-            <Reveal>
-              <svg
-                className="resonance-diagram"
-                viewBox="0 0 400 400"
-                role="img"
-                aria-label="The Resonance Model: alignment radiating from self through voice and technology into the world"
-              >
-                <circle className="ring pulse-ring" cx="200" cy="200" r="180" stroke="var(--accent-line)" />
-                <circle className="ring pulse-ring b" cx="200" cy="200" r="180" stroke="var(--accent-line)" />
-                <circle className="ring pulse-ring c" cx="200" cy="200" r="180" stroke="var(--accent-line)" />
-                <circle className="ring" cx="200" cy="200" r="180" />
-                <circle className="ring" cx="200" cy="200" r="128" />
-                <circle className="ring glow" cx="200" cy="200" r="76" />
-                <circle className="core-dot" cx="200" cy="200" r="5" />
-                <text className="lbl core" x="200" y="186" textAnchor="middle">Self</text>
-                <text className="lbl" x="200" y="135" textAnchor="middle">Voice</text>
-                <text className="lbl" x="200" y="83" textAnchor="middle">Technology</text>
-                <text className="lbl" x="200" y="34" textAnchor="middle">World</text>
-              </svg>
-            </Reveal>
-            <Reveal className="frame-copy" style={{ transitionDelay: ".1s" }}>
-              <div className="mono-meta">Framework 01</div>
-              <h2>The Resonance Model</h2>
-              <p className="lead">
-                Everything we build moves outward from the same center. When the
-                self is aligned, the voice is true; when the voice is true,
-                technology can carry it; when technology carries it faithfully,
-                it changes the world without distorting the person. Break the
-                chain anywhere and you get noise. Keep it whole and you get
-                resonance.
-              </p>
-            </Reveal>
-          </div>
-
-          <div className="models">
-            {models.map((m, i) => (
-              <Reveal
-                as="article"
-                key={m.title}
-                className="model"
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div className="mono-meta">{m.meta}</div>
-                <h3>{m.title}</h3>
-                <p>{m.body}</p>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
+      <Invitation />
     </main>
   );
 }

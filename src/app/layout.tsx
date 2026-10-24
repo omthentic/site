@@ -1,61 +1,65 @@
 import type { Metadata, Viewport } from "next";
+import localFont from "next/font/local";
 import "./globals.css";
+
+const dmSans = localFont({
+  src: [
+    {
+      path: "../../public/fonts/dm-sans-regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../public/fonts/dm-sans-semibold.ttf",
+      weight: "600",
+      style: "normal",
+    },
+  ],
+  variable: "--font-dm-sans",
+  display: "swap",
+});
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  maximumScale: 5,
-  userScalable: true,
-  viewportFit: "cover",
+  themeColor: "#f4f3ed",
 };
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai"),
-  title: "Omthentic — You are already enough",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai",
+  ),
+  title: {
+    default: "Omthentic — More human. By design.",
+    template: "%s — Omthentic",
+  },
   description:
-    "A venture house built on one conviction: you are already enough. We build technology that amplifies who you are instead of helping you hide.",
-  keywords: "Omthentic, InterviewMD, authenticity, amplification, becoming yourself, high-stakes interviews",
-  authors: [{ name: "The Stewards of Omthentic" }],
+    "We build technology that helps you express who you are. A venture house for human potential, starting with InterviewMD.",
+  authors: [{ name: "Omthentic" }],
   openGraph: {
-    title: "Omthentic — You are already enough",
-    description:
-      "A venture house built on one conviction. We build technology that amplifies who you are, not who you fear you are not.",
     type: "website",
-    url: "https://omthentic.ai",
-    images: [{ url: "/opengraph-image" }],
+    siteName: "Omthentic",
+    title: "Omthentic — More human. By design.",
+    description:
+      "You are already enough. We build the technology that helps you express it.",
+    images: [{ url: "/opengraph-image", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Omthentic — You are already enough",
+    title: "Omthentic — More human. By design.",
     description:
-      "A venture house built on one conviction: you are already enough. Technology that amplifies who you are.",
+      "You are already enough. We build the technology that helps you express it.",
     images: ["/twitter-image"],
   },
-  icons: {
-    icon: [
-      { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml' },
-      { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml', sizes: '32x32' },
-      { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml', sizes: '48x48' },
-      { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml', sizes: '64x64' }
-    ],
-    shortcut: [
-      { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml' },
-      { url: '/images/Omthentic Icon.svg', type: 'image/svg+xml' }
-    ],
-    apple: {
-      url: '/images/Omthentic Icon.svg',
-    },
-  },
+  icons: { icon: "/icon.svg", apple: "/apple-touch-icon.png" },
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className="scroll-smooth">
-      <body className="antialiased font-sans">
+    <html lang="en" className={dmSans.variable}>
+      <body style={{ fontFamily: "var(--font-dm-sans), Arial, sans-serif" }}>
         {children}
       </body>
     </html>

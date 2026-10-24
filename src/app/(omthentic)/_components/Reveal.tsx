@@ -1,62 +1,63 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 type RevealProps = {
   children: React.ReactNode;
   as?: React.ElementType;
-  delay?: number;
   className?: string;
   style?: React.CSSProperties;
   id?: string;
-  [key: string]: unknown;
 };
 
 export function Reveal({
   children,
   as: Tag = "div",
-  delay,
-  className,
-  style,
-  id,
+  className = "",
   ...rest
 }: RevealProps) {
   const ref = useRef<HTMLElement>(null);
-  const [shown, setShown] = useState(false);
 
   useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
+    const element = ref.current;
+    if (!element || !("IntersectionObserver" in window)) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     if (
-      window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-      setShown(true);
+      motion.matches ||
+      element.getBoundingClientRect().top < window.innerHeight * 0.9
+    )
       return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) {
-            setShown(true);
-            io.unobserve(e.target);
-          }
-        });
+    let animation: Animation | undefined;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        if (!motion.matches) {
+          animation = element.animate(
+            [
+              { opacity: 0, transform: "translateY(28px)" },
+              { opacity: 1, transform: "translateY(0)" },
+            ],
+            { duration: 850, easing: "cubic-bezier(.2,.7,.2,1)", fill: "none" },
+          );
+        }
+        observer.disconnect();
       },
-      { rootMargin: "0px 0px -10% 0px", threshold: 0.05 }
+      { threshold: 0.08 },
     );
-    io.observe(el);
-    return () => io.disconnect();
+    const stopMotion = () => {
+      if (motion.matches) animation?.cancel();
+    };
+    motion.addEventListener("change", stopMotion);
+    observer.observe(element);
+    return () => {
+      observer.disconnect();
+      animation?.cancel();
+      motion.removeEventListener("change", stopMotion);
+    };
   }, []);
 
   return (
-    <Tag
-      ref={ref}
-      id={id}
-      className={`reveal${shown ? " is-in" : ""}${className ? ` ${className}` : ""}`}
-      data-delay={delay}
-      style={style}
-      {...rest}
-    >
+    <Tag ref={ref} className={`reveal ${className}`} {...rest}>
       {children}
     </Tag>
   );

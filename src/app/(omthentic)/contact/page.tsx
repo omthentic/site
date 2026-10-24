@@ -1,75 +1,116 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import { Arrow } from "../_components/Arrow";
 import { Reveal } from "../_components/Reveal";
-import { SignalForm } from "../_components/SignalForm";
+import { contactEmail, founderUrl } from "../content";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Let’s talk",
   description:
-    "Leave a frequency. Omthentic reaches the investors, builders, and early believers genuinely aligned with this.",
+    "Connect with Omthentic founder Shanaka Jayakody about building, backing or collaborating on technology for human potential.",
 };
-
-const channels = [
-  {
-    meta: "For investors",
-    title: "Back the long resonance",
-    body: "We share our thesis, structure, and the case for a house built on alignment.",
-    href: "mailto:invest@omthentic.ai",
-    label: "invest@omthentic.ai →",
-  },
-  {
-    meta: "For builders",
-    title: "Join the founding circle",
-    body: "Engineers, designers, and researchers who want their work to mean something.",
-    href: "mailto:build@omthentic.ai",
-    label: "build@omthentic.ai →",
-  },
-  {
-    meta: "For believers",
-    title: "Walk with us early",
-    body: "Follow the manifesto as it becomes real, and shape it while it is still soft.",
-    href: "mailto:hello@omthentic.ai",
-    label: "Join the circle →",
-  },
-];
 
 export default function ContactPage() {
   return (
-    <main>
-      <section className="join" id="join">
-        <div className="wrap">
-          <Reveal
-            className="eyebrow"
-            style={{ justifyContent: "center", display: "flex", marginBottom: "clamp(24px,3vh,36px)" }}
-          >
-            Resonate with us
-          </Reveal>
-          <Reveal as="h2">If something here moved you, that was the point.</Reveal>
-          <Reveal as="p" className="lead">
-            Leave a frequency. We will reach the people who are genuinely aligned
-            with this: investors, builders, and early believers who feel the same
-            pull.
-          </Reveal>
-          <Reveal>
-            <SignalForm />
-          </Reveal>
-
-          <div className="channels">
-            {channels.map((c, i) => (
-              <Reveal
-                key={c.title}
-                className="channel"
-                style={{ transitionDelay: `${i * 0.1}s` }}
-              >
-                <div className="mono-meta">{c.meta}</div>
-                <h3>{c.title}</h3>
-                <p>{c.body}</p>
-                <a className="link" href={c.href}>
-                  {c.label}
-                </a>
-              </Reveal>
-            ))}
-          </div>
+    <main id="main-content">
+      <section className="wrap page-hero contact-hero" id="join">
+        <p className="eyebrow">
+          <span className="status-dot" /> An open invitation
+        </p>
+        <h1>
+          Good things start
+          <br />
+          with a <span className="soft-word">conversation.</span>
+        </h1>
+        <div className="contact-intro">
+          <p>
+            You might have an idea, a question, or a feeling that we should
+            meet. That’s plenty to start with.
+          </p>
         </div>
+      </section>
+      <section className="wrap contact-layout">
+        <Reveal className="contact-photo image-frame">
+          <Image
+            src="/images/conversation.jpg"
+            alt="Two people making time for a conversation"
+            fill
+            priority
+            sizes="(max-width: 760px) 100vw, 45vw"
+          />
+        </Reveal>
+        <Reveal className="contact-content">
+          <p className="eyebrow">A direct conversation</p>
+          <h2>
+            Meet the person
+            <br />
+            behind Omthentic.
+          </h2>
+          <p>
+            Shanaka Jayakody is the founder of Omthentic. For collaborations,
+            investment, or a conversation about InterviewMD, send him a note
+            directly.
+          </p>
+          <a href={`mailto:${contactEmail}`} className="button button-dark">
+            Email Shanaka <Arrow diagonal />
+          </a>
+          <a className="contact-link-note" href={`mailto:${contactEmail}`}>
+            {contactEmail}
+          </a>
+          <a
+            href={founderUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-link founder-profile-link"
+          >
+            Meet the founder <Arrow diagonal />
+          </a>
+          <div className="contact-topics">
+            <p className="eyebrow">A few good reasons to talk</p>
+            <details>
+              <summary>
+                Build with us{" "}
+                <span className="expand-mark" aria-hidden="true" />
+              </summary>
+              <p>
+                For engineers, designers and researchers interested in building
+                tools that help people trust their own abilities. Tell Shanaka
+                what you make and what you care about.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Back the work{" "}
+                <span className="expand-mark" aria-hidden="true" />
+              </summary>
+              <p>
+                For investors who want to understand the business, the coaching
+                experience behind InterviewMD, and the long-term thinking behind
+                Omthentic.
+              </p>
+            </details>
+            <details>
+              <summary>
+                Explore a collaboration{" "}
+                <span className="expand-mark" aria-hidden="true" />
+              </summary>
+              <p>
+                For educators, coaches and people working on the same questions.
+                Bring your context, your idea, or the problem you keep coming
+                back to.
+              </p>
+            </details>
+          </div>
+        </Reveal>
+      </section>
+      <section className="wrap contact-closing">
+        <Reveal>
+          <p>
+            No perfect pitch required.
+            <br />
+            <span className="soft-word">Just be yourself.</span>
+          </p>
+        </Reveal>
       </section>
     </main>
   );

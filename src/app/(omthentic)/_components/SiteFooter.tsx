@@ -1,48 +1,31 @@
 import Link from "next/link";
-import { BrandMark } from "./BrandMark";
+import { Arrow } from "./Arrow";
 
 export function SiteFooter() {
   return (
-    <footer className="foot">
+    <footer className="site-footer">
       <div className="wrap">
-        <div className="foot-in">
-          <div>
-            <div className="brand">
-              <BrandMark />
-              Omthentic
-            </div>
-            <p className="tag">
-              A parent house for aligned, authentic, communication-based
-              technologies.
-            </p>
-          </div>
-          <div className="foot-links">
-            <div className="foot-col">
-              <h4>The house</h4>
-              <Link href="/vision">Manifesto</Link>
-              <Link href="/vision#principles">Principles</Link>
-              <Link href="/vision#frameworks">Frameworks</Link>
-              <Link href="/companies#whynow">Why now</Link>
-            </div>
-            <div className="foot-col">
-              <h4>Ventures</h4>
-              <Link href="/companies#ventures">Attune</Link>
-              <Link href="/companies#ventures">Veridian</Link>
-              <Link href="/companies#ventures">Lumen</Link>
-              <Link href="/companies#ventures">Concord</Link>
-            </div>
-            <div className="foot-col">
-              <h4>Connect</h4>
-              <a href="mailto:invest@omthentic.ai">Investors</a>
-              <a href="mailto:build@omthentic.ai">Builders</a>
-              <Link href="/contact">Believers</Link>
-              <a href="https://www.shanakajayakody.com/">Founder</a>
-            </div>
+        <div className="footer-top">
+          <p>
+            Technology moves forward.
+            <br />
+            Let’s make sure people do, too.
+          </p>
+          <div className="footer-links">
+            <Link href="/vision">Our approach</Link>
+            <Link href="/companies">Ventures</Link>
+            <Link href="/contact">
+              Get in touch <Arrow diagonal />
+            </Link>
           </div>
         </div>
-        <div className="foot-base">
-          <span>© 2026 Omthentic. Built in resonance.</span>
-          <span>Om · authentic · aligned</span>
+        <Link href="/" className="footer-wordmark" aria-label="Omthentic home">
+          omthentic
+        </Link>
+        <div className="footer-bottom">
+          <span>© {new Date().getFullYear()} Omthentic</span>
+          <span>You are already enough.</span>
+          <a href="#top">Back to top ↑</a>
         </div>
       </div>
     </footer>

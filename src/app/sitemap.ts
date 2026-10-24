@@ -1,12 +1,12 @@
-import { MetadataRoute } from 'next';
+import { MetadataRoute } from "next";
 
-const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://omthentic.ai';
+const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://omthentic.ai";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return ['', '/vision', '/companies', '/contact'].map((route) => ({
+  return ["", "/vision", "/companies", "/contact"].map((route) => ({
     url: `${SITE_URL}${route}`,
-    lastModified: new Date(),
-    changeFrequency: 'monthly' as const,
-    priority: route === '' ? 1 : 0.8,
+    lastModified: new Date("2026-10-24"),
+    changeFrequency: "monthly" as const,
+    priority: route === "" ? 1 : 0.8,
   }));
 }
